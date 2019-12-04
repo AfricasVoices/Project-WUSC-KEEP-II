@@ -14,7 +14,7 @@ from temba_client.v2 import Contact, Run
 from src.lib import PipelineConfiguration
 from src.lib.pipeline_configuration import RapidProSource
 
-Logger.set_project_name("Wusc-Keep-II")
+Logger.set_project_name("WUSC-KEEP-II")
 log = Logger(__name__)
 
 
