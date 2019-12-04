@@ -14,7 +14,7 @@ DATA_ROOT=$3
 
 ./checkout_coda_v2.sh "$CODA_V2_ROOT"
 
-PROJECT_NAME="WUSC-KEEP=II"
+PROJECT_NAME="WUSC-KEEP-II"
 
 DATASETS=(
     "dadaab_s01e01"
