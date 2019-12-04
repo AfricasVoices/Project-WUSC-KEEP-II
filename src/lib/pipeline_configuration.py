@@ -101,6 +101,7 @@ class PipelineConfiguration(object):
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e01"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
+
         CodingPlan(raw_field="rqa_s01e02_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e02_run_id",
@@ -117,6 +118,7 @@ class PipelineConfiguration(object):
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e02"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
+
         CodingPlan(raw_field="rqa_s01e03_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e03_run_id",
@@ -133,6 +135,7 @@ class PipelineConfiguration(object):
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e03"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
+
         CodingPlan(raw_field="rqa_s01e04_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e04_run_id",
@@ -149,6 +152,7 @@ class PipelineConfiguration(object):
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e04"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
+
         CodingPlan(raw_field="rqa_s01e05_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e05_run_id",
@@ -165,6 +169,7 @@ class PipelineConfiguration(object):
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e05"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
+
         CodingPlan(raw_field="rqa_s01e06_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e06_run_id",
@@ -181,6 +186,7 @@ class PipelineConfiguration(object):
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e06"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
+
         CodingPlan(raw_field="rqa_s01e07_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e07_run_id",
@@ -216,6 +222,7 @@ class PipelineConfiguration(object):
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e01"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
+
         CodingPlan(raw_field="rqa_s01e02_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e02_run_id",
@@ -232,6 +239,7 @@ class PipelineConfiguration(object):
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e02"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
+
         CodingPlan(raw_field="rqa_s01e03_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e03_run_id",
@@ -248,6 +256,7 @@ class PipelineConfiguration(object):
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e03"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
+
         CodingPlan(raw_field="rqa_s01e04_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e04_run_id",
@@ -264,6 +273,7 @@ class PipelineConfiguration(object):
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e04"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
+
         CodingPlan(raw_field="rqa_s01e05_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e05_run_id",
@@ -280,6 +290,7 @@ class PipelineConfiguration(object):
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e05"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
+
         CodingPlan(raw_field="rqa_s01e06_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e06_run_id",
@@ -296,6 +307,7 @@ class PipelineConfiguration(object):
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e06"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
+
         CodingPlan(raw_field="rqa_s01e07_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e07_run_id",
