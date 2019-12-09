@@ -1,17 +1,17 @@
 {
   "SchemeID": "Scheme-fffffc6e",
-  "Name": "WS - Correct Dataset",
+  "Name": "DADAAB WS - Correct Dataset",
   "Version": "0.0.0.1",
   "Codes": [
     {
       "CodeID": "code-9919ab80",
       "CodeType": "Normal",
-      "DisplayText": "dadaab hh language",
-      "StringValue": "dadaab_hh_language",
+      "DisplayText": "dadaab household language",
+      "StringValue": "dadaab_household_language",
       "NumericValue": 0,
       "VisibleInCoda": true,
       "MatchValues": [
-        "dadaab hh language"
+        "dadaab household language"
       ]
     },
     {
@@ -56,138 +56,6 @@
       "VisibleInCoda": true,
       "MatchValues": [
         "dadaab nationality"
-      ]
-    },
-    {
-      "CodeID": "code-ac8223be",
-      "CodeType": "Normal",
-      "DisplayText": "kakuma hh language",
-      "StringValue": "kakuma_hh_language",
-      "NumericValue": 5,
-      "VisibleInCoda": true,
-      "MatchValues": [
-        "kakuma hh language"
-      ]
-    },
-    {
-      "CodeID": "code-5d39be18",
-      "CodeType": "Normal",
-      "DisplayText": "kakuma age",
-      "StringValue": "kakuma_age",
-      "NumericValue": 6,
-      "VisibleInCoda": true,
-      "MatchValues": [
-        "kakuma age"
-      ]
-    },
-    {
-      "CodeID": "code-7e3694d6",
-      "CodeType": "Normal",
-      "DisplayText": "kakuma gender",
-      "StringValue": "kakuma_gender",
-      "NumericValue": 7,
-      "VisibleInCoda": true,
-      "MatchValues": [
-        "kakuma gender"
-      ]
-    },
-    {
-      "CodeID": "code-2afd82b5",
-      "CodeType": "Normal",
-      "DisplayText": "kakuma location",
-      "StringValue": "kakuma_location",
-      "NumericValue": 8,
-      "VisibleInCoda": true,
-      "MatchValues": [
-        "kakuma location"
-      ]
-    },
-    {
-      "CodeID": "code-a9a51f4a",
-      "CodeType": "Normal",
-      "DisplayText": "kakuma nationality",
-      "StringValue": "kakuma_nationality",
-      "NumericValue": 9,
-      "VisibleInCoda": true,
-      "MatchValues": [
-        "kakuma nationality"
-      ]
-    },
-    {
-      "CodeID": "code-b86d2039",
-      "CodeType": "Normal",
-      "DisplayText": "kakuma s01e01",
-      "StringValue": "kakuma_s01e01",
-      "NumericValue": 10,
-      "VisibleInCoda": true,
-      "MatchValues": [
-        "kakuma s01e01"
-      ]
-    },
-    {
-      "CodeID": "code-db2453d5",
-      "CodeType": "Normal",
-      "DisplayText": "kakuma s01e02",
-      "StringValue": "kakuma_s01e02",
-      "NumericValue": 11,
-      "VisibleInCoda": true,
-      "MatchValues": [
-        "kakuma s01e02"
-      ]
-    },
-    {
-      "CodeID": "code-05b30dbf",
-      "CodeType": "Normal",
-      "DisplayText": "kakuma s01e03",
-      "StringValue": "kakuma_s01e03",
-      "NumericValue": 12,
-      "VisibleInCoda": true,
-      "MatchValues": [
-        "kakuma s01e03"
-      ]
-    },
-    {
-      "CodeID": "code-d015fae8",
-      "CodeType": "Normal",
-      "DisplayText": "kakuma s01e04",
-      "StringValue": "kakuma_s01e04",
-      "NumericValue": 13,
-      "VisibleInCoda": true,
-      "MatchValues": [
-        "kakuma s01e04"
-      ]
-    },
-    {
-      "CodeID": "code-d81cf4bd",
-      "CodeType": "Normal",
-      "DisplayText": "kakuma s01e05",
-      "StringValue": "kakuma_s01e05",
-      "NumericValue": 14,
-      "VisibleInCoda": true,
-      "MatchValues": [
-        "kakuma s01e05"
-      ]
-    },
-    {
-      "CodeID": "code-001cf54d",
-      "CodeType": "Normal",
-      "DisplayText": "kakuma s01e06",
-      "StringValue": "kakuma_s01e06",
-      "NumericValue": 15,
-      "VisibleInCoda": true,
-      "MatchValues": [
-        "kakuma s01e06"
-      ]
-    },
-    {
-      "CodeID": "code-caf58c40",
-      "CodeType": "Normal",
-      "DisplayText": "kakuma s01e07",
-      "StringValue": "kakuma_s01e07",
-      "NumericValue": 16,
-      "VisibleInCoda": true,
-      "MatchValues": [
-        "kakuma s01e07"
       ]
     },
     {
