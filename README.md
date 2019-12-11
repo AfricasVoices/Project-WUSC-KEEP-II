@@ -1,4 +1,4 @@
-# Project-Wusc-Keep-II
+# Project-WUSC-KEEP-II
 Data pipeline for Wusc-Keep-II.
 
 This pipeline fetches all project data from a Rapid Pro instance and Coda, and processes it to produce data for
