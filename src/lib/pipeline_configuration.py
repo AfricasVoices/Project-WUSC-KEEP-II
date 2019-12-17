@@ -631,7 +631,9 @@ class PipelineConfiguration(object):
         validators.validate_string(self.memory_profile_upload_url_prefix, "memory_profile_upload_url_prefix")
 
         if self.listening_group_csv_urls is not None:
-            validators.validate_string(self.pipeline_name, "listening_group_csv_urls")
+            validators.validate_list(self.listening_group_csv_urls, "listening_group_csv_urls")
+            for i, listening_group_csv_url in enumerate(self.listening_group_csv_urls):
+                validators.validate_string(listening_group_csv_url, f"{listening_group_csv_url}")
 
 
 class RawDataSource(ABC):
