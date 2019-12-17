@@ -34,5 +34,6 @@ class CodeSchemes(object):
     KAKUMA_HOUSEHOLD_LANGUAGE = _open_scheme("kakuma_household_language.json")
     KAKUMA_LOCATION = _open_scheme("kakuma_location.json")
 
+    WS_CORRECT_DATASET = None
     KAKUMA_WS_CORRECT_DATASET = _open_scheme("kakuma_ws_correct_dataset.json")
     DADAAB_WS_CORRECT_DATASET = _open_scheme("dadaab_ws_correct_dataset.json")

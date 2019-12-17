@@ -10,7 +10,7 @@ from storage.google_drive import drive_client_wrapper
 
 from src import CombineRawDatasets, TranslateRapidProKeys, AutoCode, ProductionFile, \
     ApplyManualCodes, AnalysisFile, WSCorrection
-from src.lib import PipelineConfiguration
+from src.lib import PipelineConfiguration, CodeSchemes
 
 Logger.set_project_name("WUSC-KEEP-II")
 log = Logger(__name__)
@@ -117,12 +117,14 @@ if __name__ == "__main__":
         log.info("Running Dadaab pipeline")
         PipelineConfiguration.RQA_CODING_PLANS = PipelineConfiguration.DADAAB_RQA_CODING_PLANS
         PipelineConfiguration.SURVEY_CODING_PLANS = PipelineConfiguration.DADAAB_SURVEY_CODING_PLANS
+        CodeSchemes.WS_CORRECT_DATASET = CodeSchemes.DADAAB_WS_CORRECT_DATASET
     else:
         assert pipeline_configuration.pipeline_name == "kakuma_pipeline", "PipelineName must be either " \
                                                                           "'dadaab_pipeline or kakuma_pipeline"
         log.info("Running Kakuma pipeline")
         PipelineConfiguration.RQA_CODING_PLANS = PipelineConfiguration.KAKUMA_RQA_CODING_PLANS
         PipelineConfiguration.SURVEY_CODING_PLANS = PipelineConfiguration.KAKUMA_SURVEY_CODING_PLANS
+        CodeSchemes.WS_CORRECT_DATASET = CodeSchemes.KAKUMA_WS_CORRECT_DATASET
 
     log.info("Translating Rapid Pro Keys...")
     data = TranslateRapidProKeys.translate_rapid_pro_keys(user, data, pipeline_configuration)
