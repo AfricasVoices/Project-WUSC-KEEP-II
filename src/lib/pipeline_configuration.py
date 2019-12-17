@@ -533,7 +533,7 @@ class PipelineConfiguration(object):
         :param drive_upload: Configuration for uploading to Google Drive, or None.
                              If None, does not upload to Google Drive.
         :type drive_upload: DriveUploadPaths | None
-        :param listening_group_csv_urls: Google cloud storage urls to fetch listening group csvs from
+        :param listening_group_csv_urls: Google cloud storage urls to fetch listening group csvs from.
         :type listening_group_csv_urls: ListeningGroupCSVURLs | None
         """
         self.raw_data_sources = raw_data_sources
