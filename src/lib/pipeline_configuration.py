@@ -534,7 +534,7 @@ class PipelineConfiguration(object):
                              If None, does not upload to Google Drive.
         :type drive_upload: DriveUploadPaths | None
         :param listening_group_csv_urls: Google cloud storage urls to fetch listening group csvs from.
-        :type listening_group_csv_urls: ListeningGroupCSVURLs | None
+        :type listening_group_csv_urls: list of str | None
         """
         self.raw_data_sources = raw_data_sources
         self.phone_number_uuid_table = phone_number_uuid_table
