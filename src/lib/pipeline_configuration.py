@@ -506,7 +506,7 @@ class PipelineConfiguration(object):
                  rapid_pro_key_remappings, project_start_date, project_end_date, filter_test_messages, move_ws_messages,
                  memory_profile_upload_url_prefix, data_archive_upload_url_prefix, pipeline_name=None,
                  drive_upload=None,
-                 listening_group_csv_urls=None, ):
+                 listening_group_csv_urls=None):
         """
         :param raw_data_sources: List of sources to pull the various raw run files from.
         :type raw_data_sources: list of RawDataSource
