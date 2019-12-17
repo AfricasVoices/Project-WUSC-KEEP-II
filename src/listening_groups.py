@@ -13,9 +13,21 @@ class ListeningGroup(object):
 
     @classmethod
     def tag_listening_groups_participants(cls, user, data, listening_group_dir):
+        '''
+        This tags uids who participated in repeat listening groups and/or weekly listening
+        group sessions.
+        :param user: Identifier of the user running this program, for TracedData Metadata.
+        :type user: str
+        :param data: TracedData objects to tag listening group participation to.
+        :type data: iterable of TracedData
+        :param listening_group_dir: Directory containing de-identified listening groups contacts CSVs.
+        :type user: str
+        '''
 
-        repeat_listening_group_participants = []
-        listening_group_participants = dict()
+        repeat_listening_group_participants = [] # Contains uids of listening group participants who will participate
+                                                 # in all listening group sessions.
+        listening_group_participants = dict()   # Contains lists of weekly listening group participants. The participants
+                                                # will change each week.
 
         with open(f'{listening_group_dir}/repeat_listening_group.csv', "r", encoding='utf-8-sig') as f:
             repeat_listening_group_data = list(csv.DictReader(f))
@@ -35,7 +47,7 @@ class ListeningGroup(object):
                              f'{plan.dataset_name} listening group participants')
 
         for td in data:
-            listening_group_participation = dict()
+            listening_group_participation = dict() # of uid repeat and weekly listening group participation data
             listening_group_participation['repeat_listening_group_participant'] = False
 
             if td['uid'] in repeat_listening_group_participants:
