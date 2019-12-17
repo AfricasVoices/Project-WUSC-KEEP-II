@@ -86,6 +86,7 @@ class PipelineConfiguration(object):
 
     DADAAB_RQA_CODING_PLANS = [
         CodingPlan(raw_field="rqa_s01e01_raw",
+                   dataset_name="dadaab_s01e01",
                    time_field="sent_on",
                    run_id_field="rqa_s01e01_run_id",
                    coda_filename="s01e01.json",
@@ -103,6 +104,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e02_raw",
+                   dataset_name="dadaab_s01e02",
                    time_field="sent_on",
                    run_id_field="rqa_s01e02_run_id",
                    coda_filename="s01e02.json",
@@ -120,6 +122,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e03_raw",
+                   dataset_name="dadaab_s01e03",
                    time_field="sent_on",
                    run_id_field="rqa_s01e03_run_id",
                    coda_filename="s01e03.json",
@@ -137,6 +140,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e04_raw",
+                   dataset_name="dadaab_s01e04",
                    time_field="sent_on",
                    run_id_field="rqa_s01e04_run_id",
                    coda_filename="s01e04.json",
@@ -154,6 +158,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e05_raw",
+                   dataset_name="dadaab_s01e05",
                    time_field="sent_on",
                    run_id_field="rqa_s01e05_run_id",
                    coda_filename="s01e05.json",
@@ -171,6 +176,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e06_raw",
+                   dataset_name="dadaab_s01e06",
                    time_field="sent_on",
                    run_id_field="rqa_s01e06_run_id",
                    coda_filename="s01e06.json",
@@ -188,6 +194,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e07_raw",
+                   dataset_name="dadaab_s01e07",
                    time_field="sent_on",
                    run_id_field="rqa_s01e07_run_id",
                    coda_filename="s01e07.json",
@@ -207,6 +214,7 @@ class PipelineConfiguration(object):
 
     KAKUMA_RQA_CODING_PLANS = [
         CodingPlan(raw_field="rqa_s01e01_raw",
+                   dataset_name="kakuma_s01e01",
                    time_field="sent_on",
                    run_id_field="rqa_s01e01_run_id",
                    coda_filename="s01e01.json",
@@ -224,6 +232,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e02_raw",
+                   dataset_name="kakuma_s01e02",
                    time_field="sent_on",
                    run_id_field="rqa_s01e02_run_id",
                    coda_filename="s01e02.json",
@@ -241,6 +250,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e03_raw",
+                   dataset_name="kakuma_s01e03",
                    time_field="sent_on",
                    run_id_field="rqa_s01e03_run_id",
                    coda_filename="s01e03.json",
@@ -258,6 +268,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e04_raw",
+                   dataset_name="kakuma_s01e04",
                    time_field="sent_on",
                    run_id_field="rqa_s01e04_run_id",
                    coda_filename="s01e04.json",
@@ -275,6 +286,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e05_raw",
+                   dataset_name="kakuma_s01e05",
                    time_field="sent_on",
                    run_id_field="rqa_s01e05_run_id",
                    coda_filename="s01e05.json",
@@ -292,6 +304,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e06_raw",
+                   dataset_name="kakuma_s01e06",
                    time_field="sent_on",
                    run_id_field="rqa_s01e06_run_id",
                    coda_filename="s01e06.json",
@@ -309,6 +322,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e07_raw",
+                   dataset_name="kakuma_s01e07",
                    time_field="sent_on",
                    run_id_field="rqa_s01e07_run_id",
                    coda_filename="s01e07.json",
@@ -344,6 +358,7 @@ class PipelineConfiguration(object):
     KAKUMA_SURVEY_CODING_PLANS = [
 
         CodingPlan(raw_field="location_raw",
+                   dataset_name="kakuma_location",
                    time_field="location_time",
                    coda_filename="kakuma location.json",
                    coding_configurations=[
@@ -359,6 +374,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
 
         CodingPlan(raw_field="gender_raw",
+                   dataset_name="kakuma_gender",
                    time_field="gender_time",
                    coda_filename="gender.json",
                    coding_configurations=[
@@ -375,6 +391,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
 
         CodingPlan(raw_field="age_raw",
+                   dataset_name="kakuma_age",
                    time_field="age_time",
                    coda_filename="age.json",
                    coding_configurations=[
@@ -391,6 +408,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
 
         CodingPlan(raw_field="household_language_raw",
+                   dataset_name="kakuma_household_language",
                    time_field="household_language_time",
                    coda_filename="household_language.json",
                    coding_configurations=[
@@ -406,6 +424,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
 
         CodingPlan(raw_field="nationality_raw",
+                   dataset_name="kakuma_nationality",
                    time_field="nationality_time",
                    coda_filename="nationality.json",
                    coding_configurations=[
@@ -421,10 +440,10 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.ASSERT_EQUAL)
     ]
 
-
     DADAAB_SURVEY_CODING_PLANS = [
 
         CodingPlan(raw_field="location_raw",
+                   dataset_name="dadaab_location",
                    time_field="location_time",
                    coda_filename="dadaab location.json",
                    coding_configurations=[
@@ -440,6 +459,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
 
         CodingPlan(raw_field="gender_raw",
+                   dataset_name="dadaab_gender",
                    time_field="gender_time",
                    coda_filename="gender.json",
                    coding_configurations=[
@@ -456,6 +476,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
 
         CodingPlan(raw_field="age_raw",
+                   dataset_name="dadaab_age",
                    time_field="age_time",
                    coda_filename="age.json",
                    coding_configurations=[
@@ -472,6 +493,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
 
         CodingPlan(raw_field="household_language_raw",
+                   dataset_name="dadaab_household_language",
                    time_field="household_language_time",
                    coda_filename="household_language.json",
                    coding_configurations=[
@@ -487,6 +509,7 @@ class PipelineConfiguration(object):
                    raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
 
         CodingPlan(raw_field="nationality_raw",
+                   dataset_name="dadaab_nationality",
                    time_field="nationality_time",
                    coda_filename="nationality.json",
                    coding_configurations=[
