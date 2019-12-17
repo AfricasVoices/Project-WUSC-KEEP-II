@@ -99,7 +99,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.MATRIX
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e01"),
+                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e01"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e02_raw",
@@ -116,7 +116,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.MATRIX
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e02"),
+                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e02"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e03_raw",
@@ -133,7 +133,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.MATRIX
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e03"),
+                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e03"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e04_raw",
@@ -150,7 +150,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.MATRIX
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e04"),
+                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e04"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e05_raw",
@@ -167,7 +167,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.MATRIX
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e05"),
+                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e05"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e06_raw",
@@ -184,7 +184,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.MATRIX
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e06"),
+                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e06"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e07_raw",
@@ -201,7 +201,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.MATRIX
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e07"),
+                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e07"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
     ]
 
@@ -220,7 +220,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.MATRIX
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e01"),
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e01"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e02_raw",
@@ -237,7 +237,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.MATRIX
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e02"),
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e02"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e03_raw",
@@ -254,7 +254,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.MATRIX
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e03"),
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e03"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e04_raw",
@@ -271,7 +271,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.MATRIX
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e04"),
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e04"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e05_raw",
@@ -288,7 +288,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.MATRIX
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e05"),
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e05"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e06_raw",
@@ -305,7 +305,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.MATRIX
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e06"),
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e06"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
 
         CodingPlan(raw_field="rqa_s01e07_raw",
@@ -322,7 +322,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.MATRIX
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e07"),
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e07"),
                    raw_field_folding_mode=FoldingModes.CONCATENATE),
     ]
 
@@ -355,7 +355,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.ASSERT_EQUAL
                        ),
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("kakuma location"),
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma location"),
                    raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
 
         CodingPlan(raw_field="gender_raw",
@@ -371,7 +371,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.ASSERT_EQUAL
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("kakuma gender"),
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma gender"),
                    raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
 
         CodingPlan(raw_field="age_raw",
@@ -387,7 +387,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.ASSERT_EQUAL
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("kakuma age"),
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma age"),
                    raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
 
         CodingPlan(raw_field="household_language_raw",
@@ -396,13 +396,13 @@ class PipelineConfiguration(object):
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.SINGLE,
-                           code_scheme=CodeSchemes.KAKUMA_HH_LANGUAGE,
+                           code_scheme=CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE,
                            coded_field="household_language_coded",
                            analysis_file_key="household_language",
                            folding_mode=FoldingModes.ASSERT_EQUAL
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("kakuma hh language"),
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma household language"),
                    raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
 
         CodingPlan(raw_field="nationality_raw",
@@ -417,7 +417,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.ASSERT_EQUAL
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("kakuma nationality"),
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma nationality"),
                    raw_field_folding_mode=FoldingModes.ASSERT_EQUAL)
     ]
 
@@ -436,7 +436,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.ASSERT_EQUAL
                        ),
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("dadaab location"),
+                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab location"),
                    raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
 
         CodingPlan(raw_field="gender_raw",
@@ -452,7 +452,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.ASSERT_EQUAL
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("dadaab gender"),
+                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab gender"),
                    raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
 
         CodingPlan(raw_field="age_raw",
@@ -468,7 +468,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.ASSERT_EQUAL
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("dadaab age"),
+                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab age"),
                    raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
 
         CodingPlan(raw_field="household_language_raw",
@@ -477,13 +477,13 @@ class PipelineConfiguration(object):
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.SINGLE,
-                           code_scheme=CodeSchemes.KAKUMA_HH_LANGUAGE,
+                           code_scheme=CodeSchemes.DADAAB_HOUSEHOLD_LANGUAGE,
                            coded_field="household_language_coded",
                            analysis_file_key="household_language",
                            folding_mode=FoldingModes.ASSERT_EQUAL
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("dadaab hh language"),
+                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab household language"),
                    raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
 
         CodingPlan(raw_field="nationality_raw",
@@ -498,7 +498,7 @@ class PipelineConfiguration(object):
                            folding_mode=FoldingModes.ASSERT_EQUAL
                        )
                    ],
-                   ws_code=CodeSchemes.WS_CORRECT_DATASET.get_code_with_match_value("dadaab nationality"),
+                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab nationality"),
                    raw_field_folding_mode=FoldingModes.ASSERT_EQUAL)
     ]
 
