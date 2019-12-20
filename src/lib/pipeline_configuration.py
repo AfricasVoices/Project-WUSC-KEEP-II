@@ -63,9 +63,10 @@ class CodingConfiguration(object):
 
 # TODO: Rename CodingPlan to something like DatasetConfiguration?
 class CodingPlan(object):
-    def __init__(self, raw_field, coding_configurations, raw_field_folding_mode, coda_filename=None, ws_code=None,
+    def __init__(self, raw_field, dataset_name, coding_configurations, raw_field_folding_mode, coda_filename=None, ws_code=None,
                  time_field=None, run_id_field=None, icr_filename=None, id_field=None, code_imputation_function=None):
         self.raw_field = raw_field
+        self.dataset_name = dataset_name
         self.time_field = time_field
         self.run_id_field = run_id_field
         self.coda_filename = coda_filename
@@ -527,7 +528,8 @@ class PipelineConfiguration(object):
 
     def __init__(self, raw_data_sources, phone_number_uuid_table, timestamp_remappings,
                  rapid_pro_key_remappings, project_start_date, project_end_date, filter_test_messages, move_ws_messages,
-                 memory_profile_upload_url_prefix, data_archive_upload_url_prefix, pipeline_name=None, drive_upload=None):
+                 memory_profile_upload_url_prefix, data_archive_upload_url_prefix, pipeline_name=None, drive_upload=None,
+                 listening_group_csv_urls=None,):
         """
         :param raw_data_sources: List of sources to pull the various raw run files from.
         :type raw_data_sources: list of RawDataSource
@@ -554,6 +556,8 @@ class PipelineConfiguration(object):
         :param drive_upload: Configuration for uploading to Google Drive, or None.
                              If None, does not upload to Google Drive.
         :type drive_upload: DriveUploadPaths | None
+        :param listening_group_csv_urls: Google cloud storage urls to fetch listening group csvs from
+        :type listening_group_csv_urls: ListeningGroupCSVURLs | None
         """
         self.raw_data_sources = raw_data_sources
         self.phone_number_uuid_table = phone_number_uuid_table
@@ -567,6 +571,7 @@ class PipelineConfiguration(object):
         self.data_archive_upload_url_prefix = data_archive_upload_url_prefix
         self.pipeline_name = pipeline_name
         self.drive_upload = drive_upload
+        self.listening_group_csv_urls = listening_group_csv_urls
 
 
         self.validate()
@@ -607,10 +612,12 @@ class PipelineConfiguration(object):
         if "DriveUpload" in configuration_dict:
             drive_upload_paths = DriveUpload.from_configuration_dict(configuration_dict["DriveUpload"])
 
+        listening_group_csv_urls = configuration_dict.get("ListeningGroupCSVURLs")
+
         return cls(raw_data_sources, phone_number_uuid_table, timestamp_remappings,
                    rapid_pro_key_remappings, project_start_date, project_end_date, filter_test_messages,
                    move_ws_messages, memory_profile_upload_url_prefix, data_archive_upload_url_prefix, pipeline_name,
-                   drive_upload_paths)
+                   drive_upload_paths, listening_group_csv_urls)
 
     @classmethod
     def from_configuration_file(cls, f):
@@ -646,6 +653,12 @@ class PipelineConfiguration(object):
             self.drive_upload.validate()
 
         validators.validate_string(self.memory_profile_upload_url_prefix, "memory_profile_upload_url_prefix")
+
+        if self.listening_group_csv_urls is not None:
+            validators.validate_string(self.pipeline_name, "listening_group_csv_urls")
+            validators.validate_list(self.listening_group_csv_urls, "listening_group_csv_urls")
+            for i, listening_group_csv_url in enumerate(self.listening_group_csv_urls):
+                validators.validate_string(listening_group_csv_url, f"{listening_group_csv_url}")
 
 
 class RawDataSource(ABC):
