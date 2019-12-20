@@ -9,7 +9,7 @@ from storage.google_cloud import google_cloud_utils
 from storage.google_drive import drive_client_wrapper
 
 from src import CombineRawDatasets, TranslateRapidProKeys, AutoCode, ProductionFile, \
-    ApplyManualCodes, AnalysisFile, WSCorrection
+    ApplyManualCodes, AnalysisFile, WSCorrection, ListeningGroups
 from src.lib import PipelineConfiguration, CodeSchemes
 
 Logger.set_project_name("WUSC-KEEP-II")
@@ -149,7 +149,7 @@ if __name__ == "__main__":
     data = ApplyManualCodes.apply_manual_codes(user, data, prev_coded_dir_path)
 
     log.info("Tagging listening group participants")
-    ListeningGroup.tag_listening_groups_participants(user, data, listening_groups_dir_path)
+    ListeningGroups.tag_listening_groups_participants(user, data, listening_groups_dir_path)
 
     log.info("Generating Analysis CSVs...")
     messages_data, individuals_data = AnalysisFile.generate(user, data, csv_by_message_output_path,
