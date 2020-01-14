@@ -504,7 +504,9 @@ class PipelineConfiguration(object):
 
     def __init__(self, raw_data_sources, phone_number_uuid_table, timestamp_remappings,
                  rapid_pro_key_remappings, project_start_date, project_end_date, filter_test_messages, move_ws_messages,
-                 memory_profile_upload_url_prefix, data_archive_upload_url_prefix, pipeline_name=None, drive_upload=None):
+                 memory_profile_upload_url_prefix, data_archive_upload_url_prefix, pipeline_name=None,
+                 drive_upload=None,
+                 listening_group_csv_urls=None):
         """
         :param raw_data_sources: List of sources to pull the various raw run files from.
         :type raw_data_sources: list of RawDataSource
@@ -531,6 +533,8 @@ class PipelineConfiguration(object):
         :param drive_upload: Configuration for uploading to Google Drive, or None.
                              If None, does not upload to Google Drive.
         :type drive_upload: DriveUploadPaths | None
+        :param listening_group_csv_urls: Google cloud storage urls to fetch listening group csvs from.
+        :type listening_group_csv_urls: list of str | None
         """
         self.raw_data_sources = raw_data_sources
         self.phone_number_uuid_table = phone_number_uuid_table
@@ -544,7 +548,7 @@ class PipelineConfiguration(object):
         self.data_archive_upload_url_prefix = data_archive_upload_url_prefix
         self.pipeline_name = pipeline_name
         self.drive_upload = drive_upload
-
+        self.listening_group_csv_urls = listening_group_csv_urls
 
         self.validate()
 
@@ -556,7 +560,7 @@ class PipelineConfiguration(object):
                 raw_data_sources.append(RapidProSource.from_configuration_dict(raw_data_source))
             else:
                 assert False, f"Unknown SourceType '{raw_data_source['SourceType']}'. " \
-                              f"Must be 'RapidPro'"
+                    f"Must be 'RapidPro'"
 
         phone_number_uuid_table = PhoneNumberUuidTable.from_configuration_dict(
             configuration_dict["PhoneNumberUuidTable"])
@@ -584,10 +588,12 @@ class PipelineConfiguration(object):
         if "DriveUpload" in configuration_dict:
             drive_upload_paths = DriveUpload.from_configuration_dict(configuration_dict["DriveUpload"])
 
+        listening_group_csv_urls = configuration_dict.get("ListeningGroupCSVURLs")
+
         return cls(raw_data_sources, phone_number_uuid_table, timestamp_remappings,
                    rapid_pro_key_remappings, project_start_date, project_end_date, filter_test_messages,
                    move_ws_messages, memory_profile_upload_url_prefix, data_archive_upload_url_prefix, pipeline_name,
-                   drive_upload_paths)
+                   drive_upload_paths, listening_group_csv_urls)
 
     @classmethod
     def from_configuration_file(cls, f):
@@ -623,6 +629,11 @@ class PipelineConfiguration(object):
             self.drive_upload.validate()
 
         validators.validate_string(self.memory_profile_upload_url_prefix, "memory_profile_upload_url_prefix")
+
+        if self.listening_group_csv_urls is not None:
+            validators.validate_list(self.listening_group_csv_urls, "listening_group_csv_urls")
+            for i, listening_group_csv_url in enumerate(self.listening_group_csv_urls):
+                validators.validate_string(listening_group_csv_url, f"{listening_group_csv_url}")
 
 
 class RawDataSource(ABC):
