@@ -149,7 +149,7 @@ if __name__ == "__main__":
     data = ApplyManualCodes.apply_manual_codes(user, data, prev_coded_dir_path)
 
     log.info("Tagging listening group participants")
-    ListeningGroups.tag_listening_groups_participants(user, data, listening_groups_dir_path)
+    ListeningGroups.tag_listening_groups_participants(user, data, pipeline_configuration, listening_groups_dir_path)
 
     log.info("Generating Analysis CSVs...")
     messages_data, individuals_data = AnalysisFile.generate(user, data, csv_by_message_output_path,

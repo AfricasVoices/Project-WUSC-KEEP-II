@@ -12,7 +12,7 @@ log = Logger(__name__)
 
 class ListeningGroups(object):
     @classmethod
-    def tag_listening_groups_participants(cls, user, data, listening_group_dir):
+    def tag_listening_groups_participants(cls, user, data, pipeline_configuration, listening_group_dir):
         """
         This tags uids who participated in repeat listening groups and/or weekly listening
         group sessions.
@@ -23,6 +23,8 @@ class ListeningGroups(object):
         :param listening_group_dir: Directory containing de-identified listening groups contacts CSVs containing
                                     listening groups data stored as `Name` and `avf-phone-uuid` columns.
         :type user: str
+        :param pipeline_configuration: Pipeline configuration.
+        :type pipeline_configuration: PipelineConfiguration
         """
         repeat_listening_group_participants = [] # Contains uids of listening group participants who will participate
                                                  # in all listening group sessions.
@@ -38,9 +40,12 @@ class ListeningGroups(object):
 
         # Read weekly listening group participants CSVs and add their uids to the respective radio-show
         # listening_group_participants lists
+        listening_group_csvs = []
+        for listening_group_csv_url in pipeline_configuration.listening_group_csv_urls:
+            listening_group_csvs.append(listening_group_csv_url.split("/")[-1])
         for plan in PipelineConfiguration.RQA_CODING_PLANS:
             listening_group_participants[plan.dataset_name] = []
-            if os.path.isfile(f'{listening_group_dir}/{plan.dataset_name}_listening_group.csv'):
+            if f'{plan.dataset_name}_listening_group.csv' in listening_group_csvs:
                 with open(f'{listening_group_dir}/{plan.dataset_name}_listening_group.csv', "r",
                           encoding='utf-8-sig') as f:
                     plan_listening_group_data = list(csv.DictReader(f))
