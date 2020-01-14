@@ -13,7 +13,7 @@ log = Logger(__name__)
 class ListeningGroups(object):
     @classmethod
     def tag_listening_groups_participants(cls, user, data, listening_group_dir):
-        '''
+        """
         This tags uids who participated in repeat listening groups and/or weekly listening
         group sessions.
         :param user: Identifier of the user running this program, for TracedData Metadata.
@@ -23,7 +23,7 @@ class ListeningGroups(object):
         :param listening_group_dir: Directory containing de-identified listening groups contacts CSVs containing
                                     listening groups data stored as `Name` and `avf-phone-uuid` columns.
         :type user: str
-        '''
+        """
         repeat_listening_group_participants = [] # Contains uids of listening group participants who will participate
                                                  # in all listening group sessions.
         listening_group_participants = dict()   # Contains lists of weekly listening group participants. The participants
