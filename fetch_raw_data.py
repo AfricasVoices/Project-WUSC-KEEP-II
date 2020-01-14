@@ -1,5 +1,6 @@
 import argparse
 import json
+import os
 
 import pytz
 from core_data_modules.logging import Logger
@@ -87,8 +88,22 @@ def fetch_from_rapid_pro(user, google_cloud_credentials_file_path, raw_data_dir,
         json.dump([contact.serialize() for contact in raw_contacts], raw_contacts_file)
     log.info(f"Saved {len(raw_contacts)} contacts")
 
+def fetch_listening_groups_csvs(google_cloud_credentials_file_path, pipeline_configuration, listening_groups_dir):
+    for listening_group_csv_url in pipeline_configuration.listening_group_csv_urls:
+        listening_group = listening_group_csv_url.split("/")[-1]
 
-def main(user, google_cloud_credentials_file_path, pipeline_configuration_file_path, raw_data_dir):
+        listening_group_output_path = f"{listening_groups_dir}/{listening_group}"
+        if os.path.exists(listening_group_output_path):
+            log.info(
+                f"File '{listening_group_output_path}' for '{listening_group}' already exists; skipping download")
+            continue
+
+        log.info(f"Saving '{listening_group}' to file '{listening_group_output_path}'...")
+        with open(listening_group_output_path, "wb") as listening_group_output_file:
+            google_cloud_utils.download_blob_to_file(
+                google_cloud_credentials_file_path, listening_group_csv_url, listening_group_output_file)
+
+def main(user, google_cloud_credentials_file_path, pipeline_configuration_file_path, raw_data_dir, listening_groups_dir):
     # Read the settings from the configuration file
     log.info("Loading Pipeline Configuration File...")
     with open(pipeline_configuration_file_path) as f:
@@ -116,6 +131,10 @@ def main(user, google_cloud_credentials_file_path, pipeline_configuration_file_p
         else:
             assert False, f"Unknown raw_data_source type {type(raw_data_source)}"
 
+    # Fetch de-identified listening group CSVs
+    log.info(f"Fetching listening group CSVs")
+    fetch_listening_groups_csvs(google_cloud_credentials_file_path, pipeline_configuration, listening_groups_dir)
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Fetches all the raw data for this project from Rapid Pro. "
@@ -128,8 +147,11 @@ if __name__ == "__main__":
     parser.add_argument("pipeline_configuration_file_path", metavar="pipeline-configuration-file",
                         help="Path to the pipeline configuration json file"),
     parser.add_argument("raw_data_dir", metavar="raw-data-dir",
-                        help="Path to a directory to save the raw data to")
+                        help="Path to a directory to save the raw data to"),
+    parser.add_argument("listening_groups_dir", metavar="listening_groups_dir",
+                        help="Path to a directory to save the listening groups CSVs to")
 
     args = parser.parse_args()
 
-    main(args.user, args.google_cloud_credentials_file_path, args.pipeline_configuration_file_path, args.raw_data_dir)
+    main(args.user, args.google_cloud_credentials_file_path, args.pipeline_configuration_file_path, args.raw_data_dir,
+         args.listening_groups_dir)
