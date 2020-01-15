@@ -4,6 +4,7 @@
       "SourceType": "RapidPro",
       "Domain": "textit.in",
       "TokenFileURL": "gs://avf-credentials/wusc-keep-ii-kakuma-textit-token.txt",
+      "ContactsFileName": "wusc_keep_ii",
       "ActivationFlowNames": [
         "wusc_keep_ii_s01_e01_kakuma_activation",
         "wusc_keep_ii_s01_e02_kakuma_activation",
