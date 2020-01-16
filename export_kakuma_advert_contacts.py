@@ -26,7 +26,7 @@ if __name__ == "__main__":
     parser.add_argument("individuals_json_input_path", metavar="individuals_json_input_path",
                         help="Path to the WUSC-KEEP-II-KAKUMA individuals traced data JSONL file to extract phone"
                              "numbers from")
-    parser.add_argument("contacts_csv_dir", metavar="output-path",
+    parser.add_argument("contacts_csv_dir", metavar="contacts-csv-dir",
                         help="Dir to write CSVs with per-language contacts to")
 
     args = parser.parse_args()
