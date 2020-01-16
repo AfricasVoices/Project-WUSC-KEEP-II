@@ -40,7 +40,7 @@ if __name__ == "__main__":
     log.info("Loading Pipeline Configuration File...")
     with open(pipeline_configuration_file_path) as f:
         pipeline_configuration = PipelineConfiguration.from_configuration_file(f)
-        assert pipeline_configuration.pipeline_name == "kakuma_pipeline", "PipelineName must kakuma_pipeline"
+        assert pipeline_configuration.pipeline_name == "kakuma_pipeline", "PipelineName must be kakuma_pipeline"
 
     log.info("Downloading Firestore UUID Table credentials...")
     firestore_uuid_table_credentials = json.loads(google_cloud_utils.download_blob_to_string(
