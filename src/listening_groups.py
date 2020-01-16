@@ -50,7 +50,7 @@ class ListeningGroups(object):
                           encoding='utf-8-sig') as f:
                     plan_listening_group_data = list(csv.DictReader(f))
                     for row in plan_listening_group_data:
-                        listening_group_participants[f'{plan.dataset_name}'].append(row['avf-phone-uuid'])
+                        listening_group_participants[plan.dataset_name].append(row['avf-phone-uuid'])
                     log.info(f'Loaded {len(listening_group_participants[f"{plan.dataset_name}"])} '
                              f'{plan.dataset_name} listening group participants')
 
