@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-#!/bin/bash
-
 set -e
 
 IMAGE_NAME=wusc-keep-ii-generate-analysis-graphs
