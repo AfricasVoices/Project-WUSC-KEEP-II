@@ -64,7 +64,8 @@ class CodingConfiguration(object):
 # TODO: Rename CodingPlan to something like DatasetConfiguration?
 class CodingPlan(object):
     def __init__(self, raw_field, dataset_name, coding_configurations, raw_field_folding_mode, coda_filename=None, ws_code=None,
-                 time_field=None, run_id_field=None, icr_filename=None, id_field=None, code_imputation_function=None):
+                 time_field=None, run_id_field=None, icr_filename=None, id_field=None, code_imputation_function=None,
+                 listening_group_filename=None,):
         self.raw_field = raw_field
         self.dataset_name = dataset_name
         self.time_field = time_field
@@ -73,6 +74,7 @@ class CodingPlan(object):
         self.icr_filename = icr_filename
         self.coding_configurations = coding_configurations
         self.code_imputation_function = code_imputation_function
+        self.listening_group_filename = listening_group_filename
         self.ws_code = ws_code
         self.raw_field_folding_mode = raw_field_folding_mode
 
@@ -216,6 +218,7 @@ class PipelineConfiguration(object):
     KAKUMA_RQA_CODING_PLANS = [
         CodingPlan(raw_field="rqa_s01e01_raw",
                    dataset_name="kakuma_s01e01",
+                   listening_group_filename="kakuma_s01e01_listening_group.csv",
                    time_field="sent_on",
                    run_id_field="rqa_s01e01_run_id",
                    coda_filename="s01e01.json",
@@ -234,6 +237,7 @@ class PipelineConfiguration(object):
 
         CodingPlan(raw_field="rqa_s01e02_raw",
                    dataset_name="kakuma_s01e02",
+                   listening_group_filename="kakuma_s01e02_listening_group.csv",
                    time_field="sent_on",
                    run_id_field="rqa_s01e02_run_id",
                    coda_filename="s01e02.json",
@@ -252,6 +256,7 @@ class PipelineConfiguration(object):
 
         CodingPlan(raw_field="rqa_s01e03_raw",
                    dataset_name="kakuma_s01e03",
+                   listening_group_filename="kakuma_s01e03_listening_group.csv",
                    time_field="sent_on",
                    run_id_field="rqa_s01e03_run_id",
                    coda_filename="s01e03.json",
@@ -270,6 +275,7 @@ class PipelineConfiguration(object):
 
         CodingPlan(raw_field="rqa_s01e04_raw",
                    dataset_name="kakuma_s01e04",
+                   listening_group_filename="kakuma_s01e04_listening_group.csv",
                    time_field="sent_on",
                    run_id_field="rqa_s01e04_run_id",
                    coda_filename="s01e04.json",
@@ -288,6 +294,7 @@ class PipelineConfiguration(object):
 
         CodingPlan(raw_field="rqa_s01e05_raw",
                    dataset_name="kakuma_s01e05",
+                   listening_group_filename="kakuma_s01e05_listening_group.csv",
                    time_field="sent_on",
                    run_id_field="rqa_s01e05_run_id",
                    coda_filename="s01e05.json",
@@ -306,6 +313,7 @@ class PipelineConfiguration(object):
 
         CodingPlan(raw_field="rqa_s01e06_raw",
                    dataset_name="kakuma_s01e06",
+                   listening_group_filename="kakuma_s01e06_listening_group.csv",
                    time_field="sent_on",
                    run_id_field="rqa_s01e06_run_id",
                    coda_filename="s01e06.json",
@@ -324,6 +332,7 @@ class PipelineConfiguration(object):
 
         CodingPlan(raw_field="rqa_s01e07_raw",
                    dataset_name="kakuma_s01e07",
+                   listening_group_filename="kakuma_s01e07_listening_group.csv",
                    time_field="sent_on",
                    run_id_field="rqa_s01e07_run_id",
                    coda_filename="s01e07.json",
