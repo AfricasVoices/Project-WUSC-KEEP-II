@@ -45,14 +45,16 @@ class ListeningGroups(object):
             listening_group_csvs.append(listening_group_csv_url.split("/")[-1])
         for plan in PipelineConfiguration.RQA_CODING_PLANS:
             listening_group_participants[plan.dataset_name] = set()
-            if f'{plan.dataset_name}_listening_group.csv' in listening_group_csvs:
-                with open(f'{listening_group_dir}/{plan.dataset_name}_listening_group.csv', "r",
+            if plan.listening_group_filename in listening_group_csvs:
+                with open(f'{listening_group_dir}/{plan.listening_group_filename}', "r",
                           encoding='utf-8-sig') as f:
                     plan_listening_group_data = list(csv.DictReader(f))
                     for row in plan_listening_group_data:
                         listening_group_participants[plan.dataset_name].add(row['avf-phone-uuid'])
                     log.info(f'Loaded {len(listening_group_participants[f"{plan.dataset_name}"])} '
                              f'{plan.dataset_name} listening group participants')
+            else:
+                log.warning(f'Skipping loading {plan.listening_group_filename},file not found!')
 
         # 1.Check if a participant is part of the repeat listening groups contacts then tag true or false otherwise
         #   Example - "repeat_listening_group_participant": true
