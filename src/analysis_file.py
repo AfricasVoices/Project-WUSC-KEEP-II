@@ -13,7 +13,7 @@ from src.lib.pipeline_configuration import CodingModes, FoldingModes
 
 class AnalysisFile(object):
     @staticmethod
-    def generate(user, data, csv_by_message_output_path, csv_by_individual_output_path):
+    def generate(user, data, pipeline_configuration, csv_by_message_output_path, csv_by_individual_output_path):
         # Serializer is currently overflowing
         # TODO: Investigate/address the cause of this.
         sys.setrecursionlimit(15000)
@@ -24,8 +24,19 @@ class AnalysisFile(object):
                            Metadata(user, Metadata.get_call_location(), time.time()))
 
         # Set the list of keys to be exported and how they are to be handled when folding
-        export_keys = ["uid", consent_withdrawn_key]
+        export_keys = ["uid"]
         bool_keys = [consent_withdrawn_key]
+        # Export listening group bool keys in analysis files headers only when running kakuma_pipeline because
+        # dadaab does not have listening groups.
+        if pipeline_configuration.pipeline_name == "kakuma_pipeline":
+            bool_keys.extend(["repeat_listening_group_participant"])
+            for plan in PipelineConfiguration.KAKUMA_RQA_CODING_PLANS:
+                bool_keys.append(f'{plan.dataset_name}_listening_group_participant')
+        else:
+            assert pipeline_configuration.pipeline_name == "dadaab_pipeline", "PipelineName must be either " \
+                                                                              "'dadaab_pipeline' or 'kakuma_pipeline'"
+            
+        export_keys.extend(bool_keys)
         equal_keys = ["uid"]
         concat_keys = []
         matrix_keys = []

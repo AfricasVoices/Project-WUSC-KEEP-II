@@ -152,7 +152,7 @@ if __name__ == "__main__":
     ListeningGroups.tag_listening_groups_participants(user, data, pipeline_configuration, listening_groups_dir_path)
 
     log.info("Generating Analysis CSVs...")
-    messages_data, individuals_data = AnalysisFile.generate(user, data, csv_by_message_output_path,
+    messages_data, individuals_data = AnalysisFile.generate(user, data, pipeline_configuration, csv_by_message_output_path,
                                                             csv_by_individual_output_path)
 
     log.info("Writing messages TracedData to file...")
