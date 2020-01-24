@@ -17,14 +17,6 @@ DATA_ROOT=$3
 PROJECT_NAME="WUSC-KEEP-II"
 
 DATASETS=(
-    "dadaab_s01e01"
-    "dadaab_s01e02"
-    "dadaab_s01e03"
-    "dadaab_s01e04"
-    "dadaab_s01e05"
-    "dadaab_s01e06"
-    "dadaab_s01e07"
-
     "kakuma_s01e01"
     "kakuma_s01e02"
     "kakuma_s01e03"
@@ -33,17 +25,25 @@ DATASETS=(
     "kakuma_s01e06"
     "kakuma_s01e07"
 
+    "kakuma_location"
+    "kakuma_gender"
+    "kakuma_age"
+    "kakuma_nationality"
+    "kakuma_household_language"
+
+    "dadaab_s01e01"
+    "dadaab_s01e02"
+    "dadaab_s01e03"
+    "dadaab_s01e04"
+    "dadaab_s01e05"
+    "dadaab_s01e06"
+    "dadaab_s01e07"
+
     "dadaab_location"
     "dadaab_gender"
     "dadaab_age"
     "dadaab_nationality"
     "dadaab_hh_language"
-
-    "kakuma_location"
-    "kakuma_gender"
-    "kakuma_age"
-    "kakuma_nationality"
-    "kakuma_hh_language"
 )
 
 cd "$CODA_V2_ROOT/data_tools"
