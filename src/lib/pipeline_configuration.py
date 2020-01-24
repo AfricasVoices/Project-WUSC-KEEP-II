@@ -88,7 +88,7 @@ class PipelineConfiguration(object):
         CodingPlan(raw_field="rqa_s01e01_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e01_run_id",
-                   coda_filename="s01e01.json",
+                   coda_filename="dadaab_s01e01.json",
                    icr_filename="s01e01.csv",
                    coding_configurations=[
                        CodingConfiguration(
@@ -105,7 +105,7 @@ class PipelineConfiguration(object):
         CodingPlan(raw_field="rqa_s01e02_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e02_run_id",
-                   coda_filename="s01e02.json",
+                   coda_filename="dadaab_s01e02.json",
                    icr_filename="s01e02.csv",
                    coding_configurations=[
                        CodingConfiguration(
@@ -122,7 +122,7 @@ class PipelineConfiguration(object):
         CodingPlan(raw_field="rqa_s01e03_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e03_run_id",
-                   coda_filename="s01e03.json",
+                   coda_filename="dadaab_s01e03.json",
                    icr_filename="s01e03.csv",
                    coding_configurations=[
                        CodingConfiguration(
@@ -139,7 +139,7 @@ class PipelineConfiguration(object):
         CodingPlan(raw_field="rqa_s01e04_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e04_run_id",
-                   coda_filename="s01e04.json",
+                   coda_filename="dadaab_s01e04.json",
                    icr_filename="s01e04.csv",
                    coding_configurations=[
                        CodingConfiguration(
@@ -156,7 +156,7 @@ class PipelineConfiguration(object):
         CodingPlan(raw_field="rqa_s01e05_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e05_run_id",
-                   coda_filename="s01e05.json",
+                   coda_filename="dadaab_s01e05.json",
                    icr_filename="s01e05.csv",
                    coding_configurations=[
                        CodingConfiguration(
@@ -173,7 +173,7 @@ class PipelineConfiguration(object):
         CodingPlan(raw_field="rqa_s01e06_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e06_run_id",
-                   coda_filename="s01e06.json",
+                   coda_filename="dadaab_s01e06.json",
                    icr_filename="s01e06.csv",
                    coding_configurations=[
                        CodingConfiguration(
@@ -190,7 +190,7 @@ class PipelineConfiguration(object):
         CodingPlan(raw_field="rqa_s01e07_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e07_run_id",
-                   coda_filename="s01e07.json",
+                   coda_filename="dadaab_s01e07.json",
                    icr_filename="s01e07.csv",
                    coding_configurations=[
                        CodingConfiguration(
@@ -209,7 +209,7 @@ class PipelineConfiguration(object):
         CodingPlan(raw_field="rqa_s01e01_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e01_run_id",
-                   coda_filename="s01e01.json",
+                   coda_filename="kakuma_s01e01.json",
                    icr_filename="s01e01.csv",
                    coding_configurations=[
                        CodingConfiguration(
@@ -226,7 +226,7 @@ class PipelineConfiguration(object):
         CodingPlan(raw_field="rqa_s01e02_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e02_run_id",
-                   coda_filename="s01e02.json",
+                   coda_filename="kakuma_s01e02.json",
                    icr_filename="s01e02.csv",
                    coding_configurations=[
                        CodingConfiguration(
@@ -243,7 +243,7 @@ class PipelineConfiguration(object):
         CodingPlan(raw_field="rqa_s01e03_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e03_run_id",
-                   coda_filename="s01e03.json",
+                   coda_filename="kakuma_s01e03.json",
                    icr_filename="s01e03.csv",
                    coding_configurations=[
                        CodingConfiguration(
@@ -260,7 +260,7 @@ class PipelineConfiguration(object):
         CodingPlan(raw_field="rqa_s01e04_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e04_run_id",
-                   coda_filename="s01e04.json",
+                   coda_filename="kakuma_s01e04.json",
                    icr_filename="s01e04.csv",
                    coding_configurations=[
                        CodingConfiguration(
@@ -277,7 +277,7 @@ class PipelineConfiguration(object):
         CodingPlan(raw_field="rqa_s01e05_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e05_run_id",
-                   coda_filename="s01e05.json",
+                   coda_filename="kakuma_s01e05.json",
                    icr_filename="s01e05.csv",
                    coding_configurations=[
                        CodingConfiguration(
@@ -294,7 +294,7 @@ class PipelineConfiguration(object):
         CodingPlan(raw_field="rqa_s01e06_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e06_run_id",
-                   coda_filename="s01e06.json",
+                   coda_filename="kakuma_s01e06.json",
                    icr_filename="s01e06.csv",
                    coding_configurations=[
                        CodingConfiguration(
@@ -311,7 +311,7 @@ class PipelineConfiguration(object):
         CodingPlan(raw_field="rqa_s01e07_raw",
                    time_field="sent_on",
                    run_id_field="rqa_s01e07_run_id",
-                   coda_filename="s01e07.json",
+                   coda_filename="kakuma_s01e07.json",
                    icr_filename="s01e07.csv",
                    coding_configurations=[
                        CodingConfiguration(
@@ -345,7 +345,7 @@ class PipelineConfiguration(object):
 
         CodingPlan(raw_field="location_raw",
                    time_field="location_time",
-                   coda_filename="kakuma location.json",
+                   coda_filename="kakuma_location.json",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.SINGLE,
@@ -360,7 +360,7 @@ class PipelineConfiguration(object):
 
         CodingPlan(raw_field="gender_raw",
                    time_field="gender_time",
-                   coda_filename="gender.json",
+                   coda_filename="kakuma_gender.json",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.SINGLE,
@@ -376,7 +376,7 @@ class PipelineConfiguration(object):
 
         CodingPlan(raw_field="age_raw",
                    time_field="age_time",
-                   coda_filename="age.json",
+                   coda_filename="kakuma_age.json",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.SINGLE,
@@ -392,7 +392,7 @@ class PipelineConfiguration(object):
 
         CodingPlan(raw_field="household_language_raw",
                    time_field="household_language_time",
-                   coda_filename="household_language.json",
+                   coda_filename="kakuma_household_language.json",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.SINGLE,
@@ -407,7 +407,7 @@ class PipelineConfiguration(object):
 
         CodingPlan(raw_field="nationality_raw",
                    time_field="nationality_time",
-                   coda_filename="nationality.json",
+                   coda_filename="kakuma_nationality.json",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.SINGLE,
@@ -426,7 +426,7 @@ class PipelineConfiguration(object):
 
         CodingPlan(raw_field="location_raw",
                    time_field="location_time",
-                   coda_filename="dadaab location.json",
+                   coda_filename="dadaab_location.json",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.SINGLE,
@@ -441,7 +441,7 @@ class PipelineConfiguration(object):
 
         CodingPlan(raw_field="gender_raw",
                    time_field="gender_time",
-                   coda_filename="gender.json",
+                   coda_filename="dadaab_gender.json",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.SINGLE,
@@ -457,7 +457,7 @@ class PipelineConfiguration(object):
 
         CodingPlan(raw_field="age_raw",
                    time_field="age_time",
-                   coda_filename="age.json",
+                   coda_filename="dadaab_age.json",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.SINGLE,
@@ -473,7 +473,7 @@ class PipelineConfiguration(object):
 
         CodingPlan(raw_field="household_language_raw",
                    time_field="household_language_time",
-                   coda_filename="household_language.json",
+                   coda_filename="dadaab_household_language.json",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.SINGLE,
@@ -488,7 +488,7 @@ class PipelineConfiguration(object):
 
         CodingPlan(raw_field="nationality_raw",
                    time_field="nationality_time",
-                   coda_filename="nationality.json",
+                   coda_filename="dadaab_nationality.json",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.SINGLE,
