@@ -16,9 +16,8 @@ Logger.set_project_name("WUSC-KEEP-II")
 log = Logger(__name__)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generates a list of phone numbers and textit language of "
-                                                 "WUSC-KEEP-II-KAKUMA participants"
-                                                 "based on their manually labeled demographic language response")
+    parser = argparse.ArgumentParser(description="Generates a CSV of phone numbers and their  repective Textit ISO 639 "
+                                                 "language code based on their manually labeled demographic response")
 
     parser.add_argument("google_cloud_credentials_file_path", metavar="google-cloud-credentials-file-path",
                         help="Path to a Google Cloud service account credentials file to use to access the "
@@ -29,7 +28,7 @@ if __name__ == "__main__":
                         help="Path to the WUSC-KEEP-II-KAKUMA messages traced data JSONL file to extract phone"
                              "numbers from")
     parser.add_argument("contacts_csv_path", metavar="contacts-csv-path",
-                        help="CSV file path to write per-language contacts data to")
+                        help="CSV file path to write the contacts data to")
 
     args = parser.parse_args()
 
@@ -57,11 +56,11 @@ if __name__ == "__main__":
     )
     log.info("Initialised the Firestore UUID table")
 
-    # Read the individuals dataset
+    # Read the messages dataset
     log.info(f'Loading the messages dataset from {messages_json_input_path}...')
     with open(messages_json_input_path) as f:
         messages = TracedDataJsonIO.import_jsonl_to_traced_data_iterable(f)
-    log.info(f'Loaded {len(messages)} messages')
+    log.info(f'Loaded {len(messages)} objects from the dataset')
         
     # Search the TracedData for uuids for kakuma participants based on their manually labelled household language
     # i.e Oromo/Sudanese-Juba arabic/Somali/Swahili speakers.
@@ -71,41 +70,41 @@ if __name__ == "__main__":
     somali_uuids = set()
     english_uuids = set()
     swahili_uuids = set()
-    all_uids = set()
+    all_uuids = set()
 
     log.info(f'Searching for the participants uuids vis-a-vis` their manually labelled '
              f'demographic language response')
     for msg in messages:
-        if msg['uid'] in all_uids or msg["consent_withdrawn"] == Codes.TRUE:
+        if msg['uid'] in all_uuids or msg["consent_withdrawn"] == Codes.TRUE:
             continue
 
         if CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE.get_code_with_code_id(
                 msg["household_language_coded"]["CodeID"]).string_value == "oromo":
             oromo_uuids.add(msg['uid'])
-            all_uids.add(msg['uid'])
+            all_uuids.add(msg['uid'])
         elif CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE.get_code_with_code_id(
                     msg["household_language_coded"]["CodeID"]).string_value == "sudanese":
                 sudanese_juba_arabic_uuids.add(msg['uid'])
-                all_uids.add(msg['uid'])
+                all_uuids.add(msg['uid'])
         elif CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE.get_code_with_code_id(
                     msg["household_language_coded"]["CodeID"]).string_value == "turkana":
                 turkana_uuids.add(msg['uid'])
-                all_uids.add(msg['uid'])
+                all_uuids.add(msg['uid'])
         elif CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE.get_code_with_code_id(
                     msg["household_language_coded"]["CodeID"]).string_value == "somali":
                 somali_uuids.add(msg['uid'])
-                all_uids.add(msg['uid'])
+                all_uuids.add(msg['uid'])
         elif CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE.get_code_with_code_id(
                     msg["household_language_coded"]["CodeID"]).string_value == "english":
                 english_uuids.add(msg['uid'])
-                all_uids.add(msg['uid'])
+                all_uuids.add(msg['uid'])
         else:
             swahili_uuids.add(msg['uid'])
-            all_uids.add(msg['uid'])
+            all_uuids.add(msg['uid'])
 
     # Convert the uuids to phone numbers
     log.info("Converting the uuids to phone numbers...")
-    uuids_to_phone_numbers = phone_number_uuid_table.uuid_to_data_batch(list(all_uids))
+    uuids_to_phone_numbers = phone_number_uuid_table.uuid_to_data_batch(list(all_uuids))
 
     oromo_phone_numbers = [f"+{uuids_to_phone_numbers[uuid]}" for uuid in oromo_uuids]
     sudanese_phone_numbers = [f"+{uuids_to_phone_numbers[uuid]}" for uuid in sudanese_juba_arabic_uuids]
@@ -114,54 +113,46 @@ if __name__ == "__main__":
     english_phone_numbers = [f"+{uuids_to_phone_numbers[uuid]}" for uuid in english_uuids]
     swahili_phone_numbers = [f"+{uuids_to_phone_numbers[uuid]}" for uuid in swahili_uuids]
 
-    # Export the phone numbers to the advert CSV
+    # Export the phone number and language pairs to a CSV
     # TODO upload this to keep_ii_kakuma textit instance through API?
     advert_contacts = OrderedDict()
-    for contact_list in [oromo_phone_numbers, sudanese_phone_numbers, turkana_phone_numbers, somali_phone_numbers,
-                       english_phone_numbers, swahili_phone_numbers]:
+    for phone_number in oromo_phone_numbers:
+        advert_contacts[phone_number] = {
+            "URN:Tel": phone_number,
+            "Name": None,
+            "Language": 'orm'
+        }
+    for phone_number in sudanese_phone_numbers:
+        advert_contacts[phone_number] = {
+            "URN:Tel": phone_number,
+            "Name": None,
+            "Language": 'apd'
+        }
+    for phone_number in turkana_phone_numbers:
+        advert_contacts[phone_number] = {
+            "URN:Tel": phone_number,
+            "Name": None,
+            "Language": 'tuv'
+        }
+    for phone_number in somali_phone_numbers:
+        advert_contacts[phone_number] = {
+            "URN:Tel": phone_number,
+            "Name": None,
+            "Language": 'som'
+        }
+    for phone_number in english_phone_numbers:
+        advert_contacts[phone_number] = {
+            "URN:Tel": phone_number,
+            "Name": None,
+            "Language": 'eng'
+        }
+    for phone_number in swahili_phone_numbers:
+        advert_contacts[phone_number] = {
+            "URN:Tel": phone_number,
+            "Name": None,
+            "Language": 'swh'
+        }
 
-        if contact_list == oromo_phone_numbers:
-            for phone_number in contact_list:
-                advert_contacts[phone_number] = {
-                    "URN:Tel": phone_number,
-                    "Name": None,
-                    "Language": 'orm'
-                }
-        elif contact_list == sudanese_phone_numbers:
-            for phone_number in contact_list:
-                advert_contacts[phone_number] = {
-                    "URN:Tel": phone_number,
-                    "Name": None,
-                    "Language": 'apd'
-                }
-        elif contact_list == turkana_phone_numbers:
-            for phone_number in contact_list:
-                advert_contacts[phone_number] = {
-                    "URN:Tel": phone_number,
-                    "Name": None,
-                    "Language": 'tuv'
-                }
-        elif contact_list == somali_phone_numbers:
-            for phone_number in contact_list:
-                advert_contacts[phone_number] = {
-                    "URN:Tel": phone_number,
-                    "Name": None,
-                    "Language": 'som'
-                }
-        elif contact_list == english_phone_numbers:
-            for phone_number in contact_list:
-                advert_contacts[phone_number] = {
-                    "URN:Tel": phone_number,
-                    "Name": None,
-                    "Language": 'eng'
-                }
-        elif contact_list == swahili_phone_numbers:
-            for phone_number in contact_list:
-                advert_contacts[phone_number] = {
-                    "URN:Tel": phone_number,
-                    "Name": None,
-                    "Language": 'swh'
-                }
     log.warning(f"Exporting {len(advert_contacts)} contacts to {contacts_csv_path}")
     with open(contacts_csv_path, "w") as f:
         headers = ["URN:Tel", "Name", "Language"]
