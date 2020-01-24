@@ -3,7 +3,7 @@
     {
       "SourceType": "RapidPro",
       "Domain": "textit.in",
-      "TokenFileURL": "gs://avf-credentials/wusc-keep-ii-kakuma-textit-token.txt",
+      "TokenFileURL": "gs://avf-credentials/wusc-keep-II-kakuma-textit-token.txt",
       "ContactsFileName": "wusc_keep_ii",
       "ActivationFlowNames": [
         "wusc_keep_ii_s01_e01_kakuma_activation",
@@ -18,7 +18,10 @@
         "wusc_keep_ii_kakuma_demogs"
       ],
       "TestContactUUIDs": [
-
+        "84f1c3bc-596e-455e-b5f6-ce16640e9b95",
+        "965a6702-08b9-438d-b234-d2d71b5e7c27",
+        "5f214693-03dc-4867-b440-896bf2ccbb1e",
+        "df4b5e80-2148-4fa6-82c1-307bebc554bc"
       ]
     }
   ],
@@ -67,9 +70,9 @@
     {"RapidProKey": "Household_Language (Time) - wusc_keep_ii_kakuma_demogs", "PipelineKey": "household_language_time"}
   ],
   "PipelineName": "kakuma_pipeline",
-  "ProjectStartDate": "2019-01-01T00:00:00+03:00",
+  "ProjectStartDate": "2020-01-18T13:00:00+03:00",
   "ProjectEndDate": "2100-01-01T00:00:00+03:00",
-  "FilterTestMessages": false,
+  "FilterTestMessages": true,
   "MoveWSMessages": false,
   "DriveUpload": {
     "DriveCredentialsFileURL": "gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
