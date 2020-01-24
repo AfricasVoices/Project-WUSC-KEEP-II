@@ -32,11 +32,14 @@ class ListeningGroups(object):
                                                 # will change each week.
 
         # Read repeat listening group participants CSV and add their uids to repeat_listening_group_participants lists
-        with open(f'{listening_group_dir}/repeat_listening_group.csv', "r", encoding='utf-8-sig') as f:
-            repeat_listening_group_data = list(csv.DictReader(f))
-            for row in repeat_listening_group_data:
-                repeat_listening_group_participants.append(row['avf-phone-uuid'])
-            log.info(f'Loaded {len(repeat_listening_group_participants)} repeat listening group participants')
+        if os.path.exists(f'{listening_group_dir}/repeat_listening_group.csv'):
+            with open(f'{listening_group_dir}/repeat_listening_group.csv', "r", encoding='utf-8-sig') as f:
+                repeat_listening_group_data = list(csv.DictReader(f))
+                for row in repeat_listening_group_data:
+                    repeat_listening_group_participants.append(row['avf-phone-uuid'])
+                log.info(f'Loaded {len(repeat_listening_group_participants)} repeat listening group participants')
+        else:
+            log.warning(f'Skipping loading {listening_group_dir}/repeat_listening_group.csv, file not found!')
 
         # Read weekly listening group participants CSVs and add their uids to the respective radio-show
         # listening_group_participants lists
