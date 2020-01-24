@@ -34,7 +34,7 @@ class AnalysisFile(object):
                 bool_keys.append(f'{plan.dataset_name}_listening_group_participant')
         else:
             assert pipeline_configuration.pipeline_name == "dadaab_pipeline", "PipelineName must be either " \
-                                                                              "'dadaab_pipeline or kakuma_pipeline"
+                                                                              "'dadaab_pipeline' or 'kakuma_pipeline'"
             
         export_keys.extend(bool_keys)
         equal_keys = ["uid"]
