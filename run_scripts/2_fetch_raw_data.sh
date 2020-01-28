@@ -33,5 +33,4 @@ mkdir -p "$DATA_ROOT/Listening Groups"
 
 cd ..
 ./docker-run-fetch-raw-data.sh ${CPU_PROFILE_ARG} \
-    "$USER" "$GOOGLE_CLOUD_CREDENTIALS_FILE_PATH" "$PIPELINE_CONFIGURATION_FILE_PATH" "$DATA_ROOT/Raw Data" \
-     "$DATA_ROOT/Listening Groups"
+    "$USER" "$GOOGLE_CLOUD_CREDENTIALS_FILE_PATH" "$PIPELINE_CONFIGURATION_FILE_PATH" "$DATA_ROOT/Raw Data"

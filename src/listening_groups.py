@@ -12,7 +12,7 @@ log = Logger(__name__)
 
 class ListeningGroups(object):
     @classmethod
-    def tag_listening_groups_participants(cls, user, data, pipeline_configuration, listening_group_dir):
+    def tag_listening_groups_participants(cls, user, data, pipeline_configuration, raw_data_dir):
         """
         This tags uids who participated in repeat listening groups and/or weekly listening
         group sessions.
@@ -20,7 +20,7 @@ class ListeningGroups(object):
         :type user: str
         :param data: TracedData objects to tag listening group participation to.
         :type data: iterable of TracedData
-        :param listening_group_dir: Directory containing de-identified listening groups contacts CSVs containing
+        :param raw_data_dir: Directory containing de-identified listening groups contacts CSVs containing
                                     listening groups data stored as `Name` and `avf-phone-uuid` columns.
         :type user: str
         :param pipeline_configuration: Pipeline configuration.
@@ -32,14 +32,14 @@ class ListeningGroups(object):
                                                 # will change each week.
 
         # Read repeat listening group participants CSV and add their uids to repeat_listening_group_participants lists
-        if os.path.exists(f'{listening_group_dir}/repeat_listening_group.csv'):
-            with open(f'{listening_group_dir}/repeat_listening_group.csv', "r", encoding='utf-8-sig') as f:
+        if os.path.exists(f'{raw_data_dir}/repeat_listening_group.csv'):
+            with open(f'{raw_data_dir}/repeat_listening_group.csv', "r", encoding='utf-8-sig') as f:
                 repeat_listening_group_data = list(csv.DictReader(f))
                 for row in repeat_listening_group_data:
                     repeat_listening_group_participants.append(row['avf-phone-uuid'])
                 log.info(f'Loaded {len(repeat_listening_group_participants)} repeat listening group participants')
         else:
-            log.warning(f'Skipping loading {listening_group_dir}/repeat_listening_group.csv, file not found!')
+            log.warning(f'Skipping loading {raw_data_dir}/repeat_listening_group.csv, file not found!')
 
         # Read weekly listening group participants CSVs and add their uids to the respective radio-show
         # listening_group_participants lists
@@ -49,7 +49,7 @@ class ListeningGroups(object):
         for plan in PipelineConfiguration.RQA_CODING_PLANS:
             listening_group_participants[plan.dataset_name] = set()
             if plan.listening_group_filename in listening_group_csvs:
-                with open(f'{listening_group_dir}/{plan.listening_group_filename}', "r",
+                with open(f'{raw_data_dir}/{plan.listening_group_filename}', "r",
                           encoding='utf-8-sig') as f:
                     plan_listening_group_data = list(csv.DictReader(f))
                     for row in plan_listening_group_data:

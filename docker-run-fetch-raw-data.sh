@@ -19,11 +19,11 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Check that the correct number of arguments were provided.
-if [[ $# -ne 5 ]]; then
+if [[ $# -ne 4 ]]; then
     echo "Usage: ./docker-run-fetch-raw-data.sh
     [--profile-cpu <profile-output-path>]
     <user> <google-cloud-credentials-file-path> <pipeline-configuration-file-path>
-    <raw-data-dir> <listening-group-dir>"
+    <raw-data-dir>"
     exit
 fi
 
@@ -32,7 +32,6 @@ USER=$1
 INPUT_GOOGLE_CLOUD_CREDENTIALS=$2
 INPUT_PIPELINE_CONFIGURATION=$3
 OUTPUT_RAW_DATA_DIR=$4
-OUTPUT_LISTENING_GROUPS_DIR=$5
 
 # Build an image for this pipeline stage.
 docker build --build-arg INSTALL_CPU_PROFILER="$PROFILE_CPU" -t "$IMAGE_NAME" .
@@ -44,7 +43,7 @@ if [[ "$PROFILE_CPU" = true ]]; then
 fi
 CMD="pipenv run $PROFILE_CPU_CMD python -u fetch_raw_data.py \
     \"$USER\" /credentials/google-cloud-credentials.json \
-    /data/pipeline-configuration.json /data/Raw\ Data /data/Listening\ Groups
+    /data/pipeline-configuration.json /data/Raw\ Data
 "
 container="$(docker container create ${SYS_PTRACE_CAPABILITY} -w /app "$IMAGE_NAME" /bin/bash -c "$CMD")"
 
@@ -53,15 +52,12 @@ docker cp "$INPUT_GOOGLE_CLOUD_CREDENTIALS" "$container:/credentials/google-clou
 docker cp "$INPUT_PIPELINE_CONFIGURATION" "$container:/data/pipeline-configuration.json"
 mkdir -p "$OUTPUT_RAW_DATA_DIR"
 docker cp "$OUTPUT_RAW_DATA_DIR/." "$container:/data/Raw Data/"
-mkdir -p "$OUTPUT_LISTENING_GROUPS_DIR"
-docker cp "$OUTPUT_LISTENING_GROUPS_DIR/." "$container:/data/Listening\ Groups"
 
 # Run the container
 docker start -a -i "$container"
 
 # Copy the output data back out of the container
 docker cp "$container:/data/Raw Data/." "$OUTPUT_RAW_DATA_DIR"
-docker cp "$container:/data/Listening\ Groups" "$OUTPUT_LISTENING_GROUPS_DIR"
 
 if [[ "$PROFILE_CPU" = true ]]; then
     mkdir -p "$(dirname "$CPU_PROFILE_OUTPUT_PATH")"

@@ -88,22 +88,21 @@ def fetch_from_rapid_pro(user, google_cloud_credentials_file_path, raw_data_dir,
         json.dump([contact.serialize() for contact in raw_contacts], raw_contacts_file)
     log.info(f"Saved {len(raw_contacts)} contacts")
 
-def fetch_listening_groups_csvs(google_cloud_credentials_file_path, pipeline_configuration, listening_groups_dir):
+def fetch_listening_groups_csvs(google_cloud_credentials_file_path, pipeline_configuration, raw_data_dir):
     for listening_group_csv_url in pipeline_configuration.listening_group_csv_urls:
         listening_group = listening_group_csv_url.split("/")[-1]
 
-        listening_group_output_path = f"{listening_groups_dir}/{listening_group}"
-        if os.path.exists(listening_group_output_path):
+        if os.path.exists(f'{raw_data_dir}/{listening_group}'):
             log.info(
-                f"File '{listening_group_output_path}' for '{listening_group}' already exists; skipping download")
+                f"File '{raw_data_dir}' for '{listening_group}' already exists; skipping download")
             continue
 
-        log.info(f"Saving '{listening_group}' to file '{listening_group_output_path}'...")
-        with open(listening_group_output_path, "wb") as listening_group_output_file:
+        log.info(f"Saving '{listening_group}' to file '{raw_data_dir}'...")
+        with open(f'{raw_data_dir}/{listening_group}', "wb") as listening_group_output_file:
             google_cloud_utils.download_blob_to_file(
                 google_cloud_credentials_file_path, listening_group_csv_url, listening_group_output_file)
 
-def main(user, google_cloud_credentials_file_path, pipeline_configuration_file_path, raw_data_dir, listening_groups_dir):
+def main(user, google_cloud_credentials_file_path, pipeline_configuration_file_path, raw_data_dir):
     # Read the settings from the configuration file
     log.info("Loading Pipeline Configuration File...")
     with open(pipeline_configuration_file_path) as f:
@@ -133,7 +132,7 @@ def main(user, google_cloud_credentials_file_path, pipeline_configuration_file_p
 
     # Fetch de-identified listening group CSVs
     log.info(f"Fetching listening group CSVs")
-    fetch_listening_groups_csvs(google_cloud_credentials_file_path, pipeline_configuration, listening_groups_dir)
+    fetch_listening_groups_csvs(google_cloud_credentials_file_path, pipeline_configuration, raw_data_dir)
 
 
 if __name__ == "__main__":
@@ -148,10 +147,7 @@ if __name__ == "__main__":
                         help="Path to the pipeline configuration json file"),
     parser.add_argument("raw_data_dir", metavar="raw-data-dir",
                         help="Path to a directory to save the raw data to"),
-    parser.add_argument("listening_groups_dir", metavar="listening_groups_dir",
-                        help="Path to a directory to save the listening groups CSVs to")
 
     args = parser.parse_args()
 
-    main(args.user, args.google_cloud_credentials_file_path, args.pipeline_configuration_file_path, args.raw_data_dir,
-         args.listening_groups_dir)
+    main(args.user, args.google_cloud_credentials_file_path, args.pipeline_configuration_file_path, args.raw_data_dir)

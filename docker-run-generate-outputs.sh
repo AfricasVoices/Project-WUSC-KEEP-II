@@ -24,11 +24,11 @@ done
 
 
 # Check that the correct number of arguments were provided.
-if [[ $# -ne 13 ]]; then
+if [[ $# -ne 12 ]]; then
     echo "Usage: ./docker-run.sh
     [--profile-cpu <profile-output-path>] [--profile-memory <profile-output-path>]
     <user> <google-cloud-credentials-file-path> <pipeline-configuration-file-path>
-    <raw-data-dir> <prev-coded-dir> <listening-groups> <messages-json-output-path> <individuals-json-output-path>
+    <raw-data-dir> <prev-coded-dir> <messages-json-output-path> <individuals-json-output-path>
     <icr-output-dir> <coded-output-dir> <messages-output-csv> <individuals-output-csv> <production-output-csv>"
     exit
 fi
@@ -39,14 +39,13 @@ INPUT_GOOGLE_CLOUD_CREDENTIALS=$2
 INPUT_PIPELINE_CONFIGURATION=$3
 INPUT_RAW_DATA_DIR=$4
 PREV_CODED_DIR=$5
-INPUT_LISTENING_GROUPS=$6
-OUTPUT_MESSAGES_JSONL=$7
-OUTPUT_INDIVIDUALS_JSONL=$8
-OUTPUT_ICR_DIR=$9
-OUTPUT_CODED_DIR=${10}
-OUTPUT_MESSAGES_CSV=${11}
-OUTPUT_INDIVIDUALS_CSV=${12}
-OUTPUT_PRODUCTION_CSV=${13}
+OUTPUT_MESSAGES_JSONL=$6
+OUTPUT_INDIVIDUALS_JSONL=$7
+OUTPUT_ICR_DIR=$8
+OUTPUT_CODED_DIR=$9
+OUTPUT_MESSAGES_CSV=${10}
+OUTPUT_INDIVIDUALS_CSV=${11}
+OUTPUT_PRODUCTION_CSV=${12}
 
 # Build an image for this pipeline stage.
 docker build --build-arg INSTALL_CPU_PROFILER="$PROFILE_CPU" --build-arg INSTALL_MEMORY_PROFILER="$PROFILE_MEMORY" -t "$IMAGE_NAME" .
@@ -61,7 +60,7 @@ if [[ "$PROFILE_MEMORY" = true ]]; then
 fi
 CMD="pipenv run $PROFILE_CPU_CMD $PROFILE_MEMORY_CMD python -u generate_outputs.py \
     \"$USER\" /credentials/google-cloud-credentials.json /data/pipeline_configuration.json \
-    /data/raw-data /data/prev-coded /data/listening-groups \
+    /data/raw-data /data/prev-coded \
     /data/output-messages.jsonl /data/output-individuals.jsonl /data/output-icr /data/coded \
     /data/output-messages.csv /data/output-individuals.csv /data/output-production.csv \
 "
@@ -71,7 +70,6 @@ container="$(docker container create ${SYS_PTRACE_CAPABILITY} -w /app "$IMAGE_NA
 docker cp "$INPUT_PIPELINE_CONFIGURATION" "$container:/data/pipeline_configuration.json"
 docker cp "$INPUT_GOOGLE_CLOUD_CREDENTIALS" "$container:/credentials/google-cloud-credentials.json"
 docker cp "$INPUT_RAW_DATA_DIR" "$container:/data/raw-data"
-docker cp "$INPUT_LISTENING_GROUPS" "$container:/data/listening-groups"
 if [[ -d "$PREV_CODED_DIR" ]]; then
     docker cp "$PREV_CODED_DIR" "$container:/data/prev-coded"
 fi
