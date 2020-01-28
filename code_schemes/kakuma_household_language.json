@@ -4,6 +4,62 @@
   "Version": "0.0.0.1",
   "Codes": [
     {
+      "DisplayText": "english",
+      "VisibleInCoda": true,
+      "NumericValue": 0,
+      "CodeID": "code-d083ae8a",
+      "CodeType": "Normal",
+      "StringValue": "english"
+    },
+    {
+      "DisplayText": "swahili",
+      "VisibleInCoda": true,
+      "NumericValue": 1,
+      "CodeID": "code-17b22de0",
+      "CodeType": "Normal",
+      "StringValue": "swahili"
+    },
+    {
+      "DisplayText": "somali",
+      "VisibleInCoda": true,
+      "NumericValue": 2,
+      "CodeID": "code-0ef426aa",
+      "CodeType": "Normal",
+      "StringValue": "somali"
+    },
+    {
+      "DisplayText": "turkana",
+      "VisibleInCoda": true,
+      "NumericValue": 3,
+      "CodeID": "code-9f7f192b",
+      "CodeType": "Normal",
+      "StringValue": "turkana"
+    },
+    {
+      "DisplayText": "oromo",
+      "VisibleInCoda": true,
+      "NumericValue": 4,
+      "CodeID": "code-58d86c44",
+      "CodeType": "Normal",
+      "StringValue": "oromo"
+    },
+    {
+      "DisplayText": "sudanese",
+      "VisibleInCoda": true,
+      "NumericValue": 5,
+      "CodeID": "code-724d5b83",
+      "CodeType": "Normal",
+      "StringValue": "sudanese"
+    },
+    {
+      "VisibleInCoda": true,
+      "NumericValue": 6,
+      "CodeID": "code-49087f30",
+      "CodeType": "Normal",
+      "StringValue": "other",
+      "DisplayText": "other"
+    },
+    {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
       "ControlCode": "NA",
@@ -47,6 +103,15 @@
       "NumericValue": -50,
       "StringValue": "NIC",
       "VisibleInCoda": false
+    },
+    {
+      "CodeID": "code-NOC-4eb70633",
+      "ControlCode": "NOC",
+      "StringValue": "NOC",
+      "DisplayText": "Noise (Other Channel)",
+      "VisibleInCoda": true,
+      "NumericValue": -60,
+      "CodeType": "Control"
     },
     {
       "CodeID": "code-STOP-08b832a8",
