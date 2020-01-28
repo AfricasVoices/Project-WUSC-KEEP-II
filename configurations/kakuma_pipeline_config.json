@@ -34,12 +34,12 @@
   "RapidProKeyRemappings": [
     {"RapidProKey": "avf_phone_id", "PipelineKey": "uid"},
     {"RapidProKey": "Rqa_S01_E01_Kakuma (Text) - wusc_keep_ii_s01_e01_kakuma_activation", "PipelineKey": "rqa_s01e01_raw", "IsActivationMessage": true},
-    {"RapidProKey": "Rqa_S01_E02_Kakuma (Text) - wusc_keep_ii_s01_e01_kakuma_activation", "PipelineKey": "rqa_s01e02_raw", "IsActivationMessage": true},
-    {"RapidProKey": "Rqa_S01_E03_Kakuma (Text) - wusc_keep_ii_s01_e01_kakuma_activation", "PipelineKey": "rqa_s01e03_raw", "IsActivationMessage": true},
-    {"RapidProKey": "Rqa_S01_E04_Kakuma (Text) - wusc_keep_ii_s01_e01_kakuma_activation", "PipelineKey": "rqa_s01e04_raw", "IsActivationMessage": true},
-    {"RapidProKey": "Rqa_S01_E05_Kakuma (Text) - wusc_keep_ii_s01_e01_kakuma_activation", "PipelineKey": "rqa_s01e05_raw", "IsActivationMessage": true},
-    {"RapidProKey": "Rqa_S01_E06_Kakuma (Text) - wusc_keep_ii_s01_e01_kakuma_activation", "PipelineKey": "rqa_s01e06_raw", "IsActivationMessage": true},
-    {"RapidProKey": "Rqa_S01_E07_Kakuma (Text) - wusc_keep_ii_s01_e01_kakuma_activation", "PipelineKey": "rqa_s01e07_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S01_E02_Kakuma (Text) - wusc_keep_ii_s01_e02_kakuma_activation", "PipelineKey": "rqa_s01e02_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S01_E03_Kakuma (Text) - wusc_keep_ii_s01_e03_kakuma_activation", "PipelineKey": "rqa_s01e03_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S01_E04_Kakuma (Text) - wusc_keep_ii_s01_e04_kakuma_activation", "PipelineKey": "rqa_s01e04_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S01_E05_Kakuma (Text) - wusc_keep_ii_s01_e05_kakuma_activation", "PipelineKey": "rqa_s01e05_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S01_E06_Kakuma (Text) - wusc_keep_ii_s01_e06_kakuma_activation", "PipelineKey": "rqa_s01e06_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S01_E07_Kakuma (Text) - wusc_keep_ii_s01_e07_kakuma_activation", "PipelineKey": "rqa_s01e07_raw", "IsActivationMessage": true},
     
     {"RapidProKey": "Rqa_S01_E01_Kakuma (Run ID) - wusc_keep_ii_s01_e01_kakuma_activation", "PipelineKey": "rqa_s01e01_run_id"},
     {"RapidProKey": "Rqa_S01_E02_Kakuma (Run ID) - wusc_keep_ii_s01_e02_kakuma_activation", "PipelineKey": "rqa_s01e02_run_id"},
