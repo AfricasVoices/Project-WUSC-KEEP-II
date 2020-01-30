@@ -2,6 +2,7 @@ import argparse
 import glob
 import json
 from collections import OrderedDict
+import sys
 
 import altair
 from core_data_modules.cleaners import Codes
@@ -83,6 +84,7 @@ if __name__ == "__main__":
         individuals = TracedDataJsonIO.import_jsonl_to_traced_data_iterable(f)
     log.info(f"Loaded {len(individuals)} individuals")
 
+    sys.setrecursionlimit(15000)
     # Compute the number of messages in each show and graph
     log.info(f"Graphing the number of messages received in response to each show...")
     messages_per_show = OrderedDict()  # Of radio show index to messages count
