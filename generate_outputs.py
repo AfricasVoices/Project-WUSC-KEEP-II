@@ -10,7 +10,7 @@ from storage.google_drive import drive_client_wrapper
 
 from src import CombineRawDatasets, TranslateRapidProKeys, AutoCode, ProductionFile, \
     ApplyManualCodes, AnalysisFile, WSCorrection, ListeningGroups
-from src.lib import PipelineConfiguration, CodeSchemes
+from src.lib import PipelineConfiguration, CodeSchemes, MessageFilters
 
 Logger.set_project_name("WUSC-KEEP-II")
 log = Logger(__name__)
@@ -139,11 +139,14 @@ if __name__ == "__main__":
     log.info("Auto Coding...")
     data = AutoCode.auto_code(user, data, pipeline_configuration, icr_output_dir, coded_dir_path)
 
-    log.info("Exporting production CSV...")
-    data = ProductionFile.generate(data, production_csv_output_path)
-
     log.info("Applying Manual Codes from Coda...")
     data = ApplyManualCodes.apply_manual_codes(user, data, prev_coded_dir_path)
+
+    log.info("Filtering out Messages labelled as Noise_Other_Channel...")
+    data = MessageFilters.filter_noise_other_channel(data)
+
+    log.info("Exporting production CSV...")
+    data = ProductionFile.generate(data, production_csv_output_path)
 
     log.info("Tagging listening group participants")
     ListeningGroups.tag_listening_groups_participants(user, data, pipeline_configuration, raw_data_dir)
