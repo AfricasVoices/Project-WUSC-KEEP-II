@@ -74,32 +74,6 @@ if __name__ == "__main__":
     swahili_uuids = set()
     all_uuids = set()
 
-    # Load listening group de-identified CSV files
-    listening_group_csvs = []
-    for listening_group_csv_url in pipeline_configuration.listening_group_csv_urls:
-        listening_group_csvs.append(listening_group_csv_url.split("/")[-1])
-
-    for listening_group_csv in listening_group_csvs:
-        with open(f'{data_dir}/Raw Data/{listening_group_csv}', "r", encoding='utf-8-sig') as f:
-            data = list(csv.DictReader(f))
-            log.info(f'Loaded {len(data)} listening group participants from {data_dir}/Raw Data/{listening_group_csv}')
-
-            # Add the lg avf-phone-uuids to their respective language set
-            for row in data:
-                all_uuids.add(row['avf-phone-uuid'])
-                if row['Language'] == 'orm':
-                    oromo_uuids.add(row['avf-phone-uuid'])
-                elif row['Language'] == 'apd':
-                    sudanese_juba_arabic_uuids.add(row['avf-phone-uuid'])
-                elif row['Language'] == 'tuv':
-                    turkana_uuids.add(row['avf-phone-uuid'])
-                elif row['Language'] == 'som':
-                    somali_uuids.add(row['avf-phone-uuid'])
-                elif row['Language'] == 'eng':
-                    english_uuids.add(row['avf-phone-uuid'])
-                else:
-                    swahili_uuids.add(row['avf-phone-uuid'])
-
     log.info(f'Searching for the participants uuids vis-a-vis` their manually labelled '
              f'demographic language response')
     for msg in messages:
@@ -125,6 +99,38 @@ if __name__ == "__main__":
                 english_uuids.add(msg['uid'])
         else:
             swahili_uuids.add(msg['uid'])
+
+    # Load all listening group de-identified CSV files
+    listening_group_csvs = []
+    for listening_group_csv_url in pipeline_configuration.listening_group_csv_urls:
+        listening_group_csvs.append(listening_group_csv_url.split("/")[-1])
+
+    for listening_group_csv in listening_group_csvs:
+        with open(f'{data_dir}/Raw Data/{listening_group_csv}', "r", encoding='utf-8-sig') as f:
+            data = list(csv.DictReader(f))
+            log.info(
+                f'Loaded {len(data)} listening group participants from {data_dir}/Raw Data/{listening_group_csv}')
+
+            # Add the lg avf-phone-uuids to their respective language set
+            for row in data:
+                if row['avf-phone-uuid'] in all_uuids: # because we are giving precedence to the participants manually
+                                                       # labeled language
+                    continue
+
+                all_uuids.add(row['avf-phone-uuid'])
+
+                if row['Language'] == 'orm':
+                    oromo_uuids.add(row['avf-phone-uuid'])
+                elif row['Language'] == 'apd':
+                    sudanese_juba_arabic_uuids.add(row['avf-phone-uuid'])
+                elif row['Language'] == 'tuv':
+                    turkana_uuids.add(row['avf-phone-uuid'])
+                elif row['Language'] == 'som':
+                    somali_uuids.add(row['avf-phone-uuid'])
+                elif row['Language'] == 'eng':
+                    english_uuids.add(row['avf-phone-uuid'])
+                else:
+                    swahili_uuids.add(row['avf-phone-uuid'])
 
     # Convert the uuids to phone numbers
     log.info("Converting the uuids to phone numbers...")
