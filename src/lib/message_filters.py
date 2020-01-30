@@ -131,13 +131,13 @@ class MessageFilters(object):
     @staticmethod
     def filter_noise_other_channel(messages):
         """
-        Filters out messages which have been labelled as Noise_Other_Channel(NOC).
+        Filters out messages which have been labelled as Codes.NOISE_OTHER_CHANNEL.
         :param messages: List of message objects to filter.
         :type messages: list of TracedData
         :return: Filtered list.
         :rtype: list of TracedData
         """
-        not_noise_other_channel = []
+        noise_other_channel_uuids = set()
         for td in messages:
             codes = []
             for plan in PipelineConfiguration.RQA_CODING_PLANS + PipelineConfiguration.SURVEY_CODING_PLANS:
@@ -145,16 +145,18 @@ class MessageFilters(object):
                     if cc.coding_mode == CodingModes.SINGLE:
                         if cc.coded_field in td:
                             label = td[cc.coded_field]
-                            codes.append(cc.code_scheme.get_code_with_code_id(label["CodeID"]).string_value)
+                            codes.append(cc.code_scheme.get_code_with_code_id(label["CodeID"]).control_code)
                     else:
                         assert cc.coding_mode == CodingModes.MULTIPLE
                         for label in td.get(cc.coded_field, []):
-                            codes.append(cc.code_scheme.get_code_with_code_id(label["CodeID"]).string_value)
+                            codes.append(cc.code_scheme.get_code_with_code_id(label["CodeID"]).control_code)
 
-            if Codes.NOISE_OTHER_CHANNEL not in codes:
-                not_noise_other_channel.append(td)
+            if Codes.NOISE_OTHER_CHANNEL in codes:
+                noise_other_channel_uuids.add(td['uid'])
 
-        log.info(f"Filtered out noise other project messages. "
-                 f"Returning {len(not_noise_other_channel)}/{len(messages)} messages.")
+        filtered = [td for td in messages if td['uid'] not in noise_other_channel_uuids]
 
-        return not_noise_other_channel
+        log.info(f"Filtered out noise other project messages from {len(noise_other_channel_uuids)} uuids. "
+                 f"Returning {len(filtered)}/{len(messages)} messages.")
+
+        return filtered
