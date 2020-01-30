@@ -131,7 +131,8 @@ class MessageFilters(object):
     @staticmethod
     def filter_noise_other_channel(messages):
         """
-        Filters out messages which have been labelled as Codes.NOISE_OTHER_CHANNEL.
+        Filters out messages from individuals who have any RQA or survey message labelled as Codes.NOISE_OTHER_CHANNEL.
+        
         :param messages: List of message objects to filter.
         :type messages: list of TracedData
         :return: Filtered list.
