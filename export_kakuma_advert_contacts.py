@@ -82,7 +82,7 @@ if __name__ == "__main__":
     for listening_group_csv in listening_group_csvs:
         with open(f'{data_dir}/Raw Data/{listening_group_csv}', "r", encoding='utf-8-sig') as f:
             data = list(csv.DictReader(f))
-            log.info(f'Loaded {len(data)} ' f'{data_dir}/Raw Data/{listening_group_csv} listening group participants')
+            log.info(f'Loaded {len(data)} listening group participants from {data_dir}/Raw Data/{listening_group_csv}')
 
             # Add the lg avf-phone-uuids to their respective language set
             for row in data:
