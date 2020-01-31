@@ -182,7 +182,7 @@ if __name__ == "__main__":
         }
 
     log.warning(f"Exporting {len(advert_contacts)} contacts to {contacts_csv_path}")
-    with open(f'{contacts_csv_path}.csv', "w") as f:
+    with open(contacts_csv_path, "w") as f:
         headers = ["URN:Tel", "Name", "Language"]
         writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
         writer.writeheader()
