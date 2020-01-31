@@ -27,17 +27,15 @@ if __name__ == "__main__":
     parser.add_argument("data_dir", metavar="data-dir",
                         help="Directory path to read messages traced data JSONL file + listening group CSV files "
                              "to extract phone from, and write the advert CSV file to")
-    parser.add_argument("sms_ad_flow_name", metavar="sms-ad-flow-name",
-                        help="The name of the advert flow we are triggering the contacts to i.e "
-                             "sms ad flow name for the radio show currently airing. The string format for this project is "
-                             "<kakuma_so{n}_e0{n}_sms_ad>")
+    parser.add_argument("contacts_csv_path", metavar="contacts-csv-path",
+                        help="CSV file path to write the contacts data to")
 
     args = parser.parse_args()
 
     google_cloud_credentials_file_path = args.google_cloud_credentials_file_path
     pipeline_configuration_file_path = args.pipeline_configuration_file_path
     data_dir = args.data_dir
-    sms_ad_flow_name = args.sms_ad_flow_name
+    contacts_csv_path = args.contacts_csv_path
 
     # Read the settings from the configuration file
     log.info("Loading Pipeline Configuration File...")
@@ -183,12 +181,12 @@ if __name__ == "__main__":
             "Language": 'swh'
         }
 
-    log.warning(f"Exporting {len(advert_contacts)} contacts to {data_dir}")
-    with open(f'{data_dir}/Outputs/{sms_ad_flow_name}.csv', "w") as f:
+    log.warning(f"Exporting {len(advert_contacts)} contacts to {contacts_csv_path}")
+    with open(f'{contacts_csv_path}.csv', "w") as f:
         headers = ["URN:Tel", "Name", "Language"]
         writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
         writer.writeheader()
         for phone_number in advert_contacts.values():
             writer.writerow(phone_number)
 
-        log.info(f"Wrote {len(advert_contacts)} contacts to {data_dir}/Outputs/{sms_ad_flow_name}.csv")
+        log.info(f"Wrote {len(advert_contacts)} contacts to {contacts_csv_path}")
