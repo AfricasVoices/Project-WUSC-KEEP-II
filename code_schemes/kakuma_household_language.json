@@ -44,7 +44,7 @@
       "StringValue": "oromo"
     },
     {
-      "DisplayText": "sudanese",
+      "DisplayText": "sudanese/nuer/juba_arabic",
       "VisibleInCoda": true,
       "NumericValue": 5,
       "CodeID": "code-724d5b83",
