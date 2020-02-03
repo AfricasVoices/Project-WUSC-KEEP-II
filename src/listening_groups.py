@@ -66,8 +66,7 @@ class ListeningGroups(object):
         for td in data:
             listening_group_participation = dict() # of uid repeat and weekly listening group participation data
             listening_group_participation["repeat_listening_group_participant"] = td["uid"] in repeat_listening_group_participants
-
             for plan in PipelineConfiguration.RQA_CODING_PLANS:
-                listening_group_participation[f'{plan.dataset_name}_listening_group_participant'] =  td['uid'] in listening_group_participants[f'{plan.dataset_name}']
+                listening_group_participation[f'{plan.dataset_name}_listening_group_participant'] =  td['uid'] in listening_group_participants[plan.dataset_name]
 
             td.append_data(listening_group_participation, Metadata(user, Metadata.get_call_location(), time.time()))
