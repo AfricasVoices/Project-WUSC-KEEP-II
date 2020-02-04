@@ -3,6 +3,7 @@ import glob
 import json
 from collections import OrderedDict
 import sys
+import csv
 
 import altair
 from core_data_modules.cleaners import Codes
@@ -14,6 +15,8 @@ from storage.google_drive import drive_client_wrapper
 
 from src.lib import PipelineConfiguration, CodeSchemes
 from src.lib.pipeline_configuration import CodingModes
+from core_data_modules.data_models.code_scheme import CodeTypes
+
 
 Logger.set_project_name("WUSC-KEEP-II")
 log = Logger(__name__)
@@ -83,6 +86,71 @@ if __name__ == "__main__":
     with open(individuals_json_input_path) as f:
         individuals = TracedDataJsonIO.import_jsonl_to_traced_data_iterable(f)
     log.info(f"Loaded {len(individuals)} individuals")
+
+    # Compute the number of messages, activations and participants per episode and overall.
+    log.info("Computing the per-episode and per-season engagement counts...")
+    engagement_counts = OrderedDict()
+    for plan in PipelineConfiguration.RQA_CODING_PLANS:
+        engagement_counts[plan.dataset_name] = {
+            "Episode": plan.dataset_name,
+            "Total messages with Opt-ins": 0,
+            "Total activations with Opt-ins": 0,
+            "Total repeat listening group activations": 0,
+            "Total weekly listening group activations": 0,
+            "Total participants with Opt-ins": '-',
+        }
+    engagement_counts["Total"] = {
+        "Episode": "Total",
+        "Total messages with Opt-ins": 0,
+        "Total activations with Opt-ins": '-',
+        "Total repeat listening group activations": '-',
+        "Total weekly listening group activations": '-',
+        "Total participants with Opt-ins": 0
+    }
+
+    # Compute, per episode and across the season:
+    #  - Total Messages, by counting the number of consenting message objects that contain the raw_field key each week.
+    for msg in messages:
+        if msg["consent_withdrawn"] == Codes.FALSE:
+            for plan in PipelineConfiguration.RQA_CODING_PLANS:
+                if plan.raw_field in msg:
+                    engagement_counts[plan.dataset_name]["Total messages with Opt-ins"] += 1
+                    engagement_counts["Total"]["Total messages with Opt-ins"] += 1
+
+    # Compute, per episode and across the season:
+    #  - Total Participants, by counting the number of consenting individuals objects that contain the raw_field key
+    #    each week.
+    for ind in individuals:
+        if ind["consent_withdrawn"] == Codes.FALSE:
+            engagement_counts["Total"]["Total participants with Opt-ins"] += 1
+            for plan in PipelineConfiguration.RQA_CODING_PLANS:
+                if plan.raw_field in ind:
+                    engagement_counts[plan.dataset_name]["Total activations with Opt-ins"] += 1
+
+    if pipeline_configuration.pipeline_name == "kakuma_pipeline":
+        for ind in individuals:
+            if ind["consent_withdrawn"] == Codes.FALSE:
+                for plan in PipelineConfiguration.KAKUMA_RQA_CODING_PLANS:
+                    if plan.raw_field in ind:
+                        if ind[f'{plan.dataset_name}_listening_group_participant'] == True:
+                            engagement_counts[plan.dataset_name]["Total weekly listening group activations"] += 1
+                        if ind["repeat_listening_group_participant"] == True:
+                            engagement_counts[plan.dataset_name]["Total repeat listening group activations"] += 1
+    else:
+        assert pipeline_configuration.pipeline_name == "dadaab_pipeline", "PipelineName must be either " \
+                                                                          "'dadaab_pipeline or kakuma_pipeline"
+
+    # Export the engagement counts to a csv.
+    with open(f"{output_dir}/engagement_counts.csv", "w") as f:
+        headers = ["Episode", "Total messages with Opt-ins", "Total activations with Opt-ins",
+         "Total repeat listening group activations", "Total weekly listening group activations",
+                   "Total participants with Opt-ins",]
+
+        writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
+        writer.writeheader()
+
+        for row in engagement_counts.values():
+            writer.writerow(row)
 
     sys.setrecursionlimit(15000)
     # Compute the number of messages in each show and graph
