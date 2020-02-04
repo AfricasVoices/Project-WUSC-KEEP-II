@@ -94,13 +94,13 @@ if __name__ == "__main__":
         engagement_counts[plan.dataset_name] = {
             "Episode": plan.dataset_name,
             "Total messages with Opt-ins": 0,
-            "Total activations with Opt-ins": 0,
+            "Total participants per-show with Opt-ins": 0,
             "Total participants with Opt-ins": '-'
         }
     engagement_counts["Total"] = {
         "Episode": "Total",
         "Total messages with Opt-ins": 0,
-        "Total activations with Opt-ins": '-',
+        "Total participants per-show with Opt-ins": '-',
         "Total participants with Opt-ins": 0,
     }
 
@@ -121,12 +121,12 @@ if __name__ == "__main__":
             engagement_counts["Total"]["Total participants with Opt-ins"] += 1
             for plan in PipelineConfiguration.RQA_CODING_PLANS:
                 if plan.raw_field in ind:
-                    engagement_counts[plan.dataset_name]["Total activations with Opt-ins"] += 1
+                    engagement_counts[plan.dataset_name]["Total participants per-show with Opt-ins"] += 1
 
     # Export the engagement counts to a csv.
     with open(f"{output_dir}/engagement_counts.csv", "w") as f:
         headers = ["Episode", "Total messages with Opt-ins",
-                   "Total activations with Opt-ins", "Total participants with Opt-ins"]
+                   "Total participants per-show with Opt-ins", "Total participants with Opt-ins"]
 
         writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
         writer.writeheader()
