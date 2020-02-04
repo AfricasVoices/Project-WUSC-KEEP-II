@@ -93,16 +93,16 @@ if __name__ == "__main__":
     for plan in PipelineConfiguration.RQA_CODING_PLANS:
         engagement_counts[plan.dataset_name] = {
             "Episode": plan.dataset_name,
-            "Total messages per show with Opt-ins": 0,
-            "Total activations per show with Opt-ins": 0,
             "Total messages with Opt-ins": '-',
-            "Total participants with Opt-ins": '-',
+            "Total activations with Opt-ins": 0,
+            "Total participants with Opt-ins": '-'
             "Total repeat listening group participants": 0,
             "Total weekly listening group participants": 0,
         }
     engagement_counts["Total"] = {
         "Episode": "Total",
         "Total messages with Opt-ins": 0,
+        "Total activations with Opt-ins": '-',
         "Total participants with Opt-ins": 0,
     }
 
@@ -112,7 +112,7 @@ if __name__ == "__main__":
         if msg["consent_withdrawn"] == Codes.FALSE:
             for plan in PipelineConfiguration.RQA_CODING_PLANS:
                 if plan.raw_field in msg:
-                    engagement_counts[plan.dataset_name]["Total messages per show with Opt-ins"] += 1
+                    engagement_counts[plan.dataset_name]["Total messages with Opt-ins"] += 1
                     engagement_counts["Total"]["Total messages with Opt-ins"] += 1
 
     # Compute, per episode and across the season:
@@ -123,7 +123,7 @@ if __name__ == "__main__":
             engagement_counts["Total"]["Total participants with Opt-ins"] += 1
             for plan in PipelineConfiguration.RQA_CODING_PLANS:
                 if plan.raw_field in ind:
-                    engagement_counts[plan.dataset_name]["Total activations per show with Opt-ins"] += 1
+                    engagement_counts[plan.dataset_name]["Total activations with Opt-ins"] += 1
 
     if pipeline_configuration.pipeline_name == "kakuma_pipeline":
         for ind in individuals:
@@ -140,9 +140,8 @@ if __name__ == "__main__":
 
     # Export the engagement counts to a csv.
     with open(f"{output_dir}/engagement_counts.csv", "w") as f:
-        headers = ["Episode", "Total messages per show with Opt-ins","Total messages with Opt-ins",
-                   "Total activations per show with Opt-ins", "Total participants with Opt-ins",
-                   "Total repeat listening group participants", "Total weekly listening group participants" ]
+        headers = ["Episode", "Total messages with Opt-ins", "Total activations with Opt-ins", "Total participants with Opt-ins",
+         "Total repeat listening group participants", "Total weekly listening group participants"]
 
         writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
         writer.writeheader()
