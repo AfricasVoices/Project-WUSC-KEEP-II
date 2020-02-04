@@ -95,9 +95,9 @@ if __name__ == "__main__":
             "Episode": plan.dataset_name,
             "Total messages with Opt-ins": '-',
             "Total activations with Opt-ins": 0,
-            "Total participants with Opt-ins": '-'
+            "Total participants with Opt-ins": '-',
             "Total repeat listening group participants": 0,
-            "Total weekly listening group participants": 0,
+            "Total weekly listening group participants": 0
         }
     engagement_counts["Total"] = {
         "Episode": "Total",
