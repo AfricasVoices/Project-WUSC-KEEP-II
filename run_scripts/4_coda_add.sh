@@ -30,20 +30,6 @@ DATASETS=(
     "kakuma_age"
     "kakuma_nationality"
     "kakuma_household_language"
-
-    "dadaab_s01e01"
-    "dadaab_s01e02"
-    "dadaab_s01e03"
-    "dadaab_s01e04"
-    "dadaab_s01e05"
-    "dadaab_s01e06"
-    "dadaab_s01e07"
-
-    "dadaab_location"
-    "dadaab_gender"
-    "dadaab_age"
-    "dadaab_nationality"
-    "dadaab_hh_language"
 )
 
 cd "$CODA_V2_ROOT/data_tools"
