@@ -3,7 +3,7 @@
     {
       "SourceType": "RapidPro",
       "Domain": "textit.in",
-      "TokenFileURL": "gs://avf-credentials/wusc-keep-ii-dadaab-textit-token.txt",
+      "TokenFileURL": "gs://avf-credentials/wusc-keep-II-dadaab-textit-token.txt",
       "ContactsFileName": "wusc_keep_ii",
       "ActivationFlowNames": [
         "wusc_keep_ii_s01_e01_dadaab_activation",
