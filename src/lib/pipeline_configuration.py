@@ -93,7 +93,7 @@ class PipelineConfiguration(object):
                    time_field="sent_on",
                    run_id_field="rqa_s01e01_run_id",
                    coda_filename="dadaab_s01e01.json",
-                   icr_filename="s01e01.csv",
+                   icr_filename="dadaab_s01e01.csv",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.MULTIPLE,
@@ -111,7 +111,7 @@ class PipelineConfiguration(object):
                    time_field="sent_on",
                    run_id_field="rqa_s01e02_run_id",
                    coda_filename="dadaab_s01e02.json",
-                   icr_filename="s01e02.csv",
+                   icr_filename="dadaab_s01e02.csv",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.MULTIPLE,
@@ -129,7 +129,7 @@ class PipelineConfiguration(object):
                    time_field="sent_on",
                    run_id_field="rqa_s01e03_run_id",
                    coda_filename="dadaab_s01e03.json",
-                   icr_filename="s01e03.csv",
+                   icr_filename="dadaab_s01e03.csv",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.MULTIPLE,
@@ -147,7 +147,7 @@ class PipelineConfiguration(object):
                    time_field="sent_on",
                    run_id_field="rqa_s01e04_run_id",
                    coda_filename="dadaab_s01e04.json",
-                   icr_filename="s01e04.csv",
+                   icr_filename="dadaab_s01e04.csv",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.MULTIPLE,
@@ -165,7 +165,7 @@ class PipelineConfiguration(object):
                    time_field="sent_on",
                    run_id_field="rqa_s01e05_run_id",
                    coda_filename="dadaab_s01e05.json",
-                   icr_filename="s01e05.csv",
+                   icr_filename="dadaab_s01e05.csv",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.MULTIPLE,
@@ -183,7 +183,7 @@ class PipelineConfiguration(object):
                    time_field="sent_on",
                    run_id_field="rqa_s01e06_run_id",
                    coda_filename="dadaab_s01e06.json",
-                   icr_filename="s01e06.csv",
+                   icr_filename="dadaab_s01e06.csv",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.MULTIPLE,
@@ -201,7 +201,7 @@ class PipelineConfiguration(object):
                    time_field="sent_on",
                    run_id_field="rqa_s01e07_run_id",
                    coda_filename="dadaab_s01e07.json",
-                   icr_filename="s01e07.csv",
+                   icr_filename="dadaab_s01e07.csv",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.MULTIPLE,
@@ -222,7 +222,7 @@ class PipelineConfiguration(object):
                    time_field="sent_on",
                    run_id_field="rqa_s01e01_run_id",
                    coda_filename="kakuma_s01e01.json",
-                   icr_filename="s01e01.csv",
+                   icr_filename="kakuma_s01e01.csv",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.MULTIPLE,
@@ -241,7 +241,7 @@ class PipelineConfiguration(object):
                    time_field="sent_on",
                    run_id_field="rqa_s01e02_run_id",
                    coda_filename="kakuma_s01e02.json",
-                   icr_filename="s01e02.csv",
+                   icr_filename="kakuma_s01e02.csv",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.MULTIPLE,
@@ -260,7 +260,7 @@ class PipelineConfiguration(object):
                    time_field="sent_on",
                    run_id_field="rqa_s01e03_run_id",
                    coda_filename="kakuma_s01e03.json",
-                   icr_filename="s01e03.csv",
+                   icr_filename="kakuma_s01e03.csv",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.MULTIPLE,
@@ -279,7 +279,7 @@ class PipelineConfiguration(object):
                    time_field="sent_on",
                    run_id_field="rqa_s01e04_run_id",
                    coda_filename="kakuma_s01e04.json",
-                   icr_filename="s01e04.csv",
+                   icr_filename="kakuma_s01e04.csv",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.MULTIPLE,
@@ -298,7 +298,7 @@ class PipelineConfiguration(object):
                    time_field="sent_on",
                    run_id_field="rqa_s01e05_run_id",
                    coda_filename="kakuma_s01e05.json",
-                   icr_filename="s01e05.csv",
+                   icr_filename="kakuma_s01e05.csv",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.MULTIPLE,
@@ -317,7 +317,7 @@ class PipelineConfiguration(object):
                    time_field="sent_on",
                    run_id_field="rqa_s01e06_run_id",
                    coda_filename="kakuma_s01e06.json",
-                   icr_filename="s01e06.csv",
+                   icr_filename="kakuma_s01e06.csv",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.MULTIPLE,
@@ -336,7 +336,7 @@ class PipelineConfiguration(object):
                    time_field="sent_on",
                    run_id_field="rqa_s01e07_run_id",
                    coda_filename="kakuma_s01e07.json",
-                   icr_filename="s01e07.csv",
+                   icr_filename="kakuma_s01e07.csv",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.MULTIPLE,
