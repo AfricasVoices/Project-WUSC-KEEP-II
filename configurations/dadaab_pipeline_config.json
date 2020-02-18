@@ -71,7 +71,7 @@
     {"RapidProKey": "Household_Language (Time) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "household_language_time"}
   ],
   "PipelineName": "dadaab_pipeline",
-  "ProjectStartDate": "2019-02-08T20:20:00+03:00",
+  "ProjectStartDate": "2020-02-06T08:20:00+03:00",
   "ProjectEndDate": "2100-01-01T00:00:00+03:00",
   "FilterTestMessages": true,
   "MoveWSMessages": false,
