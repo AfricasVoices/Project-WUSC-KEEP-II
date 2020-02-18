@@ -3,7 +3,7 @@
     {
       "SourceType": "RapidPro",
       "Domain": "textit.in",
-      "TokenFileURL": "gs://avf-credentials/wusc-keep-ii-dadaab-textit-token.txt",
+      "TokenFileURL": "gs://avf-credentials/wusc-keep-II-dadaab-textit-token.txt",
       "ContactsFileName": "wusc_keep_ii",
       "ActivationFlowNames": [
         "wusc_keep_ii_s01_e01_dadaab_activation",
@@ -18,7 +18,11 @@
         "wusc_keep_ii_dadaab_demogs"
       ],
       "TestContactUUIDs": [
-        "f3e07a4a-4c5d-4032-80f3-c31bcf480dc9"
+        "f3e07a4a-4c5d-4032-80f3-c31bcf480dc9",
+        "8aa09c45-5070-4a75-a3b8-75d8519e77b9",
+        "33d8b0c6-4b68-4307-b7ae-0088024b380d",
+        "9c8bc1e6-78bc-40ac-8b11-aec4280b3862",
+        "415bd689-bb41-44f9-90af-8e743cfca35b"
       ]
     }
   ],
@@ -67,9 +71,9 @@
     {"RapidProKey": "Household_Language (Time) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "household_language_time"}
   ],
   "PipelineName": "dadaab_pipeline",
-  "ProjectStartDate": "2019-01-01T00:00:00+03:00",
+  "ProjectStartDate": "2020-02-06T08:20:00+03:00",
   "ProjectEndDate": "2100-01-01T00:00:00+03:00",
-  "FilterTestMessages": false,
+  "FilterTestMessages": true,
   "MoveWSMessages": false,
   "DriveUpload": {
     "DriveCredentialsFileURL": "gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
