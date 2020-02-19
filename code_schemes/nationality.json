@@ -58,7 +58,6 @@
         "somali"
       ]
     },
-
     {
       "CodeID": "code-8a77245b",
       "CodeType": "Normal",
@@ -68,6 +67,17 @@
       "VisibleInCoda": true,
       "MatchValues": [
         "south sudanese"
+      ]
+    },
+    {
+      "CodeID": "code-d721a238",
+      "CodeType": "Normal",
+      "DisplayText": "ugandan",
+      "NumericValue": 6,
+      "StringValue": "ugandan",
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "ugandan"
       ]
     },
     {
