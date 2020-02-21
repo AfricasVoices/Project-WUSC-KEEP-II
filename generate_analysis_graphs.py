@@ -127,20 +127,24 @@ if __name__ == "__main__":
                 if plan.raw_field in ind:
                     engagement_counts[plan.dataset_name]["Total participants per-show with Opt-ins"] += 1
 
+    # Compute, repeat and weekly listening group participants engagement per episode:
     if pipeline_configuration.pipeline_name == "kakuma_pipeline":
-        for ind in individuals:
-            if ind["consent_withdrawn"] == Codes.FALSE:
-                for plan in PipelineConfiguration.KAKUMA_RQA_CODING_PLANS:
-                    if plan.raw_field in ind:
-                        if ind[f'{plan.dataset_name}_listening_group_participant'] == True:
-                            engagement_counts[plan.dataset_name]["Total weekly listening group participants"] += 1
-                        if ind["repeat_listening_group_participant"] == True:
-                            engagement_counts[plan.dataset_name]["Total repeat listening group participants"] += 1
+        for plan in PipelineConfiguration.KAKUMA_RQA_CODING_PLANS:
+            for ind in individuals:
+                if ind["consent_withdrawn"] == Codes.TRUE:
+                    continue
+
+                if plan.raw_field in ind:
+                    if ind[f'{plan.dataset_name}_listening_group_participant']:
+                        engagement_counts[plan.dataset_name]["Total weekly listening group participants"] += 1
+                    if ind["repeat_listening_group_participant"]:
+                        engagement_counts[plan.dataset_name]["Total repeat listening group participants"] += 1
     else:
         assert pipeline_configuration.pipeline_name == "dadaab_pipeline", "PipelineName must be either " \
                                                                           "'dadaab_pipeline or kakuma_pipeline"
 
     # Export the engagement counts to a csv.
+    log.info(f'Writing engagement counts csv ...')
     with open(f"{output_dir}/engagement_counts.csv", "w") as f:
         headers = ["Episode", "Total messages with Opt-ins", "Total participants per-show with Opt-ins",
          "Total repeat listening group participants", "Total weekly listening group participants",
