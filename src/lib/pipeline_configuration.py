@@ -6,6 +6,7 @@ from urllib.parse import urlparse
 import pytz
 from core_data_modules.cleaners import Codes, swahili, somali
 from core_data_modules.data_models import validators
+from core_data_modules.traced_data.util.fold_traced_data import FoldStrategies
 from dateutil.parser import isoparse
 
 from src.lib import CodeSchemes, code_imputation_functions
@@ -16,54 +17,21 @@ class CodingModes(object):
     MULTIPLE = "MULTIPLE"
 
 
-class FoldingModes(object):
-    """
-    Configures how a column of data should be combined when folding multiple messages objects into a single 
-    individuals object.
-    """
-
-    ASSERT_EQUAL = "ASSERT_EQUAL"
-    """
-    Check that the column is the same across all message objects for this individual, and fail the program if any 
-    are different. Use for columns that should be identical across all the message objects.
-    """
-
-    YES_NO_AMB = "YES_NO_AMB"
-    """
-    Set the folded column to Codes.YES if all message objects have value Codes.YES, Codes.NO if all message objects have
-    value Codes.NO, or Codes.AMBIVALENT otherwise (with some additional logic for handling control codes). 
-    Use for columns containing yes/no/ambivalent codes which can vary between message objects for the same person.
-    """
-
-    CONCATENATE = "CONCATENATE"
-    """
-    Join all the values in the input message objects, separating them by a ';'. For example, the messages "a", "b", and
-    "c" will be folded to "a;b;c". Uses for columns which differ and where all the original messages should be 
-    preserved.
-    """
-
-    MATRIX = "MATRIX"
-    """
-    Set the folded value to Codes.MATRIX_1 if either input is Codes.MATRIX_1, otherwise to Codes.MATRIX_0 or the 
-    appropriate control code. Use for columns in matrix representation.
-    """
-
-
 class CodingConfiguration(object):
-    def __init__(self, coding_mode, code_scheme, coded_field, folding_mode, analysis_file_key=None, cleaner=None):
+    def __init__(self, coding_mode, code_scheme, coded_field, fold_strategy, analysis_file_key=None, cleaner=None):
         assert coding_mode in {CodingModes.SINGLE, CodingModes.MULTIPLE}
 
         self.coding_mode = coding_mode
         self.code_scheme = code_scheme
         self.coded_field = coded_field
         self.analysis_file_key = analysis_file_key
-        self.folding_mode = folding_mode
+        self.fold_strategy = fold_strategy
         self.cleaner = cleaner
 
 
 # TODO: Rename CodingPlan to something like DatasetConfiguration?
 class CodingPlan(object):
-    def __init__(self, raw_field, dataset_name, coding_configurations, raw_field_folding_mode, coda_filename=None, ws_code=None,
+    def __init__(self, raw_field, dataset_name, coding_configurations, raw_field_fold_strategy, coda_filename=None, ws_code=None,
                  time_field=None, run_id_field=None, icr_filename=None, id_field=None, code_imputation_function=None,
                  listening_group_filename=None,):
         self.raw_field = raw_field
@@ -76,7 +44,7 @@ class CodingPlan(object):
         self.code_imputation_function = code_imputation_function
         self.listening_group_filename = listening_group_filename
         self.ws_code = ws_code
-        self.raw_field_folding_mode = raw_field_folding_mode
+        self.raw_field_fold_strategy = raw_field_fold_strategy
 
         if id_field is None:
             id_field = "{}_id".format(self.raw_field)
@@ -100,11 +68,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.DADAAB_S01E01_REASONS,
                            coded_field="rqa_s01e01_coded",
                            analysis_file_key="rqa_s01e01_",
-                           folding_mode=FoldingModes.MATRIX
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.DADAAB_S01E01_REASONS, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e01"),
-                   raw_field_folding_mode=FoldingModes.CONCATENATE),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
 
         CodingPlan(raw_field="rqa_s01e02_raw",
                    dataset_name="dadaab_s01e02",
@@ -118,11 +86,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.DADAAB_S01E02_REASONS,
                            coded_field="rqa_s01e02_coded",
                            analysis_file_key="rqa_s01e02_",
-                           folding_mode=FoldingModes.MATRIX
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.DADAAB_S01E02_REASONS, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e02"),
-                   raw_field_folding_mode=FoldingModes.CONCATENATE),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
 
         CodingPlan(raw_field="rqa_s01e03_raw",
                    dataset_name="dadaab_s01e03",
@@ -136,11 +104,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.DADAAB_S01E03_REASONS,
                            coded_field="rqa_s01e03_coded",
                            analysis_file_key="rqa_s01e03_",
-                           folding_mode=FoldingModes.MATRIX
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.DADAAB_S01E03_REASONS, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e03"),
-                   raw_field_folding_mode=FoldingModes.CONCATENATE),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
 
         CodingPlan(raw_field="rqa_s01e04_raw",
                    dataset_name="dadaab_s01e04",
@@ -154,11 +122,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.DADAAB_S01E04_REASONS,
                            coded_field="rqa_s01e04_coded",
                            analysis_file_key="rqa_s01e04_",
-                           folding_mode=FoldingModes.MATRIX
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.DADAAB_S01E04_REASONS, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e04"),
-                   raw_field_folding_mode=FoldingModes.CONCATENATE),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
 
         CodingPlan(raw_field="rqa_s01e05_raw",
                    dataset_name="dadaab_s01e05",
@@ -172,11 +140,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.DADAAB_S01E05_REASONS,
                            coded_field="rqa_s01e05_coded",
                            analysis_file_key="rqa_s01e05_",
-                           folding_mode=FoldingModes.MATRIX
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.DADAAB_S01E05_REASONS, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e05"),
-                   raw_field_folding_mode=FoldingModes.CONCATENATE),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
 
         CodingPlan(raw_field="rqa_s01e06_raw",
                    dataset_name="dadaab_s01e06",
@@ -190,11 +158,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.DADAAB_S01E06_REASONS,
                            coded_field="rqa_s01e06_coded",
                            analysis_file_key="rqa_s01e06_",
-                           folding_mode=FoldingModes.MATRIX
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.DADAAB_S01E06_REASONS, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e06"),
-                   raw_field_folding_mode=FoldingModes.CONCATENATE),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
 
         CodingPlan(raw_field="rqa_s01e07_raw",
                    dataset_name="dadaab_s01e07",
@@ -208,11 +176,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.DADAAB_S01E07_REASONS,
                            coded_field="rqa_s01e07_coded",
                            analysis_file_key="rqa_s01e07_",
-                           folding_mode=FoldingModes.MATRIX
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.DADAAB_S01E07_REASONS, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e07"),
-                   raw_field_folding_mode=FoldingModes.CONCATENATE),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
     ]
 
     KAKUMA_RQA_CODING_PLANS = [
@@ -229,11 +197,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.KAKUMA_S01E01_REASONS,
                            coded_field="rqa_s01e01_coded",
                            analysis_file_key="rqa_s01e01_",
-                           folding_mode=FoldingModes.MATRIX
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.KAKUMA_S01E01_REASONS, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e01"),
-                   raw_field_folding_mode=FoldingModes.CONCATENATE),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
 
         CodingPlan(raw_field="rqa_s01e02_raw",
                    dataset_name="kakuma_s01e02",
@@ -248,11 +216,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.KAKUMA_S01E02_REASONS,
                            coded_field="rqa_s01e02_coded",
                            analysis_file_key="rqa_s01e02_",
-                           folding_mode=FoldingModes.MATRIX
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.KAKUMA_S01E02_REASONS, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e02"),
-                   raw_field_folding_mode=FoldingModes.CONCATENATE),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
 
         CodingPlan(raw_field="rqa_s01e03_raw",
                    dataset_name="kakuma_s01e03",
@@ -267,11 +235,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.KAKUMA_S01E03_REASONS,
                            coded_field="rqa_s01e03_coded",
                            analysis_file_key="rqa_s01e03_",
-                           folding_mode=FoldingModes.MATRIX
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.KAKUMA_S01E03_REASONS, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e03"),
-                   raw_field_folding_mode=FoldingModes.CONCATENATE),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
 
         CodingPlan(raw_field="rqa_s01e04_raw",
                    dataset_name="kakuma_s01e04",
@@ -286,11 +254,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.KAKUMA_S01E04_REASONS,
                            coded_field="rqa_s01e04_coded",
                            analysis_file_key="rqa_s01e04_",
-                           folding_mode=FoldingModes.MATRIX
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.KAKUMA_S01E04_REASONS, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e04"),
-                   raw_field_folding_mode=FoldingModes.CONCATENATE),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
 
         CodingPlan(raw_field="rqa_s01e05_raw",
                    dataset_name="kakuma_s01e05",
@@ -305,11 +273,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.KAKUMA_S01E05_REASONS,
                            coded_field="rqa_s01e05_coded",
                            analysis_file_key="rqa_s01e05_",
-                           folding_mode=FoldingModes.MATRIX
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.KAKUMA_S01E05_REASONS, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e05"),
-                   raw_field_folding_mode=FoldingModes.CONCATENATE),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
 
         CodingPlan(raw_field="rqa_s01e06_raw",
                    dataset_name="kakuma_s01e06",
@@ -324,11 +292,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.KAKUMA_S01E06_REASONS,
                            coded_field="rqa_s01e06_coded",
                            analysis_file_key="rqa_s01e06_",
-                           folding_mode=FoldingModes.MATRIX
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.KAKUMA_S01E06_REASONS, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e06"),
-                   raw_field_folding_mode=FoldingModes.CONCATENATE),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
 
         CodingPlan(raw_field="rqa_s01e07_raw",
                    dataset_name="kakuma_s01e07",
@@ -343,11 +311,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.KAKUMA_S01E07_REASONS,
                            coded_field="rqa_s01e07_coded",
                            analysis_file_key="rqa_s01e07_",
-                           folding_mode=FoldingModes.MATRIX
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.KAKUMA_S01E07_REASONS, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e07"),
-                   raw_field_folding_mode=FoldingModes.CONCATENATE),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
     ]
 
     @staticmethod
@@ -377,11 +345,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.KAKUMA_LOCATION,
                            coded_field="location_coded",
                            analysis_file_key="location",
-                           folding_mode=FoldingModes.ASSERT_EQUAL
+                           fold_strategy=FoldStrategies.assert_label_ids_equal
                        ),
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma location"),
-                   raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
+                   raw_field_fold_strategy=FoldStrategies.assert_equal),
 
         CodingPlan(raw_field="gender_raw",
                    dataset_name="kakuma_gender",
@@ -394,11 +362,11 @@ class PipelineConfiguration(object):
                            cleaner=somali.DemographicCleaner.clean_gender,
                            coded_field="gender_coded",
                            analysis_file_key="gender",
-                           folding_mode=FoldingModes.ASSERT_EQUAL
+                           fold_strategy=FoldStrategies.assert_label_ids_equal
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma gender"),
-                   raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
+                   raw_field_fold_strategy=FoldStrategies.assert_equal),
 
         CodingPlan(raw_field="age_raw",
                    dataset_name="kakuma_age",
@@ -411,11 +379,11 @@ class PipelineConfiguration(object):
                            cleaner=lambda text: PipelineConfiguration.clean_age_with_range_filter(text),
                            coded_field="age_coded",
                            analysis_file_key="age",
-                           folding_mode=FoldingModes.ASSERT_EQUAL
+                           fold_strategy=FoldStrategies.assert_label_ids_equal
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma age"),
-                   raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
+                   raw_field_fold_strategy=FoldStrategies.assert_equal),
 
         CodingPlan(raw_field="household_language_raw",
                    dataset_name="kakuma_household_language",
@@ -427,11 +395,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE,
                            coded_field="household_language_coded",
                            analysis_file_key="household_language",
-                           folding_mode=FoldingModes.ASSERT_EQUAL
+                           fold_strategy=FoldStrategies.assert_label_ids_equal
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma household language"),
-                   raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
+                   raw_field_fold_strategy=FoldStrategies.assert_equal),
 
         CodingPlan(raw_field="nationality_raw",
                    dataset_name="kakuma_nationality",
@@ -443,11 +411,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.NATIONALITY,
                            coded_field="nationality_coded",
                            analysis_file_key="nationality",
-                           folding_mode=FoldingModes.ASSERT_EQUAL
+                           fold_strategy=FoldStrategies.assert_label_ids_equal
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma nationality"),
-                   raw_field_folding_mode=FoldingModes.ASSERT_EQUAL)
+                   raw_field_fold_strategy=FoldStrategies.assert_equal)
     ]
 
     DADAAB_SURVEY_CODING_PLANS = [
@@ -462,11 +430,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.DADAAB_LOCATION,
                            coded_field="location_coded",
                            analysis_file_key="location",
-                           folding_mode=FoldingModes.ASSERT_EQUAL
+                           fold_strategy=FoldStrategies.assert_label_ids_equal
                        ),
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab location"),
-                   raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
+                   raw_field_fold_strategy=FoldStrategies.assert_equal),
 
         CodingPlan(raw_field="gender_raw",
                    dataset_name="dadaab_gender",
@@ -479,11 +447,11 @@ class PipelineConfiguration(object):
                            cleaner=somali.DemographicCleaner.clean_gender,
                            coded_field="gender_coded",
                            analysis_file_key="gender",
-                           folding_mode=FoldingModes.ASSERT_EQUAL
+                           fold_strategy=FoldStrategies.assert_label_ids_equal
                        )
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab gender"),
-                   raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
+                   raw_field_fold_strategy=FoldStrategies.assert_equal),
 
         CodingPlan(raw_field="age_raw",
                    dataset_name="dadaab_age",
@@ -496,11 +464,11 @@ class PipelineConfiguration(object):
                            cleaner=lambda text: PipelineConfiguration.clean_age_with_range_filter(text),
                            coded_field="age_coded",
                            analysis_file_key="age",
-                           folding_mode=FoldingModes.ASSERT_EQUAL
+                           fold_strategy=FoldStrategies.assert_label_ids_equal
                        )
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab age"),
-                   raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
+                   raw_field_fold_strategy=FoldStrategies.assert_equal),
 
         CodingPlan(raw_field="household_language_raw",
                    dataset_name="dadaab_household_language",
@@ -512,11 +480,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.DADAAB_HOUSEHOLD_LANGUAGE,
                            coded_field="household_language_coded",
                            analysis_file_key="household_language",
-                           folding_mode=FoldingModes.ASSERT_EQUAL
+                           fold_strategy=FoldStrategies.assert_label_ids_equal
                        )
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab household language"),
-                   raw_field_folding_mode=FoldingModes.ASSERT_EQUAL),
+                   raw_field_fold_strategy=FoldStrategies.assert_equal),
 
         CodingPlan(raw_field="nationality_raw",
                    dataset_name="dadaab_nationality",
@@ -528,11 +496,11 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.NATIONALITY,
                            coded_field="nationality_coded",
                            analysis_file_key="nationality",
-                           folding_mode=FoldingModes.ASSERT_EQUAL
+                           fold_strategy=FoldStrategies.assert_label_ids_equal
                        )
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab nationality"),
-                   raw_field_folding_mode=FoldingModes.ASSERT_EQUAL)
+                   raw_field_fold_strategy=FoldStrategies.assert_equal)
     ]
 
     def __init__(self, raw_data_sources, phone_number_uuid_table, timestamp_remappings,
