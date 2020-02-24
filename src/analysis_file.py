@@ -12,7 +12,6 @@ from core_data_modules.util import TimeUtils
 from src.lib import PipelineConfiguration, ConsentUtils, ListeningGroups
 from src.lib.pipeline_configuration import CodingModes
 
-log = Logger(__name__)
 
 class AnalysisFile(object):
     @staticmethod
@@ -44,7 +43,7 @@ class AnalysisFile(object):
             td.append_data(analysis_dict,
                            Metadata(user, Metadata.get_call_location(), TimeUtils.utc_now_as_iso_string()))
 
-        log.info("Tagging listening group participants")
+        # Tag listening group participants
         ListeningGroups.tag_listening_groups_participants(user, data, pipeline_configuration, raw_data_dir)
 
         # Hide data from participants who opted out
