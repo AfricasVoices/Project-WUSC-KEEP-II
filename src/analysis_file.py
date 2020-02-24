@@ -12,6 +12,7 @@ from core_data_modules.util import TimeUtils
 from src.lib import PipelineConfiguration, ConsentUtils, ListeningGroups
 from src.lib.pipeline_configuration import CodingModes
 
+log = Logger(__name__)
 
 class AnalysisFile(object):
     @staticmethod
@@ -43,11 +44,11 @@ class AnalysisFile(object):
             td.append_data(analysis_dict,
                            Metadata(user, Metadata.get_call_location(), TimeUtils.utc_now_as_iso_string()))
 
+        log.info("Tagging listening group participants")
+        ListeningGroups.tag_listening_groups_participants(user, data, pipeline_configuration, raw_data_dir)
+
         # Hide data from participants who opted out
         ConsentUtils.set_stopped(user, data, consent_withdrawn_key, additional_keys=export_keys)
-
-        #log.info("Tagging listening group participants")
-        ListeningGroups.tag_listening_groups_participants(user, data, pipeline_configuration, raw_data_dir)
 
         with open(csv_path, "w") as f:
             TracedDataCSVIO.export_traced_data_iterable_to_csv(data, f, headers=export_keys)
