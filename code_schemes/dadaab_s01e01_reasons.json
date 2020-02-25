@@ -4,6 +4,86 @@
   "Version": "0.0.0.1",
   "Codes": [
     {
+      "CodeID": "code-a7f7eba0",
+      "CodeType": "Normal",
+      "DisplayText": "income generation",
+      "NumericValue": 1,
+      "StringValue": "income_generation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-7b1f897e",
+      "CodeType": "Normal",
+      "DisplayText": "education is important",
+      "NumericValue": 2,
+      "StringValue": "education_is_important",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-2665b282",
+      "CodeType": "Normal",
+      "DisplayText": "poverty",
+      "NumericValue": 3,
+      "StringValue": "poverty",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-c358d677",
+      "CodeType": "Normal",
+      "DisplayText": "not understanding value of education",
+      "NumericValue": 4,
+      "StringValue": "not_understanding_value_of_education",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-6304857a",
+      "CodeType": "Normal",
+      "DisplayText": "lack of encouragement",
+      "NumericValue": 5,
+      "StringValue": "lack_of_encouragement",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-a7337a1e",
+      "CodeType": "Normal",
+      "DisplayText": "ignorance",
+      "NumericValue": 6,
+      "StringValue": "ignorance",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-77836419",
+      "CodeType": "Normal",
+      "DisplayText": "girls have rights",
+      "NumericValue": 7,
+      "StringValue": "girls_have_rights",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-30c957bb",
+      "CodeType": "Normal",
+      "DisplayText": "fear of shame and embarrassment",
+      "NumericValue": 8,
+      "StringValue": "fear_of_shame_and_embarrassment",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-f638dc8b",
+      "CodeType": "Normal",
+      "DisplayText": "negative culture",
+      "NumericValue": 9,
+      "StringValue": "negative_culture",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-65273815",
+      "CodeType": "Normal",
+      "DisplayText": "other",
+      "NumericValue": 10,
+      "StringValue": "other",
+      "VisibleInCoda": true
+    },
+    {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
       "ControlCode": "NA",
