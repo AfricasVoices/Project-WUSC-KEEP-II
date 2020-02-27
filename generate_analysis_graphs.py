@@ -147,7 +147,7 @@ if __name__ == "__main__":
     log.info(f'Writing engagement counts csv ...')
     with open(f"{output_dir}/engagement_counts.csv", "w") as f:
         headers = ["Episode", "Total messages with Opt-ins", "Total participants per-show with Opt-ins",
-         "Total repeat listening group participants", "Total weekly listening group participants",
+         "Total participants with Opt-ins", "Total repeat listening group participants", "Total weekly listening group participants",
                    "Total participants with Opt-ins",]
 
         writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
