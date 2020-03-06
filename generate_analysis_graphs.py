@@ -3,6 +3,7 @@ import glob
 import json
 from collections import OrderedDict
 import sys
+import csv
 
 import altair
 from core_data_modules.cleaners import Codes
@@ -83,6 +84,84 @@ if __name__ == "__main__":
     with open(individuals_json_input_path) as f:
         individuals = TracedDataJsonIO.import_jsonl_to_traced_data_iterable(f)
     log.info(f"Loaded {len(individuals)} individuals")
+
+    log.info(f'Computing repeat and new participation per show ...')
+    # Computes the number of new and repeat consented individuals who participated in each radio show.
+    # Repeat participants are consented individuals who participated in previous shows prior to the target show.
+    # New participants are consented individuals who participated in target show but din't participate in previous shows.
+    repeat_new_participation_map = OrderedDict()  # of rqa_raw_field to participation metrics.
+
+    rqa_raw_fields =  [plan.raw_field for plan in PipelineConfiguration.RQA_CODING_PLANS]
+
+    for rqa_raw_field in rqa_raw_fields:
+        target_radio_show = rqa_raw_field  # radio show in which we are calculating repeat and new participation metrics for.
+
+        target_radio_show_participants = set()  # contains uids of individuals who participated in target radio show.
+        for ind in individuals:
+            if ind["consent_withdrawn"] == Codes.TRUE:
+                continue
+
+            if target_radio_show in ind:
+                target_radio_show_participants.add(ind['uid'])
+        log.debug(f'No. of uids in {target_radio_show} = {len(target_radio_show_participants)} ')
+
+        previous_radio_shows = []  # rqa_raw_fields of shows that aired before the target radio show.
+        for rqa_raw_field in rqa_raw_fields:
+            if rqa_raw_field == target_radio_show:
+                break
+
+            previous_radio_shows.append(rqa_raw_field)
+
+        previous_radio_shows_participants = set()  # uids of individuals who participated in previous radio shows.
+        for rqa_raw_field in previous_radio_shows:
+            for ind in individuals:
+                if ind["consent_withdrawn"] == Codes.TRUE:
+                    continue
+
+                if rqa_raw_field in ind:
+                    previous_radio_shows_participants.add(ind['uid'])
+        log.debug(f'No. of uids in {len(previous_radio_shows)} previous_radio_shows = {len(previous_radio_shows_participants)} ')
+
+        repeat_participants = set()  # uids of individuals who participated in target and previous shows.
+        new_participants = set()  # uids of individuals who participated in target show but din't participate in previous shows.
+        for uid in target_radio_show_participants:
+            if uid in previous_radio_shows_participants:
+                repeat_participants.add(uid)
+            else:
+                new_participants.add(uid)
+        log.debug(f'No. of repeat uids in {target_radio_show} = {len(repeat_participants)} ')
+        log.debug(f'No. of new uids in {target_radio_show} = {len(new_participants)} ')
+
+        repeat_new_participation_map[target_radio_show] = {
+            "Radio Show": target_radio_show,  # Todo switch to dataset name
+            "No. of opt-in participants": len(target_radio_show_participants),
+            "No. of opt-in participants that are new": len(new_participants),
+            "No. of opt-in participants that are repeats": len(repeat_participants),
+            "% of opt-in participants that are new": None,
+            "% of opt-in participants that are repeats": None
+        }
+
+        # Compute:
+        #  -% of opt-in participants that are new, by computing No. of opt-in participants that are new / No. of opt-in participants
+        #  * 100, to 1 decimal place.
+        #  - % of opt-in participants that are repeats, by computing No. of opt-in participants that are repeats / No. of opt-in participants
+        #  * 100, to 1 decimal place.
+        if len(new_participants) > 0:
+            repeat_new_participation_map[target_radio_show]["% of opt-in participants that are new"] = \
+                round(len(new_participants) / len(target_radio_show_participants) * 100, 1)
+            repeat_new_participation_map[target_radio_show]["% of opt-in participants that are repeats"] = \
+                round(len(repeat_participants) / len(target_radio_show_participants) * 100, 1)
+
+    log.info(f'Writing per show repeat and new participation metrics per show csv ...')
+    with open(f"{output_dir}/per_show_repeat_and_new_participation.csv", "w") as f:
+        headers = ["Radio Show", "No. of opt-in participants", "No. of opt-in participants that are new",
+                   "No. of opt-in participants that are repeats", "% of opt-in participants that are new",
+                   "% of opt-in participants that are repeats"]
+        writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
+        writer.writeheader()
+
+        for row in repeat_new_participation_map.values():
+            writer.writerow(row)
 
     sys.setrecursionlimit(15000)
     # Compute the number of messages in each show and graph
