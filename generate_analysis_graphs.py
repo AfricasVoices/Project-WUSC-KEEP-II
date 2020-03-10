@@ -103,7 +103,7 @@ if __name__ == "__main__":
 
             if target_radio_show in ind:
                 target_radio_show_participants.add(ind['uid'])
-        log.debug(f'No. of uids in {target_radio_show} = {len(target_radio_show_participants)} ')
+        log.debug(f'No. of uids in {target_radio_show} = {len(target_radio_show_participants)}')
 
         previous_radio_shows = []  # rqa_raw_fields of shows that aired before the target radio show.
         for rqa_raw_field in rqa_raw_fields:
