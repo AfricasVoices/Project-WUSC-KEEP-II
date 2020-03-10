@@ -42,7 +42,7 @@ DATASETS=(
     "dadaab_gender"
     "dadaab_age"
     "dadaab_nationality"
-    "dadaab_hh_language"
+    "dadaab_household_language"
 )
 
 cd "$CODA_V2_ROOT/data_tools"
