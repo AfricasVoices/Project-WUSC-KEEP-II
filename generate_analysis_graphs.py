@@ -93,6 +93,7 @@ if __name__ == "__main__":
 
     rqa_raw_fields =  [plan.raw_field for plan in PipelineConfiguration.RQA_CODING_PLANS]
 
+    #TODO: update to use responded() once moved to core
     for rqa_raw_field in rqa_raw_fields:
         target_radio_show = rqa_raw_field  # radio show in which we are calculating repeat and new participation metrics for.
 
@@ -122,14 +123,12 @@ if __name__ == "__main__":
                     previous_radio_shows_participants.add(ind['uid'])
         log.debug(f'No. of uids in {len(previous_radio_shows)} previous_radio_shows = {len(previous_radio_shows_participants)} ')
 
-        repeat_participants = set()  # uids of individuals who participated in target and previous shows.
-        new_participants = set()  # uids of individuals who participated in target show but din't participate in previous shows.
-        for uid in target_radio_show_participants:
-            if uid in previous_radio_shows_participants:
-                repeat_participants.add(uid)
-            else:
-                new_participants.add(uid)
+        # Check for uids of individuals who participated in target and previous shows.
+        repeat_participants = target_radio_show_participants.intersection(previous_radio_shows_participants)
         log.debug(f'No. of repeat uids in {target_radio_show} = {len(repeat_participants)} ')
+
+        # Check for uids of individuals who participated in target show but din't participate in previous shows.
+        new_participants = target_radio_show_participants.difference(previous_radio_shows_participants)
         log.debug(f'No. of new uids in {target_radio_show} = {len(new_participants)} ')
 
         repeat_new_participation_map[target_radio_show] = {
