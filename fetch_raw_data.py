@@ -59,7 +59,7 @@ def fetch_from_rapid_pro(user, google_cloud_credentials_file_path, raw_data_dir,
                     raw_runs = [Run.deserialize(run_json) for run_json in json.load(raw_runs_file)]
                 log.info(f"Loaded {len(raw_runs)} runs")
                 raw_runs = rapid_pro.update_raw_runs_with_latest_modified(
-                    flow_id, raw_runs, raw_export_log_file=raw_runs_log_file)
+                    flow_id, raw_runs, raw_export_log_file=raw_runs_log_file, ignore_archives=True)
             except FileNotFoundError:
                 log.info(f"File '{raw_runs_path}' not found, will fetch all runs from the Rapid Pro server for flow '{flow}'")
                 raw_runs = rapid_pro.get_raw_runs_for_flow_id(flow_id, raw_export_log_file=raw_runs_log_file)
@@ -91,11 +91,6 @@ def fetch_from_rapid_pro(user, google_cloud_credentials_file_path, raw_data_dir,
 def fetch_listening_groups_csvs(google_cloud_credentials_file_path, pipeline_configuration, raw_data_dir):
     for listening_group_csv_url in pipeline_configuration.listening_group_csv_urls:
         listening_group = listening_group_csv_url.split("/")[-1]
-
-        if os.path.exists(f'{raw_data_dir}/{listening_group}'):
-            log.info(
-                f"File '{raw_data_dir}' for '{listening_group}' already exists; skipping download")
-            continue
 
         log.info(f"Saving '{listening_group}' to file '{raw_data_dir}'...")
         with open(f'{raw_data_dir}/{listening_group}', "wb") as listening_group_output_file:

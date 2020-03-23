@@ -4,6 +4,83 @@
   "Version": "0.0.0.1",
   "Codes": [
     {
+      "CodeID": "code-a1f4602d",
+      "CodeType": "Normal",
+      "DisplayText": "burundian",
+      "NumericValue": 0,
+      "StringValue": "burundian",
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "burundian"
+      ]
+    },
+    {
+      "CodeID": "code-045fb66d",
+      "CodeType": "Normal",
+      "DisplayText": "congolese",
+      "NumericValue": 1,
+      "StringValue": "congolese",
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "congolese"
+      ]
+    },
+    {
+      "CodeID": "code-2f0127a7",
+      "CodeType": "Normal",
+      "DisplayText": "ethiopian",
+      "NumericValue": 2,
+      "StringValue": "ethiopian",
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "ethiopian"
+      ]
+    },
+    {
+      "CodeID": "code-69be4b04",
+      "CodeType": "Normal",
+      "DisplayText": "kenyan",
+      "NumericValue": 3,
+      "StringValue": "kenyan",
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "kenyan"
+      ]
+    },
+    {
+      "CodeID": "code-1f20538d",
+      "CodeType": "Normal",
+      "DisplayText": "somali",
+      "NumericValue": 4,
+      "StringValue": "somali",
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "somali"
+      ]
+    },
+    {
+      "CodeID": "code-8a77245b",
+      "CodeType": "Normal",
+      "DisplayText": "south sudanese",
+      "NumericValue": 5,
+      "StringValue": "south sudanese",
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "south sudanese"
+      ]
+    },
+    {
+      "CodeID": "code-d721a238",
+      "CodeType": "Normal",
+      "DisplayText": "ugandan",
+      "NumericValue": 6,
+      "StringValue": "ugandan",
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "ugandan"
+      ]
+    },
+    {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
       "ControlCode": "NA",
