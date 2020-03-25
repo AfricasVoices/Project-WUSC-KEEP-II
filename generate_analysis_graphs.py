@@ -132,6 +132,8 @@ if __name__ == "__main__":
         writer.writeheader()
 
         for row in engagement_counts.values():
+            writer.writerow(row)
+
     log.info(f'Computing repeat and new participation per show ...')
     # Computes the number of new and repeat consented individuals who participated in each radio show.
     # Repeat participants are consented individuals who participated in previous shows prior to the target show.
