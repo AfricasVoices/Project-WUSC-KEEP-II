@@ -23,6 +23,7 @@ DATASETS=(
     "kakuma_s01e05"
     "kakuma_s01e06"
     "kakuma_s01e07"
+    "kakuma_s01_intro"
 
     "kakuma_location"
     "kakuma_gender"
@@ -37,6 +38,7 @@ DATASETS=(
     "dadaab_s01e05"
     "dadaab_s01e06"
     "dadaab_s01e07"
+    "dadaab_s01_intro"
 
     "dadaab_location"
     "dadaab_gender"
