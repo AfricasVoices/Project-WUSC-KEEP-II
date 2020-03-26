@@ -181,6 +181,25 @@ class PipelineConfiguration(object):
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01e07"),
                    raw_field_fold_strategy=FoldStrategies.concatenate),
+
+        CodingPlan(raw_field="rqa_s01_intro_raw",
+                   dataset_name="dadaab_s01_intro",
+                   time_field="sent_on",
+                   run_id_field="rqa_s01_intro_run_id",
+                   coda_filename="dadaab_s01_intro.json",
+                   icr_filename="dadaab_s01_intro.csv",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.MULTIPLE,
+                           code_scheme=CodeSchemes.DADAAB_S01_INTRO_REASONS,
+                           coded_field="rqa_s01_intro_coded",
+                           analysis_file_key="rqa_s01_intro_",
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.DADAAB_S01_INTRO_REASONS,
+                                                                                    x, y)
+                       )
+                   ],
+                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01_intro"),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
     ]
 
     KAKUMA_RQA_CODING_PLANS = [
@@ -315,6 +334,26 @@ class PipelineConfiguration(object):
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01e07"),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
+
+        CodingPlan(raw_field="rqa_s01_intro_raw",
+                   dataset_name="kakuma_s01_intro",
+                   time_field="sent_on",
+                   run_id_field="rqa_s01_intro_run_id",
+                   coda_filename="kakuma_s01_intro.json",
+                   icr_filename="kakuma_s01_intro.csv",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.MULTIPLE,
+                           code_scheme=CodeSchemes.KAKUMA_S01_INTRO_REASONS,
+                           coded_field="rqa_s01_intro_coded",
+                           analysis_file_key="rqa_s01_intro_",
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                               CodeSchemes.KAKUMA_S01_INTRO_REASONS,
+                               x, y)
+                       )
+                   ],
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01_intro"),
                    raw_field_fold_strategy=FoldStrategies.concatenate),
     ]
 

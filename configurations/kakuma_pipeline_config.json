@@ -12,7 +12,8 @@
         "wusc_keep_ii_s01_e04_kakuma_activation",
         "wusc_keep_ii_s01_e05_kakuma_activation",
         "wusc_keep_ii_s01_e06_kakuma_activation",
-        "wusc_keep_ii_s01_e07_kakuma_activation"
+        "wusc_keep_ii_s01_e07_kakuma_activation",
+        "wusc_keep_ii_s01_intro_kakuma_activation"
       ],
       "SurveyFlowNames": [
         "wusc_keep_ii_kakuma_demogs",
@@ -52,6 +53,7 @@
     {"RapidProKey": "Rqa_S01_E05_Kakuma (Text) - wusc_keep_ii_s01_e05_kakuma_activation", "PipelineKey": "rqa_s01e05_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_S01_E06_Kakuma (Text) - wusc_keep_ii_s01_e06_kakuma_activation", "PipelineKey": "rqa_s01e06_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_S01_E07_Kakuma (Text) - wusc_keep_ii_s01_e07_kakuma_activation", "PipelineKey": "rqa_s01e07_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S01_Intro_Kakuma (Text) - wusc_keep_ii_s01_intro_kakuma_activation", "PipelineKey": "rqa_s01_intro_raw", "IsActivationMessage": true},
     
     {"RapidProKey": "Rqa_S01_E01_Kakuma (Run ID) - wusc_keep_ii_s01_e01_kakuma_activation", "PipelineKey": "rqa_s01e01_run_id"},
     {"RapidProKey": "Rqa_S01_E02_Kakuma (Run ID) - wusc_keep_ii_s01_e02_kakuma_activation", "PipelineKey": "rqa_s01e02_run_id"},
@@ -60,6 +62,7 @@
     {"RapidProKey": "Rqa_S01_E05_Kakuma (Run ID) - wusc_keep_ii_s01_e05_kakuma_activation", "PipelineKey": "rqa_s01e05_run_id"},
     {"RapidProKey": "Rqa_S01_E06_Kakuma (Run ID) - wusc_keep_ii_s01_e06_kakuma_activation", "PipelineKey": "rqa_s01e06_run_id"},
     {"RapidProKey": "Rqa_S01_E07_Kakuma (Run ID) - wusc_keep_ii_s01_e07_kakuma_activation", "PipelineKey": "rqa_s01e07_run_id"},
+    {"RapidProKey": "Rqa_S01_Intro_Kakuma (Run ID) - wusc_keep_ii_s01_intro_kakuma_activation", "PipelineKey": "rqa_s01_intro_run_id"},
 
     {"RapidProKey": "Rqa_S01_E01_Kakuma (Time) - wusc_keep_ii_s01_e01_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S01_E02_Kakuma (Time) - wusc_keep_ii_s01_e02_kakuma_activation", "PipelineKey": "sent_on"},
@@ -68,6 +71,7 @@
     {"RapidProKey": "Rqa_S01_E05_Kakuma (Time) - wusc_keep_ii_s01_e05_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S01_E06_Kakuma (Time) - wusc_keep_ii_s01_e06_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S01_E07_Kakuma (Time) - wusc_keep_ii_s01_e07_kakuma_activation", "PipelineKey": "sent_on"},
+    {"RapidProKey": "Rqa_S01_Intro_Kakuma (Time) - wusc_keep_ii_s01_intro_kakuma_activation", "PipelineKey": "sent_on"},
 
     {"RapidProKey": "Gender (Text) - wusc_keep_ii_kakuma_demogs", "PipelineKey": "gender_raw"},
     {"RapidProKey": "Age (Text) - wusc_keep_ii_kakuma_demogs", "PipelineKey": "age_raw"},
