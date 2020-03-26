@@ -17,6 +17,7 @@ class CodeSchemes(object):
     DADAAB_S01E05_REASONS = _open_scheme("dadaab_s01e05_reasons.json")
     DADAAB_S01E06_REASONS = _open_scheme("dadaab_s01e06_reasons.json")
     DADAAB_S01E07_REASONS = _open_scheme("dadaab_s01e07_reasons.json")
+    DADAAB_S01_INTRO_REASONS = _open_scheme("dadaab_s01_intro_reasons.json")
 
     KAKUMA_S01E01_REASONS = _open_scheme("kakuma_s01e01_reasons.json")
     KAKUMA_S01E02_REASONS = _open_scheme("kakuma_s01e02_reasons.json")
@@ -25,6 +26,7 @@ class CodeSchemes(object):
     KAKUMA_S01E05_REASONS = _open_scheme("kakuma_s01e05_reasons.json")
     KAKUMA_S01E06_REASONS = _open_scheme("kakuma_s01e06_reasons.json")
     KAKUMA_S01E07_REASONS = _open_scheme("kakuma_s01e07_reasons.json")
+    KAKUMA_S01_INTRO_REASONS = _open_scheme("kakuma_s01_intro_reasons.json")
 
     GENDER = _open_scheme("gender.json")
     NATIONALITY = _open_scheme("nationality.json")
