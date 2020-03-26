@@ -136,6 +136,61 @@
       ]
     },
     {
+      "CodeID": "code-62e86a77",
+      "CodeType": "Normal",
+      "DisplayText": "dadaab girls education champions",
+      "StringValue": "dadaab_girls_education_champions",
+      "NumericValue": 24,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "dadaab girls education champions"
+      ]
+    },
+    {
+      "CodeID": "code-e24f1e4a",
+      "CodeType": "Normal",
+      "DisplayText": "dadaab encouragement for boys",
+      "StringValue": "dadaab_encouragement_for_boys",
+      "NumericValue": 25,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "dadaab encouragement for boys"
+      ]
+    },
+    {
+      "CodeID": "code-5c606074",
+      "CodeType": "Normal",
+      "DisplayText": "dadaab unmarried fathers community view",
+      "StringValue": "dadaab_unmarried_fathers_community_view",
+      "NumericValue": 26,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "dadaab unmarried fathers community view"
+      ]
+    },
+    {
+      "CodeID": "code-90616cb5",
+      "CodeType": "Normal",
+      "DisplayText": "dadaab lessons learnt",
+      "StringValue": "dadaab_lessons_learnt",
+      "NumericValue": 27,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "dadaab lessons learnt"
+      ]
+    },
+    {
+      "CodeID": "code-e3c25a49",
+      "CodeType": "Normal",
+      "DisplayText": "dadaab show suggestions",
+      "StringValue": "dadaab_show_suggestions",
+      "NumericValue": 27,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "dadaab show suggestions"
+      ]
+    },
+    {
       "CodeID": "code-NC-42f1d983",
       "CodeType": "Control",
       "ControlCode": "NC",

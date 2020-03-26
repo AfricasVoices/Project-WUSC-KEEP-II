@@ -136,6 +136,61 @@
       ]
     },
     {
+      "CodeID": "code-b03a8d5c",
+      "CodeType": "Normal",
+      "DisplayText": "kakuma girls education champions",
+      "StringValue": "kakuma_girls_education_champions",
+      "NumericValue": 24,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "kakuma girls education champions"
+      ]
+    },
+    {
+      "CodeID": "code-c93519aa",
+      "CodeType": "Normal",
+      "DisplayText": "kakuma encouragement for boys",
+      "StringValue": "kakuma_encouragement_for_boys",
+      "NumericValue": 25,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "kakuma encouragement for boys"
+      ]
+    },
+    {
+      "CodeID": "code-77ef8619",
+      "CodeType": "Normal",
+      "DisplayText": "kakuma unmarried fathers community view",
+      "StringValue": "kakuma_unmarried_fathers_community_view",
+      "NumericValue": 26,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "kakuma unmarried fathers community view"
+      ]
+    },
+    {
+      "CodeID": "code-e4a281b8",
+      "CodeType": "Normal",
+      "DisplayText": "kakuma lessons learnt",
+      "StringValue": "kakuma_lessons_learnt",
+      "NumericValue": 27,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "kakuma lessons learnt"
+      ]
+    },
+    {
+      "CodeID": "code-9b2cb541",
+      "CodeType": "Normal",
+      "DisplayText": "kakuma show suggestions",
+      "StringValue": "kakuma_show_suggestions",
+      "NumericValue": 27,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "kakuma show suggestions"
+      ]
+    },
+    {
       "CodeID": "code-NC-42f1d983",
       "CodeType": "Control",
       "ControlCode": "NC",
