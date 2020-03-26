@@ -15,7 +15,11 @@
         "wusc_keep_ii_s01_e07_dadaab_activation"
       ],
       "SurveyFlowNames": [
-        "wusc_keep_ii_dadaab_demogs"
+        "wusc_keep_ii_dadaab_demogs",
+        "wusc_keep_ii_s01_w3_dadaab_follow_up",
+        "wusc_keep_ii_s01_w4_dadaab_follow_up",
+        "wusc_keep_ii_s01_w6_dadaab_follow_up",
+        "kakuma_s01_evaluation_flow"
       ],
       "TestContactUUIDs": [
         "f3e07a4a-4c5d-4032-80f3-c31bcf480dc9",
@@ -68,7 +72,19 @@
     {"RapidProKey": "Age (Time) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "age_time"},
     {"RapidProKey": "Location (Time) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "location_time"},
     {"RapidProKey": "Nationality (Time) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "nationality_time"},
-    {"RapidProKey": "Household_Language (Time) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "household_language_time"}
+    {"RapidProKey": "Household_Language (Time) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "household_language_time"},
+    
+    {"RapidProKey": "Girls_Education_Champions (Text) - wusc_keep_ii_s01_w3_dadaab_follow_up", "PipelineKey": "girls_education_champions_raw"},
+    {"RapidProKey": "Encouragement_For_Boys (Text) - wusc_keep_ii_s01_w4_dadaab_follow_up", "PipelineKey": "encouragement_for_boys_raw"},
+    {"RapidProKey": "Unmarried_Fathers_Community_View (Text) - wusc_keep_ii_s01_w6_dadaab_follow_up", "PipelineKey": "unmarried_fathers_community_view_raw"},
+    {"RapidProKey": "Lessons_Learnt (Text) - dadaab_s01_evaluation_flow", "PipelineKey": "lessons_learnt_raw"},
+    {"RapidProKey": "Show_Suggestions (Text) - dadaab_s01_evaluation_flow", "PipelineKey": "show_suggestions_raw"},
+
+    {"RapidProKey": "Girls_Education_Champions (Time) - wusc_keep_ii_s01_w3_dadaab_follow_up", "PipelineKey": "girls_education_champions_time"},
+    {"RapidProKey": "Encouragement_For_Boys (Time) - wusc_keep_ii_s01_w4_dadaab_follow_up", "PipelineKey": "encouragement_for_boys_time"},
+    {"RapidProKey": "Unmarried_Fathers_Community_View (Time) - wusc_keep_ii_s01_w6_dadaab_follow_up", "PipelineKey": "unmarried_fathers_community_view_time"},
+    {"RapidProKey": "Lessons_Learnt (Time) - dadaab_s01_evaluation_flow", "PipelineKey": "lessons_learnt_time"},
+    {"RapidProKey": "Show_Suggestions (Time) - dadaab_s01_evaluation_flow", "PipelineKey": "show_suggestions_time"}
   ],
   "PipelineName": "dadaab_pipeline",
   "ProjectStartDate": "2020-02-06T08:20:00+03:00",
