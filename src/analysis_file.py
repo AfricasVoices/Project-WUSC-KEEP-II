@@ -75,9 +75,9 @@ class AnalysisFile(object):
         # Export listening group bool keys in analysis files headers only when running kakuma_pipeline because
         # dadaab does not have listening groups.
         if pipeline_configuration.pipeline_name == "kakuma_pipeline":
-            export_keys.extend("repeat_listening_group_participant")
+            export_keys.extend(["repeat_listening_group_participant"])
             for plan in PipelineConfiguration.KAKUMA_RQA_CODING_PLANS:
-                export_keys.extend(f'{plan.dataset_name}_listening_group_participant')
+                export_keys.extend([f'{plan.dataset_name}_listening_group_participant'])
         else:
             assert pipeline_configuration.pipeline_name == "dadaab_pipeline", "PipelineName must be either " \
                                                                               "'dadaab_pipeline' or 'kakuma_pipeline'"
