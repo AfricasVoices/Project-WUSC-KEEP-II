@@ -200,7 +200,6 @@ class PipelineConfiguration(object):
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01_intro"),
                    raw_field_fold_strategy=FoldStrategies.concatenate),
-
     ]
 
     KAKUMA_RQA_CODING_PLANS = [
