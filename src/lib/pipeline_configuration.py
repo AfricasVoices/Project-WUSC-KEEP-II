@@ -372,7 +372,8 @@ class PipelineConfiguration(object):
 
     SURVEY_CODING_PLANS = None
 
-    KAKUMA_SURVEY_CODING_PLANS = [
+
+    KAKUMA_DEMOG_CODING_PLANS = [
 
         CodingPlan(raw_field="location_raw",
                    dataset_name="kakuma_location",
@@ -455,6 +456,9 @@ class PipelineConfiguration(object):
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma nationality"),
                    raw_field_fold_strategy=FoldStrategies.assert_equal),
+    ]
+
+    KAKUMA_FOLLOW_UP_SURVEY_CODING_PLANS = [
 
         CodingPlan(raw_field="girls_education_champions_raw",
                    dataset_name="kakuma_girls_education_champions",
@@ -466,7 +470,8 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.KAKUMA_GIRLS_EDUCATION_CHAMPIONS,
                            coded_field="girls_education_champions_coded",
                            analysis_file_key="girls_education_champions_",
-                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.KAKUMA_GIRLS_EDUCATION_CHAMPIONS, x, y)
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                               CodeSchemes.KAKUMA_GIRLS_EDUCATION_CHAMPIONS, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value(
@@ -483,7 +488,8 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.KAKUMA_ENCOURAGEMENT_FOR_BOYS_CHAMPIONS,
                            coded_field="encouragement_for_boys",
                            analysis_file_key="encouragement_for_boys_",
-                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.KAKUMA_ENCOURAGEMENT_FOR_BOYS_CHAMPIONS, x, y)
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                               CodeSchemes.KAKUMA_ENCOURAGEMENT_FOR_BOYS_CHAMPIONS, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value(
@@ -500,7 +506,8 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.KAKUMA_UNMARRIED_FATHERS_COMMUNITY_VIEW,
                            coded_field="unmarried_fathers_community_view",
                            analysis_file_key="unmarried_fathers_community_view_",
-                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.KAKUMA_UNMARRIED_FATHERS_COMMUNITY_VIEW, x, y)
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                               CodeSchemes.KAKUMA_UNMARRIED_FATHERS_COMMUNITY_VIEW, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value(
@@ -517,7 +524,8 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.KAKUMA_LESSONS_LEARNT,
                            coded_field="lessons_learnt",
                            analysis_file_key="lessons_learnt_",
-                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.KAKUMA_LESSONS_LEARNT, x, y)
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.KAKUMA_LESSONS_LEARNT,
+                                                                                    x, y)
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value(
@@ -534,7 +542,8 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.KAKUMA_SHOW_SUGGESTIONS,
                            coded_field="show_suggestions",
                            analysis_file_key="show_suggestions_",
-                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.KAKUMA_SHOW_SUGGESTIONS, x, y)
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.KAKUMA_SHOW_SUGGESTIONS,
+                                                                                    x, y)
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value(
@@ -542,7 +551,9 @@ class PipelineConfiguration(object):
                    raw_field_fold_strategy=FoldStrategies.concatenate)
     ]
 
-    DADAAB_SURVEY_CODING_PLANS = [
+    KAKUMA_SURVEY_CODING_PLANS = KAKUMA_DEMOG_CODING_PLANS + KAKUMA_FOLLOW_UP_SURVEY_CODING_PLANS
+
+    DADAAB_DEMOG_CODING_PLANS = [
 
         CodingPlan(raw_field="location_raw",
                    dataset_name="dadaab_location",
@@ -625,6 +636,9 @@ class PipelineConfiguration(object):
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab nationality"),
                    raw_field_fold_strategy=FoldStrategies.assert_equal),
+    ]
+
+    DADAAB_FOLLOW_UP_SURVEY_CODING_PLANS = [
 
         CodingPlan(raw_field="girls_education_champions_raw",
                    dataset_name="dadaab_girls_education_champions",
@@ -636,10 +650,12 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.DADAAB_GIRLS_EDUCATION_CHAMPIONS,
                            coded_field="girls_education_champions_coded",
                            analysis_file_key="girls_education_champions_",
-                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.DADAAB_GIRLS_EDUCATION_CHAMPIONS, x, y)
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                               CodeSchemes.DADAAB_GIRLS_EDUCATION_CHAMPIONS, x, y)
                        )
                    ],
-                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab girls education champions"),
+                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value(
+                       "dadaab girls education champions"),
                    raw_field_fold_strategy=FoldStrategies.concatenate),
 
         CodingPlan(raw_field="encouragement_for_boys_raw",
@@ -652,7 +668,8 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.DADAAB_ENCOURAGEMENT_FOR_BOYS_CHAMPIONS,
                            coded_field="encouragement_for_boys",
                            analysis_file_key="encouragement_for_boys_",
-                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.DADAAB_ENCOURAGEMENT_FOR_BOYS_CHAMPIONS, x, y)
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                               CodeSchemes.DADAAB_ENCOURAGEMENT_FOR_BOYS_CHAMPIONS, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value(
@@ -669,7 +686,8 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.DADAAB_UNMARRIED_FATHERS_COMMUNITY_VIEW,
                            coded_field="girls_unmarried_fathers_community_view",
                            analysis_file_key="girls_unmarried_fathers_community_view_",
-                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.DADAAB_UNMARRIED_FATHERS_COMMUNITY_VIEW, x, y)
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                               CodeSchemes.DADAAB_UNMARRIED_FATHERS_COMMUNITY_VIEW, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value(
@@ -686,7 +704,8 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.DADAAB_LESSONS_LEARNT,
                            coded_field="lessons_learnt",
                            analysis_file_key="lessons_learnt_",
-                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.DADAAB_LESSONS_LEARNT, x, y)
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.DADAAB_LESSONS_LEARNT,
+                                                                                    x, y)
                        )
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value(
@@ -703,13 +722,16 @@ class PipelineConfiguration(object):
                            code_scheme=CodeSchemes.DADAAB_SHOW_SUGGESTIONS,
                            coded_field="show_suggestions",
                            analysis_file_key="show_suggestions_",
-                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.DADAAB_SHOW_SUGGESTIONS, x, y)
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.DADAAB_SHOW_SUGGESTIONS,
+                                                                                    x, y)
                        )
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value(
                        "dadaab show suggestions"),
                    raw_field_fold_strategy=FoldStrategies.concatenate)
     ]
+
+    DADAAB_SURVEY_CODING_PLANS = DADAAB_DEMOG_CODING_PLANS + DADAAB_FOLLOW_UP_SURVEY_CODING_PLANS
 
     def __init__(self, raw_data_sources, phone_number_uuid_table, timestamp_remappings,
                  rapid_pro_key_remappings, project_start_date, project_end_date, filter_test_messages, move_ws_messages,
