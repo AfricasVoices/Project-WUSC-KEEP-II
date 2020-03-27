@@ -128,7 +128,8 @@
       "NumericValue": -100040,
       "StringValue": "opt_in",
       "VisibleInCoda": true
-    },{
+    },
+    {
       "CodeID": "code-SC-a3a065bc",
       "CodeType": "Meta",
       "MetaCode": "similar_content",
