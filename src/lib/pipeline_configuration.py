@@ -198,7 +198,7 @@ class PipelineConfiguration(object):
                                                                                     x, y)
                        )
                    ],
-                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01_intro"),
+                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s01 intro"),
                    raw_field_fold_strategy=FoldStrategies.concatenate),
     ]
 
@@ -353,7 +353,7 @@ class PipelineConfiguration(object):
                                x, y)
                        )
                    ],
-                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01_intro"),
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s01 intro"),
                    raw_field_fold_strategy=FoldStrategies.concatenate),
     ]
 
