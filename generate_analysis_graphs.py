@@ -4,8 +4,8 @@ import json
 from collections import OrderedDict
 import sys
 import csv
-
 import altair
+
 from core_data_modules.cleaners import Codes
 from core_data_modules.logging import Logger
 from core_data_modules.traced_data.io import TracedDataJsonIO
@@ -15,11 +15,14 @@ from storage.google_drive import drive_client_wrapper
 
 from src.lib import PipelineConfiguration, CodeSchemes
 from src.lib.pipeline_configuration import CodingModes
+from src import AnalysisUtils
 
 Logger.set_project_name("WUSC-KEEP-II")
 log = Logger(__name__)
 
 IMG_SCALE_FACTOR = 10  # Increase this to increase the resolution of the outputted PNGs
+CONSENT_WITHDRAWN_KEY = "consent_withdrawn"
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generates graphs for analysis")
@@ -84,6 +87,47 @@ if __name__ == "__main__":
     with open(individuals_json_input_path) as f:
         individuals = TracedDataJsonIO.import_jsonl_to_traced_data_iterable(f)
     log.info(f"Loaded {len(individuals)} individuals")
+
+    # Compute the number of messages, individuals, and relevant messages per episode and overall.
+    log.info("Computing the per-episode and per-season engagement counts...")
+    engagement_counts = OrderedDict()  # of episode name to counts
+    for plan in PipelineConfiguration.RQA_CODING_PLANS:
+        engagement_counts[plan.dataset_name] = {
+            "Episode": plan.dataset_name,
+
+            "Total Messages": "-",  # Can't report this for individual weeks because the data has been overwritten with "STOP"
+            "Total Messages with Opt-Ins": len(AnalysisUtils.filter_opt_ins(messages, CONSENT_WITHDRAWN_KEY, [plan])),
+            "Total Labelled Messages": len(AnalysisUtils.filter_fully_labelled(messages, CONSENT_WITHDRAWN_KEY, [plan])),
+            "Total Relevant Messages": len(AnalysisUtils.filter_relevant(messages, CONSENT_WITHDRAWN_KEY, [plan])),
+
+            "Total Participants": "-",
+            "Total Participants with Opt-Ins": len(AnalysisUtils.filter_opt_ins(individuals, CONSENT_WITHDRAWN_KEY, [plan])),
+            "Total Relevant Participants": len(AnalysisUtils.filter_relevant(individuals, CONSENT_WITHDRAWN_KEY, [plan]))
+        }
+    engagement_counts["Total"] = {
+        "Episode": "Total",
+
+        "Total Messages": len(messages),
+        "Total Messages with Opt-Ins": len(AnalysisUtils.filter_opt_ins(messages, CONSENT_WITHDRAWN_KEY, PipelineConfiguration.RQA_CODING_PLANS)),
+        "Total Labelled Messages": len(AnalysisUtils.filter_partially_labelled(messages, CONSENT_WITHDRAWN_KEY, PipelineConfiguration.RQA_CODING_PLANS)),
+        "Total Relevant Messages": len(AnalysisUtils.filter_relevant(messages, CONSENT_WITHDRAWN_KEY, PipelineConfiguration.RQA_CODING_PLANS)),
+
+        "Total Participants": len(individuals),
+        "Total Participants with Opt-Ins": len(AnalysisUtils.filter_opt_ins(individuals, CONSENT_WITHDRAWN_KEY, PipelineConfiguration.RQA_CODING_PLANS)),
+        "Total Relevant Participants": len(AnalysisUtils.filter_relevant(individuals, CONSENT_WITHDRAWN_KEY, PipelineConfiguration.RQA_CODING_PLANS))
+    }
+
+    with open(f"{output_dir}/engagement_counts.csv", "w") as f:
+        headers = [
+            "Episode",
+            "Total Messages", "Total Messages with Opt-Ins", "Total Labelled Messages", "Total Relevant Messages",
+            "Total Participants", "Total Participants with Opt-Ins", "Total Relevant Participants"
+        ]
+        writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
+        writer.writeheader()
+
+        for row in engagement_counts.values():
+            writer.writerow(row)
 
     log.info(f'Computing repeat and new participation per show ...')
     # Computes the number of new and repeat consented individuals who participated in each radio show.
