@@ -31,6 +31,12 @@ DATASETS=(
     "kakuma_age"
     "kakuma_nationality"
     "kakuma_household_language"
+    
+    "kakuma_girls_education_champions"
+    "kakuma_encouragement_for_boys"
+    "kakuma_unmarried_fathers_community_view"
+    "kakuma_lessons_learnt"
+    "kakuma_show_suggestions"
 
     "dadaab_s01e01"
     "dadaab_s01e02"
@@ -46,6 +52,12 @@ DATASETS=(
     "dadaab_age"
     "dadaab_nationality"
     "dadaab_household_language"
+    
+    "dadaab_girls_education_champions"
+    "dadaab_encouragement_for_boys"
+    "dadaab_unmarried_fathers_community_view"
+    "dadaab_lessons_learnt"
+    "dadaab_show_suggestions"
 )
 
 cd "$CODA_V2_ROOT/data_tools"

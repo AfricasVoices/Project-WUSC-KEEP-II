@@ -36,6 +36,18 @@ class CodeSchemes(object):
     KAKUMA_HOUSEHOLD_LANGUAGE = _open_scheme("kakuma_household_language.json")
     KAKUMA_LOCATION = _open_scheme("kakuma_location.json")
 
+    DADAAB_GIRLS_EDUCATION_CHAMPIONS = _open_scheme("dadaab_girls_education_champions.json")
+    DADAAB_ENCOURAGEMENT_FOR_BOYS_CHAMPIONS = _open_scheme("dadaab_encouragement_for_boys.json")
+    DADAAB_UNMARRIED_FATHERS_COMMUNITY_VIEW = _open_scheme("dadaab_unmarried_fathers_community_view.json")
+    DADAAB_LESSONS_LEARNT = _open_scheme("dadaab_lessons_learnt.json")
+    DADAAB_SHOW_SUGGESTIONS = _open_scheme("dadaab_show_suggestions.json")
+
+    KAKUMA_GIRLS_EDUCATION_CHAMPIONS = _open_scheme("kakuma_girls_education_champions.json")
+    KAKUMA_ENCOURAGEMENT_FOR_BOYS_CHAMPIONS = _open_scheme("kakuma_encouragement_for_boys.json")
+    KAKUMA_UNMARRIED_FATHERS_COMMUNITY_VIEW = _open_scheme("kakuma_unmarried_fathers_community_view.json")
+    KAKUMA_LESSONS_LEARNT = _open_scheme("kakuma_lessons_learnt.json")
+    KAKUMA_SHOW_SUGGESTIONS = _open_scheme("kakuma_show_suggestions.json")
+
     WS_CORRECT_DATASET = None
     KAKUMA_WS_CORRECT_DATASET = _open_scheme("kakuma_ws_correct_dataset.json")
     DADAAB_WS_CORRECT_DATASET = _open_scheme("dadaab_ws_correct_dataset.json")
