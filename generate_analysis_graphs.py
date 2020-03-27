@@ -66,6 +66,7 @@ if __name__ == "__main__":
     if pipeline_configuration.pipeline_name == "dadaab_pipeline":
         log.info("Extracting Dadaab pipeline data")
         PipelineConfiguration.RQA_CODING_PLANS = PipelineConfiguration.DADAAB_RQA_CODING_PLANS
+        PipelineConfiguration.DEMOG_CODING_PLANS = PipelineConfiguration.DADAAB_DEMOG_CODING_PLANS
         PipelineConfiguration.SURVEY_CODING_PLANS = PipelineConfiguration.DADAAB_SURVEY_CODING_PLANS
         CodeSchemes.WS_CORRECT_DATASET = CodeSchemes.DADAAB_WS_CORRECT_DATASET
     else:
@@ -73,6 +74,7 @@ if __name__ == "__main__":
                                                                           "'dadaab_pipeline or kakuma_pipeline"
         log.info("Extracting Kakuma pipeline data")
         PipelineConfiguration.RQA_CODING_PLANS = PipelineConfiguration.KAKUMA_RQA_CODING_PLANS
+        PipelineConfiguration.DEMOG_CODING_PLANS = PipelineConfiguration.KAKUMA_DEMOG_CODING_PLANS
         PipelineConfiguration.SURVEY_CODING_PLANS = PipelineConfiguration.KAKUMA_SURVEY_CODING_PLANS
         CodeSchemes.WS_CORRECT_DATASET = CodeSchemes.KAKUMA_WS_CORRECT_DATASET
 
@@ -205,6 +207,54 @@ if __name__ == "__main__":
 
         for row in repeat_new_participation_map.values():
             writer.writerow(row)
+
+    log.info("Computing the demographic distributions...")
+    # Compute the number of individuals with each demographic code.
+    # Count excludes individuals who withdrew consent. STOP codes in each scheme are not exported, as it would look
+    # like 0 individuals opted out otherwise, which could be confusing.
+    # TODO: Report percentages?
+    # TODO: Handle distributions for other variables too or just demographics?
+    # TODO: Categorise age
+    demographic_distributions = OrderedDict()  # of analysis_file_key -> code string_value -> number of individuals
+    for plan in PipelineConfiguration.DEMOG_CODING_PLANS:
+        for cc in plan.coding_configurations:
+            if cc.analysis_file_key is None:
+                continue
+
+            demographic_distributions[cc.analysis_file_key] = OrderedDict()
+            for code in cc.code_scheme.codes:
+                if code.control_code == Codes.STOP:
+                    continue
+                demographic_distributions[cc.analysis_file_key][code.string_value] = 0
+
+    for ind in individuals:
+        if ind["consent_withdrawn"] == Codes.TRUE:
+            continue
+
+        for plan in PipelineConfiguration.DEMOG_CODING_PLANS:
+            for cc in plan.coding_configurations:
+                if cc.analysis_file_key is None:
+                    continue
+
+                code = cc.code_scheme.get_code_with_code_id(ind[cc.coded_field]["CodeID"])
+                if code.control_code == Codes.STOP:
+                    continue
+                demographic_distributions[cc.analysis_file_key][code.string_value] += 1
+
+    with open(f"{output_dir}/demographic_distributions.csv", "w") as f:
+        headers = ["Demographic", "Code", "Number of Individuals"]
+        writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
+        writer.writeheader()
+
+        last_demographic = None
+        for demographic, counts in demographic_distributions.items():
+            for code_string_value, number_of_individuals in counts.items():
+                writer.writerow({
+                    "Demographic": demographic if demographic != last_demographic else "",
+                    "Code": code_string_value,
+                    "Number of Individuals": number_of_individuals
+                })
+                last_demographic = demographic
 
     sys.setrecursionlimit(15000)
     # Compute the number of messages in each show and graph
