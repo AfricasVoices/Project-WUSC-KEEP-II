@@ -21,6 +21,19 @@ def impute_age_category(user, data, age_configurations):
     #       code imputation functions.
     age_cc = age_configurations[0]
     age_category_cc = age_configurations[1]
+
+    age_categories = {
+        (10, 14): "10 to 14",
+        (15, 17): "15 to 17",
+        (18, 35): "18 to 35",
+        (36, 54): "36 to 54",
+        (55, 99): "55 to 99"
+    }
+
+    for td in data:
+        age_label = td[age_cc.coded_field]
+        age_code = age_cc.code_scheme.get_code_with_code_id(age_label["CodeID"])
+
         if age_code.code_type == CodeTypes.NORMAL:
             # TODO: If these age categories are standard across projects, move this to Core as a new cleaner.
             age_category = None
