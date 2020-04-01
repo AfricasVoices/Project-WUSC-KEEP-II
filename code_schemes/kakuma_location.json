@@ -4,10 +4,26 @@
   "Version": "0.0.0.1",
   "Codes": [
     {
+      "CodeID": "code-1d80b315",
+      "CodeType": "Normal",
+      "DisplayText": "kakuma",
+      "NumericValue": 0,
+      "StringValue": "kakuma",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-4cc343c5",
+      "CodeType": "Normal",
+      "DisplayText": "kakuma 1,zone 1,block 8",
+      "NumericValue": 1,
+      "StringValue": "kakuma_1_zone_1_block_8",
+      "VisibleInCoda": true
+    },
+    {
       "CodeID": "code-ebd6ec45",
       "CodeType": "Normal",
       "DisplayText": "kakuma 1,zone 2,block 13",
-      "NumericValue": 0,
+      "NumericValue": 2,
       "StringValue": "kakuma_1_zone_2_block_13",
       "VisibleInCoda": true
     },
@@ -15,23 +31,15 @@
       "CodeID": "code-4adda802",
       "CodeType": "Normal",
       "DisplayText": "kakuma 1,zone 2,block 14",
-      "NumericValue": 1,
+      "NumericValue": 3,
       "StringValue": "kakuma_1_zone_2_block_14",
-      "VisibleInCoda": true
-    },
-    {
-      "CodeID": "code-4cc343c5",
-      "CodeType": "Normal",
-      "DisplayText": "kakuma 1,zone 1,block 8",
-      "NumericValue": 2,
-      "StringValue": "kakuma_1_zone_1_block_8",
       "VisibleInCoda": true
     },
     {
       "CodeID": "code-6a976313",
       "CodeType": "Normal",
       "DisplayText": "nadapal location",
-      "NumericValue": 3,
+      "NumericValue": 4,
       "StringValue": "nadapal_location",
       "VisibleInCoda": true
     },
@@ -39,7 +47,7 @@
       "CodeID": "code-32ab3534",
       "CodeType": "Normal",
       "DisplayText": "loyala kakuma",
-      "NumericValue": 4,
+      "NumericValue": 5,
       "StringValue": "loyala_kakuma",
       "VisibleInCoda": true
     },
@@ -47,16 +55,8 @@
       "CodeID": "code-727087ea",
       "CodeType": "Normal",
       "DisplayText": "turkana county",
-      "NumericValue": 5,
-      "StringValue": "turkana_county",
-      "VisibleInCoda": true
-    },
-    {
-      "CodeID": "code-1d80b315",
-      "CodeType": "Normal",
-      "DisplayText": "kakuma",
       "NumericValue": 6,
-      "StringValue": "kakuma",
+      "StringValue": "turkana_county",
       "VisibleInCoda": true
     },
     {
