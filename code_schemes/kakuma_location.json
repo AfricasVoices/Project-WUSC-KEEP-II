@@ -4,6 +4,38 @@
   "Version": "0.0.0.1",
   "Codes": [
     {
+      "CodeID": "code-1d80b315",
+      "CodeType": "Normal",
+      "DisplayText": "camp",
+      "NumericValue": 0,
+      "StringValue": "camp",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-4cc343c5",
+      "CodeType": "Normal",
+      "DisplayText": "host",
+      "NumericValue": 1,
+      "StringValue": "host",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-ebd6ec45",
+      "CodeType": "Normal",
+      "DisplayText": "kakuma",
+      "NumericValue": 2,
+      "StringValue": "kakuma",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-4adda802",
+      "CodeType": "Normal",
+      "DisplayText": "other",
+      "NumericValue": 3,
+      "StringValue": "other",
+      "VisibleInCoda": true
+    },
+    {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
       "ControlCode": "NA",
