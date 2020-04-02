@@ -31,6 +31,7 @@ class CodeSchemes(object):
     GENDER = _open_scheme("gender.json")
     NATIONALITY = _open_scheme("nationality.json")
     AGE = _open_scheme("age.json")
+    AGE_CATEGORY = _open_scheme("age_category.json")
     DADAAB_HOUSEHOLD_LANGUAGE = _open_scheme("dadaab_household_language.json") # We have different language & location schemes for the two camps
     DADAAB_LOCATION = _open_scheme("dadaab_location.json")
     KAKUMA_HOUSEHOLD_LANGUAGE = _open_scheme("kakuma_household_language.json")

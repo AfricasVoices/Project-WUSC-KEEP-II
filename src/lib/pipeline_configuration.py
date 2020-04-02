@@ -420,8 +420,16 @@ class PipelineConfiguration(object):
                            coded_field="age_coded",
                            analysis_file_key="age",
                            fold_strategy=FoldStrategies.assert_label_ids_equal
+                       ),
+                       CodingConfiguration(
+                           coding_mode=CodingModes.SINGLE,
+                           code_scheme=CodeSchemes.AGE_CATEGORY,
+                           coded_field="age_category_coded",
+                           analysis_file_key="age_category",
+                           fold_strategy=FoldStrategies.assert_label_ids_equal
                        )
                    ],
+                   code_imputation_function=code_imputation_functions.impute_age_category,
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma age"),
                    raw_field_fold_strategy=FoldStrategies.assert_equal),
 
@@ -600,8 +608,16 @@ class PipelineConfiguration(object):
                            coded_field="age_coded",
                            analysis_file_key="age",
                            fold_strategy=FoldStrategies.assert_label_ids_equal
+                       ),
+                       CodingConfiguration(
+                           coding_mode=CodingModes.SINGLE,
+                           code_scheme=CodeSchemes.AGE_CATEGORY,
+                           coded_field="age_category_coded",
+                           analysis_file_key="age_category",
+                           fold_strategy=FoldStrategies.assert_label_ids_equal
                        )
                    ],
+                   code_imputation_function=code_imputation_functions.impute_age_category,
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab age"),
                    raw_field_fold_strategy=FoldStrategies.assert_equal),
 
