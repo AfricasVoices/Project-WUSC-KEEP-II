@@ -9,7 +9,8 @@ from core_data_modules.data_models import validators
 from core_data_modules.traced_data.util.fold_traced_data import FoldStrategies
 from dateutil.parser import isoparse
 
-from src.lib import CodeSchemes, code_imputation_functions
+from src.lib import code_imputation_functions
+from configurations.code_schemes import CodeSchemes
 
 
 class CodingModes(object):

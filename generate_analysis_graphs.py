@@ -13,9 +13,10 @@ from core_data_modules.util import IOUtils
 from storage.google_cloud import google_cloud_utils
 from storage.google_drive import drive_client_wrapper
 
-from src.lib import PipelineConfiguration, CodeSchemes
+from src.lib import PipelineConfiguration
 from src.lib.pipeline_configuration import CodingModes
 from src import AnalysisUtils
+from configurations.code_schemes import CodeSchemes
 
 Logger.set_project_name("WUSC-KEEP-II")
 log = Logger(__name__)

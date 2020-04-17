@@ -10,7 +10,8 @@ from storage.google_drive import drive_client_wrapper
 
 from src import CombineRawDatasets, TranslateRapidProKeys, AutoCode, ProductionFile, \
     ApplyManualCodes, AnalysisFile, WSCorrection
-from src.lib import PipelineConfiguration, CodeSchemes, MessageFilters
+from src.lib import PipelineConfiguration, MessageFilters
+from configurations.code_schemes import CodeSchemes
 
 Logger.set_project_name("WUSC-KEEP-II")
 log = Logger(__name__)
