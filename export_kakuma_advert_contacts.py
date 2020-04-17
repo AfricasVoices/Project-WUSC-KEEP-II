@@ -10,7 +10,7 @@ from id_infrastructure.firestore_uuid_table import FirestoreUuidTable
 from storage.google_cloud import google_cloud_utils
 
 from src.lib import PipelineConfiguration
-from src.lib.code_schemes import CodeSchemes
+from configurations.code_schemes import CodeSchemes
 
 Logger.set_project_name("WUSC-KEEP-II")
 log = Logger(__name__)
