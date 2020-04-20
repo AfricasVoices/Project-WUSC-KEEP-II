@@ -4,6 +4,54 @@
   "Version": "0.0.0.1",
   "Codes": [
     {
+      "CodeID": "code-8936e3c3",
+      "CodeType": "Normal",
+      "DisplayText": "abstain from sex",
+      "NumericValue": 1,
+      "StringValue": "abstain_from_sex",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-caced6d4",
+      "CodeType": "Normal",
+      "DisplayText": "awareness creation on effects of early pregnancies and marriages",
+      "NumericValue": 2,
+      "StringValue": "awareness_creation_on_effects_of_early_pregnancies_and_marriages",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-31c269e9",
+      "CodeType": "Normal",
+      "DisplayText": "training on use of condoms",
+      "NumericValue": 3,
+      "StringValue": "training_on_use_of_condoms",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-f63b6485",
+      "CodeType": "Normal",
+      "DisplayText": "awareness creation on girls rights",
+      "NumericValue": 4,
+      "StringValue": "awareness_creation_on_girls_rights",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-30d8dae9",
+      "CodeType": "Normal",
+      "DisplayText": "respect for girls",
+      "NumericValue": 5,
+      "StringValue": "respect_for_girls",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-3992ba9e",
+      "CodeType": "Normal",
+      "DisplayText": "other",
+      "NumericValue": 6,
+      "StringValue": "other",
+      "VisibleInCoda": true
+    },
+    {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
       "ControlCode": "NA",
@@ -88,18 +136,9 @@
       "CodeID": "code-PB-a434a800",
       "CodeType": "Meta",
       "MetaCode": "push_back",
-      "DisplayText": "push back",
+      "DisplayText": "meta: push back",
       "NumericValue": -100000,
       "StringValue": "push_back",
-      "VisibleInCoda": true
-    },
-    {
-      "CodeID": "code-SQ-5e8f0122",
-      "CodeType": "Meta",
-      "MetaCode": "showtime_question",
-      "DisplayText": "showtime question",
-      "NumericValue": -100030,
-      "StringValue": "showtime_question",
       "VisibleInCoda": true
     },
     {
@@ -115,16 +154,25 @@
       "CodeID": "code-G-97cb3199",
       "CodeType": "Meta",
       "MetaCode": "greeting",
-      "DisplayText": "greeting",
+      "DisplayText": "meta: greeting",
       "NumericValue": -100020,
       "StringValue": "greeting",
       "VisibleInCoda": true
     },
     {
+      "CodeID": "code-SQ-5e8f0122",
+      "CodeType": "Meta",
+      "MetaCode": "showtime_question",
+      "DisplayText": "meta: showtime question",
+      "NumericValue": -100030,
+      "StringValue": "showtime_question",
+      "VisibleInCoda": true
+    },
+    {
       "CodeID": "code-OI-c5f1d054",
       "CodeType": "Meta",
-      "MetaCode": "opt_in",
-      "DisplayText": "opt-in",
+      "MetaCode": "opt-in",
+      "DisplayText": "meta: opt-in",
       "NumericValue": -100040,
       "StringValue": "opt_in",
       "VisibleInCoda": true
@@ -133,7 +181,7 @@
       "CodeID": "code-SC-a3a065bc",
       "CodeType": "Meta",
       "MetaCode": "similar_content",
-      "DisplayText": "similar content",
+      "DisplayText": "meta: similar content",
       "NumericValue": -100050,
       "StringValue": "similar_content",
       "VisibleInCoda": true
@@ -142,7 +190,7 @@
       "CodeID": "code-PI-83b90d32",
       "CodeType": "Meta",
       "MetaCode": "participation_incentive",
-      "DisplayText": "participation incentive",
+      "DisplayText": "meta: participation incentive",
       "NumericValue": -100060,
       "StringValue": "participation_incentive",
       "VisibleInCoda": true
