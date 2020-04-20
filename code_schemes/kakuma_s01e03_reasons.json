@@ -46,7 +46,7 @@
     {
       "CodeID": "code-30b953f8",
       "CodeType": "Normal",
-      "DisplayText": "edu equal opportunities for both",
+      "DisplayText": "edu - equal opportunities for both",
       "NumericValue": 6,
       "StringValue": "edu_equal_opportunities_for_both",
       "VisibleInCoda": true
@@ -54,7 +54,7 @@
     {
       "CodeID": "code-fdeaf663",
       "CodeType": "Normal",
-      "DisplayText": "edu proposed solutions",
+      "DisplayText": "edu - proposed solutions",
       "NumericValue": 7,
       "StringValue": "edu_proposed_solutions",
       "VisibleInCoda": true
