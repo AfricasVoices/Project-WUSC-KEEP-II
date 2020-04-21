@@ -6,9 +6,9 @@
     {
       "CodeID": "code-68025c64",
       "CodeType": "Normal",
-      "DisplayText": "edu - equal responsibilities rights",
+      "DisplayText": "edu - equal responsibilities or rights",
       "NumericValue": 1,
-      "StringValue": "edu_equal_responsibilities_rights",
+      "StringValue": "edu_equal_responsibilities_or_rights",
       "VisibleInCoda": true
     },
     {
@@ -38,9 +38,9 @@
     {
       "CodeID": "code-68025c64",
       "CodeType": "Normal",
-      "DisplayText": "edu proposed solutions",
+      "DisplayText": "edu - proposed solutions",
       "NumericValue": 5,
-      "StringValue": "gender_proposed_solutions",
+      "StringValue": "edu_gender_proposed_solutions",
       "VisibleInCoda": true
     },
     {
