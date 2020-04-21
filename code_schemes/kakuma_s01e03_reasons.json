@@ -4,6 +4,102 @@
   "Version": "0.0.0.1",
   "Codes": [
     {
+      "CodeID": "code-68025c64",
+      "CodeType": "Normal",
+      "DisplayText": "culture or gender roles",
+      "NumericValue": 1,
+      "StringValue": "culture_or_gender_roles",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-aa4e6411",
+      "CodeType": "Normal",
+      "DisplayText": "training for girls to be wives",
+      "NumericValue": 2,
+      "StringValue": "training_for_girls_to_be_wives",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-0eec27d0",
+      "CodeType": "Normal",
+      "DisplayText": "religion",
+      "NumericValue": 3,
+      "StringValue": "religion",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-53d0dbba",
+      "CodeType": "Normal",
+      "DisplayText": "equal rights",
+      "NumericValue": 4,
+      "StringValue": "equal_rights",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-636d10a6",
+      "CodeType": "Normal",
+      "DisplayText": "gender stereotyping",
+      "NumericValue": 5,
+      "StringValue": "gender_stereotyping",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-30b953f8",
+      "CodeType": "Normal",
+      "DisplayText": "edu - equal opportunities for both",
+      "NumericValue": 6,
+      "StringValue": "edu_equal_opportunities_for_both",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-fdeaf663",
+      "CodeType": "Normal",
+      "DisplayText": "edu - proposed solutions",
+      "NumericValue": 7,
+      "StringValue": "edu_proposed_solutions",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-773d8fdb",
+      "CodeType": "Normal",
+      "DisplayText": "parents level of education or exposure",
+      "NumericValue": 8,
+      "StringValue": "parents_level_of_education_or_exposure",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-75ddf685",
+      "CodeType": "Normal",
+      "DisplayText": "it is considered shameful",
+      "NumericValue": 9,
+      "StringValue": "it_is_considered_shameful",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-bf1a4df9",
+      "CodeType": "Normal",
+      "DisplayText": "gender discrimination",
+      "NumericValue": 10,
+      "StringValue": "gender_discrimination",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-bee91032",
+      "CodeType": "Normal",
+      "DisplayText": "sensitize parents on importance of education",
+      "NumericValue": 11,
+      "StringValue": "sensitize_parents_on_importance_of_education",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-5673ccd9",
+      "CodeType": "Normal",
+      "DisplayText": "others",
+      "NumericValue": 12,
+      "StringValue": "others",
+      "VisibleInCoda": true
+    },
+    {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
       "ControlCode": "NA",
@@ -88,18 +184,9 @@
       "CodeID": "code-PB-a434a800",
       "CodeType": "Meta",
       "MetaCode": "push_back",
-      "DisplayText": "push back",
+      "DisplayText": "meta: push back",
       "NumericValue": -100000,
       "StringValue": "push_back",
-      "VisibleInCoda": true
-    },
-    {
-      "CodeID": "code-SQ-5e8f0122",
-      "CodeType": "Meta",
-      "MetaCode": "showtime_question",
-      "DisplayText": "showtime question",
-      "NumericValue": -100030,
-      "StringValue": "showtime_question",
       "VisibleInCoda": true
     },
     {
@@ -115,16 +202,25 @@
       "CodeID": "code-G-97cb3199",
       "CodeType": "Meta",
       "MetaCode": "greeting",
-      "DisplayText": "greeting",
+      "DisplayText": "meta: greeting",
       "NumericValue": -100020,
       "StringValue": "greeting",
       "VisibleInCoda": true
     },
     {
+      "CodeID": "code-SQ-5e8f0122",
+      "CodeType": "Meta",
+      "MetaCode": "showtime_question",
+      "DisplayText": "meta: showtime question",
+      "NumericValue": -100030,
+      "StringValue": "showtime_question",
+      "VisibleInCoda": true
+    },
+    {
       "CodeID": "code-OI-c5f1d054",
       "CodeType": "Meta",
-      "MetaCode": "opt_in",
-      "DisplayText": "opt-in",
+      "MetaCode": "opt-in",
+      "DisplayText": "meta: opt-in",
       "NumericValue": -100040,
       "StringValue": "opt_in",
       "VisibleInCoda": true
@@ -133,7 +229,7 @@
       "CodeID": "code-SC-a3a065bc",
       "CodeType": "Meta",
       "MetaCode": "similar_content",
-      "DisplayText": "similar content",
+      "DisplayText": "meta: similar content",
       "NumericValue": -100050,
       "StringValue": "similar_content",
       "VisibleInCoda": true
@@ -142,7 +238,7 @@
       "CodeID": "code-PI-83b90d32",
       "CodeType": "Meta",
       "MetaCode": "participation_incentive",
-      "DisplayText": "participation incentive",
+      "DisplayText": "meta: participation incentive",
       "NumericValue": -100060,
       "StringValue": "participation_incentive",
       "VisibleInCoda": true
