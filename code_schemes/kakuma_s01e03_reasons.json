@@ -62,9 +62,9 @@
     {
       "CodeID": "code-773d8fdb",
       "CodeType": "Normal",
-      "DisplayText": "parent level of education or exposure",
+      "DisplayText": "parents level of education or exposure",
       "NumericValue": 8,
-      "StringValue": "parent_level_of_education_or_exposure",
+      "StringValue": "parents_level_of_education_or_exposure",
       "VisibleInCoda": true
     },
     {
