@@ -4,7 +4,7 @@
   "Version": "0.0.0.1",
   "Codes": [
     {
-      "CodeID": "code-68025c64",
+      "CodeID": "code-33fa2153",
       "CodeType": "Normal",
       "DisplayText": "edu - equal responsibilities or rights",
       "NumericValue": 1,
@@ -12,7 +12,7 @@
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-68025c64",
+      "CodeID": "code-baf78662",
       "CodeType": "Normal",
       "DisplayText": "culture or beliefs",
       "NumericValue": 2,
@@ -20,7 +20,7 @@
       "VisibleInCoda": true
     },
      {
-      "CodeID": "code-68025c64",
+      "CodeID": "code-8fe6e004",
       "CodeType": "Normal",
       "DisplayText": "gender roles and stereotyping",
       "NumericValue": 3,
@@ -28,7 +28,7 @@
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-68025c64",
+      "CodeID": "code-30077595",
       "CodeType": "Normal",
       "DisplayText": "gender discrimination",
       "NumericValue": 4,
@@ -36,7 +36,7 @@
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-68025c64",
+      "CodeID": "code-7677c4aa",
       "CodeType": "Normal",
       "DisplayText": "edu - proposed solutions",
       "NumericValue": 5,
@@ -44,7 +44,7 @@
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-68025c64",
+      "CodeID": "code-62103bba",
       "CodeType": "Normal",
       "DisplayText": "other",
       "NumericValue": 6,
