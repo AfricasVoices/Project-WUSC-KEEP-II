@@ -4,6 +4,70 @@
   "Version": "0.0.0.1",
   "Codes": [
     {
+      "CodeID": "code-76434f2c",
+      "CodeType": "Normal",
+      "DisplayText": "lack of school fees",
+      "NumericValue": 1,
+      "StringValue": "lack_of_school_fees",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-bd2f58a8",
+      "CodeType": "Normal",
+      "DisplayText": "lack awareness of value education",
+      "NumericValue": 2,
+      "StringValue": "lack_awareness_of_value_education",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-55bf9d8c",
+      "CodeType": "Normal",
+      "DisplayText": "edu - awareness creation",
+      "NumericValue": 3,
+      "StringValue": "edu_awareness_creation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-eddce7a4",
+      "CodeType": "Normal",
+      "DisplayText": "culture or religion",
+      "NumericValue": 4,
+      "StringValue": "culture_or_religion",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-14309b9d",
+      "CodeType": "Normal",
+      "DisplayText": "house chore burden",
+      "NumericValue": 5,
+      "StringValue": "house_chore_burden",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-822b31ac",
+      "CodeType": "Normal",
+      "DisplayText": "edu - equal rights",
+      "NumericValue": 6,
+      "StringValue": "edu_equal_rights",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-47a944a8",
+      "CodeType": "Normal",
+      "DisplayText": "edu - education is important",
+      "NumericValue": 7,
+      "StringValue": "edu_education_is_important",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-186f812a",
+      "CodeType": "Normal",
+      "DisplayText": "other",
+      "NumericValue": 8,
+      "StringValue": "other",
+      "VisibleInCoda": true
+    },
+    {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
       "ControlCode": "NA",
@@ -88,7 +152,7 @@
       "CodeID": "code-PB-a434a800",
       "CodeType": "Meta",
       "MetaCode": "push_back",
-      "DisplayText": "push back",
+      "DisplayText": "meta: push back",
       "NumericValue": -100000,
       "StringValue": "push_back",
       "VisibleInCoda": true
@@ -97,7 +161,7 @@
       "CodeID": "code-SQ-5e8f0122",
       "CodeType": "Meta",
       "MetaCode": "showtime_question",
-      "DisplayText": "showtime question",
+      "DisplayText": "meta: showtime question",
       "NumericValue": -100030,
       "StringValue": "showtime_question",
       "VisibleInCoda": true
@@ -115,7 +179,7 @@
       "CodeID": "code-G-97cb3199",
       "CodeType": "Meta",
       "MetaCode": "greeting",
-      "DisplayText": "greeting",
+      "DisplayText": "meta: greeting",
       "NumericValue": -100020,
       "StringValue": "greeting",
       "VisibleInCoda": true
@@ -123,8 +187,8 @@
     {
       "CodeID": "code-OI-c5f1d054",
       "CodeType": "Meta",
-      "MetaCode": "opt_in",
-      "DisplayText": "opt-in",
+      "MetaCode": "opt-in",
+      "DisplayText": "meta: opt-in",
       "NumericValue": -100040,
       "StringValue": "opt_in",
       "VisibleInCoda": true
@@ -133,7 +197,7 @@
       "CodeID": "code-SC-a3a065bc",
       "CodeType": "Meta",
       "MetaCode": "similar_content",
-      "DisplayText": "similar content",
+      "DisplayText": "meta: similar content",
       "NumericValue": -100050,
       "StringValue": "similar_content",
       "VisibleInCoda": true
@@ -142,7 +206,7 @@
       "CodeID": "code-PI-83b90d32",
       "CodeType": "Meta",
       "MetaCode": "participation_incentive",
-      "DisplayText": "participation incentive",
+      "DisplayText": "meta: participation incentive",
       "NumericValue": -100060,
       "StringValue": "participation_incentive",
       "VisibleInCoda": true
