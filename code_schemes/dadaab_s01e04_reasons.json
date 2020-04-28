@@ -47,7 +47,7 @@
       "CodeID": "code-00896259",
       "CodeType": "Normal",
       "DisplayText": "gender discrimination",
-      "NumericValue": 3,
+      "NumericValue": 6,
       "StringValue": "gender_discrimination",
       "VisibleInCoda": true
     },
@@ -55,7 +55,7 @@
       "CodeID": "code-f2125c70",
       "CodeType": "Normal",
       "DisplayText": "reduce house chores or share with boys",
-      "NumericValue": 6,
+      "NumericValue": 7,
       "StringValue": "reduce_house_chores_or_share_with_boys",
       "VisibleInCoda": true
     },
@@ -63,7 +63,7 @@
       "CodeID": "code-aaf57bc3",
       "CodeType": "Normal",
       "DisplayText": "training for girls to be wives",
-      "NumericValue": 7,
+      "NumericValue": 8,
       "StringValue": "training_for_girls_to_be_wives",
       "VisibleInCoda": true
     },
@@ -71,7 +71,7 @@
       "CodeID": "code-e25b4f1f",
       "CodeType": "Normal",
       "DisplayText": "other",
-      "NumericValue": 8,
+      "NumericValue": 9,
       "StringValue": "other",
       "VisibleInCoda": true
     },

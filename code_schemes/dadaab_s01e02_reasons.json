@@ -31,7 +31,7 @@
       "CodeID": "code-519fc494",
       "CodeType": "Normal",
       "DisplayText": "edu - awareness creation",
-      "NumericValue": 3,
+      "NumericValue": 4,
       "StringValue": "edu_awareness_creation",
       "VisibleInCoda": true
     },
@@ -39,7 +39,7 @@
       "CodeID": "code-4a17f83f",
       "CodeType": "Normal",
       "DisplayText": "lack awareness of value of education",
-      "NumericValue": 4,
+      "NumericValue": 5,
       "StringValue": "lack_awareness_of_value_of_education",
       "VisibleInCoda": true
     },
@@ -47,7 +47,7 @@
       "CodeID": "code-faff909a",
       "CodeType": "Normal",
       "DisplayText": "provision of school requirements or support",
-      "NumericValue": 5,
+      "NumericValue": 6,
       "StringValue": "provision_of_school_requirements_or_support",
       "VisibleInCoda": true
     },
@@ -55,7 +55,7 @@
       "CodeID": "code-15b5f5e2",
       "CodeType": "Normal",
       "DisplayText": "religion",
-      "NumericValue": 6,
+      "NumericValue": 7,
       "StringValue": "religion",
       "VisibleInCoda": true
     },
@@ -63,7 +63,7 @@
       "CodeID": "code-fc21efc9",
       "CodeType": "Normal",
       "DisplayText": "other",
-      "NumericValue": 7,
+      "NumericValue": 8,
       "StringValue": "other",
       "VisibleInCoda": true
     },
