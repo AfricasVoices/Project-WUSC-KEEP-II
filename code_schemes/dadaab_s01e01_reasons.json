@@ -40,7 +40,7 @@
       "CodeType": "Normal",
       "DisplayText": "edu - girls encouragement",
       "NumericValue": 5,
-      "StringValue": "edu - girls_encouragement",
+      "StringValue": "edu_girls_encouragement",
       "VisibleInCoda": true
     },
     {
@@ -72,7 +72,7 @@
       "CodeType": "Normal",
       "DisplayText": "culture or beliefs",
       "NumericValue": 9,
-      "StringValue": "culture or beliefs",
+      "StringValue": "culture_or_beliefs",
       "VisibleInCoda": true
     },
     {
