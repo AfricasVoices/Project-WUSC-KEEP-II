@@ -54,9 +54,9 @@
     {
       "CodeID": "code-47a944a8",
       "CodeType": "Normal",
-      "DisplayText": "edu - education is important",
+      "DisplayText": "girls education is important",
       "NumericValue": 7,
-      "StringValue": "edu_education_is_important",
+      "StringValue": "girls_education_is_important",
       "VisibleInCoda": true
     },
     {
