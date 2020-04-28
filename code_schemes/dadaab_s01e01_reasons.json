@@ -14,9 +14,9 @@
     {
       "CodeID": "code-7b1f897e",
       "CodeType": "Normal",
-      "DisplayText": "education is important",
+      "DisplayText": "girls education is important",
       "NumericValue": 2,
-      "StringValue": "education_is_important",
+      "StringValue": "girls_education_is_important",
       "VisibleInCoda": true
     },
     {
@@ -30,17 +30,17 @@
     {
       "CodeID": "code-c358d677",
       "CodeType": "Normal",
-      "DisplayText": "not understanding value of education",
+      "DisplayText": "lack awareness of value of education",
       "NumericValue": 4,
-      "StringValue": "not_understanding_value_of_education",
+      "StringValue": "lack_awareness_of_value_of_education",
       "VisibleInCoda": true
     },
     {
       "CodeID": "code-6304857a",
       "CodeType": "Normal",
-      "DisplayText": "lack of encouragement",
+      "DisplayText": "edu - girls encouragement",
       "NumericValue": 5,
-      "StringValue": "lack_of_encouragement",
+      "StringValue": "edu - girls_encouragement",
       "VisibleInCoda": true
     },
     {
@@ -54,9 +54,9 @@
     {
       "CodeID": "code-77836419",
       "CodeType": "Normal",
-      "DisplayText": "girls have rights",
+      "DisplayText": "edu - equal rights",
       "NumericValue": 7,
-      "StringValue": "girls_have_rights",
+      "StringValue": "edu_equal_rights",
       "VisibleInCoda": true
     },
     {
@@ -70,9 +70,17 @@
     {
       "CodeID": "code-f638dc8b",
       "CodeType": "Normal",
-      "DisplayText": "negative culture",
+      "DisplayText": "culture or beliefs",
       "NumericValue": 9,
-      "StringValue": "negative_culture",
+      "StringValue": "culture or beliefs",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-26bbc018",
+      "CodeType": "Normal",
+      "DisplayText": "religion",
+      "NumericValue": 11,
+      "StringValue": "religion",
       "VisibleInCoda": true
     },
     {
