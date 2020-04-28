@@ -54,9 +54,9 @@
     {
       "CodeID": "code-f2125c70",
       "CodeType": "Normal",
-      "DisplayText": "reduce house chores share with boys",
+      "DisplayText": "reduce house chores or share with boys",
       "NumericValue": 6,
-      "StringValue": "reduce_house_chores_share_with_boys",
+      "StringValue": "reduce_house_chores_or_share_with_boys",
       "VisibleInCoda": true
     },
     {
