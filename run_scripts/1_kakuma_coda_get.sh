@@ -36,27 +36,6 @@ DATASETS=(
     "kakuma_unmarried_fathers_community_view"
     "kakuma_lessons_learnt"
     "kakuma_show_suggestions"
-
-    "dadaab_s01e01"
-    "dadaab_s01e02"
-    "dadaab_s01e03"
-    "dadaab_s01e04"
-    "dadaab_s01e05"
-    "dadaab_s01e06"
-    "dadaab_s01e07"
-    "dadaab_s01_intro"
-
-    "dadaab_location"
-    "dadaab_gender"
-    "dadaab_age"
-    "dadaab_nationality"
-    "dadaab_household_language"
-
-    "dadaab_girls_education_champions"
-    "dadaab_encouragement_for_boys"
-    "dadaab_unmarried_fathers_community_view"
-    "dadaab_lessons_learnt"
-    "dadaab_show_suggestions"
 )
 
 cd "$CODA_V2_ROOT/data_tools"
