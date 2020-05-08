@@ -19,7 +19,7 @@ done
 
 if [[ $# -ne 4 ]]; then
     echo "Usage: ./5_automated_analysis [--profile-cpu <cpu-profile-output-path>] <user> <google-cloud-credentials-file-path> <pipeline-configuration-file-path> <data-root>"
-    echo "Generates the analysis graphs using the traced data produced by 3_generate_outputs.sh"
+    echo "Generates the automated analysis files using the traced data produced by 3_generate_outputs.sh"
     exit
 fi
 

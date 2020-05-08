@@ -66,6 +66,7 @@ if __name__ == "__main__":
             google_cloud_credentials_file_path, pipeline_configuration.drive_upload.drive_credentials_file_url))
         drive_client_wrapper.init_client_from_info(credentials_info)
 
+    # Infer which RQA and Demog coding plans to use from the pipeline name.
     if pipeline_configuration.pipeline_name == "dadaab_pipeline":
         log.info("Extracting Dadaab pipeline data")
         PipelineConfiguration.RQA_CODING_PLANS = PipelineConfiguration.DADAAB_RQA_CODING_PLANS
