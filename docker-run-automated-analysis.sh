@@ -2,7 +2,7 @@
 
 set -e
 
-IMAGE_NAME=wusc-keep-ii-generate-analysis-graphs
+IMAGE_NAME=wusc-keep-ii-automated-analysis
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -43,7 +43,7 @@ if [[ "$PROFILE_CPU" = true ]]; then
     PROFILE_CPU_CMD="pyflame -o /data/cpu.prof -t"
     SYS_PTRACE_CAPABILITY="--cap-add SYS_PTRACE"
 fi
-CMD="pipenv run $PROFILE_CPU_CMD python -u generate_analysis_graphs.py \
+CMD="pipenv run $PROFILE_CPU_CMD python -u automated_analysis.py \
     \"$USER\" /credentials/google-cloud-credentials.json /data/pipeline_configuration.json \
     /data/messages-traced-data.jsonl /data/individuals-traced-data.jsonl /data/output-graphs
 "

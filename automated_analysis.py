@@ -1,12 +1,13 @@
 import argparse
-import glob
-import json
-from collections import OrderedDict
-import sys
 import csv
-import altair
+import json
+import random
+from collections import OrderedDict
+from glob import glob
 
+import plotly.express as px
 from core_data_modules.cleaners import Codes
+from core_data_modules.data_models.code_scheme import CodeTypes
 from core_data_modules.logging import Logger
 from core_data_modules.traced_data.io import TracedDataJsonIO
 from core_data_modules.util import IOUtils
@@ -24,9 +25,9 @@ log = Logger(__name__)
 IMG_SCALE_FACTOR = 10  # Increase this to increase the resolution of the outputted PNGs
 CONSENT_WITHDRAWN_KEY = "consent_withdrawn"
 
-
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generates graphs for analysis")
+    parser = argparse.ArgumentParser(description="Runs automated analysis over the outputs produced by "
+                                                 "`generate_outputs.py`, and optionally uploads the outputs to Drive.")
 
     parser.add_argument("user", help="User launching this program")
     parser.add_argument("google_cloud_credentials_file_path", metavar="google-cloud-credentials-file-path",
@@ -40,7 +41,7 @@ if __name__ == "__main__":
     parser.add_argument("individuals_json_input_path", metavar="individuals-json-input-path",
                         help="Path to a JSONL file to read the TracedData of the messages data from")
     parser.add_argument("output_dir", metavar="output-dir",
-                        help="Directory to write the output graphs to")
+                        help="Directory to write the analysis outputs to")
 
     args = parser.parse_args()
 
@@ -53,6 +54,7 @@ if __name__ == "__main__":
     output_dir = args.output_dir
 
     IOUtils.ensure_dirs_exist(output_dir)
+    IOUtils.ensure_dirs_exist(f"{output_dir}/graphs")
 
     log.info("Loading Pipeline Configuration File...")
     with open(pipeline_configuration_file_path) as f:
@@ -63,7 +65,8 @@ if __name__ == "__main__":
         credentials_info = json.loads(google_cloud_utils.download_blob_to_string(
             google_cloud_credentials_file_path, pipeline_configuration.drive_upload.drive_credentials_file_url))
         drive_client_wrapper.init_client_from_info(credentials_info)
-        # Infer which RQA and Demog coding plans to use from the pipeline name.
+
+    # Infer which RQA and Demog coding plans to use from the pipeline name.
     if pipeline_configuration.pipeline_name == "dadaab_pipeline":
         log.info("Extracting Dadaab pipeline data")
         PipelineConfiguration.RQA_CODING_PLANS = PipelineConfiguration.DADAAB_RQA_CODING_PLANS
@@ -257,55 +260,170 @@ if __name__ == "__main__":
                 })
                 last_demographic = demographic
 
-    sys.setrecursionlimit(15000)
-    # Compute the number of messages in each show and graph
-    log.info(f"Graphing the number of messages received in response to each show...")
-    messages_per_show = OrderedDict()  # Of radio show index to messages count
-    for plan in PipelineConfiguration.RQA_CODING_PLANS:
-        messages_per_show[plan.raw_field] = 0
+    # Compute the theme distributions
+    log.info("Computing the theme distributions...")
 
-    for msg in messages:
-        for plan in PipelineConfiguration.RQA_CODING_PLANS:
-            if msg.get(plan.raw_field, "") != "" and msg["consent_withdrawn"] == "false":
-                messages_per_show[plan.raw_field] += 1
+    def make_survey_counts_dict():
+        survey_counts = OrderedDict()
+        survey_counts["Total Participants"] = 0
+        survey_counts["Total Participants %"] = None
+        for plan in PipelineConfiguration.SURVEY_CODING_PLANS:
+            for cc in plan.coding_configurations:
+                if cc.analysis_file_key is None:
+                    continue
 
-    chart = altair.Chart(
-        altair.Data(values=[{"show": k, "count": v} for k, v in messages_per_show.items()])
-    ).mark_bar().encode(
-        x=altair.X("show:N", title="Show", sort=list(messages_per_show.keys())),
-        y=altair.Y("count:Q", title="Number of Messages")
-    ).properties(
-        title="Messages per Show"
-    )
-    chart.save(f"{output_dir}/messages_per_show.html")
-    chart.save(f"{output_dir}/messages_per_show.png", scale_factor=IMG_SCALE_FACTOR)
+                for code in cc.code_scheme.codes:
+                    if code.control_code == Codes.STOP:
+                        continue  # Ignore STOP codes because we already excluded everyone who opted out.
+                    survey_counts[f"{cc.analysis_file_key}:{code.string_value}"] = 0
+                    survey_counts[f"{cc.analysis_file_key}:{code.string_value} %"] = None
 
-    # Compute the number of individuals in each show and graph
-    log.info(f"Graphing the number of individuals who responded to each show...")
-    individuals_per_show = OrderedDict()  # Of radio show index to individuals count
-    for plan in PipelineConfiguration.RQA_CODING_PLANS:
-        individuals_per_show[plan.raw_field] = 0
+        return survey_counts
 
-    for ind in individuals:
-        for plan in PipelineConfiguration.RQA_CODING_PLANS:
-            if ind.get(plan.raw_field, "") != "" and ind["consent_withdrawn"] == "false":
-                individuals_per_show[plan.raw_field] += 1
+    def update_survey_counts(survey_counts, td):
+        for plan in PipelineConfiguration.SURVEY_CODING_PLANS:
+            for cc in plan.coding_configurations:
+                if cc.analysis_file_key is None:
+                    continue
 
-    chart = altair.Chart(
-        altair.Data(values=[{"show": k, "count": v} for k, v in individuals_per_show.items()])
-    ).mark_bar().encode(
-        x=altair.X("show:N", title="Show", sort=list(individuals_per_show.keys())),
-        y=altair.Y("count:Q", title="Number of Individuals")
-    ).properties(
-        title="Individuals per Show"
-    )
-    chart.save(f"{output_dir}/individuals_per_show.html")
-    chart.save(f"{output_dir}/individuals_per_show.png", scale_factor=IMG_SCALE_FACTOR)
+                if cc.coding_mode == CodingModes.SINGLE:
+                    codes = [cc.code_scheme.get_code_with_code_id(td[cc.coded_field]["CodeID"])]
+                else:
+                    assert cc.coding_mode == CodingModes.MULTIPLE
+                    codes = [cc.code_scheme.get_code_with_code_id(label["CodeID"]) for label in td[cc.coded_field]]
+
+                for code in codes:
+                    if code.control_code == Codes.STOP:
+                        continue
+                    survey_counts[f"{cc.analysis_file_key}:{code.string_value}"] += 1
+
+    def set_survey_percentages(survey_counts, total_survey_counts):
+        if total_survey_counts["Total Participants"] == 0:
+            survey_counts["Total Participants %"] = "-"
+        else:
+            survey_counts["Total Participants %"] = \
+                round(survey_counts["Total Participants"] / total_survey_counts["Total Participants"] * 100, 1)
+
+        for plan in PipelineConfiguration.SURVEY_CODING_PLANS:
+            for cc in plan.coding_configurations:
+                if cc.analysis_file_key is None:
+                    continue
+
+                for code in cc.code_scheme.codes:
+                    if code.control_code == Codes.STOP:
+                        continue
+
+                    code_count = survey_counts[f"{cc.analysis_file_key}:{code.string_value}"]
+                    code_total = total_survey_counts[f"{cc.analysis_file_key}:{code.string_value}"]
+
+                    if code_total == 0:
+                        survey_counts[f"{cc.analysis_file_key}:{code.string_value} %"] = "-"
+                    else:
+                        survey_counts[f"{cc.analysis_file_key}:{code.string_value} %"] = \
+                            round(code_count / code_total * 100, 1)
+
+    episodes = OrderedDict()
+    for episode_plan in PipelineConfiguration.RQA_CODING_PLANS:
+        # Prepare empty counts of the survey responses for each variable
+        themes = OrderedDict()
+        episodes[episode_plan.raw_field] = themes
+        for cc in episode_plan.coding_configurations:
+            # TODO: Add support for CodingModes.SINGLE if we need it e.g. for IMAQAL?
+            assert cc.coding_mode == CodingModes.MULTIPLE, "Other CodingModes not (yet) supported"
+            themes["Total Relevant Participants"] = make_survey_counts_dict()
+            for code in cc.code_scheme.codes:
+                if code.control_code == Codes.STOP:
+                    continue
+                themes[f"{cc.analysis_file_key}{code.string_value}"] = make_survey_counts_dict()
+
+        # Fill in the counts by iterating over every individual
+        for td in individuals:
+            if td["consent_withdrawn"] == Codes.TRUE:
+                continue
+
+            relevant_participant = False
+            for cc in episode_plan.coding_configurations:
+                assert cc.coding_mode == CodingModes.MULTIPLE, "Other CodingModes not (yet) supported"
+                for label in td[cc.coded_field]:
+                    code = cc.code_scheme.get_code_with_code_id(label["CodeID"])
+                    if code.control_code == Codes.STOP:
+                        continue
+                    themes[f"{cc.analysis_file_key}{code.string_value}"]["Total Participants"] += 1
+                    update_survey_counts(themes[f"{cc.analysis_file_key}{code.string_value}"], td)
+                    if code.code_type == CodeTypes.NORMAL:
+                        relevant_participant = True
+
+            if relevant_participant:
+                themes["Total Relevant Participants"]["Total Participants"] += 1
+                update_survey_counts(themes["Total Relevant Participants"], td)
+
+            set_survey_percentages(themes["Total Relevant Participants"], themes["Total Relevant Participants"])
+
+            for cc in episode_plan.coding_configurations:
+                assert cc.coding_mode == CodingModes.MULTIPLE, "Other CodingModes not (yet) supported"
+
+                for code in cc.code_scheme.codes:
+                    if code.code_type != CodeTypes.NORMAL:
+                        continue
+
+                    theme = themes[f"{cc.analysis_file_key}{code.string_value}"]
+                    set_survey_percentages(theme, themes["Total Relevant Participants"])
+
+    with open(f"{output_dir}/theme_distributions.csv", "w") as f:
+        headers = ["Question", "Variable"] + list(make_survey_counts_dict().keys())
+        writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
+        writer.writeheader()
+
+        last_row_episode = None
+        for episode, themes in episodes.items():
+            for theme, survey_counts in themes.items():
+                row = {
+                    "Question": episode if episode != last_row_episode else "",
+                    "Variable": theme,
+                }
+                row.update(survey_counts)
+                writer.writerow(row)
+                last_row_episode = episode
+
+    log.info("Graphing the per-episode engagement counts...")
+    # Graph the number of messages in each episode
+    fig = px.bar([x for x in engagement_counts.values() if x["Episode"] != "Total"],
+                 x="Episode", y="Total Messages with Opt-Ins", template="plotly_white",
+                 title="Messages/Episode", width=len(engagement_counts) * 20 + 150)
+    fig.update_xaxes(tickangle=-60)
+    fig.write_image(f"{output_dir}/graphs/messages_per_episode.png", scale=IMG_SCALE_FACTOR)
+
+    # Graph the number of participants in each episode
+    fig = px.bar([x for x in engagement_counts.values() if x["Episode"] != "Total"],
+                 x="Episode", y="Total Participants with Opt-Ins", template="plotly_white",
+                 title="Participants/Episode", width=len(engagement_counts) * 20 + 150)
+    fig.update_xaxes(tickangle=-60)
+    fig.write_image(f"{output_dir}/graphs/participants_per_episode.png", scale=IMG_SCALE_FACTOR)
+
+    log.info("Graphing the demographic distributions...")
+    for demographic, counts in demographic_distributions.items():
+        if len(counts) > 200:
+            log.warning(f"Skipping graphing the distribution of codes for {demographic}, but is contains too many "
+                        f"columns to graph (has {len(counts)} columns; limit is 200).")
+            continue
+
+        log.info(f"Graphing the distribution of codes for {demographic}...")
+        fig = px.bar([{"Label": code_string_value, "Number of Participants": number_of_participants}
+                      for code_string_value, number_of_participants in counts.items()],
+                     x="Label", y="Number of Participants", template="plotly_white",
+                     title=f"Season Distribution: {demographic}", width=len(counts) * 20 + 150)
+        fig.update_xaxes(type="category", tickangle=-60, dtick=1)
+        fig.write_image(f"{output_dir}/graphs/season_distribution_{demographic}.png", scale=IMG_SCALE_FACTOR)
 
     # Plot the per-season distribution of responses for each survey question, per individual
     for plan in PipelineConfiguration.RQA_CODING_PLANS + PipelineConfiguration.SURVEY_CODING_PLANS:
         for cc in plan.coding_configurations:
             if cc.analysis_file_key is None:
+                continue
+
+            # Don't generate graphs for the demographics, as they were already generated above.
+            # TODO: Update the demographic_distributions to include the distributions for all variables?
+            if cc.analysis_file_key in demographic_distributions:
                 continue
 
             log.info(f"Graphing the distribution of codes for {cc.analysis_file_key}...")
@@ -323,24 +441,90 @@ if __name__ == "__main__":
                         if ind[f"{cc.analysis_file_key}{code.string_value}"] == Codes.MATRIX_1:
                             label_counts[code.string_value] += 1
 
-            chart = altair.Chart(
-                altair.Data(values=[{"label": k, "count": v} for k, v in label_counts.items()])
-            ).mark_bar().encode(
-                x=altair.X("label:N", title="Label", sort=list(label_counts.keys())),
-                y=altair.Y("count:Q", title="Number of Individuals")
-            ).properties(
-                title=f"Season Distribution: {cc.analysis_file_key}"
-            )
-            chart.save(f"{output_dir}/season_distribution_{cc.analysis_file_key}.html")
-            chart.save(f"{output_dir}/season_distribution_{cc.analysis_file_key}.png", scale_factor=IMG_SCALE_FACTOR)
+            data = [{"Label": k, "Number of Participants": v} for k, v in label_counts.items()]
+            fig = px.bar(data, x="Label", y="Number of Participants", template="plotly_white",
+                         title=f"Season Distribution: {cc.analysis_file_key}", width=len(label_counts) * 20 + 150)
+            fig.update_xaxes(tickangle=-60)
+            fig.write_image(f"{output_dir}/graphs/season_distribution_{cc.analysis_file_key}.png", scale=IMG_SCALE_FACTOR)
+
+    log.info("Graphing pie chart of normal codes for gender...")
+    # TODO: Gender is hard-coded here for COVID19. If we need this in future, but don't want to extend to other
+    #       demographic variables, then this will need to be controlled from configuration
+    gender_distribution = demographic_distributions["gender"]
+    normal_gender_distribution = []
+    for code in CodeSchemes.GENDER.codes:
+        if code.code_type == CodeTypes.NORMAL:
+            normal_gender_distribution.append({
+                "Gender": code.string_value,
+                "Number of Participants": gender_distribution[code.string_value]
+            })
+    fig = px.pie(normal_gender_distribution, names="Gender", values="Number of Participants",
+                 title="Season Distribution: gender", template="plotly_white")
+    fig.update_traces(textinfo="value")
+    fig.write_image(f"{output_dir}/graphs/season_distribution_gender_pie.png", scale=IMG_SCALE_FACTOR)
+
+    log.info("Graphing normal themes by gender...")
+    # Adapt the theme distributions produced above to extract the normal RQA + gender codes, and graph by gender
+    # TODO: Gender is hard-coded here for COVID19. If we need this in future, but don't want to extend to other
+    #       demographic variables, then this will need to be controlled from configuration
+    for plan in PipelineConfiguration.RQA_CODING_PLANS:
+        episode = episodes[plan.raw_field]
+        normal_themes = dict()
+
+        for cc in plan.coding_configurations:
+            for code in cc.code_scheme.codes:
+                if code.code_type == CodeTypes.NORMAL and code.string_value not in {"knowledge", "attitude", "behaviour"}:
+                    normal_themes[code.string_value] = episode[f"{cc.analysis_file_key}{code.string_value}"]
+
+        if len(normal_themes) == 0:
+            log.warning(f"Skipping graphing normal themes by gender for {plan.raw_field} because the scheme does "
+                        f"not contain any normal codes")
+            continue
+
+        normal_by_gender = []
+        for theme, demographic_counts in normal_themes.items():
+            for gender_code in CodeSchemes.GENDER.codes:
+                if gender_code.code_type != CodeTypes.NORMAL:
+                    continue
+
+                total_relevant_gender = episode["Total Relevant Participants"][f"gender:{gender_code.string_value}"]
+                normal_by_gender.append({
+                    "RQA Theme": theme,
+                    "Gender": gender_code.string_value,
+                    "Number of Participants": demographic_counts[f"gender:{gender_code.string_value}"],
+                    "Fraction of Relevant Participants": None if total_relevant_gender == 0 else
+                        demographic_counts[f"gender:{gender_code.string_value}"] / total_relevant_gender
+                })
+
+        fig = px.bar(normal_by_gender, x="RQA Theme", y="Number of Participants", color="Gender", barmode="group",
+                     template="plotly_white")
+        fig.update_layout(title_text=f"{plan.raw_field} by gender (absolute)")
+        fig.update_xaxes(tickangle=-60)
+        fig.write_image(f"{output_dir}/graphs/{plan.raw_field}_by_gender_absolute.png", scale=IMG_SCALE_FACTOR)
+
+        fig = px.bar(normal_by_gender, x="RQA Theme", y="Fraction of Relevant Participants", color="Gender", barmode="group",
+                     template="plotly_white")
+        fig.update_layout(title_text=f"{plan.raw_field} by gender (normalised)")
+        fig.update_xaxes(tickangle=-60)
+        fig.write_image(f"{output_dir}/graphs/{plan.raw_field}_by_gender_normalised.png", scale=IMG_SCALE_FACTOR)
 
     if pipeline_configuration.drive_upload is not None:
+        log.info("Uploading CSVs to Drive...")
+        paths_to_upload = glob(f"{output_dir}/*.csv")
+        for i, path in enumerate(paths_to_upload):
+            log.info(f"Uploading CSV {i + 1}/{len(paths_to_upload)}: {path}...")
+            drive_client_wrapper.update_or_create(
+                path, pipeline_configuration.drive_upload.analysis_graphs_dir, target_folder_is_shared_with_me=True
+            )
+
         log.info("Uploading graphs to Drive...")
-        paths_to_upload = glob.glob(f"{output_dir}/*.png")
+        paths_to_upload = glob(f"{output_dir}/graphs/*.png")
         for i, path in enumerate(paths_to_upload):
             log.info(f"Uploading graph {i + 1}/{len(paths_to_upload)}: {path}...")
-            drive_client_wrapper.update_or_create(path, pipeline_configuration.drive_upload.analysis_graphs_dir,
-                                                  target_folder_is_shared_with_me=True)
+            drive_client_wrapper.update_or_create(
+                path, f"{pipeline_configuration.drive_upload.analysis_graphs_dir}/graphs",
+                target_folder_is_shared_with_me=True
+            )
     else:
         log.info("Skipping uploading to Google Drive (because the pipeline configuration json does not contain the key "
                  "'DriveUploadPaths')")
