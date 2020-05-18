@@ -76,6 +76,14 @@
       "VisibleInCoda": true
     },
     {
+      "CodeID": "code-492b3a35",
+      "CodeType": "Normal",
+      "DisplayText": "educated girls are valued low in dowry payment",
+      "NumericValue": 10,
+      "StringValue": "educated_girls_are_valued_low_in_dowry_payment",
+      "VisibleInCoda": true
+    },
+    {
       "CodeID": "code-6f3b02f0",
       "CodeType": "Normal",
       "DisplayText": "other",

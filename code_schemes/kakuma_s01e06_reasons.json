@@ -22,9 +22,9 @@
     {
       "CodeID": "code-31c269e9",
       "CodeType": "Normal",
-      "DisplayText": "training on use of condoms",
+      "DisplayText": "training on use of contraceptives",
       "NumericValue": 3,
-      "StringValue": "training_on_use_of_condoms",
+      "StringValue": "training_on_use_of_contraceptives",
       "VisibleInCoda": true
     },
     {
@@ -41,6 +41,30 @@
       "DisplayText": "respect for girls",
       "NumericValue": 5,
       "StringValue": "respect_for_girls",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-083be2ae",
+      "CodeType": "Normal",
+      "DisplayText": "sex education",
+      "NumericValue": 7,
+      "StringValue": "sex_education",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-0f066f8f",
+      "CodeType": "Normal",
+      "DisplayText": "have separate girl and boy schools",
+      "NumericValue": 8,
+      "StringValue": "have_separate_girl_and_boy_schools",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-110954d5",
+      "CodeType": "Normal",
+      "DisplayText": "self control",
+      "NumericValue": 9,
+      "StringValue": "self_control",
       "VisibleInCoda": true
     },
     {
