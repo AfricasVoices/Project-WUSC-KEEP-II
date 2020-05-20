@@ -38,14 +38,14 @@
     {
       "DisplayText": "mother tongue",
       "VisibleInCoda": true,
-      "NumericValue": 3,
+      "NumericValue": 4,
       "CodeID": "code-2c529e08",
       "CodeType": "Normal",
       "StringValue": "mother_tongue"
     },
     {
       "VisibleInCoda": true,
-      "NumericValue": 6,
+      "NumericValue": 5,
       "CodeID": "code-cdeb1836",
       "CodeType": "Normal",
       "StringValue": "other",
