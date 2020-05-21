@@ -4,6 +4,54 @@
   "Version": "0.0.0.1",
   "Codes": [
     {
+      "DisplayText": "english",
+      "VisibleInCoda": true,
+      "NumericValue": 0,
+      "CodeID": "code-cc85869f",
+      "CodeType": "Normal",
+      "StringValue": "english"
+    },
+    {
+      "DisplayText": "swahili",
+      "VisibleInCoda": true,
+      "NumericValue": 1,
+      "CodeID": "code-1c326624",
+      "CodeType": "Normal",
+      "StringValue": "swahili"
+    },
+    {
+      "DisplayText": "somali",
+      "VisibleInCoda": true,
+      "NumericValue": 2,
+      "CodeID": "code-c83b2297",
+      "CodeType": "Normal",
+      "StringValue": "somali"
+    },
+    {
+      "DisplayText": "arabic",
+      "VisibleInCoda": true,
+      "NumericValue": 3,
+      "CodeID": "code-5536ba55",
+      "CodeType": "Normal",
+      "StringValue": "arabic"
+    },
+    {
+      "DisplayText": "mother tongue",
+      "VisibleInCoda": true,
+      "NumericValue": 4,
+      "CodeID": "code-2c529e08",
+      "CodeType": "Normal",
+      "StringValue": "mother_tongue"
+    },
+    {
+      "VisibleInCoda": true,
+      "NumericValue": 5,
+      "CodeID": "code-cdeb1836",
+      "CodeType": "Normal",
+      "StringValue": "other",
+      "DisplayText": "other"
+    },
+    {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
       "ControlCode": "NA",
