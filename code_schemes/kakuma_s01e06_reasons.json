@@ -68,6 +68,46 @@
       "VisibleInCoda": true
     },
     {
+      "CodeID": "code-b26634d1",
+      "CodeType": "Normal",
+      "DisplayText": "advise men and boys",
+      "NumericValue": 10,
+      "StringValue": "advise_men_and_boys",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-d2958c33",
+      "CodeType": "Normal",
+      "DisplayText": "advise girls to follow their education",
+      "NumericValue": 11,
+      "StringValue": "advise_girls_to_follow_their_education",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-2b08b8bc",
+      "CodeType": "Normal",
+      "DisplayText": "avoid early marriage",
+      "NumericValue": 12,
+      "StringValue": "avoid_early_marriage",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-a094a3f7",
+      "CodeType": "Normal",
+      "DisplayText": "keep girls in school",
+      "NumericValue": 13,
+      "StringValue": "keep_girls_in_school",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-4ccd4bdb",
+      "CodeType": "Normal",
+      "DisplayText": "avoid bad company",
+      "NumericValue": 14,
+      "StringValue": "avoid_bad_company",
+      "VisibleInCoda": true
+    },
+    {
       "CodeID": "code-3992ba9e",
       "CodeType": "Normal",
       "DisplayText": "other",
