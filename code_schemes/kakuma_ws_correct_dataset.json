@@ -8,7 +8,7 @@
       "CodeType": "Normal",
       "DisplayText": "kakuma household language",
       "StringValue": "kakuma_household_language",
-      "NumericValue": 5,
+      "NumericValue": 1,
       "VisibleInCoda": true,
       "MatchValues": [
         "kakuma household language"
@@ -19,7 +19,7 @@
       "CodeType": "Normal",
       "DisplayText": "kakuma age",
       "StringValue": "kakuma_age",
-      "NumericValue": 6,
+      "NumericValue": 2,
       "VisibleInCoda": true,
       "MatchValues": [
         "kakuma age"
@@ -30,7 +30,7 @@
       "CodeType": "Normal",
       "DisplayText": "kakuma gender",
       "StringValue": "kakuma_gender",
-      "NumericValue": 7,
+      "NumericValue": 3,
       "VisibleInCoda": true,
       "MatchValues": [
         "kakuma gender"
@@ -41,7 +41,7 @@
       "CodeType": "Normal",
       "DisplayText": "kakuma location",
       "StringValue": "kakuma_location",
-      "NumericValue": 8,
+      "NumericValue": 4,
       "VisibleInCoda": true,
       "MatchValues": [
         "kakuma location"
@@ -52,7 +52,7 @@
       "CodeType": "Normal",
       "DisplayText": "kakuma nationality",
       "StringValue": "kakuma_nationality",
-      "NumericValue": 9,
+      "NumericValue": 5,
       "VisibleInCoda": true,
       "MatchValues": [
         "kakuma nationality"
@@ -63,7 +63,7 @@
       "CodeType": "Normal",
       "DisplayText": "kakuma s01e01",
       "StringValue": "kakuma_s01e01",
-      "NumericValue": 10,
+      "NumericValue": 6,
       "VisibleInCoda": true,
       "MatchValues": [
         "kakuma s01e01"
@@ -74,7 +74,7 @@
       "CodeType": "Normal",
       "DisplayText": "kakuma s01e02",
       "StringValue": "kakuma_s01e02",
-      "NumericValue": 11,
+      "NumericValue": 7,
       "VisibleInCoda": true,
       "MatchValues": [
         "kakuma s01e02"
@@ -85,7 +85,7 @@
       "CodeType": "Normal",
       "DisplayText": "kakuma s01e03",
       "StringValue": "kakuma_s01e03",
-      "NumericValue": 12,
+      "NumericValue": 8,
       "VisibleInCoda": true,
       "MatchValues": [
         "kakuma s01e03"
@@ -96,7 +96,7 @@
       "CodeType": "Normal",
       "DisplayText": "kakuma s01e04",
       "StringValue": "kakuma_s01e04",
-      "NumericValue": 13,
+      "NumericValue": 9,
       "VisibleInCoda": true,
       "MatchValues": [
         "kakuma s01e04"
@@ -107,7 +107,7 @@
       "CodeType": "Normal",
       "DisplayText": "kakuma s01e05",
       "StringValue": "kakuma_s01e05",
-      "NumericValue": 14,
+      "NumericValue": 10,
       "VisibleInCoda": true,
       "MatchValues": [
         "kakuma s01e05"
@@ -118,7 +118,7 @@
       "CodeType": "Normal",
       "DisplayText": "kakuma s01e06",
       "StringValue": "kakuma_s01e06",
-      "NumericValue": 15,
+      "NumericValue": 11,
       "VisibleInCoda": true,
       "MatchValues": [
         "kakuma s01e06"
@@ -129,7 +129,7 @@
       "CodeType": "Normal",
       "DisplayText": "kakuma s01e07",
       "StringValue": "kakuma_s01e07",
-      "NumericValue": 16,
+      "NumericValue": 12,
       "VisibleInCoda": true,
       "MatchValues": [
         "kakuma s01e07"
@@ -140,7 +140,7 @@
       "CodeType": "Normal",
       "DisplayText": "kakuma s01 intro",
       "StringValue": "kakuma_s01_intro",
-      "NumericValue": 17,
+      "NumericValue": 13,
       "VisibleInCoda": true,
       "MatchValues": [
         "kakuma s01 intro"
@@ -151,7 +151,7 @@
       "CodeType": "Normal",
       "DisplayText": "kakuma girls education champions",
       "StringValue": "kakuma_girls_education_champions",
-      "NumericValue": 18,
+      "NumericValue": 14,
       "VisibleInCoda": true,
       "MatchValues": [
         "kakuma girls education champions"
@@ -162,7 +162,7 @@
       "CodeType": "Normal",
       "DisplayText": "kakuma encouragement for boys",
       "StringValue": "kakuma_encouragement_for_boys",
-      "NumericValue": 19,
+      "NumericValue": 15,
       "VisibleInCoda": true,
       "MatchValues": [
         "kakuma encouragement for boys"
@@ -173,7 +173,7 @@
       "CodeType": "Normal",
       "DisplayText": "kakuma unmarried fathers community view",
       "StringValue": "kakuma_unmarried_fathers_community_view",
-      "NumericValue": 20,
+      "NumericValue": 16,
       "VisibleInCoda": true,
       "MatchValues": [
         "kakuma unmarried fathers community view"
@@ -184,7 +184,7 @@
       "CodeType": "Normal",
       "DisplayText": "kakuma lessons learnt",
       "StringValue": "kakuma_lessons_learnt",
-      "NumericValue": 21,
+      "NumericValue": 17,
       "VisibleInCoda": true,
       "MatchValues": [
         "kakuma lessons learnt"
@@ -195,10 +195,120 @@
       "CodeType": "Normal",
       "DisplayText": "kakuma show suggestions",
       "StringValue": "kakuma_show_suggestions",
-      "NumericValue": 22,
+      "NumericValue": 18,
       "VisibleInCoda": true,
       "MatchValues": [
         "kakuma show suggestions"
+         ]
+    },
+    {
+      "CodeID": "code-cb673df2",
+      "CodeType": "Normal",
+      "DisplayText": "covid19 adaptation kakuma s01e01",
+      "StringValue": "covid19 adaptation kakuma s01e01",
+      "NumericValue": 19,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "covid19 adaptation kakuma s01e01"
+         ]
+    },
+    {
+      "CodeID": "code-e9a97cc3",
+      "CodeType": "Normal",
+      "DisplayText": "covid19 adaptation kakuma s01e02",
+      "StringValue": "covid19 adaptation kakuma s01e02",
+      "NumericValue": 20,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "covid19 adaptation kakuma s01e02"
+         ]
+    },
+    {
+      "CodeID": "code-8dd7a90e",
+      "CodeType": "Normal",
+      "DisplayText": "covid19 adaptation kakuma s01e03",
+      "StringValue": "covid19 adaptation kakuma s01e03",
+      "NumericValue": 21,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "covid19 adaptation kakuma s01e03"
+         ]
+    },
+    {
+      "CodeID": "code-bd79e6d4",
+      "CodeType": "Normal",
+      "DisplayText": "covid19 adaptation kakuma s01e04",
+      "StringValue": "covid19 adaptation kakuma s01e04",
+      "NumericValue": 22,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "covid19 adaptation kakuma s01e04"
+         ]
+    },
+     {
+      "CodeID": "code-4f678668",
+      "CodeType": "Normal",
+      "DisplayText": "covid19 adaptation kakuma s01e05",
+      "StringValue": "covid19 adaptation kakuma s01e05",
+      "NumericValue": 23,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "covid19 adaptation kakuma s01e05"
+         ]
+    },
+    {
+      "CodeID": "code-ebd10beb",
+      "CodeType": "Normal",
+      "DisplayText": "covid19 adaptation kakuma s01e06",
+      "StringValue": "covid19 adaptation kakuma s01e06",
+      "NumericValue": 24,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "covid19 adaptation kakuma s01e06"
+         ]
+    },
+    {
+      "CodeID": "code-8a634e84",
+      "CodeType": "Normal",
+      "DisplayText": "covid19 adaptation kakuma s01e07",
+      "StringValue": "covid19 adaptation kakuma s01e07",
+      "NumericValue": 25,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "covid19 adaptation kakuma s01e07"
+         ]
+    },
+    {
+      "CodeID": "code-9d37833a",
+      "CodeType": "Normal",
+      "DisplayText": "covid19 adaptation kakuma s01e08",
+      "StringValue": "covid19 adaptation kakuma s01e08",
+      "NumericValue": 26,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "covid19 adaptation kakuma s01e08"
+         ]
+    },
+    {
+      "CodeID": "code-c90f0bd2",
+      "CodeType": "Normal",
+      "DisplayText": "covid19 adaptation kakuma s01e09",
+      "StringValue": "covid19 adaptation kakuma s01e09",
+      "NumericValue": 27,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "covid19 adaptation kakuma s01e09"
+         ]
+    },
+    {
+      "CodeID": "code-d9aac344",
+      "CodeType": "Normal",
+      "DisplayText": "covid19 adaptation kakuma s01e10",
+      "StringValue": "covid19 adaptation kakuma s01e10",
+      "NumericValue": 28,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "covid19 adaptation kakuma s01e10"
          ]
     },
     {
