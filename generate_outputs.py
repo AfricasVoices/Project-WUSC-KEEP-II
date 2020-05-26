@@ -8,7 +8,7 @@ from core_data_modules.util import IOUtils
 from storage.google_cloud import google_cloud_utils
 from storage.google_drive import drive_client_wrapper
 
-from src import CombineRawDatasets, TranslateRapidProKeys, AutoCode, ProductionFile, \
+from src import LoadData, TranslateRapidProKeys, AutoCode, ProductionFile, \
     ApplyManualCodes, AnalysisFile, WSCorrection
 from src.lib import PipelineConfiguration, MessageFilters
 from configurations.code_schemes import CodeSchemes
@@ -82,37 +82,6 @@ if __name__ == "__main__":
             google_cloud_credentials_file_path, pipeline_configuration.drive_upload.drive_credentials_file_url))
         drive_client_wrapper.init_client_from_info(credentials_info)
 
-    # Load the input datasets
-    def load_datasets(flow_names):
-        datasets = []
-        for i, flow_name in enumerate(flow_names):
-            raw_flow_path = f"{raw_data_dir}/{flow_name}.jsonl"
-            log.info(f"Loading {i + 1}/{len(flow_names)}: {raw_flow_path}...")
-            with open(raw_flow_path, "r") as f:
-                runs = TracedDataJsonIO.import_jsonl_to_traced_data_iterable(f)
-            log.info(f"Loaded {len(runs)} runs")
-            datasets.append(runs)
-        return datasets
-
-    activation_flow_names = []
-    survey_flow_names = []
-    for raw_data_source in pipeline_configuration.raw_data_sources:
-        activation_flow_names.extend(raw_data_source.get_activation_flow_names())
-        survey_flow_names.extend(raw_data_source.get_survey_flow_names())
-
-    log.info("Loading activation datasets...")
-    activation_datasets = load_datasets(activation_flow_names)
-
-    log.info("Loading survey datasets...")
-    survey_datasets = load_datasets(survey_flow_names)
-
-    # Add survey data to the messages
-    log.info("Combining Datasets...")
-    coalesced_survey_datasets = []
-    for dataset in survey_datasets:
-        coalesced_survey_datasets.append(CombineRawDatasets.coalesce_traced_runs_by_key(user, dataset, "avf_phone_id"))
-    data = CombineRawDatasets.combine_raw_datasets(user, activation_datasets, coalesced_survey_datasets)
-
     # Infer which RQA and Demog coding plans to use from the pipeline name.
     if pipeline_configuration.pipeline_name == "dadaab_pipeline":
         log.info("Running Dadaab pipeline")
@@ -126,6 +95,9 @@ if __name__ == "__main__":
         PipelineConfiguration.RQA_CODING_PLANS = PipelineConfiguration.KAKUMA_RQA_CODING_PLANS
         PipelineConfiguration.SURVEY_CODING_PLANS = PipelineConfiguration.KAKUMA_SURVEY_CODING_PLANS
         CodeSchemes.WS_CORRECT_DATASET = CodeSchemes.KAKUMA_WS_CORRECT_DATASET
+
+    log.info("Loading the raw data...")
+    data = LoadData.load_raw_data(user, raw_data_dir, pipeline_configuration)
 
     log.info("Translating Rapid Pro Keys...")
     data = TranslateRapidProKeys.translate_rapid_pro_keys(user, data, pipeline_configuration)
