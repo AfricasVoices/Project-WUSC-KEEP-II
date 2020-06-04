@@ -8,6 +8,7 @@ from core_data_modules.traced_data.io import TracedDataCodaV2IO
 
 from src.lib import PipelineConfiguration
 from src.lib.pipeline_configuration import CodingModes
+from configurations.code_schemes import CodeSchemes
 
 log = Logger(__name__)
 
