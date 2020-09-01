@@ -2,7 +2,8 @@
 
 set -e
 
-IMAGE_NAME=wusc-keep-ii-upload-logs
+PROJECT_NAME="$(<configurations/docker_image_project_name.txt)"
+IMAGE_NAME=$PROJECT_NAME-upload-files
 
 # Check that the correct number of arguments were provided.
 if [[ $# -ne 6 ]]; then
