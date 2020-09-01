@@ -2,7 +2,8 @@
 
 set -e
 
-IMAGE_NAME=wusc-keep-ii-automated-analysis
+PROJECT_NAME="$(<configurations/docker_image_project_name.txt)"
+IMAGE_NAME=$PROJECT_NAME-automated-analysis
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
