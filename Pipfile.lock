@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "862596dfc6afc8dec1dbce874b67a5639aea98f2e11b90619c4c009cf89847e3"
+            "sha256": "d9c5ec51a31ce9f6118bab945a8ef52a5fd8c6b3131cac8fd7d8108e3f0e3b20"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -348,7 +348,7 @@
         "pipelineinfrastructure": {
             "editable": true,
             "git": "https://www.github.com/AfricasVoices/Pipeline-Infrastructure",
-            "ref": "cac68f904fb857d7784360401a6864df9b32e95b"
+            "ref": "99052bca2236d34e105085055e079b2ebff76fce"
         },
         "plotly": {
             "hashes": [
