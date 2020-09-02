@@ -15,7 +15,7 @@ from storage.google_cloud import google_cloud_utils
 from storage.google_drive import drive_client_wrapper
 
 from src.lib import PipelineConfiguration
-from src.lib.pipeline_configuration import CodingModes
+from src.lib.configuration_objects import CodingModes
 from src import AnalysisUtils
 from configurations.code_schemes import CodeSchemes
 
