@@ -1,7 +1,7 @@
 from core_data_modules.logging import Logger
 from dateutil.parser import isoparse
 from src.lib.pipeline_configuration import PipelineConfiguration
-from src.lib.pipeline_configuration import CodingModes
+from src.lib.configuration_objects import CodingModes
 from core_data_modules.cleaners import Codes
 
 log = Logger(__name__)

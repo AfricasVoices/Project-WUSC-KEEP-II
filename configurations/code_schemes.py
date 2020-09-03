@@ -49,6 +49,5 @@ class CodeSchemes(object):
     KAKUMA_LESSONS_LEARNT = _open_scheme("kakuma_lessons_learnt.json")
     KAKUMA_SHOW_SUGGESTIONS = _open_scheme("kakuma_show_suggestions.json")
 
-    WS_CORRECT_DATASET = None
     KAKUMA_WS_CORRECT_DATASET = _open_scheme("kakuma_ws_correct_dataset.json")
     DADAAB_WS_CORRECT_DATASET = _open_scheme("dadaab_ws_correct_dataset.json")
