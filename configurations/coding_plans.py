@@ -20,7 +20,6 @@ def clean_age_with_range_filter(text):
 
 
 def get_rqa_coding_plans(pipeline_name):
-
     if pipeline_name == "dadaab_pipeline":
         return [
             CodingPlan(raw_field="rqa_s01e01_raw",
@@ -725,4 +724,3 @@ def get_ws_correct_dataset_scheme(pipeline_name):
         return CodeSchemes.DADAAB_WS_CORRECT_DATASET
     elif pipeline_name == "kakuma_pipeline":
         return CodeSchemes.KAKUMA_WS_CORRECT_DATASET
-
