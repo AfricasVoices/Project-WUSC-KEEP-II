@@ -120,8 +120,9 @@
     "ProductionUploadPath": "wusc_keep_ii_analysis_outputs/kakuma/wusc_keep_ii_s01_kakuma_production.csv",
     "MessagesUploadPath": "wusc_keep_ii_analysis_outputs/kakuma/wusc_keep_ii_s01_kakuma_messages.csv",
     "IndividualsUploadPath": "wusc_keep_ii_analysis_outputs/kakuma/wusc_keep_ii_s01_kakuma_individuals.csv",
-    "AnalysisGraphsDir": "wusc_keep_ii_analysis_outputs/kakuma/analysis_graphs"
+    "AutomatedAnalysisDir": "wusc_keep_ii_analysis_outputs/kakuma/automated_analysis"
   },
-  "MemoryProfileUploadURLPrefix": "gs://avf-pipeline-logs-performance-nearline/2019/WUSC-KEEP-II/kakuma-memory-",
-  "DataArchiveUploadURLPrefix": "gs://pipeline-execution-backup-archive/2019/WUSC-KEEP-II/kakuma-data-"
+  "MemoryProfileUploadURLPrefix": "gs://avf-pipeline-logs-performance-nearline/",
+  "DataArchiveUploadURLPrefix": "gs://pipeline-execution-backup-archive",
+  "BucketDirPath": "2019/WUSC-KEEP-II/KAKUMA"
 }

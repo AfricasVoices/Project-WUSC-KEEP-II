@@ -18,7 +18,7 @@ class PipelineConfiguration(object):
 
     def __init__(self, raw_data_sources, phone_number_uuid_table, timestamp_remappings,
                  rapid_pro_key_remappings, project_start_date, project_end_date, filter_test_messages, move_ws_messages,
-                 memory_profile_upload_url_prefix, data_archive_upload_url_prefix, pipeline_name=None,
+                 memory_profile_upload_bucket, data_archive_upload_bucket, bucket_dir_path, pipeline_name=None,
                  drive_upload=None, listening_group_csv_urls=None):
         """
         :param raw_data_sources: List of sources to pull the various raw run files from.
@@ -37,10 +37,16 @@ class PipelineConfiguration(object):
         :type filter_test_messages: bool
         :param move_ws_messages: Whether to move messages labelled as Wrong Scheme to the correct dataset.
         :type move_ws_messages: bool
-        :param memory_profile_upload_url_prefix: The prefix of the GS URL to upload the memory profile log to.
-                                                 This prefix will be appended by the id of the pipeline run (provided
-                                                 as a command line argument), and the ".profile" file extension.
-        :type memory_profile_upload_url_prefix: str
+        :param memory_profile_upload_bucket: The GS bucket name to upload the memory profile log to.
+                                              This name will be appended with the log_dir_path
+                                              and the file basename to generate the log upload location.
+        :type memory_profile_upload_bucket: str
+        :param data_archive_upload_bucket: The GS bucket name to upload the data archive file to.
+                                            This name will be appended with the log_dir_path
+                                            and the file basename to generate the archive upload location.
+        :type data_archive_upload_bucket: str
+        :param bucket_dir_path: The GS bucket folder path to store the data archive & memory log files to.
+        :type bucket_dir_path: str
         :param pipeline_name: The name of the pipeline to run.
         :type pipeline_name: str | None
         :param drive_upload: Configuration for uploading to Google Drive, or None.
@@ -57,8 +63,9 @@ class PipelineConfiguration(object):
         self.project_end_date = project_end_date
         self.filter_test_messages = filter_test_messages
         self.move_ws_messages = move_ws_messages
-        self.memory_profile_upload_url_prefix = memory_profile_upload_url_prefix
-        self.data_archive_upload_url_prefix = data_archive_upload_url_prefix
+        self.memory_profile_upload_bucket = memory_profile_upload_bucket
+        self.data_archive_upload_bucket = data_archive_upload_bucket
+        self.bucket_dir_path = bucket_dir_path
         self.pipeline_name = pipeline_name
         self.drive_upload = drive_upload
         self.listening_group_csv_urls = listening_group_csv_urls
@@ -99,8 +106,9 @@ class PipelineConfiguration(object):
         filter_test_messages = configuration_dict["FilterTestMessages"]
         move_ws_messages = configuration_dict["MoveWSMessages"]
 
-        memory_profile_upload_url_prefix = configuration_dict["MemoryProfileUploadURLPrefix"]
-        data_archive_upload_url_prefix = configuration_dict["DataArchiveUploadURLPrefix"]
+        memory_profile_upload_bucket = configuration_dict["MemoryProfileUploadURLPrefix"]
+        data_archive_upload_bucket = configuration_dict["DataArchiveUploadURLPrefix"]
+        bucket_dir_path = configuration_dict["BucketDirPath"]
 
         pipeline_name = configuration_dict.get("PipelineName")
 
@@ -112,8 +120,8 @@ class PipelineConfiguration(object):
 
         return cls(raw_data_sources, phone_number_uuid_table, timestamp_remappings,
                    rapid_pro_key_remappings, project_start_date, project_end_date, filter_test_messages,
-                   move_ws_messages, memory_profile_upload_url_prefix, data_archive_upload_url_prefix, pipeline_name,
-                   drive_upload_paths, listening_group_csv_urls)
+                   move_ws_messages, memory_profile_upload_bucket, data_archive_upload_bucket, bucket_dir_path,
+                   pipeline_name, drive_upload_paths, listening_group_csv_urls)
 
     @classmethod
     def from_configuration_file(cls, f):
@@ -148,7 +156,9 @@ class PipelineConfiguration(object):
                 "drive_upload is not of type DriveUpload"
             self.drive_upload.validate()
 
-        validators.validate_string(self.memory_profile_upload_url_prefix, "memory_profile_upload_url_prefix")
+        validators.validate_url(self.memory_profile_upload_bucket, "memory_profile_upload_bucket", "gs")
+        validators.validate_url(self.data_archive_upload_bucket, "data_archive_upload_bucket", "gs")
+        validators.validate_string(self.bucket_dir_path, "bucket_dir_path")
 
         if self.listening_group_csv_urls is not None:
             validators.validate_list(self.listening_group_csv_urls, "listening_group_csv_urls")
@@ -386,7 +396,7 @@ class RapidProKeyRemapping(object):
 
 class DriveUpload(object):
     def __init__(self, drive_credentials_file_url, production_upload_path, messages_upload_path,
-                 individuals_upload_path, analysis_graphs_dir):
+                 individuals_upload_path, automated_analysis_dir):
         """
         :param drive_credentials_file_url: GS URL to the private credentials file for the Drive service account to use
                                            to upload the output files.
@@ -400,15 +410,15 @@ class DriveUpload(object):
         :param individuals_upload_path: Path in the Drive service account's "Shared with Me" directory to upload the
                                         individuals analysis CSV to.
         :type individuals_upload_path: str
-        :param analysis_graphs_dir: Directory in the Drive service account's "Shared with Me" directory to upload the
-                                    analysis graphs from this pipeline run to.
-        :type analysis_graphs_dir: str
+        :param automated_analysis_dir: Directory in the Drive service account's "Shared with Me" directory to upload the
+                                    automated analysis files from this pipeline run to.
+        :type automated_analysis_dir: str
         """
         self.drive_credentials_file_url = drive_credentials_file_url
         self.production_upload_path = production_upload_path
         self.messages_upload_path = messages_upload_path
         self.individuals_upload_path = individuals_upload_path
-        self.analysis_graphs_dir = analysis_graphs_dir
+        self.automated_analysis_dir = automated_analysis_dir
 
         self.validate()
 
@@ -418,10 +428,10 @@ class DriveUpload(object):
         production_upload_path = configuration_dict["ProductionUploadPath"]
         messages_upload_path = configuration_dict["MessagesUploadPath"]
         individuals_upload_path = configuration_dict["IndividualsUploadPath"]
-        analysis_graphs_dir = configuration_dict["AnalysisGraphsDir"]
+        automated_analysis_dir = configuration_dict["AutomatedAnalysisDir"]
 
         return cls(drive_credentials_file_url, production_upload_path, messages_upload_path,
-                   individuals_upload_path, analysis_graphs_dir)
+                   individuals_upload_path, automated_analysis_dir)
 
     def validate(self):
         validators.validate_string(self.drive_credentials_file_url, "drive_credentials_file_url")
@@ -431,4 +441,4 @@ class DriveUpload(object):
         validators.validate_string(self.production_upload_path, "production_upload_path")
         validators.validate_string(self.messages_upload_path, "messages_upload_path")
         validators.validate_string(self.individuals_upload_path, "individuals_upload_path")
-        validators.validate_string(self.analysis_graphs_dir, "analysis_graphs_dir")
+        validators.validate_string(self.automated_analysis_dir, "automated_analysis_dir")

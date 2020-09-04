@@ -75,20 +75,13 @@ if __name__ == "__main__":
     log.info("Loading Pipeline Configuration File...")
     with open(pipeline_configuration_file_path) as f:
         pipeline_configuration = PipelineConfiguration.from_configuration_file(f)
+        log.info(f"Running {pipeline_configuration.pipeline_name}")
 
     if pipeline_configuration.drive_upload is not None:
         log.info(f"Downloading Google Drive service account credentials...")
         credentials_info = json.loads(google_cloud_utils.download_blob_to_string(
             google_cloud_credentials_file_path, pipeline_configuration.drive_upload.drive_credentials_file_url))
         drive_client_wrapper.init_client_from_info(credentials_info)
-
-    # Infer which RQA and Demog coding plans to use from the pipeline name.
-    if pipeline_configuration.pipeline_name == "dadaab_pipeline":
-        log.info("Running Dadaab pipeline")
-    else:
-        assert pipeline_configuration.pipeline_name == "kakuma_pipeline", "PipelineName must be either " \
-                                                                          "'dadaab_pipeline or kakuma_pipeline"
-        log.info("Running Kakuma pipeline")
 
     log.info("Loading the raw data...")
     data = LoadData.load_raw_data(user, raw_data_dir, pipeline_configuration)
@@ -128,33 +121,5 @@ if __name__ == "__main__":
     IOUtils.ensure_dirs_exist_for_file(individuals_json_output_path)
     with open(individuals_json_output_path, "w") as f:
         TracedDataJsonIO.export_traced_data_iterable_to_jsonl(individuals_data, f)
-
-    # Upload to Google Drive, if requested.
-    # Note: This should happen as late as possible in order to reduce the risk of the remainder of the pipeline failing
-    # after a Drive upload has occurred. Failures could result in inconsistent outputs or outputs with no
-    # traced data log.
-    if pipeline_configuration.drive_upload is not None:
-        log.info("Uploading CSVs to Google Drive...")
-
-        production_csv_drive_dir = os.path.dirname(pipeline_configuration.drive_upload.production_upload_path)
-        production_csv_drive_file_name = os.path.basename(pipeline_configuration.drive_upload.production_upload_path)
-        drive_client_wrapper.update_or_create(production_csv_output_path, production_csv_drive_dir,
-                                              target_file_name=production_csv_drive_file_name,
-                                              target_folder_is_shared_with_me=True)
-
-        messages_csv_drive_dir = os.path.dirname(pipeline_configuration.drive_upload.messages_upload_path)
-        messages_csv_drive_file_name = os.path.basename(pipeline_configuration.drive_upload.messages_upload_path)
-        drive_client_wrapper.update_or_create(csv_by_message_output_path, messages_csv_drive_dir,
-                                              target_file_name=messages_csv_drive_file_name,
-                                              target_folder_is_shared_with_me=True)
-
-        individuals_csv_drive_dir = os.path.dirname(pipeline_configuration.drive_upload.individuals_upload_path)
-        individuals_csv_drive_file_name = os.path.basename(pipeline_configuration.drive_upload.individuals_upload_path)
-        drive_client_wrapper.update_or_create(csv_by_individual_output_path, individuals_csv_drive_dir,
-                                              target_file_name=individuals_csv_drive_file_name,
-                                              target_folder_is_shared_with_me=True)
-    else:
-        log.info("Skipping uploading to Google Drive (because the pipeline configuration json does not contain the key "
-                 "'DriveUploadPaths')")
 
     log.info("Python script complete")
