@@ -508,23 +508,3 @@ if __name__ == "__main__":
         fig.update_xaxes(tickangle=-60)
         fig.write_image(f"{output_dir}/graphs/{plan.raw_field}_by_gender_normalised.png", scale=IMG_SCALE_FACTOR)
 
-    if pipeline_configuration.drive_upload is not None:
-        log.info("Uploading CSVs to Drive...")
-        paths_to_upload = glob(f"{output_dir}/*.csv")
-        for i, path in enumerate(paths_to_upload):
-            log.info(f"Uploading CSV {i + 1}/{len(paths_to_upload)}: {path}...")
-            drive_client_wrapper.update_or_create(
-                path, pipeline_configuration.drive_upload.analysis_graphs_dir, target_folder_is_shared_with_me=True
-            )
-
-        log.info("Uploading graphs to Drive...")
-        paths_to_upload = glob(f"{output_dir}/graphs/*.png")
-        for i, path in enumerate(paths_to_upload):
-            log.info(f"Uploading graph {i + 1}/{len(paths_to_upload)}: {path}...")
-            drive_client_wrapper.update_or_create(
-                path, f"{pipeline_configuration.drive_upload.analysis_graphs_dir}/graphs",
-                target_folder_is_shared_with_me=True
-            )
-    else:
-        log.info("Skipping uploading to Google Drive (because the pipeline configuration json does not contain the key "
-                 "'DriveUploadPaths')")
