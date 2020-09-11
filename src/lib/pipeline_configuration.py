@@ -18,7 +18,7 @@ class PipelineConfiguration(object):
 
     def __init__(self, raw_data_sources, phone_number_uuid_table, timestamp_remappings,
                  rapid_pro_key_remappings, project_start_date, project_end_date, filter_test_messages, move_ws_messages,
-                 memory_profile_upload_bucket, data_archive_upload_bucket, bucket_dir_path, pipeline_name=None,
+                 memory_profile_upload_bucket, data_archive_upload_bucket, bucket_dir_path, pipeline_name=None,season_name=None,
                  drive_upload=None, listening_group_csv_urls=None):
         """
         :param raw_data_sources: List of sources to pull the various raw run files from.
@@ -49,6 +49,8 @@ class PipelineConfiguration(object):
         :type bucket_dir_path: str
         :param pipeline_name: The name of the pipeline to run.
         :type pipeline_name: str | None
+        :param season_name: The name of the project season. We infer RQA and followup config based on the season name.
+        :type season_name: str | None
         :param drive_upload: Configuration for uploading to Google Drive, or None.
                              If None, does not upload to Google Drive.
         :type drive_upload: DriveUploadPaths | None
@@ -67,12 +69,13 @@ class PipelineConfiguration(object):
         self.data_archive_upload_bucket = data_archive_upload_bucket
         self.bucket_dir_path = bucket_dir_path
         self.pipeline_name = pipeline_name
+        self.season_name = season_name
         self.drive_upload = drive_upload
         self.listening_group_csv_urls = listening_group_csv_urls
 
-        PipelineConfiguration.RQA_CODING_PLANS = coding_plans.get_rqa_coding_plans(self.pipeline_name)
+        PipelineConfiguration.RQA_CODING_PLANS = coding_plans.get_rqa_coding_plans(self.season_name)
         PipelineConfiguration.DEMOG_CODING_PLANS = coding_plans.get_demog_coding_plans(self.pipeline_name)
-        PipelineConfiguration.FOLLOW_UP_CODING_PLANS = coding_plans.get_follow_up_coding_plans(self.pipeline_name)
+        PipelineConfiguration.FOLLOW_UP_CODING_PLANS = coding_plans.get_follow_up_coding_plans(self.season_name)
         PipelineConfiguration.SURVEY_CODING_PLANS += PipelineConfiguration.DEMOG_CODING_PLANS
         PipelineConfiguration.SURVEY_CODING_PLANS += PipelineConfiguration.FOLLOW_UP_CODING_PLANS
         PipelineConfiguration.WS_CORRECT_DATASET_SCHEME = coding_plans.get_ws_correct_dataset_scheme(self.pipeline_name)
@@ -111,6 +114,7 @@ class PipelineConfiguration(object):
         bucket_dir_path = configuration_dict["BucketDirPath"]
 
         pipeline_name = configuration_dict.get("PipelineName")
+        season_name = configuration_dict.get("SeasonName")
 
         drive_upload_paths = None
         if "DriveUpload" in configuration_dict:
@@ -121,7 +125,7 @@ class PipelineConfiguration(object):
         return cls(raw_data_sources, phone_number_uuid_table, timestamp_remappings,
                    rapid_pro_key_remappings, project_start_date, project_end_date, filter_test_messages,
                    move_ws_messages, memory_profile_upload_bucket, data_archive_upload_bucket, bucket_dir_path,
-                   pipeline_name, drive_upload_paths, listening_group_csv_urls)
+                   pipeline_name, season_name, drive_upload_paths, listening_group_csv_urls)
 
     @classmethod
     def from_configuration_file(cls, f):
@@ -150,6 +154,9 @@ class PipelineConfiguration(object):
 
         if self.pipeline_name is not None:
             validators.validate_string(self.pipeline_name, "pipeline_name")
+
+        if self.season_name is not None:
+            validators.validate_string(self.pipeline_name, "season_name")
 
         if self.drive_upload is not None:
             assert isinstance(self.drive_upload, DriveUpload), \

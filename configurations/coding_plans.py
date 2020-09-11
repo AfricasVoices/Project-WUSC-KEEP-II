@@ -19,8 +19,8 @@ def clean_age_with_range_filter(text):
         return Codes.NOT_CODED
 
 
-def get_rqa_coding_plans(pipeline_name):
-    if pipeline_name == "dadaab_pipeline":
+def get_rqa_coding_plans(season_name):
+    if season_name == "s01_dadaab":
         return [
             CodingPlan(raw_field="rqa_s01e01_raw",
                        dataset_name="dadaab_s01e01",
@@ -176,7 +176,7 @@ def get_rqa_coding_plans(pipeline_name):
                        raw_field_fold_strategy=FoldStrategies.concatenate),
         ]
 
-    elif pipeline_name == "kakuma_pipeline":
+    elif season_name == "s01_kakuma":
         return [
             CodingPlan(raw_field="rqa_s01e01_raw",
                        dataset_name="kakuma_s01e01",
@@ -528,8 +528,8 @@ def get_demog_coding_plans(pipeline_name):
                    raw_field_fold_strategy=FoldStrategies.assert_equal),
     ]
 
-def get_follow_up_coding_plans(pipeline_name):
-    if pipeline_name == "dadaab_pipeline":
+def get_follow_up_coding_plans(season_name):
+    if season_name == "s01_dadaab":
         return [
             CodingPlan(raw_field="girls_education_champions_raw",
                        dataset_name="dadaab_girls_education_champions",
@@ -624,7 +624,7 @@ def get_follow_up_coding_plans(pipeline_name):
                        raw_field_fold_strategy=FoldStrategies.concatenate)
         ]
 
-    elif pipeline_name == "kakuma_pipeline":
+    elif season_name == "s01_kakuma":
         return [
             CodingPlan(raw_field="girls_education_champions_raw",
                        dataset_name="kakuma_girls_education_champions",
