@@ -111,16 +111,17 @@
     {"RapidProKey": "Show_Suggestions (Time) - kakuma_s01_evaluation_flow", "PipelineKey": "show_suggestions_time"}
   ],
   "PipelineName": "kakuma_pipeline",
+  "SeasonName": "s01_kakuma",
   "ProjectStartDate": "2020-01-18T13:00:00+03:00",
   "ProjectEndDate": "2100-01-01T00:00:00+03:00",
   "FilterTestMessages": true,
   "MoveWSMessages": true,
   "DriveUpload": {
     "DriveCredentialsFileURL": "gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
-    "ProductionUploadPath": "wusc_keep_ii_analysis_outputs/kakuma/wusc_keep_ii_s01_kakuma_production.csv",
-    "MessagesUploadPath": "wusc_keep_ii_analysis_outputs/kakuma/wusc_keep_ii_s01_kakuma_messages.csv",
-    "IndividualsUploadPath": "wusc_keep_ii_analysis_outputs/kakuma/wusc_keep_ii_s01_kakuma_individuals.csv",
-    "AutomatedAnalysisDir": "wusc_keep_ii_analysis_outputs/kakuma/automated_analysis"
+    "ProductionUploadPath": "wusc_keep_ii_analysis_outputs/kakuma/s01/wusc_keep_ii_s01_kakuma_production.csv",
+    "MessagesUploadPath": "wusc_keep_ii_analysis_outputs/kakuma/s01/wusc_keep_ii_s01_kakuma_messages.csv",
+    "IndividualsUploadPath": "wusc_keep_ii_analysis_outputs/kakuma/s01/wusc_keep_ii_s01_kakuma_individuals.csv",
+    "AutomatedAnalysisDir": "wusc_keep_ii_analysis_outputs/kakuma/s01/automated_analysis"
   },
   "MemoryProfileUploadURLPrefix": "gs://avf-pipeline-logs-performance-nearline/",
   "DataArchiveUploadURLPrefix": "gs://pipeline-execution-backup-archive",
