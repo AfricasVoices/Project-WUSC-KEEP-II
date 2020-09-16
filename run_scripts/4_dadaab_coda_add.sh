@@ -26,6 +26,14 @@ DATASETS=(
     "dadaab_s01e07"
     "dadaab_s01_intro"
 
+    "dadaab_s02e01"
+    "dadaab_s02e02"
+    "dadaab_s02e03"
+    "dadaab_s02e04"
+    "dadaab_s02e05"
+    "dadaab_s02e06"
+    "dadaab_s02e07"
+
     "dadaab_location"
     "dadaab_gender"
     "dadaab_age"
@@ -37,6 +45,8 @@ DATASETS=(
     "dadaab_unmarried_fathers_community_view"
     "dadaab_lessons_learnt"
     "dadaab_show_suggestions"
+
+    "dadaab_community_views_on_girls_education"
 )
 
 cd "$CODA_V2_ROOT/data_tools"
