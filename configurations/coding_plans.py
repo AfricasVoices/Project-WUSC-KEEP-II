@@ -19,9 +19,7 @@ def clean_age_with_range_filter(text):
         return Codes.NOT_CODED
 
 
-def get_rqa_coding_plans(season_name):
-    if season_name == "s01_dadaab":
-        return [
+S01_DADAAB_RQA_CODING_PLANS  = [
             CodingPlan(raw_field="rqa_s01e01_raw",
                        dataset_name="dadaab_s01e01",
                        time_field="sent_on",
@@ -176,8 +174,143 @@ def get_rqa_coding_plans(season_name):
                        raw_field_fold_strategy=FoldStrategies.concatenate),
         ]
 
-    elif season_name == "s01_kakuma":
-        return [
+S02_DADAAB_RQA_CODING_PLANS  = [
+            CodingPlan(raw_field="rqa_s02e01_raw",
+                       dataset_name="dadaab_s02e01",
+                       time_field="sent_on",
+                       run_id_field="rqa_s02e01_run_id",
+                       coda_filename="dadaab_s02e01.json",
+                       icr_filename="dadaab_s02e01.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.DADAAB_S02E01_REASONS,
+                               coded_field="rqa_s02e01_coded",
+                               analysis_file_key="rqa_s02e01_",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                   CodeSchemes.DADAAB_S02E01_REASONS, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s02e01"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
+
+            CodingPlan(raw_field="rqa_s02e02_raw",
+                       dataset_name="dadaab_s02e02",
+                       time_field="sent_on",
+                       run_id_field="rqa_s02e02_run_id",
+                       coda_filename="dadaab_s02e02.json",
+                       icr_filename="dadaab_s02e02.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.DADAAB_S02E02_REASONS,
+                               coded_field="rqa_s02e02_coded",
+                               analysis_file_key="rqa_s02e02_",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                   CodeSchemes.DADAAB_S02E02_REASONS, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s02e02"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
+
+            CodingPlan(raw_field="rqa_s02e03_raw",
+                       dataset_name="dadaab_s02e03",
+                       time_field="sent_on",
+                       run_id_field="rqa_s02e03_run_id",
+                       coda_filename="dadaab_s02e03.json",
+                       icr_filename="dadaab_s02e03.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.DADAAB_S02E03_REASONS,
+                               coded_field="rqa_s02e03_coded",
+                               analysis_file_key="rqa_s02e03_",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                   CodeSchemes.DADAAB_S02E03_REASONS, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s02e03"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
+
+            CodingPlan(raw_field="rqa_s02e04_raw",
+                       dataset_name="dadaab_s02e04",
+                       time_field="sent_on",
+                       run_id_field="rqa_s02e04_run_id",
+                       coda_filename="dadaab_s02e04.json",
+                       icr_filename="dadaab_s02e04.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.DADAAB_S02E04_REASONS,
+                               coded_field="rqa_s02e04_coded",
+                               analysis_file_key="rqa_s02e04_",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                   CodeSchemes.DADAAB_S02E04_REASONS, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s02e04"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
+
+            CodingPlan(raw_field="rqa_s02e05_raw",
+                       dataset_name="dadaab_s02e05",
+                       time_field="sent_on",
+                       run_id_field="rqa_s02e05_run_id",
+                       coda_filename="dadaab_s02e05.json",
+                       icr_filename="dadaab_s02e05.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.DADAAB_S02E05_REASONS,
+                               coded_field="rqa_s02e05_coded",
+                               analysis_file_key="rqa_s02e05_",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                   CodeSchemes.DADAAB_S02E05_REASONS, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s02e05"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
+
+            CodingPlan(raw_field="rqa_s02e06_raw",
+                       dataset_name="dadaab_s02e06",
+                       time_field="sent_on",
+                       run_id_field="rqa_s02e06_run_id",
+                       coda_filename="dadaab_s02e06.json",
+                       icr_filename="dadaab_s02e06.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.DADAAB_S02E06_REASONS,
+                               coded_field="rqa_s02e06_coded",
+                               analysis_file_key="rqa_s02e06_",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                   CodeSchemes.DADAAB_S02E06_REASONS, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s02e06"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
+
+            CodingPlan(raw_field="rqa_s02e07_raw",
+                       dataset_name="dadaab_s02e07",
+                       time_field="sent_on",
+                       run_id_field="rqa_s02e07_run_id",
+                       coda_filename="dadaab_s02e07.json",
+                       icr_filename="dadaab_s02e07.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.DADAAB_S02E07_REASONS,
+                               coded_field="rqa_s02e07_coded",
+                               analysis_file_key="rqa_s02e07_",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                   CodeSchemes.DADAAB_S01E07_REASONS, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s02e07"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
+
+        ]
+
+S01_KAKUMA_RQA_CODING_PLANS = [
             CodingPlan(raw_field="rqa_s01e01_raw",
                        dataset_name="kakuma_s01e01",
                        listening_group_filename="kakuma_s01e01_listening_group.csv",
@@ -339,104 +472,171 @@ def get_rqa_coding_plans(season_name):
                        raw_field_fold_strategy=FoldStrategies.concatenate),
     ]
 
+S02_KAKUMA_RQA_CODING_PLANS  = [
+            CodingPlan(raw_field="rqa_s02e01_raw",
+                       dataset_name="kakuma_s02e01",
+                       listening_group_filename="kakuma_s02e01_listening_group.csv",
+                       time_field="sent_on",
+                       run_id_field="rqa_s02e01_run_id",
+                       coda_filename="kakuma_s02e01.json",
+                       icr_filename="kakuma_s02e01.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.KAKUMA_S02E01_REASONS,
+                               coded_field="rqa_s02e01_coded",
+                               analysis_file_key="rqa_s02e01_",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                   CodeSchemes.KAKUMA_S02E01_REASONS, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s02e01"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
 
-def get_demog_coding_plans(pipeline_name):
+            CodingPlan(raw_field="rqa_s02e02_raw",
+                       dataset_name="kakuma_s02e02",
+                       listening_group_filename="kakuma_s02e02_listening_group.csv",
+                       time_field="sent_on",
+                       run_id_field="rqa_s02e02_run_id",
+                       coda_filename="kakuma_s02e02.json",
+                       icr_filename="kakuma_s02e02.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.KAKUMA_S02E02_REASONS,
+                               coded_field="rqa_s02e02_coded",
+                               analysis_file_key="rqa_s02e02_",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                   CodeSchemes.KAKUMA_S02E02_REASONS, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s02e02"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
 
-    if pipeline_name == "kakuma_pipeline":
-        return [
-        CodingPlan(raw_field="location_raw",
-                   dataset_name="kakuma_location",
-                   time_field="location_time",
-                   coda_filename="kakuma_location.json",
-                   coding_configurations=[
-                       CodingConfiguration(
-                           coding_mode=CodingModes.SINGLE,
-                           code_scheme=CodeSchemes.KAKUMA_LOCATION,
-                           coded_field="location_coded",
-                           analysis_file_key="location",
-                           fold_strategy=FoldStrategies.assert_label_ids_equal
-                       ),
-                   ],
-                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma location"),
-                   raw_field_fold_strategy=FoldStrategies.assert_equal),
+            CodingPlan(raw_field="rqa_s02e03_raw",
+                       dataset_name="kakuma_s02e03",
+                       listening_group_filename="kakuma_s02e03_listening_group.csv",
+                       time_field="sent_on",
+                       run_id_field="rqa_s02e03_run_id",
+                       coda_filename="kakuma_s02e03.json",
+                       icr_filename="kakuma_s02e03.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.KAKUMA_S02E03_REASONS,
+                               coded_field="rqa_s02e03_coded",
+                               analysis_file_key="rqa_s02e03_",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                   CodeSchemes.KAKUMA_S02E03_REASONS, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s02e03"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
 
-        CodingPlan(raw_field="gender_raw",
-                   dataset_name="kakuma_gender",
-                   time_field="gender_time",
-                   coda_filename="kakuma_gender.json",
-                   coding_configurations=[
-                       CodingConfiguration(
-                           coding_mode=CodingModes.SINGLE,
-                           code_scheme=CodeSchemes.GENDER,
-                           cleaner=somali.DemographicCleaner.clean_gender,
-                           coded_field="gender_coded",
-                           analysis_file_key="gender",
-                           fold_strategy=FoldStrategies.assert_label_ids_equal
-                       )
-                   ],
-                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma gender"),
-                   raw_field_fold_strategy=FoldStrategies.assert_equal),
+            CodingPlan(raw_field="rqa_s02e04_raw",
+                       dataset_name="kakuma_s02e04",
+                       listening_group_filename="kakuma_s02e04_listening_group.csv",
+                       time_field="sent_on",
+                       run_id_field="rqa_s02e04_run_id",
+                       coda_filename="kakuma_s02e04.json",
+                       icr_filename="kakuma_s02e04.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.KAKUMA_S02E04_REASONS,
+                               coded_field="rqa_s02e04_coded",
+                               analysis_file_key="rqa_s02e04_",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                   CodeSchemes.KAKUMA_S02E04_REASONS, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s02e04"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
 
-        CodingPlan(raw_field="age_raw",
-                   dataset_name="kakuma_age",
-                   time_field="age_time",
-                   coda_filename="kakuma_age.json",
-                   coding_configurations=[
-                       CodingConfiguration(
-                           coding_mode=CodingModes.SINGLE,
-                           code_scheme=CodeSchemes.AGE,
-                           cleaner=lambda text: clean_age_with_range_filter(text),
-                           coded_field="age_coded",
-                           analysis_file_key="age",
-                           fold_strategy=FoldStrategies.assert_label_ids_equal
-                       ),
-                       CodingConfiguration(
-                           coding_mode=CodingModes.SINGLE,
-                           code_scheme=CodeSchemes.AGE_CATEGORY,
-                           coded_field="age_category_coded",
-                           analysis_file_key="age_category",
-                           fold_strategy=FoldStrategies.assert_label_ids_equal
-                       )
-                   ],
-                   code_imputation_function=code_imputation_functions.impute_age_category,
-                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma age"),
-                   raw_field_fold_strategy=FoldStrategies.assert_equal),
+            CodingPlan(raw_field="rqa_s02e05_raw",
+                       dataset_name="kakuma_s02e05",
+                       listening_group_filename="kakuma_s02e05_listening_group.csv",
+                       time_field="sent_on",
+                       run_id_field="rqa_s02e05_run_id",
+                       coda_filename="kakuma_s02e05.json",
+                       icr_filename="kakuma_s02e05.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.KAKUMA_S02E05_REASONS,
+                               coded_field="rqa_s02e05_coded",
+                               analysis_file_key="rqa_s02e05_",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                   CodeSchemes.KAKUMA_S02E05_REASONS, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s02e05"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
 
-        CodingPlan(raw_field="household_language_raw",
-                   dataset_name="kakuma_household_language",
-                   time_field="household_language_time",
-                   coda_filename="kakuma_household_language.json",
-                   coding_configurations=[
-                       CodingConfiguration(
-                           coding_mode=CodingModes.SINGLE,
-                           code_scheme=CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE,
-                           coded_field="household_language_coded",
-                           analysis_file_key="household_language",
-                           fold_strategy=FoldStrategies.assert_label_ids_equal
-                       )
-                   ],
-                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma household language"),
-                   raw_field_fold_strategy=FoldStrategies.assert_equal),
+            CodingPlan(raw_field="rqa_s02e06_raw",
+                       dataset_name="kakuma_s02e06",
+                       listening_group_filename="kakuma_s02e06_listening_group.csv",
+                       time_field="sent_on",
+                       run_id_field="rqa_s02e06_run_id",
+                       coda_filename="kakuma_s02e06.json",
+                       icr_filename="kakuma_s02e06.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.KAKUMA_S02E06_REASONS,
+                               coded_field="rqa_s02e06_coded",
+                               analysis_file_key="rqa_s02e06_",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                   CodeSchemes.KAKUMA_S02E06_REASONS, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s02e06"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
 
-        CodingPlan(raw_field="nationality_raw",
-                   dataset_name="kakuma_nationality",
-                   time_field="nationality_time",
-                   coda_filename="kakuma_nationality.json",
-                   coding_configurations=[
-                       CodingConfiguration(
-                           coding_mode=CodingModes.SINGLE,
-                           code_scheme=CodeSchemes.NATIONALITY,
-                           coded_field="nationality_coded",
-                           analysis_file_key="nationality",
-                           fold_strategy=FoldStrategies.assert_label_ids_equal
-                       )
-                   ],
-                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma nationality"),
-                   raw_field_fold_strategy=FoldStrategies.assert_equal),
+            CodingPlan(raw_field="rqa_s02e07_raw",
+                       dataset_name="kakuma_s02e07",
+                       listening_group_filename="kakuma_s02e07_listening_group.csv",
+                       time_field="sent_on",
+                       run_id_field="rqa_s02e07_run_id",
+                       coda_filename="kakuma_s02e07.json",
+                       icr_filename="kakuma_s02e07.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.KAKUMA_S02E07_REASONS,
+                               coded_field="rqa_s02e07_coded",
+                               analysis_file_key="rqa_s02e07_",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                   CodeSchemes.KAKUMA_S01E07_REASONS, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s02e07"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
+
         ]
 
-    elif pipeline_name == "dadaab_pipeline":
-        return [
+def get_rqa_coding_plans(season_name):
+    if season_name == "s01_dadaab":
+        return S01_DADAAB_RQA_CODING_PLANS
+
+    elif season_name == "s02_dadaab":
+        return S02_DADAAB_RQA_CODING_PLANS
+
+    elif season_name == "all_seasons_dadaab":
+        return S01_DADAAB_RQA_CODING_PLANS + S02_DADAAB_RQA_CODING_PLANS
+
+    elif season_name == "s01_kakuma":
+        return S01_KAKUMA_RQA_CODING_PLANS
+
+    elif season_name == "s02_kakuma":
+        return S02_KAKUMA_RQA_CODING_PLANS
+
+    else:
+        assert season_name == "all_seasons_kakuma", "SeasonName must be either 's01_dadaab|s01_kakuma|s02_dadaab|s02_kakuma|all_seasons_dadaab'" \
+                                                    " or 'all_seasons_kakuma'"
+        return S01_KAKUMA_RQA_CODING_PLANS + S02_KAKUMA_RQA_CODING_PLANS
+
+DADAAB_DEMOGS_CODING_PLAN = [
         CodingPlan(raw_field="location_raw",
                    dataset_name="dadaab_location",
                    time_field="location_time",
@@ -528,9 +728,108 @@ def get_demog_coding_plans(pipeline_name):
                    raw_field_fold_strategy=FoldStrategies.assert_equal),
     ]
 
-def get_follow_up_coding_plans(season_name):
-    if season_name == "s01_dadaab":
-        return [
+KAKUMA_DEMOG_CODING_PLANS = [
+        CodingPlan(raw_field="location_raw",
+                   dataset_name="kakuma_location",
+                   time_field="location_time",
+                   coda_filename="kakuma_location.json",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.SINGLE,
+                           code_scheme=CodeSchemes.KAKUMA_LOCATION,
+                           coded_field="location_coded",
+                           analysis_file_key="location",
+                           fold_strategy=FoldStrategies.assert_label_ids_equal
+                       ),
+                   ],
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma location"),
+                   raw_field_fold_strategy=FoldStrategies.assert_equal),
+
+        CodingPlan(raw_field="gender_raw",
+                   dataset_name="kakuma_gender",
+                   time_field="gender_time",
+                   coda_filename="kakuma_gender.json",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.SINGLE,
+                           code_scheme=CodeSchemes.GENDER,
+                           cleaner=somali.DemographicCleaner.clean_gender,
+                           coded_field="gender_coded",
+                           analysis_file_key="gender",
+                           fold_strategy=FoldStrategies.assert_label_ids_equal
+                       )
+                   ],
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma gender"),
+                   raw_field_fold_strategy=FoldStrategies.assert_equal),
+
+        CodingPlan(raw_field="age_raw",
+                   dataset_name="kakuma_age",
+                   time_field="age_time",
+                   coda_filename="kakuma_age.json",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.SINGLE,
+                           code_scheme=CodeSchemes.AGE,
+                           cleaner=lambda text: clean_age_with_range_filter(text),
+                           coded_field="age_coded",
+                           analysis_file_key="age",
+                           fold_strategy=FoldStrategies.assert_label_ids_equal
+                       ),
+                       CodingConfiguration(
+                           coding_mode=CodingModes.SINGLE,
+                           code_scheme=CodeSchemes.AGE_CATEGORY,
+                           coded_field="age_category_coded",
+                           analysis_file_key="age_category",
+                           fold_strategy=FoldStrategies.assert_label_ids_equal
+                       )
+                   ],
+                   code_imputation_function=code_imputation_functions.impute_age_category,
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma age"),
+                   raw_field_fold_strategy=FoldStrategies.assert_equal),
+
+        CodingPlan(raw_field="household_language_raw",
+                   dataset_name="kakuma_household_language",
+                   time_field="household_language_time",
+                   coda_filename="kakuma_household_language.json",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.SINGLE,
+                           code_scheme=CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE,
+                           coded_field="household_language_coded",
+                           analysis_file_key="household_language",
+                           fold_strategy=FoldStrategies.assert_label_ids_equal
+                       )
+                   ],
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma household language"),
+                   raw_field_fold_strategy=FoldStrategies.assert_equal),
+
+        CodingPlan(raw_field="nationality_raw",
+                   dataset_name="kakuma_nationality",
+                   time_field="nationality_time",
+                   coda_filename="kakuma_nationality.json",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.SINGLE,
+                           code_scheme=CodeSchemes.NATIONALITY,
+                           coded_field="nationality_coded",
+                           analysis_file_key="nationality",
+                           fold_strategy=FoldStrategies.assert_label_ids_equal
+                       )
+                   ],
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma nationality"),
+                   raw_field_fold_strategy=FoldStrategies.assert_equal),
+        ]
+
+
+def get_demog_coding_plans(pipeline_name):
+
+    if pipeline_name == "dadaab_pipeline":
+        return DADAAB_DEMOGS_CODING_PLAN
+    else:
+        assert pipeline_name == "kakuma_pipeline","PipelineName must be either 'kakuma_pipeline' or 'dadaab_pipeline'"
+        return KAKUMA_DEMOG_CODING_PLANS
+
+S01_DADAAB_FOLLOW_UP_CODING_PLANS = [
             CodingPlan(raw_field="girls_education_champions_raw",
                        dataset_name="dadaab_girls_education_champions",
                        time_field="girls_education_champions_time",
@@ -624,8 +923,27 @@ def get_follow_up_coding_plans(season_name):
                        raw_field_fold_strategy=FoldStrategies.concatenate)
         ]
 
-    elif season_name == "s01_kakuma":
-        return [
+S02_DADAAB_FOLLOW_UP_CODING_PLANS = [
+            CodingPlan(raw_field="community_views_on_girls_education_raw",
+                       dataset_name="dadaab_community_views_on_girls_education",
+                       time_field="community_views_on_girls_education_time",
+                       coda_filename="dadaab_community_views_on_girls_education.json",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.DADAAB_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION,
+                               coded_field="community_views_on_girls_education_coded",
+                               analysis_file_key="community_views_on_girls_education_",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                   CodeSchemes.DADAAB_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value(
+                           "dadaab community views on girls education"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
+        ]
+
+S01_KAKUMA_FOLLOW_UP_CODING_PLANS = [
             CodingPlan(raw_field="girls_education_champions_raw",
                        dataset_name="kakuma_girls_education_champions",
                        time_field="girls_education_champions_time",
@@ -718,6 +1036,48 @@ def get_follow_up_coding_plans(season_name):
                            "kakuma show suggestions"),
                        raw_field_fold_strategy=FoldStrategies.concatenate)
         ]
+
+S02_KAKUMA_FOLLOW_UP_CODING_PLANS = [
+            CodingPlan(raw_field="community_views_on_girls_education_raw",
+                       dataset_name="kakuma_community_views_on_girls_education",
+                       time_field="community_views_on_girls_education_time",
+                       coda_filename="kakuma_community_views_on_girls_education.json",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.KAKUMA_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION,
+                               coded_field="community_views_on_girls_education_coded",
+                               analysis_file_key="community_views_on_girls_education_",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                   CodeSchemes.KAKUMA_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value(
+                           "kakuma community views on girls education"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
+        ]
+
+def get_follow_up_coding_plans(season_name):
+    if season_name == "s01_dadaab":
+        return S01_DADAAB_FOLLOW_UP_CODING_PLANS
+
+    elif season_name == "s02_dadaab":
+        return S02_DADAAB_FOLLOW_UP_CODING_PLANS
+
+    elif season_name == "all_seasons_dadaab":
+        return S01_DADAAB_FOLLOW_UP_CODING_PLANS + S02_DADAAB_FOLLOW_UP_CODING_PLANS
+
+    elif season_name == "s01_kakuma":
+        return S01_KAKUMA_FOLLOW_UP_CODING_PLANS
+
+    elif season_name == "s02_kakuma":
+        return S02_KAKUMA_FOLLOW_UP_CODING_PLANS
+
+    else:
+        assert season_name == "all_seasons_kakuma", "SeasonName must be either 's01_dadaab|s01_kakuma|s02_dadaab|s02_kakuma|all_seasons_dadaab'" \
+                                                " or 'all_seasons_kakuma'"
+        return S01_KAKUMA_FOLLOW_UP_CODING_PLANS + S02_KAKUMA_FOLLOW_UP_CODING_PLANS
+
 
 def get_ws_correct_dataset_scheme(pipeline_name):
     if pipeline_name == "dadaab_pipeline":

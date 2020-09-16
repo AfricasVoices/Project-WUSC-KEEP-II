@@ -19,6 +19,14 @@ class CodeSchemes(object):
     DADAAB_S01E07_REASONS = _open_scheme("dadaab_s01e07_reasons.json")
     DADAAB_S01_INTRO_REASONS = _open_scheme("dadaab_s01_intro_reasons.json")
 
+    DADAAB_S02E01_REASONS = _open_scheme("dadaab_s02e01_reasons.json")
+    DADAAB_S02E02_REASONS = _open_scheme("dadaab_s02e02_reasons.json")
+    DADAAB_S02E03_REASONS = _open_scheme("dadaab_s02e03_reasons.json")
+    DADAAB_S02E04_REASONS = _open_scheme("dadaab_s02e04_reasons.json")
+    DADAAB_S02E05_REASONS = _open_scheme("dadaab_s02e05_reasons.json")
+    DADAAB_S02E06_REASONS = _open_scheme("dadaab_s02e06_reasons.json")
+    DADAAB_S02E07_REASONS = _open_scheme("dadaab_s02e07_reasons.json")
+
     KAKUMA_S01E01_REASONS = _open_scheme("kakuma_s01e01_reasons.json")
     KAKUMA_S01E02_REASONS = _open_scheme("kakuma_s01e02_reasons.json")
     KAKUMA_S01E03_REASONS = _open_scheme("kakuma_s01e03_reasons.json")
@@ -27,6 +35,14 @@ class CodeSchemes(object):
     KAKUMA_S01E06_REASONS = _open_scheme("kakuma_s01e06_reasons.json")
     KAKUMA_S01E07_REASONS = _open_scheme("kakuma_s01e07_reasons.json")
     KAKUMA_S01_INTRO_REASONS = _open_scheme("kakuma_s01_intro_reasons.json")
+
+    KAKUMA_S02E01_REASONS = _open_scheme("kakuma_s02e01_reasons.json")
+    KAKUMA_S02E02_REASONS = _open_scheme("kakuma_s02e02_reasons.json")
+    KAKUMA_S02E03_REASONS = _open_scheme("kakuma_s02e03_reasons.json")
+    KAKUMA_S02E04_REASONS = _open_scheme("kakuma_s02e04_reasons.json")
+    KAKUMA_S02E05_REASONS = _open_scheme("kakuma_s02e05_reasons.json")
+    KAKUMA_S02E06_REASONS = _open_scheme("kakuma_s02e06_reasons.json")
+    KAKUMA_S02E07_REASONS = _open_scheme("kakuma_s02e07_reasons.json")
 
     GENDER = _open_scheme("gender.json")
     NATIONALITY = _open_scheme("nationality.json")
@@ -43,11 +59,15 @@ class CodeSchemes(object):
     DADAAB_LESSONS_LEARNT = _open_scheme("dadaab_lessons_learnt.json")
     DADAAB_SHOW_SUGGESTIONS = _open_scheme("dadaab_show_suggestions.json")
 
+    DADAAB_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION = _open_scheme("dadaab_community_views_on_girls_education.json")
+
     KAKUMA_GIRLS_EDUCATION_CHAMPIONS = _open_scheme("kakuma_girls_education_champions.json")
     KAKUMA_ENCOURAGEMENT_FOR_BOYS_CHAMPIONS = _open_scheme("kakuma_encouragement_for_boys.json")
     KAKUMA_UNMARRIED_FATHERS_COMMUNITY_VIEW = _open_scheme("kakuma_unmarried_fathers_community_view.json")
     KAKUMA_LESSONS_LEARNT = _open_scheme("kakuma_lessons_learnt.json")
     KAKUMA_SHOW_SUGGESTIONS = _open_scheme("kakuma_show_suggestions.json")
+
+    KAKUMA_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION = _open_scheme("kakuma_community_views_on_girls_education.json")
 
     KAKUMA_WS_CORRECT_DATASET = _open_scheme("kakuma_ws_correct_dataset.json")
     DADAAB_WS_CORRECT_DATASET = _open_scheme("dadaab_ws_correct_dataset.json")
