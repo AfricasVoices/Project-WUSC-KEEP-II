@@ -615,25 +615,25 @@ S02_KAKUMA_RQA_CODING_PLANS  = [
 
         ]
 
-def get_rqa_coding_plans(season_name):
-    if season_name == "s01_dadaab":
+def get_rqa_coding_plans(pipeline_name):
+    if pipeline_name == "dadaab_s01_pipeline":
         return S01_DADAAB_RQA_CODING_PLANS
 
-    elif season_name == "s02_dadaab":
+    elif pipeline_name == "dadaab_s02_pipeline":
         return S02_DADAAB_RQA_CODING_PLANS
 
-    elif season_name == "all_seasons_dadaab":
+    elif pipeline_name == "dadaab_all_seasons_pipeline":
         return S01_DADAAB_RQA_CODING_PLANS + S02_DADAAB_RQA_CODING_PLANS
 
-    elif season_name == "s01_kakuma":
+    elif pipeline_name == "kakuma_s01_pipeline":
         return S01_KAKUMA_RQA_CODING_PLANS
 
-    elif season_name == "s02_kakuma":
+    elif pipeline_name == "kakuma_s02_pipeline":
         return S02_KAKUMA_RQA_CODING_PLANS
 
     else:
-        assert season_name == "all_seasons_kakuma", "SeasonName must be either 's01_dadaab|s01_kakuma|s02_dadaab|s02_kakuma|all_seasons_dadaab'" \
-                                                    " or 'all_seasons_kakuma'"
+        assert pipeline_name == "kakuma_all_seasons_pipeline", "SeasonName must be either 'dadaab_s01_pipeline|" \
+                                "PipelineName must be either a 'seasonal pipeline' or 'all seasons pipeline'"
         return S01_KAKUMA_RQA_CODING_PLANS + S02_KAKUMA_RQA_CODING_PLANS
 
 DADAAB_DEMOGS_CODING_PLAN = [
@@ -823,10 +823,11 @@ KAKUMA_DEMOG_CODING_PLANS = [
 
 def get_demog_coding_plans(pipeline_name):
 
-    if pipeline_name == "dadaab_pipeline":
+    if pipeline_name in ["dadaab_s01_pipeline", "dadaab_s02_pipeline", "dadaab_all_seasons_pipeline"]:
         return DADAAB_DEMOGS_CODING_PLAN
     else:
-        assert pipeline_name == "kakuma_pipeline","PipelineName must be either 'kakuma_pipeline' or 'dadaab_pipeline'"
+        assert pipeline_name in ["kakuma_s01_pipeline", "kakuma_s02_pipeline", "kakuma_all_seasons_pipeline"],\
+            "PipelineName must be either a 'seasonal pipeline' or 'all seasons pipeline'"
         return KAKUMA_DEMOG_CODING_PLANS
 
 S01_DADAAB_FOLLOW_UP_CODING_PLANS = [
@@ -1057,30 +1058,32 @@ S02_KAKUMA_FOLLOW_UP_CODING_PLANS = [
                        raw_field_fold_strategy=FoldStrategies.concatenate),
         ]
 
-def get_follow_up_coding_plans(season_name):
-    if season_name == "s01_dadaab":
+
+def get_follow_up_coding_plans(pipeline_name):
+    if pipeline_name == "dadaab_s01_pipeline":
         return S01_DADAAB_FOLLOW_UP_CODING_PLANS
 
-    elif season_name == "s02_dadaab":
+    elif pipeline_name == "dadaab_s02_pipeline":
         return S02_DADAAB_FOLLOW_UP_CODING_PLANS
 
-    elif season_name == "all_seasons_dadaab":
+    elif pipeline_name == "dadaab_all_seasons_pipeline":
         return S01_DADAAB_FOLLOW_UP_CODING_PLANS + S02_DADAAB_FOLLOW_UP_CODING_PLANS
 
-    elif season_name == "s01_kakuma":
+    elif pipeline_name == "kakuma_s01_pipeline":
         return S01_KAKUMA_FOLLOW_UP_CODING_PLANS
 
-    elif season_name == "s02_kakuma":
+    elif pipeline_name == "kakuma_s02_pipeline":
         return S02_KAKUMA_FOLLOW_UP_CODING_PLANS
 
     else:
-        assert season_name == "all_seasons_kakuma", "SeasonName must be either 's01_dadaab|s01_kakuma|s02_dadaab|s02_kakuma|all_seasons_dadaab'" \
-                                                " or 'all_seasons_kakuma'"
+        assert pipeline_name == "kakuma_all_seasons_pipeline", "PipelineName must be either a 'seasonal pipeline' or 'all seasons pipeline'"
         return S01_KAKUMA_FOLLOW_UP_CODING_PLANS + S02_KAKUMA_FOLLOW_UP_CODING_PLANS
 
 
 def get_ws_correct_dataset_scheme(pipeline_name):
-    if pipeline_name == "dadaab_pipeline":
+    if pipeline_name in ["dadaab_s01_pipeline", "dadaab_s02_pipeline", "dadaab_all_seasons_pipeline"]:
         return CodeSchemes.DADAAB_WS_CORRECT_DATASET
-    elif pipeline_name == "kakuma_pipeline":
+    else:
+        assert pipeline_name in ["kakuma_s01_pipeline", "kakuma_s02_pipeline", "kakuma_all_seasons_pipeline"], \
+            "PipelineName must be either a 'seasonal pipeline' or 'all seasons pipeline'"
         return CodeSchemes.KAKUMA_WS_CORRECT_DATASET

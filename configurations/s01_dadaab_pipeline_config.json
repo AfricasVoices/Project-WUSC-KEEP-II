@@ -103,8 +103,7 @@
     {"RapidProKey": "Lessons_Learnt (Time) - dadaab_s01_evaluation_flow", "PipelineKey": "lessons_learnt_time"},
     {"RapidProKey": "Show_Suggestions (Time) - dadaab_s01_evaluation_flow", "PipelineKey": "show_suggestions_time"}
   ],
-  "PipelineName": "dadaab_pipeline",
-  "SeasonName": "s01_dadaab",
+  "PipelineName": "dadaab_s01_pipeline",
   "ProjectStartDate": "2020-02-06T08:20:00+03:00",
   "ProjectEndDate": "2100-01-01T00:00:00+03:00",
   "FilterTestMessages": true,

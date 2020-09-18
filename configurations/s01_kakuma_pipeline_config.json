@@ -110,8 +110,7 @@
     {"RapidProKey": "Lessons_Learnt (Time) - kakuma_s01_evaluation_flow", "PipelineKey": "lessons_learnt_time"},
     {"RapidProKey": "Show_Suggestions (Time) - kakuma_s01_evaluation_flow", "PipelineKey": "show_suggestions_time"}
   ],
-  "PipelineName": "kakuma_pipeline",
-  "SeasonName": "s01_kakuma",
+  "PipelineName": "kakuma_s01_pipeline",
   "ProjectStartDate": "2020-01-18T13:00:00+03:00",
   "ProjectEndDate": "2100-01-01T00:00:00+03:00",
   "FilterTestMessages": true,

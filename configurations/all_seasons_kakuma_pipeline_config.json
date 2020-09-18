@@ -153,8 +153,7 @@
     {"RapidProKey": "Community_Views_On_Girls_Education (Time) - wusc_keep_ii_s02_kakuma_initial_evaluation", "PipelineKey": "community_views_on_girls_education"}
 
   ],
-  "PipelineName": "kakuma_pipeline",
-  "SeasonName": "all_seasons_kakuma",
+  "PipelineName": "kakuma_all_seasons_pipeline",
   "ProjectStartDate": "2020-01-18T13:00:00+03:00",
   "ProjectEndDate": "2100-01-01T00:00:00+03:00",
   "FilterTestMessages": true,
