@@ -149,7 +149,7 @@
       },
       {
         "MetaCode": "other",
-        "StringValue": "other",
+        "StringValue": "meta_other",
         "DisplayText": "meta: other",
         "VisibleInCoda": false,
         "NumericValue": -100110,
