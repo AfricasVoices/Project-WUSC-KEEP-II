@@ -46,7 +46,6 @@ DATASETS=(
     "kakuma_show_suggestions"
 
     "kakuma_community_views_on_girls_education"
-
 )
 
 cd "$CODA_V2_ROOT/data_tools"
