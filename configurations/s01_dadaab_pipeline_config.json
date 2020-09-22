@@ -103,17 +103,17 @@
     {"RapidProKey": "Lessons_Learnt (Time) - dadaab_s01_evaluation_flow", "PipelineKey": "lessons_learnt_time"},
     {"RapidProKey": "Show_Suggestions (Time) - dadaab_s01_evaluation_flow", "PipelineKey": "show_suggestions_time"}
   ],
-  "PipelineName": "dadaab_pipeline",
+  "PipelineName": "dadaab_s01_pipeline",
   "ProjectStartDate": "2020-02-06T08:20:00+03:00",
   "ProjectEndDate": "2100-01-01T00:00:00+03:00",
   "FilterTestMessages": true,
   "MoveWSMessages": true,
   "DriveUpload": {
     "DriveCredentialsFileURL": "gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
-    "ProductionUploadPath": "wusc_keep_ii_analysis_outputs/dadaab/wusc_keep_ii_s01_dadaab_production.csv",
-    "MessagesUploadPath": "wusc_keep_ii_analysis_outputs/dadaab/wusc_keep_ii_s01_dadaab_messages.csv",
-    "IndividualsUploadPath": "wusc_keep_ii_analysis_outputs/dadaab/wusc_keep_ii_s01_dadaab_individuals.csv",
-    "AnalysisGraphsDir": "wusc_keep_ii_analysis_outputs/dadaab/analysis_graphs"
+    "ProductionUploadPath": "wusc_keep_ii_analysis_outputs/dadaab/s01/wusc_keep_ii_s01_dadaab_production.csv",
+    "MessagesUploadPath": "wusc_keep_ii_analysis_outputs/dadaab/s01/wusc_keep_ii_s01_dadaab_messages.csv",
+    "IndividualsUploadPath": "wusc_keep_ii_analysis_outputs/dadaab/s01/wusc_keep_ii_s01_dadaab_individuals.csv",
+    "AnalysisGraphsDir": "wusc_keep_ii_analysis_outputs/dadaab/s01/automated_analysis"
   },
   "MemoryProfileUploadURLPrefix": "gs://avf-pipeline-logs-performance-nearline/2019/WUSC-KEEP-ii/dadaab-memory-",
   "DataArchiveUploadURLPrefix": "gs://pipeline-execution-backup-archive/2019/WUSC-KEEP-ii/dadaab-data-"
