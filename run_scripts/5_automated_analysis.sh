@@ -28,6 +28,7 @@ GOOGLE_CLOUD_CREDENTIALS_FILE_PATH=$2
 PIPELINE_CONFIGURATION_FILE_PATH=$3
 DATA_ROOT=$4
 
+#Create a new Automated Analysis dir for each pipeline run so that we only upload archives with files generated for each run.
 if [ -d "$DATA_ROOT/Outputs/Automated Analysis" ]
 then
     rm -r "$DATA_ROOT/Outputs/Automated Analysis"
