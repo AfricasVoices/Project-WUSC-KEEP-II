@@ -25,6 +25,14 @@ DATASETS=(
     "kakuma_s01e07"
     "kakuma_s01_intro"
 
+    "kakuma_s02e01"
+    "kakuma_s02e02"
+    "kakuma_s02e03"
+    "kakuma_s02e04"
+    "kakuma_s02e05"
+    "kakuma_s02e06"
+    "kakuma_s02e07"
+
     "kakuma_location"
     "kakuma_gender"
     "kakuma_age"
@@ -36,6 +44,8 @@ DATASETS=(
     "kakuma_unmarried_fathers_community_view"
     "kakuma_lessons_learnt"
     "kakuma_show_suggestions"
+
+    "kakuma_community_views_on_girls_education"
 )
 
 cd "$CODA_V2_ROOT/data_tools"

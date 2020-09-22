@@ -32,7 +32,12 @@ GOOGLE_CLOUD_CREDENTIALS_FILE_PATH=$2
 PIPELINE_CONFIGURATION_FILE_PATH=$3
 DATA_ROOT=$4
 
-mkdir -p "$DATA_ROOT/Coded Coda Files"
+#Create a new output dir for each pipeline run so that we only upload archives with files generated for each run.
+if [ -d "$DATA_ROOT/Outputs" ]
+then
+    rm -r "$DATA_ROOT/Outputs"
+fi
+
 mkdir -p "$DATA_ROOT/Outputs"
 
 cd ..
