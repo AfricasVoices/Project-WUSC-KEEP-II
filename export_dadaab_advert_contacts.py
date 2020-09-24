@@ -68,7 +68,6 @@ if __name__ == "__main__":
     # Convert the uuids to phone numbers
     log.info("Converting the uuids to phone numbers...")
     uuids_to_phone_numbers = phone_number_uuid_table.uuid_to_data_batch(list(advert_uids))
-
     advert_contacts = [f"+{uuids_to_phone_numbers[uuid]}" for uuid in advert_uids]
 
     # Export contacts CSV
@@ -76,7 +75,6 @@ if __name__ == "__main__":
     with open(csv_output_file_path, "w") as f:
         writer = csv.DictWriter(f, fieldnames=["URN:Tel", "Name"], lineterminator="\n")
         writer.writeheader()
-
         for n in advert_contacts:
             writer.writerow({
                 "URN:Tel": n
