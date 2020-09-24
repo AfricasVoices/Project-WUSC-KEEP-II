@@ -27,7 +27,7 @@ if __name__ == "__main__":
     parser.add_argument("listening_group_data_dir", metavar="listening-group-data-dir",
                         help="Directory path to read listening group CSV files to extract listening group data from,")
     parser.add_argument("messages_traced_data_paths", metavar="messages-traced-data-paths", nargs="+",
-                        help="Paths to the traced data files messages to extract phone numbers from")
+                        help="Paths to the messages traced data files to extract phone numbers from")
     parser.add_argument("contacts_csv_path", metavar="contacts-csv-path",
                         help="CSV file path to write the contacts data to")
 
