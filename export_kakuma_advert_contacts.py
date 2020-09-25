@@ -24,9 +24,10 @@ if __name__ == "__main__":
                              "credentials bucket")
     parser.add_argument("pipeline_configuration_file_path", metavar="pipeline-configuration-file",
                         help="Path to WUSC-KEEP-II-KAKUMA pipeline configuration json file")
-    parser.add_argument("data_dir", metavar="data-dir",
-                        help="Directory path to read messages traced data JSONL file + listening group CSV files "
-                             "to extract phone from, and write the advert CSV file to")
+    parser.add_argument("listening_group_data_dir", metavar="listening-group-data-dir",
+                        help="Directory path to read listening group CSV files to extract listening group data from,")
+    parser.add_argument("messages_traced_data_paths", metavar="messages-traced-data-paths", nargs="+",
+                        help="Paths to the messages traced data files to extract phone numbers from")
     parser.add_argument("contacts_csv_path", metavar="contacts-csv-path",
                         help="CSV file path to write the contacts data to")
 
@@ -34,14 +35,16 @@ if __name__ == "__main__":
 
     google_cloud_credentials_file_path = args.google_cloud_credentials_file_path
     pipeline_configuration_file_path = args.pipeline_configuration_file_path
-    data_dir = args.data_dir
+    listening_group_data_dir = args.listening_group_data_dir
+    messages_traced_data_paths = args.messages_traced_data_paths
     contacts_csv_path = args.contacts_csv_path
 
     # Read the settings from the configuration file
     log.info("Loading Pipeline Configuration File...")
     with open(pipeline_configuration_file_path) as f:
         pipeline_configuration = PipelineConfiguration.from_configuration_file(f)
-        assert pipeline_configuration.pipeline_name == "kakuma_pipeline", "PipelineName must be kakuma_pipeline"
+        assert pipeline_configuration.pipeline_name in ["kakuma_s01_pipeline", "kakuma_s02_pipeline", "kakuma_all_seasons_pipeline"], \
+            "PipelineName must be either a 'seasonal pipeline' or 'all seasons pipeline'"
 
     log.info("Downloading Firestore UUID Table credentials...")
     firestore_uuid_table_credentials = json.loads(google_cloud_utils.download_blob_to_string(
@@ -56,11 +59,6 @@ if __name__ == "__main__":
     )
     log.info("Initialised the Firestore UUID table")
 
-    # Read the messages dataset
-    log.info(f'Loading the messages dataset ...')
-    with open(f'{data_dir}/Outputs/messages_traced_data.jsonl') as f:
-        messages = TracedDataJsonIO.import_jsonl_to_traced_data_iterable(f)
-    log.info(f'Loaded {len(messages)} objects from the dataset')
 
     # Search the Messages TracedData and listening group CSV files for uuids for kakuma participants based on their
     # manually labelled household language i.e Oromo/Sudanese-Juba-arabic/Somali/English/Swahili speakers.
@@ -72,31 +70,39 @@ if __name__ == "__main__":
     swahili_uuids = set()
     all_uuids = set()
 
-    log.info(f'Searching for the participants uuids vis-a-vis` their manually labelled '
-             f'demographic language response')
-    for msg in messages:
-        if msg['uid'] in all_uuids or msg["consent_withdrawn"] == Codes.TRUE:
-            continue
+    for path in messages_traced_data_paths:
+        # Load the traced data
+        log.info(f"Loading previous traced data from file '{path}'...")
+        with open(path) as f:
+            messages = TracedDataJsonIO.import_jsonl_to_traced_data_iterable(f)
+        log.info(f"Loaded {len(messages)} traced data objects")
 
-        all_uuids.add(msg['uid'])
+        log.info(f'Searching for the participants uuids vis-a-vis` their manually labelled '
+                 f'demographic language response')
 
-        if CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE.get_code_with_code_id(
-                msg["household_language_coded"]["CodeID"]).string_value == "oromo":
-            oromo_uuids.add(msg['uid'])
-        elif CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE.get_code_with_code_id(
-                    msg["household_language_coded"]["CodeID"]).string_value == "sudanese":
-                sudanese_juba_arabic_uuids.add(msg['uid'])
-        elif CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE.get_code_with_code_id(
-                    msg["household_language_coded"]["CodeID"]).string_value == "turkana":
-                turkana_uuids.add(msg['uid'])
-        elif CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE.get_code_with_code_id(
-                    msg["household_language_coded"]["CodeID"]).string_value == "somali":
-                somali_uuids.add(msg['uid'])
-        elif CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE.get_code_with_code_id(
-                    msg["household_language_coded"]["CodeID"]).string_value == "english":
-                english_uuids.add(msg['uid'])
-        else:
-            swahili_uuids.add(msg['uid'])
+        for msg in messages:
+            if msg['uid'] in all_uuids or msg["consent_withdrawn"] == Codes.TRUE:
+                continue
+
+            all_uuids.add(msg['uid'])
+
+            if CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE.get_code_with_code_id(
+                    msg["household_language_coded"]["CodeID"]).string_value == "oromo":
+                oromo_uuids.add(msg['uid'])
+            elif CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE.get_code_with_code_id(
+                        msg["household_language_coded"]["CodeID"]).string_value == "sudanese":
+                    sudanese_juba_arabic_uuids.add(msg['uid'])
+            elif CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE.get_code_with_code_id(
+                        msg["household_language_coded"]["CodeID"]).string_value == "turkana":
+                    turkana_uuids.add(msg['uid'])
+            elif CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE.get_code_with_code_id(
+                        msg["household_language_coded"]["CodeID"]).string_value == "somali":
+                    somali_uuids.add(msg['uid'])
+            elif CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE.get_code_with_code_id(
+                        msg["household_language_coded"]["CodeID"]).string_value == "english":
+                    english_uuids.add(msg['uid'])
+            else:
+                swahili_uuids.add(msg['uid'])
 
     # Load all listening group de-identified CSV files
     listening_group_csvs = []
@@ -104,10 +110,10 @@ if __name__ == "__main__":
         listening_group_csvs.append(listening_group_csv_url.split("/")[-1])
 
     for listening_group_csv in listening_group_csvs:
-        with open(f'{data_dir}/Raw Data/{listening_group_csv}', "r", encoding='utf-8-sig') as f:
+        with open(f'{listening_group_data_dir}/Raw Data/{listening_group_csv}', "r", encoding='utf-8-sig') as f:
             data = list(csv.DictReader(f))
             log.info(
-                f'Loaded {len(data)} listening group participants from {data_dir}/Raw Data/{listening_group_csv}')
+                f'Loaded {len(data)} listening group participants from {listening_group_data_dir}/Raw Data/{listening_group_csv}')
 
             # Add the lg avf-phone-uuids to their respective language set
             for row in data:
