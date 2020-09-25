@@ -302,7 +302,7 @@ S02_DADAAB_RQA_CODING_PLANS  = [
                                coded_field="rqa_s02e07_coded",
                                analysis_file_key="rqa_s02e07_",
                                fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
-                                   CodeSchemes.DADAAB_S01E07_REASONS, x, y)
+                                   CodeSchemes.DADAAB_S02E07_REASONS, x, y)
                            )
                        ],
                        ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s02e07"),
@@ -607,7 +607,7 @@ S02_KAKUMA_RQA_CODING_PLANS  = [
                                coded_field="rqa_s02e07_coded",
                                analysis_file_key="rqa_s02e07_",
                                fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
-                                   CodeSchemes.KAKUMA_S01E07_REASONS, x, y)
+                                   CodeSchemes.KAKUMA_S02E07_REASONS, x, y)
                            )
                        ],
                        ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s02e07"),
