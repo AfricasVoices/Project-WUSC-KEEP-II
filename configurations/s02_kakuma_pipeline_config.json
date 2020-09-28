@@ -12,13 +12,14 @@
         "wusc_keep_ii_s02e04_kakuma_activation",
         "wusc_keep_ii_s02e05_kakuma_activation",
         "wusc_keep_ii_s02e06_kakuma_activation",
-        "wusc_keep_ii_s02e07_kakuma_activation"
+        "wusc_keep_ii_s02e07_kakuma_activation",
+        "wusc_keep_ii_s02_kakuma_initial_evaluation"
+
       ],
       "SurveyFlowNames": [
         "wusc_keep_ii_kakuma_demogs",
         "wusc_covid19_adaptation_kakuma_demogs",
-        "wusc_keep_ii_s02_kakuma_demogs",
-        "wusc_keep_ii_s02_kakuma_initial_evaluation"
+        "wusc_keep_ii_s02_kakuma_demogs"
       ],
       "TestContactUUIDs": [
         "84f1c3bc-596e-455e-b5f6-ce16640e9b95",
@@ -48,7 +49,7 @@
     {"RapidProKey": "Rqa_S02E06_Kakuma (Text) - wusc_keep_ii_s02e06_kakuma_activation", "PipelineKey": "rqa_s02e06_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_S02E07_Kakuma (Text) - wusc_keep_ii_s02e07_kakuma_activation", "PipelineKey": "rqa_s02e07_raw", "IsActivationMessage": true},
 
-    {"RapidProKey": "Community_Views_On_Girls_Education (Run ID) - wusc_keep_ii_s02_kakuma_initial_evaluation", "PipelineKey": "community_views_on_girls_education_raw_run_id"},
+    {"RapidProKey": "Community_Views_On_Girls_Education (Run ID) - wusc_keep_ii_s02_kakuma_initial_evaluation", "PipelineKey": "community_views_on_girls_education_run_id"},
     {"RapidProKey": "Rqa_S02E01_Kakuma (Run ID) - wusc_keep_ii_s02e01_kakuma_activation", "PipelineKey": "rqa_s02e01_run_id"},
     {"RapidProKey": "Rqa_S02E02_Kakuma (Run ID) - wusc_keep_ii_s02e02_kakuma_activation", "PipelineKey": "rqa_s02e02_run_id"},
     {"RapidProKey": "Rqa_S02E03_Kakuma (Run ID) - wusc_keep_ii_s02e03_kakuma_activation", "PipelineKey": "rqa_s02e03_run_id"},

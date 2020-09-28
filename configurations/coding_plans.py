@@ -179,7 +179,8 @@ S02_DADAAB_RQA_CODING_PLANS  = [
                        dataset_name="dadaab_community_views_on_girls_education",
                        time_field="sent_on",
                        coda_filename="dadaab_community_views_on_girls_education.json",
-                       run_id_field="community_views_on_girls_education_raw_run_id",
+                       run_id_field="community_views_on_girls_education_run_id",
+                       icr_filename="dadaab_community_views_on_girls_education.csv",
                        coding_configurations=[
                            CodingConfiguration(
                                coding_mode=CodingModes.MULTIPLE,
@@ -497,7 +498,8 @@ S02_KAKUMA_RQA_CODING_PLANS  = [
                        dataset_name="kakuma_community_views_on_girls_education",
                        time_field="sent_on",
                        coda_filename="kakuma_community_views_on_girls_education.json",
-                       run_id_field="community_views_on_girls_education_raw_run_id",
+                       run_id_field="community_views_on_girls_education_run_id",
+                       icr_filename="kakuma_community_views_on_girls_education.csv",
                        coding_configurations=[
                            CodingConfiguration(
                                coding_mode=CodingModes.MULTIPLE,
