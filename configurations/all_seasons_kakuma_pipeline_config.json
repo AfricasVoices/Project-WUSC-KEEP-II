@@ -149,8 +149,8 @@
     {"RapidProKey": "Lessons_Learnt (Time) - kakuma_s01_evaluation_flow", "PipelineKey": "lessons_learnt_time"},
     {"RapidProKey": "Show_Suggestions (Time) - kakuma_s01_evaluation_flow", "PipelineKey": "show_suggestions_time"},
 
-    {"RapidProKey": "Community_Views_On_Girls_Education (Text) - wusc_keep_ii_s02_kakuma_initial_evaluation", "PipelineKey": "community_views_on_girls_education"},
-    {"RapidProKey": "Community_Views_On_Girls_Education (Time) - wusc_keep_ii_s02_kakuma_initial_evaluation", "PipelineKey": "community_views_on_girls_education"}
+    {"RapidProKey": "Community_Views_On_Girls_Education (Text) - wusc_keep_ii_s02_kakuma_initial_evaluation", "PipelineKey": "community_views_on_girls_education_raw"},
+    {"RapidProKey": "Community_Views_On_Girls_Education (Time) - wusc_keep_ii_s02_kakuma_initial_evaluation", "PipelineKey": "community_views_on_girls_education_time"}
 
   ],
   "PipelineName": "kakuma_all_seasons_pipeline",
