@@ -77,6 +77,7 @@
     {"RapidProKey": "Rqa_S01_E07_Kakuma (Time) - wusc_keep_ii_s01_e07_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S01_Intro_Kakuma (Time) - wusc_keep_ii_s01_intro_kakuma_activation", "PipelineKey": "sent_on"},
 
+    {"RapidProKey": "Community_Views_On_Girls_Education (Text) - wusc_keep_ii_s02_kakuma_initial_evaluation", "PipelineKey": "community_views_on_girls_education_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_S02E01_Kakuma (Text) - wusc_keep_ii_s02e01_kakuma_activation", "PipelineKey": "rqa_s02e01_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_S02E02_Kakuma (Text) - wusc_keep_ii_s02e02_kakuma_activation", "PipelineKey": "rqa_s02e02_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_S02E03_Kakuma (Text) - wusc_keep_ii_s02e03_kakuma_activation", "PipelineKey": "rqa_s02e03_raw", "IsActivationMessage": true},
@@ -85,6 +86,7 @@
     {"RapidProKey": "Rqa_S02E06_Kakuma (Text) - wusc_keep_ii_s02e06_kakuma_activation", "PipelineKey": "rqa_s02e06_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_S02E07_Kakuma (Text) - wusc_keep_ii_s02e07_kakuma_activation", "PipelineKey": "rqa_s02e07_raw", "IsActivationMessage": true},
 
+    {"RapidProKey": "Community_Views_On_Girls_Education (Run ID) - wusc_keep_ii_s02_kakuma_initial_evaluation", "PipelineKey": "community_views_on_girls_education_raw_run_id"},
     {"RapidProKey": "Rqa_S02E01_Kakuma (Run ID) - wusc_keep_ii_s02e01_kakuma_activation", "PipelineKey": "rqa_s02e01_run_id"},
     {"RapidProKey": "Rqa_S02E02_Kakuma (Run ID) - wusc_keep_ii_s02e02_kakuma_activation", "PipelineKey": "rqa_s02e02_run_id"},
     {"RapidProKey": "Rqa_S02E03_Kakuma (Run ID) - wusc_keep_ii_s02e03_kakuma_activation", "PipelineKey": "rqa_s02e03_run_id"},
@@ -93,6 +95,7 @@
     {"RapidProKey": "Rqa_S02E06_Kakuma (Run ID) - wusc_keep_ii_s02e06_kakuma_activation", "PipelineKey": "rqa_s02e06_run_id"},
     {"RapidProKey": "Rqa_S02E07_Kakuma (Run ID) - wusc_keep_ii_s02e07_kakuma_activation", "PipelineKey": "rqa_s02e07_run_id"},
 
+    {"RapidProKey": "Community_Views_On_Girls_Education (Time) - wusc_keep_ii_s02_kakuma_initial_evaluation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S02E01_Kakuma (Time) - wusc_keep_ii_s02e01_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S02E02_Kakuma (Time) - wusc_keep_ii_s02e02_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S02E03_Kakuma (Time) - wusc_keep_ii_s02e03_kakuma_activation", "PipelineKey": "sent_on"},
@@ -147,10 +150,7 @@
     {"RapidProKey": "Encouragement_For_Boys (Time) - wusc_keep_ii_s01_w4_kakuma_follow_up", "PipelineKey": "encouragement_for_boys_time"},
     {"RapidProKey": "Unmarried_Fathers_Community_View (Time) - wusc_keep_ii_s01_w6_kakuma_follow_up", "PipelineKey": "unmarried_fathers_community_view_time"},
     {"RapidProKey": "Lessons_Learnt (Time) - kakuma_s01_evaluation_flow", "PipelineKey": "lessons_learnt_time"},
-    {"RapidProKey": "Show_Suggestions (Time) - kakuma_s01_evaluation_flow", "PipelineKey": "show_suggestions_time"},
-
-    {"RapidProKey": "Community_Views_On_Girls_Education (Text) - wusc_keep_ii_s02_kakuma_initial_evaluation", "PipelineKey": "community_views_on_girls_education_raw"},
-    {"RapidProKey": "Community_Views_On_Girls_Education (Time) - wusc_keep_ii_s02_kakuma_initial_evaluation", "PipelineKey": "community_views_on_girls_education_time"}
+    {"RapidProKey": "Show_Suggestions (Time) - kakuma_s01_evaluation_flow", "PipelineKey": "show_suggestions_time"}
 
   ],
   "PipelineName": "kakuma_all_seasons_pipeline",
