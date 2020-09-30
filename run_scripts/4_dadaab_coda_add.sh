@@ -17,14 +17,14 @@ DATA_ROOT=$3
 PROJECT_NAME="WUSC-KEEP-II"
 
 DATASETS=(
-    "dadaab_s01e01"
-    "dadaab_s01e02"
-    "dadaab_s01e03"
-    "dadaab_s01e04"
-    "dadaab_s01e05"
-    "dadaab_s01e06"
-    "dadaab_s01e07"
-    "dadaab_s01_intro"
+    #"dadaab_s01e01"
+    #"dadaab_s01e02"
+    #"dadaab_s01e03"
+    #"dadaab_s01e04"
+    #"dadaab_s01e05"
+    #"dadaab_s01e06"
+    #"dadaab_s01e07"
+    #"dadaab_s01_intro"
 
     "dadaab_s02e01"
     "dadaab_s02e02"
@@ -40,11 +40,11 @@ DATASETS=(
     "dadaab_nationality"
     "dadaab_household_language"
 
-    "dadaab_girls_education_champions"
-    "dadaab_encouragement_for_boys"
-    "dadaab_unmarried_fathers_community_view"
-    "dadaab_lessons_learnt"
-    "dadaab_show_suggestions"
+    #"dadaab_girls_education_champions"
+    #"dadaab_encouragement_for_boys"
+    #"dadaab_unmarried_fathers_community_view"
+    #"dadaab_lessons_learnt"
+    #"dadaab_show_suggestions"
 
     "dadaab_community_views_on_girls_education"
 )
