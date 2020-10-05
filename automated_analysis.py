@@ -1,9 +1,6 @@
 import argparse
 import csv
-import json
-import random
 from collections import OrderedDict
-from glob import glob
 
 import plotly.express as px
 from core_data_modules.cleaners import Codes
@@ -11,8 +8,6 @@ from core_data_modules.data_models.code_scheme import CodeTypes
 from core_data_modules.logging import Logger
 from core_data_modules.traced_data.io import TracedDataJsonIO
 from core_data_modules.util import IOUtils
-from storage.google_cloud import google_cloud_utils
-from storage.google_drive import drive_client_wrapper
 
 from src.lib import PipelineConfiguration
 from src.lib.configuration_objects import CodingModes
@@ -30,9 +25,6 @@ if __name__ == "__main__":
                                                  "`generate_outputs.py`, and optionally uploads the outputs to Drive.")
 
     parser.add_argument("user", help="User launching this program")
-    parser.add_argument("google_cloud_credentials_file_path", metavar="google-cloud-credentials-file-path",
-                        help="Path to a Google Cloud service account credentials file to use to access the "
-                             "credentials bucket")
     parser.add_argument("pipeline_configuration_file_path", metavar="pipeline-configuration-file",
                         help="Path to the pipeline configuration json file")
 
@@ -46,7 +38,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     user = args.user
-    google_cloud_credentials_file_path = args.google_cloud_credentials_file_path
     pipeline_configuration_file_path = args.pipeline_configuration_file_path
 
     messages_json_input_path = args.messages_json_input_path
@@ -59,28 +50,7 @@ if __name__ == "__main__":
     log.info("Loading Pipeline Configuration File...")
     with open(pipeline_configuration_file_path) as f:
         pipeline_configuration = PipelineConfiguration.from_configuration_file(f)
-
-    if pipeline_configuration.drive_upload is not None:
-        log.info(f"Downloading Google Drive service account credentials...")
-        credentials_info = json.loads(google_cloud_utils.download_blob_to_string(
-            google_cloud_credentials_file_path, pipeline_configuration.drive_upload.drive_credentials_file_url))
-        drive_client_wrapper.init_client_from_info(credentials_info)
-
-    # Infer which RQA and Demog coding plans to use from the pipeline name.
-    if pipeline_configuration.pipeline_name == "dadaab_pipeline":
-        log.info("Extracting Dadaab pipeline data")
-        PipelineConfiguration.RQA_CODING_PLANS = PipelineConfiguration.DADAAB_RQA_CODING_PLANS
-        PipelineConfiguration.DEMOG_CODING_PLANS = PipelineConfiguration.DADAAB_DEMOG_CODING_PLANS
-        PipelineConfiguration.SURVEY_CODING_PLANS = PipelineConfiguration.DADAAB_SURVEY_CODING_PLANS
-        CodeSchemes.WS_CORRECT_DATASET = CodeSchemes.DADAAB_WS_CORRECT_DATASET
-    else:
-        assert pipeline_configuration.pipeline_name == "kakuma_pipeline", "PipelineName must be either " \
-                                                                          "'dadaab_pipeline or kakuma_pipeline"
-        log.info("Extracting Kakuma pipeline data")
-        PipelineConfiguration.RQA_CODING_PLANS = PipelineConfiguration.KAKUMA_RQA_CODING_PLANS
-        PipelineConfiguration.DEMOG_CODING_PLANS = PipelineConfiguration.KAKUMA_DEMOG_CODING_PLANS
-        PipelineConfiguration.SURVEY_CODING_PLANS = PipelineConfiguration.KAKUMA_SURVEY_CODING_PLANS
-        CodeSchemes.WS_CORRECT_DATASET = CodeSchemes.KAKUMA_WS_CORRECT_DATASET
+    Logger.set_project_name(pipeline_configuration.pipeline_name)
 
     # Read the messages dataset
     log.info(f"Loading the messages dataset from {messages_json_input_path}...")
