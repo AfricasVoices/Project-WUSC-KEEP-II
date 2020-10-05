@@ -20,7 +20,9 @@
         "wusc_keep_ii_s02e04_dadaab_activation",
         "wusc_keep_ii_s02e05_dadaab_activation",
         "wusc_keep_ii_s02e06_dadaab_activation",
-        "wusc_keep_ii_s02e07_dadaab_activation"
+        "wusc_keep_ii_s02e07_dadaab_activation",
+        "wusc_keep_ii_s02_dadaab_initial_evaluation"
+
       ],
       "SurveyFlowNames": [
         "wusc_keep_ii_dadaab_demogs",
@@ -29,8 +31,7 @@
         "wusc_keep_ii_s01_w3_dadaab_follow_up",
         "wusc_keep_ii_s01_w4_dadaab_follow_up",
         "wusc_keep_ii_s01_w6_dadaab_follow_up",
-        "dadaab_s01_evaluation_flow",
-        "wusc_keep_ii_s02_dadaab_initial_evaluation"
+        "dadaab_s01_evaluation_flow"
       ],
       "TestContactUUIDs": [
         "84f1c3bc-596e-455e-b5f6-ce16640e9b95",
@@ -77,6 +78,7 @@
     {"RapidProKey": "Rqa_S01_E07_Dadaab (Time) - wusc_keep_ii_s01_e07_dadaab_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S01_Intro_Dadaab (Time) - wusc_keep_ii_s01_intro_dadaab_activation", "PipelineKey": "sent_on"},
 
+    {"RapidProKey": "Community_Views_On_Girls_Education (Text) - wusc_keep_ii_s02_dadaab_initial_evaluation", "PipelineKey": "community_views_on_girls_education_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_S02E01_Dadaab (Text) - wusc_keep_ii_s02e01_dadaab_activation", "PipelineKey": "rqa_s02e01_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_S02E02_Dadaab (Text) - wusc_keep_ii_s02e02_dadaab_activation", "PipelineKey": "rqa_s02e02_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_S02E03_Dadaab (Text) - wusc_keep_ii_s02e03_dadaab_activation", "PipelineKey": "rqa_s02e03_raw", "IsActivationMessage": true},
@@ -85,6 +87,7 @@
     {"RapidProKey": "Rqa_S02E06_Dadaab (Text) - wusc_keep_ii_s02e06_dadaab_activation", "PipelineKey": "rqa_s02e06_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_S02E07_Dadaab (Text) - wusc_keep_ii_s02e07_dadaab_activation", "PipelineKey": "rqa_s02e07_raw", "IsActivationMessage": true},
 
+    {"RapidProKey": "Community_Views_On_Girls_Education (Run ID) - wusc_keep_ii_s02_dadaab_initial_evaluation", "PipelineKey": "community_views_on_girls_education_run_id"},
     {"RapidProKey": "Rqa_S02E01_Dadaab (Run ID) - wusc_keep_ii_s02e01_dadaab_activation", "PipelineKey": "rqa_s02e01_run_id"},
     {"RapidProKey": "Rqa_S02E02_Dadaab (Run ID) - wusc_keep_ii_s02e02_dadaab_activation", "PipelineKey": "rqa_s02e02_run_id"},
     {"RapidProKey": "Rqa_S02E03_Dadaab (Run ID) - wusc_keep_ii_s02e03_dadaab_activation", "PipelineKey": "rqa_s02e03_run_id"},
@@ -93,6 +96,7 @@
     {"RapidProKey": "Rqa_S02E06_Dadaab (Run ID) - wusc_keep_ii_s02e06_dadaab_activation", "PipelineKey": "rqa_s02e06_run_id"},
     {"RapidProKey": "Rqa_S02E07_Dadaab (Run ID) - wusc_keep_ii_s02e07_dadaab_activation", "PipelineKey": "rqa_s02e07_run_id"},
 
+    {"RapidProKey": "Community_Views_On_Girls_Education (Time) - wusc_keep_ii_s02_dadaab_initial_evaluation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S02E01_Dadaab (Time) - wusc_keep_ii_s02e01_dadaab_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S02E02_Dadaab (Time) - wusc_keep_ii_s02e02_dadaab_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S02E03_Dadaab (Time) - wusc_keep_ii_s02e03_dadaab_activation", "PipelineKey": "sent_on"},
@@ -147,10 +151,7 @@
     {"RapidProKey": "Encouragement_For_Boys (Time) - wusc_keep_ii_s01_w4_dadaab_follow_up", "PipelineKey": "encouragement_for_boys_time"},
     {"RapidProKey": "Unmarried_Fathers_Community_View (Time) - wusc_keep_ii_s01_w6_dadaab_follow_up", "PipelineKey": "unmarried_fathers_community_view_time"},
     {"RapidProKey": "Lessons_Learnt (Time) - dadaab_s01_evaluation_flow", "PipelineKey": "lessons_learnt_time"},
-    {"RapidProKey": "Show_Suggestions (Time) - dadaab_s01_evaluation_flow", "PipelineKey": "show_suggestions_time"},
-
-    {"RapidProKey": "Community_Views_On_Girls_Education (Text) - wusc_keep_ii_s02_dadaab_initial_evaluation", "PipelineKey": "community_views_on_girls_education_raw"},
-    {"RapidProKey": "Community_Views_On_Girls_Education (Time) - wusc_keep_ii_s02_dadaab_initial_evaluation", "PipelineKey": "community_views_on_girls_education_time"}
+    {"RapidProKey": "Show_Suggestions (Time) - dadaab_s01_evaluation_flow", "PipelineKey": "show_suggestions_time"}
 
   ],
   "PipelineName": "dadaab_all_seasons_pipeline",
