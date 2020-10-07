@@ -4,6 +4,46 @@
   "Version": "0.0.0.2",
   "Codes": [
     {
+      "CodeID": "code-dfc56c39",
+      "CodeType": "Normal",
+      "DisplayText": "yes",
+      "NumericValue": 1,
+      "StringValue": "yes",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-1f6212ff",
+      "CodeType": "Normal",
+      "DisplayText": "yes, agree",
+      "NumericValue": 2,
+      "StringValue": "yes, agree",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-138f462d",
+      "CodeType": "Normal",
+      "DisplayText": "yes, girls education is valued",
+      "NumericValue": 3,
+      "StringValue": "yes, girls education is valued",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-1f70e18b",
+      "CodeType": "Normal",
+      "DisplayText": "no",
+      "NumericValue": 4,
+      "StringValue": "no",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-e8b5aa4b",
+      "CodeType": "Normal",
+      "DisplayText": "no, there is no agreement",
+      "NumericValue": 5,
+      "StringValue": "no_there_is_no_agreement",
+      "VisibleInCoda": true
+    },
+    {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
@@ -47,6 +87,15 @@
         "NumericValue": -50,
         "StringValue": "NIC",
         "VisibleInCoda": false
+      },
+      {
+        "CodeID": "code-NOC-4eb70633",
+        "ControlCode": "NOC",
+        "StringValue": "NOC",
+        "DisplayText": "Noise (Other Channel)",
+        "VisibleInCoda": true,
+        "NumericValue": -60,
+        "CodeType": "Control"
       },
       {
         "CodeID": "code-STOP-08b832a8",
@@ -182,6 +231,15 @@
         "StringValue": "chasing_reply",
         "DisplayText": "meta: chasing reply",
         "VisibleInCoda": false
+      },
+    {
+        "NumericValue": -100140,
+        "CodeID": "code-I-b13a41f6",
+        "CodeType": "Meta",
+        "MetaCode": "impact",
+        "StringValue": "impact",
+        "DisplayText": "meta: impact",
+        "VisibleInCoda": true
       }
   ]
 }
