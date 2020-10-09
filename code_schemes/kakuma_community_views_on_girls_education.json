@@ -6,9 +6,9 @@
     {
       "CodeID": "code-a3d58611",
       "CodeType": "Normal",
-      "DisplayText": "yes",
+      "DisplayText": "yes, no reason",
       "NumericValue": 0,
-      "StringValue": "yes",
+      "StringValue": "yes_no_reason",
       "VisibleInCoda": true
     },
     {
@@ -46,9 +46,9 @@
     {
       "CodeID": "code-4879029e",
       "CodeType": "Normal",
-      "DisplayText": "no",
+      "DisplayText": "no, no reason",
       "NumericValue": 5,
-      "StringValue": "no",
+      "StringValue": "no_no_reason",
       "VisibleInCoda": true
     },
     {

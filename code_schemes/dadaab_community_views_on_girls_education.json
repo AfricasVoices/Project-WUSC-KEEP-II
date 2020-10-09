@@ -6,9 +6,9 @@
     {
       "CodeID": "code-dfc56c39",
       "CodeType": "Normal",
-      "DisplayText": "yes",
+      "DisplayText": "yes, no reason",
       "NumericValue": 1,
-      "StringValue": "yes",
+      "StringValue": "yes_no_reason",
       "VisibleInCoda": true
     },
     {
@@ -30,9 +30,9 @@
     {
       "CodeID": "code-1f70e18b",
       "CodeType": "Normal",
-      "DisplayText": "no",
+      "DisplayText": "no, no reason",
       "NumericValue": 4,
-      "StringValue": "no",
+      "StringValue": "no_no_reason",
       "VisibleInCoda": true
     },
     {
