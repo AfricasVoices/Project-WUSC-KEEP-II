@@ -4,6 +4,70 @@
   "Version": "0.0.0.2",
   "Codes": [
     {
+      "CodeID": "code-a3d58611",
+      "CodeType": "Normal",
+      "DisplayText": "yes, no reason",
+      "NumericValue": 0,
+      "StringValue": "yes_no_reason",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-930a4a3f",
+      "CodeType": "Normal",
+      "DisplayText": "yes, agree",
+      "NumericValue": 1,
+      "StringValue": "yes, agree",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-cf5254ef",
+      "CodeType": "Normal",
+      "DisplayText": "yes, agree but don't practice",
+      "NumericValue": 2,
+      "StringValue": "yes_agree_but_dont_practice",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-74691de1",
+      "CodeType": "Normal",
+      "DisplayText": "yes, not yet but improving",
+      "NumericValue": 3,
+      "StringValue": "yes_not_yet_but_improving",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-36f26bf2",
+      "CodeType": "Normal",
+      "DisplayText": "yes, equal rights",
+      "NumericValue": 4,
+      "StringValue": "yes_equal_rights",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-4879029e",
+      "CodeType": "Normal",
+      "DisplayText": "no, no reason",
+      "NumericValue": 5,
+      "StringValue": "no_no_reason",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-ecf73134",
+      "CodeType": "Normal",
+      "DisplayText": "no, there is no agreement",
+      "NumericValue": 6,
+      "StringValue": "no_there_is_no_agreement",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-1a482ca8",
+      "CodeType": "Normal",
+      "DisplayText": "no, it depends on the parents",
+      "NumericValue": 7,
+      "StringValue": "no_it_depends_on_the_parents",
+      "VisibleInCoda": true
+    },
+    {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
@@ -47,6 +111,15 @@
         "NumericValue": -50,
         "StringValue": "NIC",
         "VisibleInCoda": false
+      },
+      {
+        "CodeID": "code-NOC-4eb70633",
+        "ControlCode": "NOC",
+        "StringValue": "NOC",
+        "DisplayText": "Noise (Other Channel)",
+        "VisibleInCoda": true,
+        "NumericValue": -60,
+        "CodeType": "Control"
       },
       {
         "CodeID": "code-STOP-08b832a8",
@@ -182,6 +255,15 @@
         "StringValue": "chasing_reply",
         "DisplayText": "meta: chasing reply",
         "VisibleInCoda": false
+      },
+    {
+        "NumericValue": -100140,
+        "CodeID": "code-I-b13a41f6",
+        "CodeType": "Meta",
+        "MetaCode": "impact",
+        "StringValue": "impact",
+        "DisplayText": "meta: impact",
+        "VisibleInCoda": true
       }
   ]
 }

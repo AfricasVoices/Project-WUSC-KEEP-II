@@ -4,6 +4,62 @@
   "Version": "0.0.0.2",
   "Codes": [
     {
+      "CodeID": "code-a6d5d75a",
+      "CodeType": "Normal",
+      "DisplayText": "preparing school requirements",
+      "NumericValue": 1,
+      "StringValue": "preparing_school_requirements",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-21eaef25",
+      "CodeType": "Normal",
+      "DisplayText": "keep them studying",
+      "NumericValue": 2,
+      "StringValue": "keep_them_studying",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-d15128ff",
+      "CodeType": "Normal",
+      "DisplayText": "advising children",
+      "NumericValue": 3,
+      "StringValue": "advising_children",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-6b2e5347",
+      "CodeType": "Normal",
+      "DisplayText": "training children to follow health guidelines",
+      "NumericValue": 4,
+      "StringValue": "training_children_to_follow_health_guidelines",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-6dada55c",
+      "CodeType": "Normal",
+      "DisplayText": "keep encouraging them",
+      "NumericValue": 5,
+      "StringValue": "keep_encouraging_them",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-be97bf15",
+      "CodeType": "Normal",
+      "DisplayText": "schools_should_reopen",
+      "NumericValue": 6,
+      "StringValue": "schools_should_reopen",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-b9e105bd",
+      "CodeType": "Normal",
+      "DisplayText": "schools should stay closed",
+      "NumericValue": 7,
+      "StringValue": "schools_should_stay_closed",
+      "VisibleInCoda": true
+    },
+    {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
@@ -47,6 +103,15 @@
         "NumericValue": -50,
         "StringValue": "NIC",
         "VisibleInCoda": false
+      },
+      {
+        "CodeID": "code-NOC-4eb70633",
+        "ControlCode": "NOC",
+        "StringValue": "NOC",
+        "DisplayText": "Noise (Other Channel)",
+        "VisibleInCoda": true,
+        "NumericValue": -60,
+        "CodeType": "Control"
       },
       {
         "CodeID": "code-STOP-08b832a8",
@@ -182,6 +247,15 @@
         "StringValue": "chasing_reply",
         "DisplayText": "meta: chasing reply",
         "VisibleInCoda": false
+      },
+      {
+        "NumericValue": -100140,
+        "CodeID": "code-I-b13a41f6",
+        "CodeType": "Meta",
+        "MetaCode": "impact",
+        "StringValue": "impact",
+        "DisplayText": "meta: impact",
+        "VisibleInCoda": true
       }
   ]
 }
