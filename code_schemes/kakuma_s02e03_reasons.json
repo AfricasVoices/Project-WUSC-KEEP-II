@@ -49,6 +49,15 @@
         "VisibleInCoda": false
       },
       {
+        "CodeID": "code-NOC-4eb70633",
+        "ControlCode": "NOC",
+        "StringValue": "NOC",
+        "DisplayText": "Noise (Other Channel)",
+        "VisibleInCoda": true,
+        "NumericValue": -60,
+        "CodeType": "Control"
+      },
+      {
         "CodeID": "code-STOP-08b832a8",
         "CodeType": "Control",
         "ControlCode": "STOP",
@@ -182,6 +191,15 @@
         "StringValue": "chasing_reply",
         "DisplayText": "meta: chasing reply",
         "VisibleInCoda": false
+      },
+      {
+        "NumericValue": -100140,
+        "CodeID": "code-I-b13a41f6",
+        "CodeType": "Meta",
+        "MetaCode": "impact",
+        "StringValue": "impact",
+        "DisplayText": "meta: impact",
+        "VisibleInCoda": true
       }
   ]
 }
