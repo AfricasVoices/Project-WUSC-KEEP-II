@@ -4,7 +4,8 @@ class CodingModes(object):
 
 
 class CodingConfiguration(object):
-    def __init__(self, coding_mode, code_scheme, coded_field, fold_strategy, analysis_file_key=None, cleaner=None):
+    def __init__(self, coding_mode, code_scheme, coded_field, fold_strategy, analysis_file_key=None, cleaner=None,
+                 include_in_theme_distribution=False):
         assert coding_mode in {CodingModes.SINGLE, CodingModes.MULTIPLE}
 
         self.coding_mode = coding_mode
@@ -13,13 +14,14 @@ class CodingConfiguration(object):
         self.analysis_file_key = analysis_file_key
         self.fold_strategy = fold_strategy
         self.cleaner = cleaner
+        self.include_in_theme_distribution = include_in_theme_distribution
 
 
 # TODO: Rename CodingPlan to something like DatasetConfiguration?
 class CodingPlan(object):
     def __init__(self, raw_field, dataset_name, coding_configurations, raw_field_fold_strategy, coda_filename=None, ws_code=None,
                  time_field=None, run_id_field=None, icr_filename=None, id_field=None, code_imputation_function=None,
-                 listening_group_filename=None,):
+                 listening_group_filename=None):
         self.raw_field = raw_field
         self.dataset_name = dataset_name
         self.time_field = time_field

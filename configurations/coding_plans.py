@@ -688,7 +688,8 @@ DADAAB_DEMOGS_CODING_PLAN = [
                            code_scheme=CodeSchemes.DADAAB_LOCATION,
                            coded_field="location_coded",
                            analysis_file_key="location",
-                           fold_strategy=FoldStrategies.assert_label_ids_equal
+                           fold_strategy=FoldStrategies.assert_label_ids_equal,
+                           include_in_theme_distribution=Codes.TRUE
                        ),
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab location"),
@@ -705,7 +706,8 @@ DADAAB_DEMOGS_CODING_PLAN = [
                            cleaner=somali.DemographicCleaner.clean_gender,
                            coded_field="gender_coded",
                            analysis_file_key="gender",
-                           fold_strategy=FoldStrategies.assert_label_ids_equal
+                           fold_strategy=FoldStrategies.assert_label_ids_equal,
+                           include_in_theme_distribution=Codes.TRUE
                        )
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab gender"),
@@ -722,14 +724,16 @@ DADAAB_DEMOGS_CODING_PLAN = [
                            cleaner=lambda text: clean_age_with_range_filter(text),
                            coded_field="age_coded",
                            analysis_file_key="age",
-                           fold_strategy=FoldStrategies.assert_label_ids_equal
+                           fold_strategy=FoldStrategies.assert_label_ids_equal,
+                           include_in_theme_distribution=Codes.FALSE
                        ),
                        CodingConfiguration(
                            coding_mode=CodingModes.SINGLE,
                            code_scheme=CodeSchemes.AGE_CATEGORY,
                            coded_field="age_category_coded",
                            analysis_file_key="age_category",
-                           fold_strategy=FoldStrategies.assert_label_ids_equal
+                           fold_strategy=FoldStrategies.assert_label_ids_equal,
+                           include_in_theme_distribution=Codes.TRUE
                        )
                    ],
                    code_imputation_function=code_imputation_functions.impute_age_category,
@@ -746,7 +750,8 @@ DADAAB_DEMOGS_CODING_PLAN = [
                            code_scheme=CodeSchemes.DADAAB_HOUSEHOLD_LANGUAGE,
                            coded_field="household_language_coded",
                            analysis_file_key="household_language",
-                           fold_strategy=FoldStrategies.assert_label_ids_equal
+                           fold_strategy=FoldStrategies.assert_label_ids_equal,
+                           include_in_theme_distribution=Codes.TRUE
                        )
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab household language"),
@@ -762,7 +767,8 @@ DADAAB_DEMOGS_CODING_PLAN = [
                            code_scheme=CodeSchemes.NATIONALITY,
                            coded_field="nationality_coded",
                            analysis_file_key="nationality",
-                           fold_strategy=FoldStrategies.assert_label_ids_equal
+                           fold_strategy=FoldStrategies.assert_label_ids_equal,
+                           include_in_theme_distribution=Codes.TRUE
                        )
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab nationality"),
@@ -780,7 +786,8 @@ KAKUMA_DEMOG_CODING_PLANS = [
                            code_scheme=CodeSchemes.KAKUMA_LOCATION,
                            coded_field="location_coded",
                            analysis_file_key="location",
-                           fold_strategy=FoldStrategies.assert_label_ids_equal
+                           fold_strategy=FoldStrategies.assert_label_ids_equal,
+                           include_in_theme_distribution=Codes.TRUE
                        ),
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma location"),
@@ -797,7 +804,8 @@ KAKUMA_DEMOG_CODING_PLANS = [
                            cleaner=somali.DemographicCleaner.clean_gender,
                            coded_field="gender_coded",
                            analysis_file_key="gender",
-                           fold_strategy=FoldStrategies.assert_label_ids_equal
+                           fold_strategy=FoldStrategies.assert_label_ids_equal,
+                           include_in_theme_distribution=Codes.TRUE
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma gender"),
@@ -814,14 +822,16 @@ KAKUMA_DEMOG_CODING_PLANS = [
                            cleaner=lambda text: clean_age_with_range_filter(text),
                            coded_field="age_coded",
                            analysis_file_key="age",
-                           fold_strategy=FoldStrategies.assert_label_ids_equal
+                           fold_strategy=FoldStrategies.assert_label_ids_equal,
+                           include_in_theme_distribution=Codes.FALSE
                        ),
                        CodingConfiguration(
                            coding_mode=CodingModes.SINGLE,
                            code_scheme=CodeSchemes.AGE_CATEGORY,
                            coded_field="age_category_coded",
                            analysis_file_key="age_category",
-                           fold_strategy=FoldStrategies.assert_label_ids_equal
+                           fold_strategy=FoldStrategies.assert_label_ids_equal,
+                           include_in_theme_distribution=Codes.TRUE
                        )
                    ],
                    code_imputation_function=code_imputation_functions.impute_age_category,
@@ -838,7 +848,8 @@ KAKUMA_DEMOG_CODING_PLANS = [
                            code_scheme=CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE,
                            coded_field="household_language_coded",
                            analysis_file_key="household_language",
-                           fold_strategy=FoldStrategies.assert_label_ids_equal
+                           fold_strategy=FoldStrategies.assert_label_ids_equal,
+                           include_in_theme_distribution=Codes.TRUE
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma household language"),
@@ -854,7 +865,8 @@ KAKUMA_DEMOG_CODING_PLANS = [
                            code_scheme=CodeSchemes.NATIONALITY,
                            coded_field="nationality_coded",
                            analysis_file_key="nationality",
-                           fold_strategy=FoldStrategies.assert_label_ids_equal
+                           fold_strategy=FoldStrategies.assert_label_ids_equal,
+                           include_in_theme_distribution=Codes.TRUE
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma nationality"),
