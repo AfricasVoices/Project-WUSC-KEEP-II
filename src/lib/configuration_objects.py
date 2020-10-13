@@ -21,7 +21,7 @@ class CodingConfiguration(object):
 class CodingPlan(object):
     def __init__(self, raw_field, dataset_name, coding_configurations, raw_field_fold_strategy, coda_filename=None, ws_code=None,
                  time_field=None, run_id_field=None, icr_filename=None, id_field=None, code_imputation_function=None,
-                 listening_group_filename=None, ):
+                 listening_group_filename=None):
         self.raw_field = raw_field
         self.dataset_name = dataset_name
         self.time_field = time_field
