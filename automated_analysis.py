@@ -1,8 +1,8 @@
 import argparse
 import csv
 from collections import OrderedDict
+import sys
 
-import plotly.express as px
 from core_data_modules.cleaners import Codes
 from core_data_modules.data_models.code_scheme import CodeTypes
 from core_data_modules.logging import Logger
@@ -12,9 +12,7 @@ from core_data_modules.util import IOUtils
 from src.lib import PipelineConfiguration
 from src.lib.configuration_objects import CodingModes
 from src import AnalysisUtils
-from configurations.code_schemes import CodeSchemes
 
-Logger.set_project_name("WUSC-KEEP-II")
 log = Logger(__name__)
 
 IMG_SCALE_FACTOR = 10  # Increase this to increase the resolution of the outputted PNGs
@@ -32,8 +30,8 @@ if __name__ == "__main__":
                         help="Path to a JSONL file to read the TracedData of the messages data from")
     parser.add_argument("individuals_json_input_path", metavar="individuals-json-input-path",
                         help="Path to a JSONL file to read the TracedData of the messages data from")
-    parser.add_argument("output_dir", metavar="output-dir",
-                        help="Directory to write the analysis outputs to")
+    parser.add_argument("automated_analysis_output_dir", metavar="automated-analysis-output-dir",
+                        help="Directory to write the automated analysis outputs to")
 
     args = parser.parse_args()
 
@@ -42,26 +40,32 @@ if __name__ == "__main__":
 
     messages_json_input_path = args.messages_json_input_path
     individuals_json_input_path = args.individuals_json_input_path
-    output_dir = args.output_dir
+    automated_analysis_output_dir = args.automated_analysis_output_dir
 
-    IOUtils.ensure_dirs_exist(output_dir)
-    IOUtils.ensure_dirs_exist(f"{output_dir}/graphs")
+    IOUtils.ensure_dirs_exist(automated_analysis_output_dir)
+    IOUtils.ensure_dirs_exist(f"{automated_analysis_output_dir}/graphs")
 
     log.info("Loading Pipeline Configuration File...")
     with open(pipeline_configuration_file_path) as f:
         pipeline_configuration = PipelineConfiguration.from_configuration_file(f)
     Logger.set_project_name(pipeline_configuration.pipeline_name)
+    log.debug(f"Pipeline name is {pipeline_configuration.pipeline_name}")
 
+    sys.setrecursionlimit(30000)
     # Read the messages dataset
     log.info(f"Loading the messages dataset from {messages_json_input_path}...")
     with open(messages_json_input_path) as f:
         messages = TracedDataJsonIO.import_jsonl_to_traced_data_iterable(f)
+        for i in range (len(messages)):
+            messages[i] = dict(messages[i].items())
     log.info(f"Loaded {len(messages)} messages")
 
     # Read the individuals dataset
     log.info(f"Loading the individuals dataset from {individuals_json_input_path}...")
     with open(individuals_json_input_path) as f:
         individuals = TracedDataJsonIO.import_jsonl_to_traced_data_iterable(f)
+        for i in range (len(individuals)):
+            individuals[i] = dict(individuals[i].items())
     log.info(f"Loaded {len(individuals)} individuals")
 
     # Compute the number of messages, individuals, and relevant messages per episode and overall.
@@ -93,7 +97,7 @@ if __name__ == "__main__":
         "Total Relevant Participants": len(AnalysisUtils.filter_relevant(individuals, CONSENT_WITHDRAWN_KEY, PipelineConfiguration.RQA_CODING_PLANS))
     }
 
-    with open(f"{output_dir}/engagement_counts.csv", "w") as f:
+    with open(f"{automated_analysis_output_dir}/engagement_counts.csv", "w") as f:
         headers = [
             "Episode",
             "Total Messages", "Total Messages with Opt-Ins", "Total Labelled Messages", "Total Relevant Messages",
@@ -103,6 +107,47 @@ if __name__ == "__main__":
         writer.writeheader()
 
         for row in engagement_counts.values():
+            writer.writerow(row)
+
+    log.info("Computing the participation frequencies...")
+    repeat_participations = OrderedDict()
+    for i in range(1, len(PipelineConfiguration.RQA_CODING_PLANS) + 1):
+        repeat_participations[i] = {
+            "Number of Episodes Participated In": i,
+            "Number of Participants with Opt-Ins": 0,
+            "% of Participants with Opt-Ins": None
+        }
+
+    # Compute the number of individuals who participated each possible number of times, from 1 to <number of RQAs>
+    # An individual is considered to have participated if they sent a message and didn't opt-out, regardless of the
+    # relevance of any of their messages.
+    for ind in individuals:
+        if AnalysisUtils.withdrew_consent(ind, CONSENT_WITHDRAWN_KEY):
+            continue
+
+        weeks_participated = 0
+        for plan in PipelineConfiguration.RQA_CODING_PLANS:
+            if AnalysisUtils.opt_in(ind, CONSENT_WITHDRAWN_KEY, plan):
+                weeks_participated += 1
+        assert weeks_participated != 0, f"Found individual '{ind['uid']}' with no participation in any week"
+        repeat_participations[weeks_participated]["Number of Participants with Opt-Ins"] += 1
+
+    # Compute the percentage of individuals who participated each possible number of times.
+    # Percentages are computed out of the total number of participants who opted-in.
+    total_participants = len(AnalysisUtils.filter_opt_ins(
+        individuals, CONSENT_WITHDRAWN_KEY, PipelineConfiguration.RQA_CODING_PLANS))
+    for rp in repeat_participations.values():
+        rp["% of Participants with Opt-Ins"] = \
+            round(rp["Number of Participants with Opt-Ins"] / total_participants * 100, 1)
+
+    # Export the participation frequency data to a csv
+    with open(f"{automated_analysis_output_dir}/repeat_participations.csv", "w") as f:
+        headers = ["Number of Episodes Participated In", "Number of Participants with Opt-Ins",
+                   "% of Participants with Opt-Ins"]
+        writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
+        writer.writeheader()
+
+        for row in repeat_participations.values():
             writer.writerow(row)
 
     log.info(f'Computing repeat and new participation per show ...')
@@ -124,7 +169,6 @@ if __name__ == "__main__":
 
             if target_radio_show in ind:
                 target_radio_show_participants.add(ind['uid'])
-        log.debug(f'No. of uids in {target_radio_show} = {len(target_radio_show_participants)}')
 
         previous_radio_shows = []  # rqa_raw_fields of shows that aired before the target radio show.
         for rqa_raw_field in rqa_raw_fields:
@@ -141,15 +185,12 @@ if __name__ == "__main__":
 
                 if rqa_raw_field in ind:
                     previous_radio_shows_participants.add(ind['uid'])
-        log.debug(f'No. of uids in {len(previous_radio_shows)} previous_radio_shows = {len(previous_radio_shows_participants)} ')
 
         # Check for uids of individuals who participated in target and previous shows.
         repeat_participants = target_radio_show_participants.intersection(previous_radio_shows_participants)
-        log.debug(f'No. of repeat uids in {target_radio_show} = {len(repeat_participants)} ')
 
         # Check for uids of individuals who participated in target show but din't participate in previous shows.
         new_participants = target_radio_show_participants.difference(previous_radio_shows_participants)
-        log.debug(f'No. of new uids in {target_radio_show} = {len(new_participants)} ')
 
         repeat_new_participation_map[target_radio_show] = {
             "Radio Show": target_radio_show,  # Todo switch to dataset name
@@ -171,8 +212,7 @@ if __name__ == "__main__":
             repeat_new_participation_map[target_radio_show]["% of opt-in participants that are repeats"] = \
                 round(len(repeat_participants) / len(target_radio_show_participants) * 100, 1)
 
-    log.info(f'Writing per show repeat and new participation metrics per show csv ...')
-    with open(f"{output_dir}/per_show_repeat_and_new_participation.csv", "w") as f:
+    with open(f"{automated_analysis_output_dir}/per_show_repeat_and_new_participation.csv", "w") as f:
         headers = ["Radio Show", "No. of opt-in participants", "No. of opt-in participants that are new",
                    "No. of opt-in participants that are repeats", "% of opt-in participants that are new",
                    "% of opt-in participants that are repeats"]
@@ -183,13 +223,11 @@ if __name__ == "__main__":
             writer.writerow(row)
 
     log.info("Computing the demographic distributions...")
-    # Compute the number of individuals with each demographic code.
-    # Count excludes individuals who withdrew consent. STOP codes in each scheme are not exported, as it would look
+    # Count the number of individuals with each demographic code.
+    # This count excludes individuals who withdrew consent. STOP codes in each scheme are not exported, as it would look
     # like 0 individuals opted out otherwise, which could be confusing.
-    # TODO: Report percentages?
-    # TODO: Handle distributions for other variables too or just demographics?
-    # TODO: Categorise age
-    demographic_distributions = OrderedDict()  # of analysis_file_key -> code string_value -> number of individuals
+    demographic_distributions = OrderedDict()  # of analysis_file_key -> code id -> number of individuals
+    total_relevant = OrderedDict()  # of analysis_file_key -> number of relevant individuals
     for plan in PipelineConfiguration.DEMOG_CODING_PLANS:
         for cc in plan.coding_configurations:
             if cc.analysis_file_key is None:
@@ -199,7 +237,8 @@ if __name__ == "__main__":
             for code in cc.code_scheme.codes:
                 if code.control_code == Codes.STOP:
                     continue
-                demographic_distributions[cc.analysis_file_key][code.string_value] = 0
+                demographic_distributions[cc.analysis_file_key][code.code_id] = 0
+            total_relevant[cc.analysis_file_key] = 0
 
     for ind in individuals:
         if ind["consent_withdrawn"] == Codes.TRUE:
@@ -207,28 +246,48 @@ if __name__ == "__main__":
 
         for plan in PipelineConfiguration.DEMOG_CODING_PLANS:
             for cc in plan.coding_configurations:
-                if cc.analysis_file_key is None:
+                if cc.analysis_file_key is None or cc.include_in_theme_distribution == Codes.FALSE:
                     continue
 
+                assert cc.coding_mode == CodingModes.SINGLE
                 code = cc.code_scheme.get_code_with_code_id(ind[cc.coded_field]["CodeID"])
-                if code.control_code == Codes.STOP:
-                    continue
-                demographic_distributions[cc.analysis_file_key][code.string_value] += 1
+                demographic_distributions[cc.analysis_file_key][code.code_id] += 1
+                if code.code_type == CodeTypes.NORMAL:
+                    total_relevant[cc.analysis_file_key] += 1
 
-    with open(f"{output_dir}/demographic_distributions.csv", "w") as f:
-        headers = ["Demographic", "Code", "Number of Individuals"]
+    with open(f"{automated_analysis_output_dir}/demographic_distributions.csv", "w") as f:
+        headers = ["Demographic", "Code", "Participants with Opt-Ins", "Percent"]
         writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
         writer.writeheader()
 
-        last_demographic = None
-        for demographic, counts in demographic_distributions.items():
-            for code_string_value, number_of_individuals in counts.items():
-                writer.writerow({
-                    "Demographic": demographic if demographic != last_demographic else "",
-                    "Code": code_string_value,
-                    "Number of Individuals": number_of_individuals
-                })
-                last_demographic = demographic
+        for plan in PipelineConfiguration.DEMOG_CODING_PLANS:
+            for cc in plan.coding_configurations:
+                if cc.analysis_file_key is None:
+                    continue
+
+                for i, code in enumerate(cc.code_scheme.codes):
+                    # Don't export a row for STOP codes because these have already been excluded, so would
+                    # report 0 here, which could be confusing.
+                    if code.control_code == Codes.STOP:
+                        continue
+
+                    participants_with_opt_ins = demographic_distributions[cc.analysis_file_key][code.code_id]
+                    row = {
+                        "Demographic": cc.analysis_file_key if i == 0 else "",
+                        "Code": code.string_value,
+                        "Participants with Opt-Ins": participants_with_opt_ins,
+                    }
+
+                    # Only compute a percentage for relevant codes.
+                    if code.code_type == CodeTypes.NORMAL:
+                        if total_relevant[cc.analysis_file_key] == 0:
+                            row["Percent"] = "-"
+                        else:
+                            row["Percent"] = round(participants_with_opt_ins / total_relevant[cc.analysis_file_key] * 100, 1)
+                    else:
+                        row["Percent"] = ""
+
+                    writer.writerow(row)
 
     # Compute the theme distributions
     log.info("Computing the theme distributions...")
@@ -239,7 +298,7 @@ if __name__ == "__main__":
         survey_counts["Total Participants %"] = None
         for plan in PipelineConfiguration.SURVEY_CODING_PLANS:
             for cc in plan.coding_configurations:
-                if cc.analysis_file_key is None:
+                if cc.include_in_theme_distribution == Codes.FALSE:
                     continue
 
                 for code in cc.code_scheme.codes:
@@ -253,7 +312,7 @@ if __name__ == "__main__":
     def update_survey_counts(survey_counts, td):
         for plan in PipelineConfiguration.SURVEY_CODING_PLANS:
             for cc in plan.coding_configurations:
-                if cc.analysis_file_key is None:
+                if cc.include_in_theme_distribution == Codes.FALSE:
                     continue
 
                 if cc.coding_mode == CodingModes.SINGLE:
@@ -276,7 +335,7 @@ if __name__ == "__main__":
 
         for plan in PipelineConfiguration.SURVEY_CODING_PLANS:
             for cc in plan.coding_configurations:
-                if cc.analysis_file_key is None:
+                if cc.include_in_theme_distribution == Codes.FALSE:
                     continue
 
                 for code in cc.code_scheme.codes:
@@ -304,7 +363,7 @@ if __name__ == "__main__":
             for code in cc.code_scheme.codes:
                 if code.control_code == Codes.STOP:
                     continue
-                themes[f"{cc.analysis_file_key}{code.string_value}"] = make_survey_counts_dict()
+                themes[f"{cc.analysis_file_key}_{code.string_value}"] = make_survey_counts_dict()
 
         # Fill in the counts by iterating over every individual
         for td in individuals:
@@ -318,8 +377,8 @@ if __name__ == "__main__":
                     code = cc.code_scheme.get_code_with_code_id(label["CodeID"])
                     if code.control_code == Codes.STOP:
                         continue
-                    themes[f"{cc.analysis_file_key}{code.string_value}"]["Total Participants"] += 1
-                    update_survey_counts(themes[f"{cc.analysis_file_key}{code.string_value}"], td)
+                    themes[f"{cc.analysis_file_key}_{code.string_value}"]["Total Participants"] += 1
+                    update_survey_counts(themes[f"{cc.analysis_file_key}_{code.string_value}"], td)
                     if code.code_type == CodeTypes.NORMAL:
                         relevant_participant = True
 
@@ -327,19 +386,19 @@ if __name__ == "__main__":
                 themes["Total Relevant Participants"]["Total Participants"] += 1
                 update_survey_counts(themes["Total Relevant Participants"], td)
 
-            set_survey_percentages(themes["Total Relevant Participants"], themes["Total Relevant Participants"])
+        set_survey_percentages(themes["Total Relevant Participants"], themes["Total Relevant Participants"])
 
-            for cc in episode_plan.coding_configurations:
-                assert cc.coding_mode == CodingModes.MULTIPLE, "Other CodingModes not (yet) supported"
+        for cc in episode_plan.coding_configurations:
+            assert cc.coding_mode == CodingModes.MULTIPLE, "Other CodingModes not (yet) supported"
 
-                for code in cc.code_scheme.codes:
-                    if code.code_type != CodeTypes.NORMAL:
-                        continue
+            for code in cc.code_scheme.codes:
+                if code.code_type != CodeTypes.NORMAL:
+                    continue
 
-                    theme = themes[f"{cc.analysis_file_key}{code.string_value}"]
-                    set_survey_percentages(theme, themes["Total Relevant Participants"])
+                theme = themes[f"{cc.analysis_file_key}_{code.string_value}"]
+                set_survey_percentages(theme, themes["Total Relevant Participants"])
 
-    with open(f"{output_dir}/theme_distributions.csv", "w") as f:
+    with open(f"{automated_analysis_output_dir}/theme_distributions.csv", "w") as f:
         headers = ["Question", "Variable"] + list(make_survey_counts_dict().keys())
         writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
         writer.writeheader()
@@ -355,126 +414,4 @@ if __name__ == "__main__":
                 writer.writerow(row)
                 last_row_episode = episode
 
-    log.info("Graphing the per-episode engagement counts...")
-    # Graph the number of messages in each episode
-    fig = px.bar([x for x in engagement_counts.values() if x["Episode"] != "Total"],
-                 x="Episode", y="Total Messages with Opt-Ins", template="plotly_white",
-                 title="Messages/Episode", width=len(engagement_counts) * 20 + 150)
-    fig.update_xaxes(tickangle=-60)
-    fig.write_image(f"{output_dir}/graphs/messages_per_episode.png", scale=IMG_SCALE_FACTOR)
-
-    # Graph the number of participants in each episode
-    fig = px.bar([x for x in engagement_counts.values() if x["Episode"] != "Total"],
-                 x="Episode", y="Total Participants with Opt-Ins", template="plotly_white",
-                 title="Participants/Episode", width=len(engagement_counts) * 20 + 150)
-    fig.update_xaxes(tickangle=-60)
-    fig.write_image(f"{output_dir}/graphs/participants_per_episode.png", scale=IMG_SCALE_FACTOR)
-
-    log.info("Graphing the demographic distributions...")
-    for demographic, counts in demographic_distributions.items():
-        if len(counts) > 200:
-            log.warning(f"Skipping graphing the distribution of codes for {demographic}, but is contains too many "
-                        f"columns to graph (has {len(counts)} columns; limit is 200).")
-            continue
-
-        log.info(f"Graphing the distribution of codes for {demographic}...")
-        fig = px.bar([{"Label": code_string_value, "Number of Participants": number_of_participants}
-                      for code_string_value, number_of_participants in counts.items()],
-                     x="Label", y="Number of Participants", template="plotly_white",
-                     title=f"Season Distribution: {demographic}", width=len(counts) * 20 + 150)
-        fig.update_xaxes(type="category", tickangle=-60, dtick=1)
-        fig.write_image(f"{output_dir}/graphs/season_distribution_{demographic}.png", scale=IMG_SCALE_FACTOR)
-
-    # Plot the per-season distribution of responses for each survey question, per individual
-    for plan in PipelineConfiguration.RQA_CODING_PLANS + PipelineConfiguration.SURVEY_CODING_PLANS:
-        for cc in plan.coding_configurations:
-            if cc.analysis_file_key is None:
-                continue
-
-            # Don't generate graphs for the demographics, as they were already generated above.
-            # TODO: Update the demographic_distributions to include the distributions for all variables?
-            if cc.analysis_file_key in demographic_distributions:
-                continue
-
-            log.info(f"Graphing the distribution of codes for {cc.analysis_file_key}...")
-            label_counts = OrderedDict()
-            for code in cc.code_scheme.codes:
-                label_counts[code.string_value] = 0
-
-            if cc.coding_mode == CodingModes.SINGLE:
-                for ind in individuals:
-                    label_counts[ind[cc.analysis_file_key]] += 1
-            else:
-                assert cc.coding_mode == CodingModes.MULTIPLE
-                for ind in individuals:
-                    for code in cc.code_scheme.codes:
-                        if ind[f"{cc.analysis_file_key}{code.string_value}"] == Codes.MATRIX_1:
-                            label_counts[code.string_value] += 1
-
-            data = [{"Label": k, "Number of Participants": v} for k, v in label_counts.items()]
-            fig = px.bar(data, x="Label", y="Number of Participants", template="plotly_white",
-                         title=f"Season Distribution: {cc.analysis_file_key}", width=len(label_counts) * 20 + 150)
-            fig.update_xaxes(tickangle=-60)
-            fig.write_image(f"{output_dir}/graphs/season_distribution_{cc.analysis_file_key}.png", scale=IMG_SCALE_FACTOR)
-
-    log.info("Graphing pie chart of normal codes for gender...")
-    # TODO: Gender is hard-coded here for COVID19. If we need this in future, but don't want to extend to other
-    #       demographic variables, then this will need to be controlled from configuration
-    gender_distribution = demographic_distributions["gender"]
-    normal_gender_distribution = []
-    for code in CodeSchemes.GENDER.codes:
-        if code.code_type == CodeTypes.NORMAL:
-            normal_gender_distribution.append({
-                "Gender": code.string_value,
-                "Number of Participants": gender_distribution[code.string_value]
-            })
-    fig = px.pie(normal_gender_distribution, names="Gender", values="Number of Participants",
-                 title="Season Distribution: gender", template="plotly_white")
-    fig.update_traces(textinfo="value")
-    fig.write_image(f"{output_dir}/graphs/season_distribution_gender_pie.png", scale=IMG_SCALE_FACTOR)
-
-    log.info("Graphing normal themes by gender...")
-    # Adapt the theme distributions produced above to extract the normal RQA + gender codes, and graph by gender
-    # TODO: Gender is hard-coded here for COVID19. If we need this in future, but don't want to extend to other
-    #       demographic variables, then this will need to be controlled from configuration
-    for plan in PipelineConfiguration.RQA_CODING_PLANS:
-        episode = episodes[plan.raw_field]
-        normal_themes = dict()
-
-        for cc in plan.coding_configurations:
-            for code in cc.code_scheme.codes:
-                if code.code_type == CodeTypes.NORMAL and code.string_value not in {"knowledge", "attitude", "behaviour"}:
-                    normal_themes[code.string_value] = episode[f"{cc.analysis_file_key}{code.string_value}"]
-
-        if len(normal_themes) == 0:
-            log.warning(f"Skipping graphing normal themes by gender for {plan.raw_field} because the scheme does "
-                        f"not contain any normal codes")
-            continue
-
-        normal_by_gender = []
-        for theme, demographic_counts in normal_themes.items():
-            for gender_code in CodeSchemes.GENDER.codes:
-                if gender_code.code_type != CodeTypes.NORMAL:
-                    continue
-
-                total_relevant_gender = episode["Total Relevant Participants"][f"gender:{gender_code.string_value}"]
-                normal_by_gender.append({
-                    "RQA Theme": theme,
-                    "Gender": gender_code.string_value,
-                    "Number of Participants": demographic_counts[f"gender:{gender_code.string_value}"],
-                    "Fraction of Relevant Participants": None if total_relevant_gender == 0 else
-                        demographic_counts[f"gender:{gender_code.string_value}"] / total_relevant_gender
-                })
-
-        fig = px.bar(normal_by_gender, x="RQA Theme", y="Number of Participants", color="Gender", barmode="group",
-                     template="plotly_white")
-        fig.update_layout(title_text=f"{plan.raw_field} by gender (absolute)")
-        fig.update_xaxes(tickangle=-60)
-        fig.write_image(f"{output_dir}/graphs/{plan.raw_field}_by_gender_absolute.png", scale=IMG_SCALE_FACTOR)
-
-        fig = px.bar(normal_by_gender, x="RQA Theme", y="Fraction of Relevant Participants", color="Gender", barmode="group",
-                     template="plotly_white")
-        fig.update_layout(title_text=f"{plan.raw_field} by gender (normalised)")
-        fig.update_xaxes(tickangle=-60)
-        fig.write_image(f"{output_dir}/graphs/{plan.raw_field}_by_gender_normalised.png", scale=IMG_SCALE_FACTOR)
-
+    log.info("Automated analysis python script complete")

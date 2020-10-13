@@ -798,6 +798,7 @@ KAKUMA_DEMOG_CODING_PLANS = [
                            coded_field="gender_coded",
                            analysis_file_key="gender",
                            fold_strategy=FoldStrategies.assert_label_ids_equal
+                           fold_strategy=FoldStrategies.assert_label_ids_equal,
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma gender"),
