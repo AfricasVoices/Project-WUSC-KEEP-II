@@ -38,17 +38,17 @@
     {
       "CodeID": "code-5539fdb8",
       "CodeType": "Normal",
-      "DisplayText": "marry them off",
+      "DisplayText": "marry her off",
       "NumericValue": 5,
-      "StringValue": "marry_them_off",
+      "StringValue": "marry_her_off",
       "VisibleInCoda": true
     },
     {
       "CodeID": "code-52781d10",
       "CodeType": "Normal",
-      "DisplayText": "advice them to stop",
+      "DisplayText": "advise them to stop",
       "NumericValue": 6,
-      "StringValue": "advice_them_to_stop",
+      "StringValue": "advise_them_to_stop",
       "VisibleInCoda": true
     },
     {
