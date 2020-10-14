@@ -4,6 +4,63 @@
   "Version": "0.0.0.2",
   "Codes": [
     {
+      "CodeID": "code-c892b5f3",
+      "CodeType": "Normal",
+      "DisplayText": "let her complete her studies/continue learning",
+      "NumericValue": 1,
+      "StringValue": "let_her_complete_her_studies_or_continue_learning",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-5539fdb8",
+      "CodeType": "Normal",
+      "DisplayText": "take legal action",
+      "NumericValue": 2,
+      "StringValue": "take_legal_action",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-b823f37e",
+      "CodeType": "Normal",
+      "DisplayText": "equal right to education for both girls and boys",
+      "NumericValue": 3,
+      "StringValue": "equal_right_to_education_for_both_girls_and_boys",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-96201a6f",
+      "CodeType": "Normal",
+      "DisplayText": "awareness creation on importance/benefits of educating girls",
+      "NumericValue": 4,
+      "StringValue": "awareness_creation_on_importance_or_benefits_of_educating_girls",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-917d66ff",
+      "CodeType": "Normal",
+      "DisplayText": "marrying girls early destroys their future",
+      "NumericValue": 5,
+      "StringValue": "marrying_girls_early_destroys_their_future",
+      "VisibleInCoda": true
+    },
+
+    {
+      "CodeID": "code-52781d10",
+      "CodeType": "Normal",
+      "DisplayText": "advice them to stop",
+      "NumericValue": 6,
+      "StringValue": "advice_them_to_stop",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-708b4f70",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 7,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
+    {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
