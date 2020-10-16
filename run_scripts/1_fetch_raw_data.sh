@@ -17,8 +17,9 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-if [[ $# -ne 4 ]]; then
-    echo "Usage: ./2_fetch_raw_data.sh [--profile-cpu <cpu-profile-output-path>] <user> <google-cloud-credentials-file-path> <pipeline-configuration-file-path> <data-root>"
+if [[ $# -ne 6 ]]; then
+    echo "Usage: ./1_fetch_raw_data.sh [--profile-cpu <cpu-profile-output-path>] <user> <google-cloud-credentials-file-path> \
+          <pipeline-configuration-file-path> <timestamp> <run-id> <data-root>"
     echo "Fetches all the raw data from Rapid Pro and converts to TracedData"
     exit
 fi
@@ -26,11 +27,14 @@ fi
 USER=$1
 GOOGLE_CLOUD_CREDENTIALS_FILE_PATH=$2
 PIPELINE_CONFIGURATION_FILE_PATH=$3
-DATA_ROOT=$4
+TIMESTAMP=$4
+RUN_ID=$5
+DATA_ROOT=$6
 
 mkdir -p "$DATA_ROOT/Raw Data"
 mkdir -p "$DATA_ROOT/Listening Groups"
 
 cd ..
 ./docker-run-fetch-raw-data.sh ${CPU_PROFILE_ARG} \
-    "$USER" "$GOOGLE_CLOUD_CREDENTIALS_FILE_PATH" "$PIPELINE_CONFIGURATION_FILE_PATH" "$DATA_ROOT/Raw Data"
+    "$USER" "$GOOGLE_CLOUD_CREDENTIALS_FILE_PATH" "$PIPELINE_CONFIGURATION_FILE_PATH" "$TIMESTAMP" "$RUN_ID" \
+    "$DATA_ROOT/Raw Data"
