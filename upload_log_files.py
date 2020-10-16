@@ -1,9 +1,12 @@
 import argparse
 import os
 import re
+import json
+from datetime import datetime
 
 from core_data_modules.logging import Logger
 from storage.google_cloud import google_cloud_utils
+from pipeline_logs import FirestorePipelinesLogsTable
 
 from src.lib import PipelineConfiguration
 
@@ -97,6 +100,8 @@ if __name__ == "__main__":
                              "credentials bucket")
     parser.add_argument("pipeline_configuration_file_path", metavar="pipeline-configuration-file-path",
                         help="Path to the pipeline configuration json file")
+    parser.add_argument("run_id", metavar="run-id",
+                        help="Identifier of this pipeline run")
     parser.add_argument("memory_profile_dir_path", metavar="memory-profile-dir-path",
                         help="Path to the memory profile log directory with file to upload")
     parser.add_argument("data_archive_dir_path", metavar="data-archive-dir-path",
@@ -107,6 +112,7 @@ if __name__ == "__main__":
     user = args.user
     google_cloud_credentials_file_path = args.google_cloud_credentials_file_path
     pipeline_configuration_file_path = args.pipeline_configuration_file_path
+    run_id = args.run_id
     memory_profile_dir_path = args.memory_profile_dir_path
     data_archive_dir_path = args.data_archive_dir_path
 
@@ -152,3 +158,20 @@ if __name__ == "__main__":
         log.info(f"Uploading data archive from {latest_data_archive_file_path} to {data_archive_upload_location}...")
         with open(latest_data_archive_file_path, "rb") as f:
             google_cloud_utils.upload_file_to_blob(google_cloud_credentials_file_path, data_archive_upload_location, f)
+
+    # TODO: store credential files in cache
+    log.info("Downloading Firestore Operations Dashboard Table credentials...")
+    firestore_pipeline_logs_table_credentials = json.loads(google_cloud_utils.download_blob_to_string(
+        google_cloud_credentials_file_path,
+        pipeline_configuration.operations_dashboard.firebase_credentials_file_url
+    ))
+    firestore_pipeline_logs_table = FirestorePipelinesLogsTable(firestore_pipeline_logs_table_credentials)
+
+    timestamp = datetime.now()
+    timestamp = timestamp.strftime("%d/%m/%Y %H:%M:%S")
+    pipeline_logs = {"timestamp": timestamp,
+                     "run_id": run_id,
+                     "event": "PipelineCompletedSuccessfully"}
+
+    firestore_pipeline_logs_table.update_pipeline_logs(pipeline_configuration.pipeline_name, timestamp, pipeline_logs)
+    log.info(f"Updated PipelineCompletedSuccessfully event log for pipeline run_id: {run_id}")

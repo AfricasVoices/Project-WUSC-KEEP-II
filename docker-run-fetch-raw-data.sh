@@ -20,11 +20,11 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Check that the correct number of arguments were provided.
-if [[ $# -ne 4 ]]; then
+if [[ $# -ne 6 ]]; then
     echo "Usage: ./docker-run-fetch-raw-data.sh
     [--profile-cpu <profile-output-path>]
     <user> <google-cloud-credentials-file-path> <pipeline-configuration-file-path>
-    <raw-data-dir>"
+    <timestamp> <run-id> <raw-data-dir>"
     exit
 fi
 
@@ -32,7 +32,9 @@ fi
 USER=$1
 INPUT_GOOGLE_CLOUD_CREDENTIALS=$2
 INPUT_PIPELINE_CONFIGURATION=$3
-OUTPUT_RAW_DATA_DIR=$4
+TIMESTAMP=$4
+RUN_ID=$5
+OUTPUT_RAW_DATA_DIR=$6
 
 # Build an image for this pipeline stage.
 docker build --build-arg INSTALL_CPU_PROFILER="$PROFILE_CPU" -t "$IMAGE_NAME" .
@@ -44,7 +46,7 @@ if [[ "$PROFILE_CPU" = true ]]; then
 fi
 CMD="pipenv run $PROFILE_CPU_CMD python -u fetch_raw_data.py \
     \"$USER\" /credentials/google-cloud-credentials.json \
-    /data/pipeline-configuration.json /data/Raw\ Data
+    /data/pipeline-configuration.json \"$TIMESTAMP\" \"$RUN_ID\" /data/Raw\ Data
 "
 container="$(docker container create ${SYS_PTRACE_CAPABILITY} -w /app "$IMAGE_NAME" /bin/bash -c "$CMD")"
 echo "Created container $container"
