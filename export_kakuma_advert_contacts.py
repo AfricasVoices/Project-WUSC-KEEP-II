@@ -84,6 +84,9 @@ if __name__ == "__main__":
             if msg['uid'] in all_uuids or msg["consent_withdrawn"] == Codes.TRUE:
                 continue
 
+            # if msg["rqa_s02e03_NA"] == Codes.MATRIX_1:
+            #     continue
+
             all_uuids.add(msg['uid'])
 
             if CodeSchemes.KAKUMA_HOUSEHOLD_LANGUAGE.get_code_with_code_id(

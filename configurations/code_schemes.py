@@ -68,6 +68,7 @@ class CodeSchemes(object):
     KAKUMA_SHOW_SUGGESTIONS = _open_scheme("kakuma_show_suggestions.json")
 
     KAKUMA_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION = _open_scheme("kakuma_community_views_on_girls_education.json")
+    KAKUMA_RESPONSES_TO_SEXUAL_VIOLENCE = _open_scheme("kakuma_responses_to_sexual_violence.json")
 
     KAKUMA_WS_CORRECT_DATASET = _open_scheme("kakuma_ws_correct_dataset.json")
     DADAAB_WS_CORRECT_DATASET = _open_scheme("dadaab_ws_correct_dataset.json")

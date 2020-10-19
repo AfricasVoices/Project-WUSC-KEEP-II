@@ -30,6 +30,7 @@
         "wusc_keep_ii_s01_w3_kakuma_follow_up",
         "wusc_keep_ii_s01_w4_kakuma_follow_up",
         "wusc_keep_ii_s01_w6_kakuma_follow_up",
+        "wusc_keep_ii_s02_w3_kakuma_follow_up",
         "kakuma_s01_evaluation_flow"
       ],
       "TestContactUUIDs": [
@@ -155,13 +156,14 @@
     {"RapidProKey": "Unmarried_Fathers_Community_View (Text) - wusc_keep_ii_s01_w6_kakuma_follow_up", "PipelineKey": "unmarried_fathers_community_view_raw"},
     {"RapidProKey": "Lessons_Learnt (Text) - kakuma_s01_evaluation_flow", "PipelineKey": "lessons_learnt_raw"},
     {"RapidProKey": "Show_Suggestions (Text) - kakuma_s01_evaluation_flow", "PipelineKey": "show_suggestions_raw"},
+    {"RapidProKey": "Responses_To_Sexual_Violence (Text) - wusc_keep_ii_s02_w3_kakuma_follow_up", "PipelineKey": "responses_to_sexual_violence_raw"},
 
     {"RapidProKey": "Girls_Education_Champions (Time) - wusc_keep_ii_s01_w3_kakuma_follow_up", "PipelineKey": "girls_education_champions_time"},
     {"RapidProKey": "Encouragement_For_Boys (Time) - wusc_keep_ii_s01_w4_kakuma_follow_up", "PipelineKey": "encouragement_for_boys_time"},
     {"RapidProKey": "Unmarried_Fathers_Community_View (Time) - wusc_keep_ii_s01_w6_kakuma_follow_up", "PipelineKey": "unmarried_fathers_community_view_time"},
     {"RapidProKey": "Lessons_Learnt (Time) - kakuma_s01_evaluation_flow", "PipelineKey": "lessons_learnt_time"},
-    {"RapidProKey": "Show_Suggestions (Time) - kakuma_s01_evaluation_flow", "PipelineKey": "show_suggestions_time"}
-
+    {"RapidProKey": "Show_Suggestions (Time) - kakuma_s01_evaluation_flow", "PipelineKey": "show_suggestions_time"},
+    {"RapidProKey": "Responses_To_Sexual_Violence (Time) - wusc_keep_ii_s02_w3_kakuma_follow_up", "PipelineKey": "responses_to_sexual_violence_time"}
   ],
   "PipelineName": "kakuma_all_seasons_pipeline",
   "ProjectStartDate": "2020-01-18T13:00:00+03:00",
