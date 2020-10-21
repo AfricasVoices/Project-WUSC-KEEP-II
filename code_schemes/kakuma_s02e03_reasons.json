@@ -4,6 +4,78 @@
   "Version": "0.0.0.2",
   "Codes": [
     {
+      "CodeID": "code-0973e428",
+      "CodeType": "Normal",
+      "DisplayText": "awareness creation by community leaders",
+      "NumericValue": 1,
+      "StringValue": "awareness_creation_by_community_leaders",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-eee0a316",
+      "CodeType": "Normal",
+      "DisplayText": "report to police",
+      "NumericValue": 2,
+      "StringValue": "report_to_police",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-eee0a316",
+      "CodeType": "Normal",
+      "DisplayText": "through corruption",
+      "NumericValue": 3,
+      "StringValue": "through_corruption",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-eee0a316",
+      "CodeType": "Normal",
+      "DisplayText": "if no solution, escalate to child protection",
+      "NumericValue": 4,
+      "StringValue": "if_no_solution_escalate_to_child_protection",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-199d7be8",
+      "CodeType": "Normal",
+      "DisplayText": "nothing is done or no response",
+      "NumericValue": 5,
+      "StringValue": "nothing_is_done_or_no_response",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-fce8306e",
+      "CodeType": "Normal",
+      "DisplayText": "punished according to cultural norms/informal laws",
+      "NumericValue": 6,
+      "StringValue": "punished_according_to_cultural_norms_or_informal_laws",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-a1135ca0",
+      "CodeType": "Normal",
+      "DisplayText": "responses to rape cases",
+      "NumericValue": 7,
+      "StringValue": "responses_to_rape_cases",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-a1135ca0",
+      "CodeType": "Normal",
+      "DisplayText": "ways to reduce SGBV cases",
+      "NumericValue": 8,
+      "StringValue": "ways_to_reduce_sgbv_cases",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-27dad76a",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 9,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
+    {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
