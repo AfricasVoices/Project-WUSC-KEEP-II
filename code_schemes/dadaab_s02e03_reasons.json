@@ -4,6 +4,54 @@
   "Version": "0.0.0.2",
   "Codes": [
     {
+      "CodeID": "code-fce8306e",
+      "CodeType": "Normal",
+      "DisplayText": "punished according to cultural norms/informal laws",
+      "NumericValue": 1,
+      "StringValue": "punished_according_to_cultural_norms_or_informal_laws",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-0973e428",
+      "CodeType": "Normal",
+      "DisplayText": "awareness creation by community leaders",
+      "NumericValue": 2,
+      "StringValue": "awareness_creation_by_community_leaders",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-eee0a316",
+      "CodeType": "Normal",
+      "DisplayText": "through corruption",
+      "NumericValue": 3,
+      "StringValue": "through_corruption",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-a1135ca0",
+      "CodeType": "Normal",
+      "DisplayText": "resolve sexual cases based on Islamic law",
+      "NumericValue": 4,
+      "StringValue": "resolve_sexual_cases_based_on_islamic_law",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-199d7be8",
+      "CodeType": "Normal",
+      "DisplayText": "nothing is done or no response",
+      "NumericValue": 5,
+      "StringValue": "nothing_is_done_or_no_response",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-27dad76a",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 6,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
+    {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
