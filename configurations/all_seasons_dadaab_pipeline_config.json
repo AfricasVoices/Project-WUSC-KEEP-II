@@ -105,6 +105,9 @@
     {"RapidProKey": "Rqa_S02E06_Dadaab (Time) - wusc_keep_ii_s02e06_dadaab_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S02E07_Dadaab (Time) - wusc_keep_ii_s02e07_dadaab_activation", "PipelineKey": "sent_on"},
 
+    {"RapidProKey": "Responses_To_Sexual_Violence (Text) - wusc_keep_ii_s02_w3_dadaab_follow_up", "PipelineKey": "responses_to_sexual_violence_raw"},
+    {"RapidProKey": "Responses_To_Sexual_Violence (Time) - wusc_keep_ii_s02_w3_dadaab_follow_up", "PipelineKey": "responses_to_sexual_violence_time"},
+
     {"RapidProKey": "Gender (Text) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "gender_raw"},
     {"RapidProKey": "Age (Text) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "age_raw"},
     {"RapidProKey": "Location (Text) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "location_raw"},
