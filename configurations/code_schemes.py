@@ -60,6 +60,7 @@ class CodeSchemes(object):
     DADAAB_SHOW_SUGGESTIONS = _open_scheme("dadaab_show_suggestions.json")
 
     DADAAB_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION = _open_scheme("dadaab_community_views_on_girls_education.json")
+    DADAAB_RESPONSES_TO_SEXUAL_VIOLENCE = _open_scheme("dadaab_responses_to_sexual_violence.json")
 
     KAKUMA_GIRLS_EDUCATION_CHAMPIONS = _open_scheme("kakuma_girls_education_champions.json")
     KAKUMA_ENCOURAGEMENT_FOR_BOYS_CHAMPIONS = _open_scheme("kakuma_encouragement_for_boys.json")
