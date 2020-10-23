@@ -18,7 +18,8 @@
       "SurveyFlowNames": [
         "wusc_keep_ii_dadaab_demogs",
         "wusc_covid19_adaptation_dadaab_demogs",
-        "wusc_keep_ii_s02_dadaab_demogs"
+        "wusc_keep_ii_s02_dadaab_demogs",
+        "wusc_keep_ii_s02_w3_dadaab_follow_up"
       ],
       "TestContactUUIDs": [
         "84f1c3bc-596e-455e-b5f6-ce16640e9b95",
