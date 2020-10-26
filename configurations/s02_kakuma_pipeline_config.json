@@ -14,12 +14,12 @@
         "wusc_keep_ii_s02e06_kakuma_activation",
         "wusc_keep_ii_s02e07_kakuma_activation",
         "wusc_keep_ii_s02_kakuma_initial_evaluation"
-
       ],
       "SurveyFlowNames": [
         "wusc_keep_ii_kakuma_demogs",
         "wusc_covid19_adaptation_kakuma_demogs",
-        "wusc_keep_ii_s02_kakuma_demogs"
+        "wusc_keep_ii_s02_kakuma_demogs",
+        "wusc_keep_ii_s02_w3_kakuma_follow_up"
       ],
       "TestContactUUIDs": [
         "84f1c3bc-596e-455e-b5f6-ce16640e9b95",
@@ -78,6 +78,9 @@
     {"RapidProKey": "Rqa_S02E05_Kakuma (Time) - wusc_keep_ii_s02e05_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S02E06_Kakuma (Time) - wusc_keep_ii_s02e06_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S02E07_Kakuma (Time) - wusc_keep_ii_s02e07_kakuma_activation", "PipelineKey": "sent_on"},
+
+    {"RapidProKey": "Responses_To_Sexual_Violence (Text) - wusc_keep_ii_s02_w3_kakuma_follow_up", "PipelineKey": "responses_to_sexual_violence_raw"},
+    {"RapidProKey": "Responses_To_Sexual_Violence (Time) - wusc_keep_ii_s02_w3_kakuma_follow_up", "PipelineKey": "responses_to_sexual_violence_time"},
 
     {"RapidProKey": "Gender (Text) - wusc_keep_ii_kakuma_demogs", "PipelineKey": "gender_raw"},
     {"RapidProKey": "Age (Text) - wusc_keep_ii_kakuma_demogs", "PipelineKey": "age_raw"},

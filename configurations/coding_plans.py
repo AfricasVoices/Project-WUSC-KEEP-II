@@ -978,6 +978,23 @@ S01_DADAAB_FOLLOW_UP_CODING_PLANS = [
         ]
 
 S02_DADAAB_FOLLOW_UP_CODING_PLANS = [
+            CodingPlan(raw_field="responses_to_sexual_violence_raw",
+                           dataset_name="dadaab_responses_to_sexual_violence",
+                           time_field="responses_to_sexual_violence_time",
+                           coda_filename="dadaab_responses_to_sexual_violence.json",
+                           coding_configurations=[
+                               CodingConfiguration(
+                                   coding_mode=CodingModes.MULTIPLE,
+                                   code_scheme=CodeSchemes.DADAAB_RESPONSES_TO_SEXUAL_VIOLENCE,
+                                   coded_field="girls_responses_to_sexual_violence",
+                                   analysis_file_key="girls_responses_to_sexual_violence_",
+                                   fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                       CodeSchemes.DADAAB_RESPONSES_TO_SEXUAL_VIOLENCE, x, y)
+                               )
+                           ],
+                           ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value(
+                               "dadaab responses to sexual violence"),
+                           raw_field_fold_strategy=FoldStrategies.concatenate),
 
         ]
 
@@ -1076,8 +1093,24 @@ S01_KAKUMA_FOLLOW_UP_CODING_PLANS = [
         ]
 
 S02_KAKUMA_FOLLOW_UP_CODING_PLANS = [
-
-        ]
+    CodingPlan(raw_field="responses_to_sexual_violence_raw",
+               dataset_name="kakuma_responses_to_sexual_violence",
+               time_field="responses_to_sexual_violence_time",
+               coda_filename="kakuma_responses_to_sexual_violence.json",
+               coding_configurations=[
+                   CodingConfiguration(
+                       coding_mode=CodingModes.MULTIPLE,
+                       code_scheme=CodeSchemes.KAKUMA_RESPONSES_TO_SEXUAL_VIOLENCE,
+                       coded_field="girls_responses_to_sexual_violence",
+                       analysis_file_key="girls_responses_to_sexual_violence_",
+                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                           CodeSchemes.KAKUMA_RESPONSES_TO_SEXUAL_VIOLENCE, x, y)
+                   )
+               ],
+               ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value(
+                   "kakuma responses to sexual violence"),
+               raw_field_fold_strategy=FoldStrategies.concatenate),
+]
 
 
 def get_follow_up_coding_plans(pipeline_name):
