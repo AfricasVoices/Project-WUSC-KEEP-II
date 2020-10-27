@@ -38,7 +38,7 @@
     {
       "CodeID": "code-024be94d",
       "CodeType": "Normal",
-      "DisplayText": "parent and grandparents or guardians",
+      "DisplayText": "parents and grandparents or guardians",
       "NumericValue": 5,
       "StringValue": "parent_and_grandparents_or_guardians",
       "VisibleInCoda": true
