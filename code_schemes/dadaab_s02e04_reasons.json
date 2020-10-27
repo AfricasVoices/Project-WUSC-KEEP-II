@@ -4,6 +4,54 @@
   "Version": "0.0.0.2",
   "Codes": [
     {
+      "CodeID": "code-df2a4f82",
+      "CodeType": "Normal",
+      "DisplayText": "medical practitioners",
+      "NumericValue": 1,
+      "StringValue": "medical_practitioners",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-d0657c96",
+      "CodeType": "Normal",
+      "DisplayText": "the parents or guardians",
+      "NumericValue": 2,
+      "StringValue": "the_parents_or_guardians",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-d7924aaf",
+      "CodeType": "Normal",
+      "DisplayText": "need for awareness creation on SRH",
+      "NumericValue": 3,
+      "StringValue": "need_for_awareness_creation_on_srh",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-0535ab4b",
+      "CodeType": "Normal",
+      "DisplayText": "indifference or nothing is done",
+      "NumericValue": 4,
+      "StringValue": "indifference_or_nothing_is_done",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-1a53b904",
+      "CodeType": "Normal",
+      "DisplayText": "educated girls",
+      "NumericValue": 5,
+      "StringValue": "educated_girls",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-1f1356e9",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 6,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
+    {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
