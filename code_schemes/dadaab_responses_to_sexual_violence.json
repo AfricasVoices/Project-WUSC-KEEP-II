@@ -3,7 +3,46 @@
   "Name": "DADAAB Responses to Sexual Violence",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-56b93a23",
+      "CodeType": "Normal",
+      "DisplayText": "awareness creation",
+      "NumericValue": 1,
+      "StringValue": "awareness_creation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-78333444",
+      "CodeType": "Normal",
+      "DisplayText": "punish the perpetrators",
+      "NumericValue": 2,
+      "StringValue": "punish_the_perpetrators",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-4874a080",
+      "CodeType": "Normal",
+      "DisplayText": "enforce the law",
+      "NumericValue": 3,
+      "StringValue": "enforce_the_law",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-c1d06060",
+      "CodeType": "Normal",
+      "DisplayText": "stakeholders cooperation",
+      "NumericValue": 4,
+      "StringValue": "stakeholders_cooperation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-8ff26c71",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 5,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
