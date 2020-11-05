@@ -4,6 +4,62 @@
   "Version": "0.0.0.2",
   "Codes": [
     {
+      "CodeID": "code-b7bb84f8",
+      "CodeType": "Normal",
+      "DisplayText": "providing learning resources",
+      "NumericValue": 1,
+      "StringValue": "providing_support_resources",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-f123b1d2",
+      "CodeType": "Normal",
+      "DisplayText": "providing support in their studies",
+      "NumericValue": 2,
+      "StringValue": "providing_support_in_their_studies",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-f461e38a",
+      "CodeType": "Normal",
+      "DisplayText": "advice them on importance of education",
+      "NumericValue": 3,
+      "StringValue": "advice_them_on_importance_of_education",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-d8ea63e9",
+      "CodeType": "Normal",
+      "DisplayText": "give them sufficient study time",
+      "NumericValue": 4,
+      "StringValue": "give_them_sufficient_study_time",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-be998eed",
+      "CodeType": "Normal",
+      "DisplayText": "teach them on how to protect themselves from covid19",
+      "NumericValue": 5,
+      "StringValue": "teach_them_on_how_to_protect_themselves_from_covid19",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-d6b71dbf",
+      "CodeType": "Normal",
+      "DisplayText": "motivate and encourage them",
+      "NumericValue": 6,
+      "StringValue": "motivate_and_encourage_them",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-53e7376b",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 7,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
+    {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",

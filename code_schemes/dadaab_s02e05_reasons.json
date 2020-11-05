@@ -4,6 +4,54 @@
   "Version": "0.0.0.2",
   "Codes": [
     {
+      "CodeID": "code-02ee0271",
+      "CodeType": "Normal",
+      "DisplayText": "providing support in their studies",
+      "NumericValue": 1,
+      "StringValue": "providing_support_in_their_studies",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-83652dac",
+      "CodeType": "Normal",
+      "DisplayText": "encouragement",
+      "NumericValue": 2,
+      "StringValue": "encouragement",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-69583fc4",
+      "CodeType": "Normal",
+      "DisplayText": "monitoring their situations",
+      "NumericValue": 3,
+      "StringValue": "monitoring_their_situations",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-6cb02445",
+      "CodeType": "Normal",
+      "DisplayText": "advice them on importance of education",
+      "NumericValue": 4,
+      "StringValue": "advice_them_on_importance_of_education",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-723f65ba",
+      "CodeType": "Normal",
+      "DisplayText": "education is important",
+      "NumericValue": 5,
+      "StringValue": "education_is_important",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-483b7b11",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 6,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
+    {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
