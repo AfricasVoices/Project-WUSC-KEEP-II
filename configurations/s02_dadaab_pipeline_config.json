@@ -19,7 +19,8 @@
         "wusc_keep_ii_dadaab_demogs",
         "wusc_covid19_adaptation_dadaab_demogs",
         "wusc_keep_ii_s02_dadaab_demogs",
-        "wusc_keep_ii_s02_w3_dadaab_follow_up"
+        "wusc_keep_ii_s02_w3_dadaab_follow_up",
+        "wusc_keep_ii_s02_w6_dadaab_follow_up"
       ],
       "TestContactUUIDs": [
         "84f1c3bc-596e-455e-b5f6-ce16640e9b95",
@@ -69,6 +70,9 @@
 
     {"RapidProKey": "Responses_To_Sexual_Violence (Text) - wusc_keep_ii_s02_w3_dadaab_follow_up", "PipelineKey": "responses_to_sexual_violence_raw"},
     {"RapidProKey": "Responses_To_Sexual_Violence (Time) - wusc_keep_ii_s02_w3_dadaab_follow_up", "PipelineKey": "responses_to_sexual_violence_time"},
+
+    {"RapidProKey": "Adolescent_Mothers_Challenges (Text) - wusc_keep_ii_s02_w6_dadaab_follow_up", "PipelineKey": "adolescent_mothers_challenges_raw"},
+    {"RapidProKey": "Adolescent_Mothers_Challenges (Time) - wusc_keep_ii_s02_w6_dadaab_follow_up", "PipelineKey": "adolescent_mothers_challenges_time"},
 
     {"RapidProKey": "Gender (Text) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "gender_raw"},
     {"RapidProKey": "Age (Text) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "age_raw"},

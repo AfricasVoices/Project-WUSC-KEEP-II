@@ -47,6 +47,7 @@ DATASETS=(
 
     "dadaab_community_views_on_girls_education"
     "dadaab_responses_to_sexual_violence"
+    "dadaab_adolescent_mothers_challenges"
 )
 
 cd "$CODA_V2_ROOT/data_tools"

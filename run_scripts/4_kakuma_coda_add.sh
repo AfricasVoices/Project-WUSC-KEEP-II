@@ -48,6 +48,7 @@ DATASETS=(
 
     "kakuma_community_views_on_girls_education"
     "kakuma_responses_to_sexual_violence"
+    "kakuma_adolescent_mothers_challenges"
 )
 
 cd "$CODA_V2_ROOT/data_tools"
