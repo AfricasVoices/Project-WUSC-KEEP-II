@@ -61,6 +61,7 @@ class CodeSchemes(object):
 
     DADAAB_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION = _open_scheme("dadaab_community_views_on_girls_education.json")
     DADAAB_RESPONSES_TO_SEXUAL_VIOLENCE = _open_scheme("dadaab_responses_to_sexual_violence.json")
+    DADAAB_ADOLESCENT_MOTHERS_CHALLENGES = _open_scheme("dadaab_adolescent_mothers_challenges.json")
 
     KAKUMA_GIRLS_EDUCATION_CHAMPIONS = _open_scheme("kakuma_girls_education_champions.json")
     KAKUMA_ENCOURAGEMENT_FOR_BOYS_CHAMPIONS = _open_scheme("kakuma_encouragement_for_boys.json")
@@ -70,6 +71,7 @@ class CodeSchemes(object):
 
     KAKUMA_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION = _open_scheme("kakuma_community_views_on_girls_education.json")
     KAKUMA_RESPONSES_TO_SEXUAL_VIOLENCE = _open_scheme("kakuma_responses_to_sexual_violence.json")
+    KAKUMA_ADOLESCENT_MOTHERS_CHALLENGES = _open_scheme("kakuma_adolescent_mothers_challenges.json")
 
     KAKUMA_WS_CORRECT_DATASET = _open_scheme("kakuma_ws_correct_dataset.json")
     DADAAB_WS_CORRECT_DATASET = _open_scheme("dadaab_ws_correct_dataset.json")
