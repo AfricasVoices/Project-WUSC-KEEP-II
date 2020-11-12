@@ -4,6 +4,78 @@
   "Version": "0.0.0.2",
   "Codes": [
     {
+        "NumericValue": 1,
+        "CodeID": "code-beff4678",
+        "CodeType": "Normal",
+        "StringValue": "age_of_adolescent_mother",
+        "DisplayText": "age of adolescent mother",
+        "VisibleInCoda": true
+      },
+    {
+        "NumericValue": 2,
+        "CodeID": "code-e5d59d18",
+        "CodeType": "Normal",
+        "StringValue": "young_women_engaging_in_sexual_activities_early",
+        "DisplayText": "young women engaging in sexual activities early",
+        "VisibleInCoda": true
+      },
+    {
+        "NumericValue": 3,
+        "CodeID": "code-ba273a4d",
+        "CodeType": "Normal",
+        "StringValue": "girls_who_have_had_their_menstrual_cycle",
+        "DisplayText": "girls who have had their menstrual cycle",
+        "VisibleInCoda": true
+      },
+    {
+        "NumericValue": 4,
+        "CodeID": "code-dd7a28e5",
+        "CodeType": "Normal",
+        "StringValue": "preferred_age_to_give_birth_or_get_married",
+        "DisplayText": "preferred age to give birth or get married",
+        "VisibleInCoda": true
+      },
+    {
+        "NumericValue": 5,
+        "CodeID": "code-9dc6a019",
+        "CodeType": "Normal",
+        "StringValue": "accept_and_support_her",
+        "DisplayText": "accept and support her",
+        "VisibleInCoda": true
+      },
+    {
+        "NumericValue": 6,
+        "CodeID": "code-916ccede",
+        "CodeType": "Normal",
+        "StringValue": "lack_support",
+        "DisplayText": "lack support",
+        "VisibleInCoda": true
+      },
+    {
+        "NumericValue": 7,
+        "CodeID": "code-5b3ebb65",
+        "CodeType": "Normal",
+        "StringValue": "face rejection",
+        "DisplayText": "face_rejection",
+        "VisibleInCoda": true
+      },
+    {
+        "NumericValue": 8,
+        "CodeID": "code-91db567a",
+        "CodeType": "Normal",
+        "StringValue": "face challenges",
+        "DisplayText": "face_challenges",
+        "VisibleInCoda": true
+      },
+    {
+        "NumericValue": 9,
+        "CodeID": "code-e54a12a3",
+        "CodeType": "Normal",
+        "StringValue": "other_theme",
+        "DisplayText": "other theme",
+        "VisibleInCoda": true
+      },
+    {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
