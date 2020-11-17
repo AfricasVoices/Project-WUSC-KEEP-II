@@ -4,6 +4,54 @@
   "Version": "0.0.0.2",
   "Codes": [
     {
+        "NumericValue": 1,
+        "CodeID": "code-e5352996",
+        "CodeType": "Normal",
+        "StringValue": "it_is_preferable",
+        "DisplayText": "it is preferable",
+        "VisibleInCoda": true
+      },
+    {
+        "NumericValue": 2,
+        "CodeID": "code-2bdbba84",
+        "CodeType": "Normal",
+        "StringValue": "it_means_to_be_responsible",
+        "DisplayText": "it means to be responsible",
+        "VisibleInCoda": true
+      },
+    {
+        "NumericValue": 3,
+        "CodeID": "code-b507b876",
+        "CodeType": "Normal",
+        "StringValue": "stop_forced_or_early_marriage",
+        "DisplayText": "stop forced or early marriage",
+        "VisibleInCoda": true
+      },
+    {
+        "NumericValue": 4,
+        "CodeID": "code-b4f92781",
+        "CodeType": "Normal",
+        "StringValue": "religion_allows_it",
+        "DisplayText": "religion allows it",
+        "VisibleInCoda": true
+      },
+    {
+        "NumericValue": 5,
+        "CodeID": "code-f885b7a7",
+        "CodeType": "Normal",
+        "StringValue": "educate_the_girls",
+        "DisplayText": "educate the girls",
+        "VisibleInCoda": true
+      },
+    {
+        "NumericValue": 6,
+        "CodeID": "code-7f17a2a5",
+        "CodeType": "Normal",
+        "StringValue": "other_theme",
+        "DisplayText": "other theme",
+        "VisibleInCoda": true
+      },
+    {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
