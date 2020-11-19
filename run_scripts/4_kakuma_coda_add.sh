@@ -33,6 +33,7 @@ DATASETS=(
     "kakuma_s02e05"
     "kakuma_s02e06"
     "kakuma_s02e07"
+    "kakuma_s02e08"
 
     "kakuma_location"
     "kakuma_gender"
@@ -47,6 +48,7 @@ DATASETS=(
     #"kakuma_show_suggestions"
 
     "kakuma_community_views_on_girls_education"
+    "kakuma_community_views_on_girls_education_final"
     "kakuma_responses_to_sexual_violence"
     "kakuma_adolescent_mothers_challenges"
 )

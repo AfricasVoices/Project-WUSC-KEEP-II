@@ -33,6 +33,7 @@ DATASETS=(
     "dadaab_s02e05"
     "dadaab_s02e06"
     "dadaab_s02e07"
+    "dadaab_s02e08"
 
     "dadaab_location"
     "dadaab_gender"
@@ -47,6 +48,7 @@ DATASETS=(
     #"dadaab_show_suggestions"
 
     "dadaab_community_views_on_girls_education"
+    "dadaab_community_views_on_girls_education_final"
     "dadaab_responses_to_sexual_violence"
     "dadaab_adolescent_mothers_challenges"
 )
