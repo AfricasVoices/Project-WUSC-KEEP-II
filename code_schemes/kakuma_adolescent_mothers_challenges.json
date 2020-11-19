@@ -14,7 +14,7 @@
     {
       "CodeID": "code-45f338e8",
       "CodeType": "Normal",
-      "DisplayText": "face rejection / discrimination",
+      "DisplayText": "face rejection or discrimination",
       "NumericValue": 2,
       "StringValue": "face_rejection_or_discrimination",
       "VisibleInCoda": true
