@@ -4,6 +4,54 @@
   "Version": "0.0.0.1",
   "Codes": [
     {
+      "CodeID": "code-0717e7c0",
+      "CodeType": "Normal",
+      "DisplayText": "lack financial support",
+      "NumericValue": 1,
+      "StringValue": "lack_financial_support",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-45f338e8",
+      "CodeType": "Normal",
+      "DisplayText": "face rejection or discrimination",
+      "NumericValue": 2,
+      "StringValue": "face_rejection_or_discrimination",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-8e136012",
+      "CodeType": "Normal",
+      "DisplayText": "school drop out",
+      "NumericValue": 3,
+      "StringValue": "school_drop_out",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-2337e92a",
+      "CodeType": "Normal",
+      "DisplayText": "lack of support",
+      "NumericValue": 4,
+      "StringValue": "lack_of_support",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-991dd1a5",
+      "CodeType": "Normal",
+      "DisplayText": "stress and drepression",
+      "NumericValue": 5,
+      "StringValue": "stress_and_drepression",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-8b7771ef",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 6,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
+    {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
       "ControlCode": "NA",
