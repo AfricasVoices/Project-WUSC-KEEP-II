@@ -4,6 +4,46 @@
   "Version": "0.0.0.2",
   "Codes": [
     {
+      "CodeID": "code-731d54c4",
+      "CodeType": "Normal",
+      "DisplayText": "household chore",
+      "NumericValue": 1,
+      "StringValue": "household_chore",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-a3be973d",
+      "CodeType": "Normal",
+      "DisplayText": "do not assign them",
+      "NumericValue": 2,
+      "StringValue": "do_not_assign_them",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-521d6652",
+      "CodeType": "Normal",
+      "DisplayText": "against culture",
+      "NumericValue": 3,
+      "StringValue": "against_culture",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-0beb11d1",
+      "CodeType": "Normal",
+      "DisplayText": "compound work",
+      "NumericValue": 4,
+      "StringValue": "compound_work",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-3e017d6c",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 5,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
+    {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
