@@ -195,6 +195,26 @@ S02_DADAAB_RQA_CODING_PLANS  = [
                            "dadaab community views on girls education"),
                        raw_field_fold_strategy=FoldStrategies.concatenate),
 
+            CodingPlan(raw_field="community_views_on_girls_education_final_raw",
+                                   dataset_name="dadaab_community_views_on_girls_education_final",
+                                   time_field="sent_on",
+                                   coda_filename="dadaab_community_views_on_girls_education_final.json",
+                                   run_id_field="community_views_on_girls_education_final_run_id",
+                                   icr_filename="dadaab_community_views_on_girls_education_final.csv",
+                                   coding_configurations=[
+                                       CodingConfiguration(
+                                           coding_mode=CodingModes.MULTIPLE,
+                                           code_scheme=CodeSchemes.DADAAB_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION_FINAL,
+                                           coded_field="community_views_on_girls_education_final_coded",
+                                           analysis_file_key="community_views_on_girls_education_final_",
+                                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                               CodeSchemes.DADAAB_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION_FINAL, x, y)
+                                       )
+                                   ],
+                                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value(
+                                       "dadaab community views on girls education final"),
+                                   raw_field_fold_strategy=FoldStrategies.concatenate),
+
             CodingPlan(raw_field="rqa_s02e01_raw",
                        dataset_name="dadaab_s02e01",
                        time_field="sent_on",
@@ -327,6 +347,25 @@ S02_DADAAB_RQA_CODING_PLANS  = [
                        ],
                        ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s02e07"),
                        raw_field_fold_strategy=FoldStrategies.concatenate),
+
+            CodingPlan(raw_field="rqa_s02e08_raw",
+                                   dataset_name="dadaab_s02e08",
+                                   time_field="sent_on",
+                                   run_id_field="rqa_s02e08_run_id",
+                                   coda_filename="dadaab_s02e08.json",
+                                   icr_filename="dadaab_s02e08.csv",
+                                   coding_configurations=[
+                                       CodingConfiguration(
+                                           coding_mode=CodingModes.MULTIPLE,
+                                           code_scheme=CodeSchemes.DADAAB_S02E08_REASONS,
+                                           coded_field="rqa_s02e08_coded",
+                                           analysis_file_key="rqa_s02e08_",
+                                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                               CodeSchemes.DADAAB_S02E08_REASONS, x, y)
+                                       )
+                                   ],
+                                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s02e08"),
+                                   raw_field_fold_strategy=FoldStrategies.concatenate),
 
         ]
 
@@ -514,6 +553,26 @@ S02_KAKUMA_RQA_CODING_PLANS  = [
                            "kakuma community views on girls education"),
                        raw_field_fold_strategy=FoldStrategies.concatenate),
 
+            CodingPlan(raw_field="community_views_on_girls_education_final_raw",
+                                   dataset_name="kakuma_community_views_on_girls_education_final",
+                                   time_field="sent_on",
+                                   coda_filename="kakuma_community_views_on_girls_education_final.json",
+                                   run_id_field="community_views_on_girls_education_final_run_id",
+                                   icr_filename="kakuma_community_views_on_girls_education_final.csv",
+                                   coding_configurations=[
+                                       CodingConfiguration(
+                                           coding_mode=CodingModes.MULTIPLE,
+                                           code_scheme=CodeSchemes.KAKUMA_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION_FINAL,
+                                           coded_field="community_views_on_girls_education_final_coded",
+                                           analysis_file_key="community_views_on_girls_education_final_",
+                                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                               CodeSchemes.KAKUMA_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION_FINAL, x, y)
+                                       )
+                                   ],
+                                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value(
+                                       "kakuma community views on girls education final"),
+                                   raw_field_fold_strategy=FoldStrategies.concatenate),
+
             CodingPlan(raw_field="rqa_s02e01_raw",
                        dataset_name="kakuma_s02e01",
                        listening_group_filename="kakuma_s02e01_listening_group.csv",
@@ -654,6 +713,25 @@ S02_KAKUMA_RQA_CODING_PLANS  = [
                        ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s02e07"),
                        raw_field_fold_strategy=FoldStrategies.concatenate),
 
+            CodingPlan(raw_field="rqa_s02e08_raw",
+                                   dataset_name="kakuma_s02e08",
+                                   listening_group_filename="kakuma_s02e08_listening_group.csv",
+                                   time_field="sent_on",
+                                   run_id_field="rqa_s02e08_run_id",
+                                   coda_filename="kakuma_s02e08.json",
+                                   icr_filename="kakuma_s02e08.csv",
+                                   coding_configurations=[
+                                       CodingConfiguration(
+                                           coding_mode=CodingModes.MULTIPLE,
+                                           code_scheme=CodeSchemes.KAKUMA_S02E08_REASONS,
+                                           coded_field="rqa_s02e08_coded",
+                                           analysis_file_key="rqa_s02e08_",
+                                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                               CodeSchemes.KAKUMA_S02E08_REASONS, x, y)
+                                       )
+                                   ],
+                                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s02e08"),
+                                   raw_field_fold_strategy=FoldStrategies.concatenate),
         ]
 
 def get_rqa_coding_plans(pipeline_name):

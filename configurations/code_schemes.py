@@ -26,6 +26,7 @@ class CodeSchemes(object):
     DADAAB_S02E05_REASONS = _open_scheme("dadaab_s02e05_reasons.json")
     DADAAB_S02E06_REASONS = _open_scheme("dadaab_s02e06_reasons.json")
     DADAAB_S02E07_REASONS = _open_scheme("dadaab_s02e07_reasons.json")
+    DADAAB_S02E08_REASONS = _open_scheme("dadaab_s02e08_reasons.json")
 
     KAKUMA_S01E01_REASONS = _open_scheme("kakuma_s01e01_reasons.json")
     KAKUMA_S01E02_REASONS = _open_scheme("kakuma_s01e02_reasons.json")
@@ -34,6 +35,7 @@ class CodeSchemes(object):
     KAKUMA_S01E05_REASONS = _open_scheme("kakuma_s01e05_reasons.json")
     KAKUMA_S01E06_REASONS = _open_scheme("kakuma_s01e06_reasons.json")
     KAKUMA_S01E07_REASONS = _open_scheme("kakuma_s01e07_reasons.json")
+    KAKUMA_S01E08_REASONS = _open_scheme("kakuma_s01e08_reasons.json")
     KAKUMA_S01_INTRO_REASONS = _open_scheme("kakuma_s01_intro_reasons.json")
 
     KAKUMA_S02E01_REASONS = _open_scheme("kakuma_s02e01_reasons.json")
@@ -43,6 +45,7 @@ class CodeSchemes(object):
     KAKUMA_S02E05_REASONS = _open_scheme("kakuma_s02e05_reasons.json")
     KAKUMA_S02E06_REASONS = _open_scheme("kakuma_s02e06_reasons.json")
     KAKUMA_S02E07_REASONS = _open_scheme("kakuma_s02e07_reasons.json")
+    KAKUMA_S02E08_REASONS = _open_scheme("kakuma_s02e08_reasons.json")
 
     GENDER = _open_scheme("gender.json")
     NATIONALITY = _open_scheme("nationality.json")
@@ -60,6 +63,7 @@ class CodeSchemes(object):
     DADAAB_SHOW_SUGGESTIONS = _open_scheme("dadaab_show_suggestions.json")
 
     DADAAB_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION = _open_scheme("dadaab_community_views_on_girls_education.json")
+    DADAAB_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION_FINAL = _open_scheme("dadaab_community_views_on_girls_education_final.json")
     DADAAB_RESPONSES_TO_SEXUAL_VIOLENCE = _open_scheme("dadaab_responses_to_sexual_violence.json")
     DADAAB_ADOLESCENT_MOTHERS_CHALLENGES = _open_scheme("dadaab_adolescent_mothers_challenges.json")
 
@@ -70,6 +74,7 @@ class CodeSchemes(object):
     KAKUMA_SHOW_SUGGESTIONS = _open_scheme("kakuma_show_suggestions.json")
 
     KAKUMA_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION = _open_scheme("kakuma_community_views_on_girls_education.json")
+    KAKUMA_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION_FINAL = _open_scheme("kakuma_community_views_on_girls_education_final.json")
     KAKUMA_RESPONSES_TO_SEXUAL_VIOLENCE = _open_scheme("kakuma_responses_to_sexual_violence.json")
     KAKUMA_ADOLESCENT_MOTHERS_CHALLENGES = _open_scheme("kakuma_adolescent_mothers_challenges.json")
 
