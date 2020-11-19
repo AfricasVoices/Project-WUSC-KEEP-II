@@ -4,6 +4,46 @@
   "Version": "0.0.0.1",
   "Codes": [
     {
+      "CodeID": "code-2eb181c4",
+      "CodeType": "Normal",
+      "DisplayText": "divorce",
+      "NumericValue": 1,
+      "StringValue": "divorce",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-45a4dd85",
+      "CodeType": "Normal",
+      "DisplayText": "pregnancy complications",
+      "NumericValue": 2,
+      "StringValue": "pregnancy_complications",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-786f0ac2",
+      "CodeType": "Normal",
+      "DisplayText": "discrimination, embarrassment & stigma",
+      "NumericValue": 3,
+      "StringValue": "discrimination_embarrassment_and_stigma",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-5a51a372",
+      "CodeType": "Normal",
+      "DisplayText": "lack of experience",
+      "NumericValue": 4,
+      "StringValue": "lack_of_experience",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-50106363",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 5,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
+    {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
       "ControlCode": "NA",
