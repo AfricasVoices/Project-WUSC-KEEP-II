@@ -4,6 +4,46 @@
   "Version": "0.0.0.2",
   "Codes": [
     {
+      "CodeID": "code-b2632d78",
+      "CodeType": "Normal",
+      "DisplayText": "household chore",
+      "NumericValue": 1,
+      "StringValue": "household_chore",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-40fad2e8",
+      "CodeType": "Normal",
+      "DisplayText": "cattle, farm and compound work",
+      "NumericValue": 2,
+      "StringValue": "cattle_farm_and_compound_work",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-faa8460d",
+      "CodeType": "Normal",
+      "DisplayText": "collecting food from distribution centers",
+      "NumericValue": 3,
+      "StringValue": "collecting_food_from_distribution_centers",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-46ad08eb",
+      "CodeType": "Normal",
+      "DisplayText": "constructing houses",
+      "NumericValue": 4,
+      "StringValue": "constructing_houses",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-57c18a37",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 5,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
+    {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
