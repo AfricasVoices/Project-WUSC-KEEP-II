@@ -21,7 +21,6 @@
         "wusc_keep_ii_s02e05_kakuma_activation",
         "wusc_keep_ii_s02e06_kakuma_activation",
         "wusc_keep_ii_s02e07_kakuma_activation",
-        "wusc_keep_ii_s02e08_kakuma_activation",
         "wusc_keep_ii_s02_kakuma_initial_evaluation",
         "wusc_keep_ii_s02_kakuma_final_evaluation"
       ],
@@ -128,7 +127,7 @@
     {"RapidProKey": "Rqa_S02E05_Kakuma (Time) - wusc_keep_ii_s02e05_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S02E06_Kakuma (Time) - wusc_keep_ii_s02e06_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S02E07_Kakuma (Time) - wusc_keep_ii_s02e07_kakuma_activation", "PipelineKey": "sent_on"},
-    {"RapidProKey": "Rqa_S02E08_Kakuma (Time) - wusc_keep_ii_s02e08_Kakuma_activation", "PipelineKey": "sent_on"},
+    {"RapidProKey": "Rqa_S02E08_Kakuma (Time) - wusc_keep_ii_s02e08_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Community_Views_On_Girls_Education_Final (Time) - wusc_keep_ii_s02_kakuma_final_evaluation", "PipelineKey": "sent_on"},
 
     {"RapidProKey": "Responses_To_Sexual_Violence (Text) - wusc_keep_ii_s02_w3_kakuma_follow_up", "PipelineKey": "responses_to_sexual_violence_raw"},
