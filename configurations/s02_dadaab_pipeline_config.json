@@ -62,7 +62,6 @@
     {"RapidProKey": "Rqa_S02E05_Dadaab (Run ID) - wusc_keep_ii_s02e05_dadaab_activation", "PipelineKey": "rqa_s02e05_run_id"},
     {"RapidProKey": "Rqa_S02E06_Dadaab (Run ID) - wusc_keep_ii_s02e06_dadaab_activation", "PipelineKey": "rqa_s02e06_run_id"},
     {"RapidProKey": "Rqa_S02E07_Dadaab (Run ID) - wusc_keep_ii_s02e07_dadaab_activation", "PipelineKey": "rqa_s02e07_run_id"},
-    {"RapidProKey": "Rqa_S02E08_Dadaab (Text) - wusc_keep_ii_s02e08_dadaab_activation", "PipelineKey": "rqa_s02e08_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_S02E08_Dadaab (Run ID) - wusc_keep_ii_s02e08_dadaab_activation", "PipelineKey": "rqa_s02e08_run_id"},
     {"RapidProKey": "Community_Views_On_Girls_Education_Final (Run ID) - wusc_keep_ii_s02_dadaab_final_evaluation", "PipelineKey": "community_views_on_girls_education_final_run_id"},
 

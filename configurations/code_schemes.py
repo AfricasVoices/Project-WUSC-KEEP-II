@@ -35,7 +35,6 @@ class CodeSchemes(object):
     KAKUMA_S01E05_REASONS = _open_scheme("kakuma_s01e05_reasons.json")
     KAKUMA_S01E06_REASONS = _open_scheme("kakuma_s01e06_reasons.json")
     KAKUMA_S01E07_REASONS = _open_scheme("kakuma_s01e07_reasons.json")
-    KAKUMA_S01E08_REASONS = _open_scheme("kakuma_s01e08_reasons.json")
     KAKUMA_S01_INTRO_REASONS = _open_scheme("kakuma_s01_intro_reasons.json")
 
     KAKUMA_S02E01_REASONS = _open_scheme("kakuma_s02e01_reasons.json")
