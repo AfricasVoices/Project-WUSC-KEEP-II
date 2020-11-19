@@ -4,35 +4,35 @@
   "Version": "0.0.0.1",
   "Codes": [
     {
-      "CodeID": "code-2eb181c4",
+      "CodeID": "code-5a51a372",
       "CodeType": "Normal",
-      "DisplayText": "divorce",
+      "DisplayText": "lack of experience",
       "NumericValue": 1,
-      "StringValue": "divorce",
-      "VisibleInCoda": true
-    },
-    {
-      "CodeID": "code-45a4dd85",
-      "CodeType": "Normal",
-      "DisplayText": "pregnancy complications",
-      "NumericValue": 2,
-      "StringValue": "pregnancy_complications",
+      "StringValue": "lack_of_experience",
       "VisibleInCoda": true
     },
     {
       "CodeID": "code-786f0ac2",
       "CodeType": "Normal",
       "DisplayText": "discrimination, embarrassment and stigma",
-      "NumericValue": 3,
+      "NumericValue": 2,
       "StringValue": "discrimination_embarrassment_and_stigma",
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-5a51a372",
+      "CodeID": "code-45a4dd85",
       "CodeType": "Normal",
-      "DisplayText": "lack of experience",
+      "DisplayText": "pregnancy complications",
+      "NumericValue": 3,
+      "StringValue": "pregnancy_complications",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-2eb181c4",
+      "CodeType": "Normal",
+      "DisplayText": "divorce",
       "NumericValue": 4,
-      "StringValue": "lack_of_experience",
+      "StringValue": "divorce",
       "VisibleInCoda": true
     },
     {
