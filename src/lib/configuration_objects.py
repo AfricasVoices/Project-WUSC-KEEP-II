@@ -37,3 +37,7 @@ class CodingPlan(object):
         if id_field is None:
             id_field = "{}_id".format(self.raw_field)
         self.id_field = id_field
+
+class PipelineEvents(object):
+    PIPELINE_START = "PipelineStart"
+    PIPELINE_END = "PipelineCompletedSuccessfully"
