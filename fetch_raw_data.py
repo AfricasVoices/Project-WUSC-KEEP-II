@@ -10,10 +10,11 @@ from id_infrastructure.firestore_uuid_table import FirestoreUuidTable
 from rapid_pro_tools.rapid_pro_client import RapidProClient
 from storage.google_cloud import google_cloud_utils
 from temba_client.v2 import Contact, Run
-from pipeline_logs import FirestorePipelinesLogsTable
+from pipeline_logs.firestore_pipeline_logger import FirestorePipelineLogger
 
 from src.lib import PipelineConfiguration
 from src.lib.pipeline_configuration import RapidProSource
+from src.lib.configuration_objects import PipelineEvents
 
 Logger.set_project_name("WUSC-KEEP-II")
 log = Logger(__name__)
@@ -125,14 +126,10 @@ def main(user, google_cloud_credentials_file_path, pipeline_configuration_file_p
         google_cloud_credentials_file_path,
         pipeline_configuration.operations_dashboard.firebase_credentials_file_url
     ))
-    firestore_pipeline_logs_table = FirestorePipelinesLogsTable(firestore_pipeline_logs_table_credentials)
 
-    pipeline_logs = {"timestamp": timestamp,
-                     "run_id": run_id,
-                     "event": "PipelineStart"}
-
-    firestore_pipeline_logs_table.update_pipeline_logs(pipeline_configuration.pipeline_name, timestamp, pipeline_logs)
-    log.info(f"Updated PipelineStart event log for pipeline run_id: {run_id}")
+    log.info(f"Updating PipelineStart event log for run_id: {run_id}")
+    FirestorePipelineLogger.update_pipeline_logs( pipeline_configuration.pipeline_name, timestamp, run_id,
+                                                  PipelineEvents.PIPELINE_START, firestore_pipeline_logs_table_credentials)
 
     log.info(f"Fetching data from {len(pipeline_configuration.raw_data_sources)} sources...")
     for i, raw_data_source in enumerate(pipeline_configuration.raw_data_sources):
