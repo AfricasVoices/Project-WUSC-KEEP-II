@@ -4,6 +4,62 @@
   "Version": "0.0.0.2",
   "Codes": [
     {
+      "CodeID": "code-10590476",
+      "CodeType": "Normal",
+      "DisplayText": "yes, no reason",
+      "NumericValue": 1,
+      "StringValue": "yes_no_reason",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-8c57705f",
+      "CodeType": "Normal",
+      "DisplayText": "no, no reason",
+      "NumericValue": 2,
+      "StringValue": "no_no_reason",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-5ec1d656",
+      "CodeType": "Normal",
+      "DisplayText": "yes, agree",
+      "NumericValue": 3,
+      "StringValue": "yes_agree",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-f14b7fe1",
+      "CodeType": "Normal",
+      "DisplayText": "yes, agree but don't practice",
+      "NumericValue": 4,
+      "StringValue": "yes_agree_but_do_not_practice",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-73fb4b9b",
+      "CodeType": "Normal",
+      "DisplayText": "yes, girls decide",
+      "NumericValue": 5,
+      "StringValue": "yes_girls_decide",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-c502f896",
+      "CodeType": "Normal",
+      "DisplayText": "no, there is no agreement",
+      "NumericValue": 6,
+      "StringValue": "no_there_is_no_agreement",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-80edf02b",
+      "CodeType": "Normal",
+      "DisplayText": "no, agreement depends on the parents or family",
+      "NumericValue": 7,
+      "StringValue": "no_agreement_depends_on_the_parents_or_family",
+      "VisibleInCoda": true
+    },
+    {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
