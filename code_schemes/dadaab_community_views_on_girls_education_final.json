@@ -6,17 +6,17 @@
     {
       "CodeID": "code-eb82e732",
       "CodeType": "Normal",
-      "DisplayText": "yes",
+      "DisplayText": "yes, no reason",
       "NumericValue": 1,
-      "StringValue": "yes",
+      "StringValue": "yes_no_reason",
       "VisibleInCoda": true
     },
     {
       "CodeID": "code-a4d4cb49",
       "CodeType": "Normal",
-      "DisplayText": "no",
+      "DisplayText": "no, no reason",
       "NumericValue": 2,
-      "StringValue": "no",
+      "StringValue": "no_no_reason",
       "VisibleInCoda": true
     },
     {
@@ -24,7 +24,7 @@
       "CodeType": "Normal",
       "DisplayText": "yes, agree",
       "NumericValue": 3,
-      "StringValue": "yes, agree",
+      "StringValue": "yes_agree",
       "VisibleInCoda": true
     },
     {
