@@ -4,6 +4,62 @@
   "Version": "0.0.0.2",
   "Codes": [
     {
+      "CodeID": "code-eb82e732",
+      "CodeType": "Normal",
+      "DisplayText": "yes",
+      "NumericValue": 1,
+      "StringValue": "yes",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-a4d4cb49",
+      "CodeType": "Normal",
+      "DisplayText": "no",
+      "NumericValue": 2,
+      "StringValue": "no",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-07ecc5b1",
+      "CodeType": "Normal",
+      "DisplayText": "yes, agree",
+      "NumericValue": 3,
+      "StringValue": "yes, agree",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-365c48f4",
+      "CodeType": "Normal",
+      "DisplayText": "yes, girls education is important",
+      "NumericValue": 4,
+      "StringValue": "yes, girls education is important",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-6bb5c936",
+      "CodeType": "Normal",
+      "DisplayText": "no, there is no agreement",
+      "NumericValue": 5,
+      "StringValue": "no_there_is_no_agreement",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-47be5b33",
+      "CodeType": "Normal",
+      "DisplayText": "marry them off",
+      "NumericValue": 6,
+      "StringValue": "marry_them_off",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-e828b760",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 7,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
+    {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
