@@ -32,7 +32,7 @@
       "CodeType": "Normal",
       "DisplayText": "yes, agree but don't practice",
       "NumericValue": 4,
-      "StringValue": "yes, agree",
+      "StringValue": "yes_agree",
       "VisibleInCoda": true
     },
     {
