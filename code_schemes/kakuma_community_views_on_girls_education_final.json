@@ -6,17 +6,17 @@
     {
       "CodeID": "code-10590476",
       "CodeType": "Normal",
-      "DisplayText": "yes",
+      "DisplayText": "yes, no reason",
       "NumericValue": 1,
-      "StringValue": "yes",
+      "StringValue": "yes_no_reason",
       "VisibleInCoda": true
     },
     {
       "CodeID": "code-8c57705f",
       "CodeType": "Normal",
-      "DisplayText": "no",
+      "DisplayText": "no, no reason",
       "NumericValue": 2,
-      "StringValue": "no",
+      "StringValue": "no_no_reason",
       "VisibleInCoda": true
     },
     {
@@ -24,7 +24,7 @@
       "CodeType": "Normal",
       "DisplayText": "yes, agree",
       "NumericValue": 3,
-      "StringValue": "yes, agree",
+      "StringValue": "yes_agree",
       "VisibleInCoda": true
     },
     {
@@ -32,7 +32,7 @@
       "CodeType": "Normal",
       "DisplayText": "yes, agree but don't practice",
       "NumericValue": 4,
-      "StringValue": "yes_agree",
+      "StringValue": "yes_agree_but_do_not_practice",
       "VisibleInCoda": true
     },
     {
@@ -40,7 +40,7 @@
       "CodeType": "Normal",
       "DisplayText": "yes, girls decide",
       "NumericValue": 5,
-      "StringValue": "yes, girls decide",
+      "StringValue": "yes_girls_decide",
       "VisibleInCoda": true
     },
     {
