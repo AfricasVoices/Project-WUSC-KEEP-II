@@ -54,9 +54,9 @@
     {
       "CodeID": "code-80edf02b",
       "CodeType": "Normal",
-      "DisplayText": "no, agreement but depends with the parents or family",
+      "DisplayText": "no, agreement depends on the parents or family",
       "NumericValue": 7,
-      "StringValue": "no_agreement_but_depends_with_the_parents_or_family",
+      "StringValue": "no_agreement_depends_on_the_parents_or_family",
       "VisibleInCoda": true
     },
     {
