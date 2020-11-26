@@ -15,7 +15,8 @@
         "wusc_keep_ii_s02e07_dadaab_activation",
         "wusc_keep_ii_s02e08_dadaab_activation",
         "wusc_keep_ii_s02_dadaab_initial_evaluation",
-        "wusc_keep_ii_s02_dadaab_final_evaluation"
+        "wusc_keep_ii_s02_dadaab_final_evaluation",
+        "wusc_keep_ii_s02_programme_evaluation_dadaab"
       ],
       "SurveyFlowNames": [
         "wusc_keep_ii_dadaab_demogs",
@@ -81,6 +82,12 @@
 
     {"RapidProKey": "Adolescent_Mothers_Challenges (Text) - wusc_keep_ii_s02_w6_dadaab_follow_up", "PipelineKey": "adolescent_mothers_challenges_raw"},
     {"RapidProKey": "Adolescent_Mothers_Challenges (Time) - wusc_keep_ii_s02_w6_dadaab_follow_up", "PipelineKey": "adolescent_mothers_challenges_time"},
+
+    {"RapidProKey": "Lessons_Learnt (Text) - wusc_keep_ii_s02_programme_evaluation_dadaab", "PipelineKey": "s02_lessons_learnt_raw"},
+    {"RapidProKey": "Lessons_Learnt (Time) - wusc_keep_ii_s02_programme_evaluation_dadaab", "PipelineKey": "s02_lessons_learnt_time"},
+
+    {"RapidProKey": "Impact_Made (Text) - wusc_keep_ii_s02_programme_evaluation_dadaab", "PipelineKey": "s02_impact_made_raw"},
+    {"RapidProKey": "Impact_Made (Time) - wusc_keep_ii_s02_programme_evaluation_dadaab", "PipelineKey": "s02_impact_made_time"},
 
     {"RapidProKey": "Gender (Text) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "gender_raw"},
     {"RapidProKey": "Age (Text) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "age_raw"},
