@@ -191,6 +191,28 @@
       ]
     },
     {
+      "CodeID": "code-afcd167e",
+      "CodeType": "Normal",
+      "DisplayText": "s02 dadaab impact made",
+      "StringValue": "s02 dadaab impact made",
+      "NumericValue": 44,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "s02 dadaab impact made"
+      ]
+    },
+    {
+      "CodeID": "code-b7b0fb62",
+      "CodeType": "Normal",
+      "DisplayText": "s02 dadaab lessons learnt",
+      "StringValue": "s02 dadaab lessons learnt",
+      "NumericValue": 45,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "s02 dadaab lessons learnt"
+      ]
+    },
+    {
       "CodeID": "code-685c35a0",
       "CodeType": "Normal",
       "DisplayText": "dadaab s01e01",
