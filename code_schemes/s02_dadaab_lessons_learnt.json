@@ -4,46 +4,6 @@
   "Version": "0.0.0.1",
   "Codes": [
     {
-      "CodeID": "code-6c5de67d",
-      "CodeType": "Normal",
-      "DisplayText": "benefits of girls education",
-      "NumericValue": 1,
-      "StringValue": "benefits_of_girls_education",
-      "VisibleInCoda": true
-    },
-    {
-      "CodeID": "code-cf071c7a",
-      "CodeType": "Normal",
-      "DisplayText": "girls and boys have equal rights",
-      "NumericValue": 2,
-      "StringValue": "girls_and_boys_have_equal_rights",
-      "VisibleInCoda": true
-    },
-    {
-      "CodeID": "code-5ce0dafd",
-      "CodeType": "Normal",
-      "DisplayText": "need for awareness creation for girls' education",
-      "NumericValue": 3,
-      "StringValue": "need_for_awareness_creation_for_girls_education",
-      "VisibleInCoda": true
-    },
-    {
-      "CodeID": "code-a032fc19",
-      "CodeType": "Normal",
-      "DisplayText": "access to encouragement for girls education",
-      "NumericValue": 4,
-      "StringValue": "access_to_encouragement_for_girls_education",
-      "VisibleInCoda": true
-    },
-    {
-      "CodeID": "code-cda1d6fb",
-      "CodeType": "Normal",
-      "DisplayText": "other",
-      "NumericValue": 5,
-      "StringValue": "other",
-      "VisibleInCoda": true
-    },
-    {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
       "ControlCode": "NA",
