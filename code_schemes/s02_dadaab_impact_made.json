@@ -14,7 +14,7 @@
     {
       "CodeID": "code-72691710",
       "CodeType": "Normal",
-      "DisplayText": "Access_to_encouragement",
+      "DisplayText": "Access to encouragement",
       "NumericValue": 2,
       "StringValue": "Access_to_encouragement",
       "VisibleInCoda": true
@@ -22,7 +22,7 @@
     {
       "CodeID": "code-44f81b2d",
       "CodeType": "Normal",
-      "DisplayText": "Gender_equality",
+      "DisplayText": "Gender equality",
       "NumericValue": 3,
       "StringValue": "Gender_equality",
       "VisibleInCoda": true
