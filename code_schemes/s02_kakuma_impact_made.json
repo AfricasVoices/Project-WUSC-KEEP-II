@@ -4,6 +4,38 @@
   "Version": "0.0.0.1",
   "Codes": [
     {
+      "CodeID": "code-38272424",
+      "CodeType": "Normal",
+      "DisplayText": "There are changes",
+      "NumericValue": 1,
+      "StringValue": "There_are_changes",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-a8642683",
+      "CodeType": "Normal",
+      "DisplayText": "no change",
+      "NumericValue": 2,
+      "StringValue": "no_change",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-0af1052b",
+      "CodeType": "Normal",
+      "DisplayText": "Benefits of educating a girl",
+      "NumericValue": 3,
+      "StringValue": "Benefits_of_educating_a_girl",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-2aa714be",
+      "CodeType": "Normal",
+      "DisplayText": "other",
+      "NumericValue": 4,
+      "StringValue": "other",
+      "VisibleInCoda": true
+    },
+    {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
       "ControlCode": "NA",
