@@ -22,17 +22,17 @@
     {
       "CodeID": "code-c8f32b22",
       "CodeType": "Normal",
-      "DisplayText": "Support for girls education",
+      "DisplayText": "support for girls education",
       "NumericValue": 3,
-      "StringValue": "Support_for_girls_education",
+      "StringValue": "support_for_girls_education",
       "VisibleInCoda": true
     },
     {
       "CodeID": "code-a1ed91ee",
       "CodeType": "Normal",
-      "DisplayText": "Girls education is important",
+      "DisplayText": "girls education is important",
       "NumericValue": 4,
-      "StringValue": "Girls_education_is_important",
+      "StringValue": "girls_education_is_important",
       "VisibleInCoda": true
     },
     {
