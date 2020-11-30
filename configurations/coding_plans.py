@@ -1091,6 +1091,42 @@ S02_DADAAB_FOLLOW_UP_CODING_PLANS = [
                            ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value(
                                "dadaab adolescent mothers challenges"),
                            raw_field_fold_strategy=FoldStrategies.concatenate),
+
+            CodingPlan(raw_field="s02_impact_made_raw",
+                           dataset_name="s02_dadaab_impact_made",
+                           time_field="s02_impact_made_time",
+                           coda_filename="s02_dadaab_impact_made.json",
+                           coding_configurations=[
+                               CodingConfiguration(
+                                   coding_mode=CodingModes.MULTIPLE,
+                                   code_scheme=CodeSchemes.S02_DADAAB_IMPACT_MADE,
+                                   coded_field="s02_impact_made",
+                                   analysis_file_key="s02_impact_made_",
+                                   fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                       CodeSchemes.S02_DADAAB_IMPACT_MADE, x, y)
+                               )
+                           ],
+                           ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value(
+                               "s02 dadaab impact made"),
+                           raw_field_fold_strategy=FoldStrategies.concatenate),
+
+            CodingPlan(raw_field="s02_lessons_learnt_raw",
+                                       dataset_name="s02_dadaab_lessons_learnt",
+                                       time_field="s02_lessons_learnt_time",
+                                       coda_filename="s02_dadaab_lessons_learnt.json",
+                                       coding_configurations=[
+                                           CodingConfiguration(
+                                               coding_mode=CodingModes.MULTIPLE,
+                                               code_scheme=CodeSchemes.S02_DADAAB_LESSONS_LEARNT,
+                                               coded_field="s02_lessons_learnt",
+                                               analysis_file_key="s02_lessons_learnt_",
+                                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                                   CodeSchemes.S02_DADAAB_LESSONS_LEARNT, x, y)
+                                           )
+                                       ],
+                                       ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value(
+                                           "s02 dadaab lessons learnt"),
+                           raw_field_fold_strategy=FoldStrategies.concatenate),
         ]
 
 S01_KAKUMA_FOLLOW_UP_CODING_PLANS = [
@@ -1222,7 +1258,43 @@ S02_KAKUMA_FOLLOW_UP_CODING_PLANS = [
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value(
                        "kakuma adolescent mothers challenges"),
-                   raw_field_fold_strategy=FoldStrategies.concatenate)
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
+
+    CodingPlan(raw_field="s02_impact_made_raw",
+                                           dataset_name="s02_kakuma_impact_made",
+                                           time_field="s02_impact_made_time",
+                                           coda_filename="s02_kakuma_impact_made.json",
+                                           coding_configurations=[
+                                               CodingConfiguration(
+                                                   coding_mode=CodingModes.MULTIPLE,
+                                                   code_scheme=CodeSchemes.S02_KAKUMA_IMPACT_MADE,
+                                                   coded_field="s02_impact_made",
+                                                   analysis_file_key="s02_impact_made_",
+                                                   fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                                       CodeSchemes.S02_KAKUMA_IMPACT_MADE, x, y)
+                                               )
+                                           ],
+                                           ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value(
+                                               "s02 kakuma impact made"),
+                                           raw_field_fold_strategy=FoldStrategies.concatenate),
+
+    CodingPlan(raw_field="s02_lessons_learnt_raw",
+                                           dataset_name="s02_kakuma_lessons_learnt",
+                                           time_field="s02_lessons_learnt_time",
+                                           coda_filename="s02_kakuma_lessons_learnt.json",
+                                           coding_configurations=[
+                                               CodingConfiguration(
+                                                   coding_mode=CodingModes.MULTIPLE,
+                                                   code_scheme=CodeSchemes.S02_KAKUMA_LESSONS_LEARNT,
+                                                   coded_field="s02_lessons_learnt",
+                                                   analysis_file_key="s02_lessons_learnt_",
+                                                   fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                                       CodeSchemes.S02_KAKUMA_LESSONS_LEARNT, x, y)
+                                               )
+                                           ],
+                                           ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value(
+                                               "s02 kakuma lessons learnt"),
+                               raw_field_fold_strategy=FoldStrategies.concatenate),
 ]
 
 

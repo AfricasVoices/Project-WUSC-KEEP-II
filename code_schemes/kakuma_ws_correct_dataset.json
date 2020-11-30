@@ -191,6 +191,28 @@
       ]
     },
     {
+      "CodeID": "code-53793a6c",
+      "CodeType": "Normal",
+      "DisplayText": "s02 kakuma impact made",
+      "StringValue": "s02 kakuma impact made",
+      "NumericValue": 44,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "s02 kakuma impact made"
+      ]
+    },
+    {
+      "CodeID": "code-0f3d915d",
+      "CodeType": "Normal",
+      "DisplayText": "s02 kakuma lessons learnt",
+      "StringValue": "s02 kakuma lessons learnt",
+      "NumericValue": 45,
+      "VisibleInCoda": true,
+      "MatchValues": [
+        "s02 kakuma lessons learnt"
+      ]
+    },
+    {
       "CodeID": "code-b86d2039",
       "CodeType": "Normal",
       "DisplayText": "kakuma s01e01",
