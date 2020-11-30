@@ -4,6 +4,38 @@
   "Version": "0.0.0.1",
   "Codes": [
     {
+      "CodeID": "code-8d8a34fb",
+      "CodeType": "Normal",
+      "DisplayText": "benefits of educating girls",
+      "NumericValue": 1,
+      "StringValue": "benefits_of_educating_girls",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-8bcc4b05",
+      "CodeType": "Normal",
+      "DisplayText": "girls rights to education",
+      "NumericValue": 2,
+      "StringValue": "girls_rights_to_education",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-794a433f",
+      "CodeType": "Normal",
+      "DisplayText": "learnt a lot",
+      "NumericValue": 3,
+      "StringValue": "learnt_a_lot",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-e61e36f1",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 4,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
+    {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
       "ControlCode": "NA",
