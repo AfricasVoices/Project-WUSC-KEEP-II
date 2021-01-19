@@ -1,78 +1,62 @@
 {
-  "SchemeID": "Scheme-6bc27b4c",
-  "Name": "KAKUMA S02E03 Reasons",
+  "SchemeID": "Scheme-98c65643",
+  "Name": "KAKUMA Community Views On Girls Education Final",
   "Version": "0.0.0.2",
   "Codes": [
     {
-      "CodeID": "code-0973e428",
+      "CodeID": "code-10590476",
       "CodeType": "Normal",
-      "DisplayText": "awareness creation by community leaders",
+      "DisplayText": "yes, no reason",
       "NumericValue": 1,
-      "StringValue": "awareness_creation_by_community_leaders",
+      "StringValue": "yes_no_reason",
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-434ddaa0",
+      "CodeID": "code-8c57705f",
       "CodeType": "Normal",
-      "DisplayText": "report to police",
+      "DisplayText": "no, no reason",
       "NumericValue": 2,
-      "StringValue": "report_to_police",
+      "StringValue": "no_no_reason",
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-c9412bf5",
+      "CodeID": "code-5ec1d656",
       "CodeType": "Normal",
-      "DisplayText": "through corruption",
+      "DisplayText": "yes, agree",
       "NumericValue": 3,
-      "StringValue": "through_corruption",
+      "StringValue": "yes_agree",
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-800c98af",
+      "CodeID": "code-f14b7fe1",
       "CodeType": "Normal",
-      "DisplayText": "if no solution, escalate to child protection",
+      "DisplayText": "yes, agree but don't practice",
       "NumericValue": 4,
-      "StringValue": "if_no_solution_escalate_to_child_protection",
+      "StringValue": "yes_agree_but_do_not_practice",
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-199d7be8",
+      "CodeID": "code-73fb4b9b",
       "CodeType": "Normal",
-      "DisplayText": "nothing is done or no response",
+      "DisplayText": "yes, girls decide",
       "NumericValue": 5,
-      "StringValue": "nothing_is_done_or_no_response",
+      "StringValue": "yes_girls_decide",
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-fce8306e",
+      "CodeID": "code-c502f896",
       "CodeType": "Normal",
-      "DisplayText": "punished according to cultural norms/informal laws",
+      "DisplayText": "no, there is no agreement",
       "NumericValue": 6,
-      "StringValue": "punished_according_to_cultural_norms_or_informal_laws",
+      "StringValue": "no_there_is_no_agreement",
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-7ee06a72",
+      "CodeID": "code-80edf02b",
       "CodeType": "Normal",
-      "DisplayText": "responses to rape cases",
+      "DisplayText": "no, agreement depends on the parents or family",
       "NumericValue": 7,
-      "StringValue": "responses_to_rape_cases",
-      "VisibleInCoda": true
-    },
-    {
-      "CodeID": "code-c6e49adc",
-      "CodeType": "Normal",
-      "DisplayText": "ways to reduce SGBV cases",
-      "NumericValue": 8,
-      "StringValue": "ways_to_reduce_sgbv_cases",
-      "VisibleInCoda": true
-    },
-    {
-      "CodeID": "code-56cb2708",
-      "CodeType": "Normal",
-      "DisplayText": "other theme",
-      "NumericValue": 9,
-      "StringValue": "other_theme",
+      "StringValue": "no_agreement_depends_on_the_parents_or_family",
       "VisibleInCoda": true
     },
     {
@@ -264,7 +248,7 @@
         "DisplayText": "meta: chasing reply",
         "VisibleInCoda": false
       },
-      {
+    {
         "NumericValue": -100140,
         "CodeID": "code-I-b13a41f6",
         "CodeType": "Meta",

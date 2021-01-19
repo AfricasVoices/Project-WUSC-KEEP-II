@@ -1,162 +1,130 @@
 {
-  "SchemeID": "Scheme-6bc27b4c",
-  "Name": "KAKUMA S02E03 Reasons",
-  "Version": "0.0.0.2",
+  "SchemeID": "Scheme-29be3abc",
+  "Name": "S02 KAKUMA Lessons Learnt",
+  "Version": "0.0.0.1",
   "Codes": [
     {
-      "CodeID": "code-0973e428",
+      "CodeID": "code-88cce9fb",
       "CodeType": "Normal",
-      "DisplayText": "awareness creation by community leaders",
+      "DisplayText": "benefits of educating girls",
       "NumericValue": 1,
-      "StringValue": "awareness_creation_by_community_leaders",
+      "StringValue": "benefits_of_educating_girls",
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-434ddaa0",
+      "CodeID": "code-7a02236c",
       "CodeType": "Normal",
-      "DisplayText": "report to police",
+      "DisplayText": "gender equality",
       "NumericValue": 2,
-      "StringValue": "report_to_police",
+      "StringValue": "gender_equality",
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-c9412bf5",
+      "CodeID": "code-c8f32b22",
       "CodeType": "Normal",
-      "DisplayText": "through corruption",
+      "DisplayText": "support for girls education",
       "NumericValue": 3,
-      "StringValue": "through_corruption",
+      "StringValue": "support_for_girls_education",
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-800c98af",
+      "CodeID": "code-a1ed91ee",
       "CodeType": "Normal",
-      "DisplayText": "if no solution, escalate to child protection",
+      "DisplayText": "girls education is important",
       "NumericValue": 4,
-      "StringValue": "if_no_solution_escalate_to_child_protection",
+      "StringValue": "girls_education_is_important",
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-199d7be8",
-      "CodeType": "Normal",
-      "DisplayText": "nothing is done or no response",
-      "NumericValue": 5,
-      "StringValue": "nothing_is_done_or_no_response",
-      "VisibleInCoda": true
-    },
-    {
-      "CodeID": "code-fce8306e",
-      "CodeType": "Normal",
-      "DisplayText": "punished according to cultural norms/informal laws",
-      "NumericValue": 6,
-      "StringValue": "punished_according_to_cultural_norms_or_informal_laws",
-      "VisibleInCoda": true
-    },
-    {
-      "CodeID": "code-7ee06a72",
-      "CodeType": "Normal",
-      "DisplayText": "responses to rape cases",
-      "NumericValue": 7,
-      "StringValue": "responses_to_rape_cases",
-      "VisibleInCoda": true
-    },
-    {
-      "CodeID": "code-c6e49adc",
-      "CodeType": "Normal",
-      "DisplayText": "ways to reduce SGBV cases",
-      "NumericValue": 8,
-      "StringValue": "ways_to_reduce_sgbv_cases",
-      "VisibleInCoda": true
-    },
-    {
-      "CodeID": "code-56cb2708",
+      "CodeID": "code-77e407b9",
       "CodeType": "Normal",
       "DisplayText": "other theme",
-      "NumericValue": 9,
+      "NumericValue": 5,
       "StringValue": "other_theme",
       "VisibleInCoda": true
     },
     {
-        "CodeID": "code-NA-f93d3eb7",
-        "CodeType": "Control",
-        "ControlCode": "NA",
-        "DisplayText": "NA (missing)",
-        "NumericValue": -10,
-        "StringValue": "NA",
-        "VisibleInCoda": false
-      },
-      {
-        "CodeID": "code-NS-2c11b7c9",
-        "CodeType": "Control",
-        "ControlCode": "NS",
-        "DisplayText": "NS (skip)",
-        "NumericValue": -20,
-        "StringValue": "NS",
-        "VisibleInCoda": false
-      },
-      {
-        "CodeID": "code-NC-42f1d983",
-        "CodeType": "Control",
-        "ControlCode": "NC",
-        "DisplayText": "NC (not coded)",
-        "NumericValue": -30,
-        "StringValue": "NC",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-NR-5e3eee23",
-        "CodeType": "Control",
-        "ControlCode": "NR",
-        "DisplayText": "NR (not reviewed)",
-        "NumericValue": -40,
-        "StringValue": "NR",
-        "VisibleInCoda": false
-      },
-      {
-        "CodeID": "code-NIC-99631cb8",
-        "CodeType": "Control",
-        "ControlCode": "NIC",
-        "DisplayText": "NIC (not internally consistent)",
-        "NumericValue": -50,
-        "StringValue": "NIC",
-        "VisibleInCoda": false
-      },
-      {
-        "CodeID": "code-NOC-4eb70633",
-        "ControlCode": "NOC",
-        "StringValue": "NOC",
-        "DisplayText": "Noise (Other Channel)",
-        "VisibleInCoda": true,
-        "NumericValue": -60,
-        "CodeType": "Control"
-      },
-      {
-        "CodeID": "code-STOP-08b832a8",
-        "CodeType": "Control",
-        "ControlCode": "STOP",
-        "DisplayText": "STOP",
-        "NumericValue": -90,
-        "StringValue": "STOP",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-WS-adb25603b7af",
-        "CodeType": "Control",
-        "ControlCode": "WS",
-        "DisplayText": "WS (wrong scheme)",
-        "NumericValue": -100,
-        "StringValue": "WS",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-CE-016c1e22",
-        "CodeType": "Control",
-        "ControlCode": "CE",
-        "DisplayText": "CE (coding error)",
-        "NumericValue": -110,
-        "StringValue": "CE",
-        "VisibleInCoda": false
-      },
-      {
+      "CodeID": "code-NA-f93d3eb7",
+      "CodeType": "Control",
+      "ControlCode": "NA",
+      "DisplayText": "NA (missing)",
+      "NumericValue": -10,
+      "StringValue": "NA",
+      "VisibleInCoda": false
+    },
+    {
+      "CodeID": "code-NS-2c11b7c9",
+      "CodeType": "Control",
+      "ControlCode": "NS",
+      "DisplayText": "NS (skip)",
+      "NumericValue": -20,
+      "StringValue": "NS",
+      "VisibleInCoda": false
+    },
+    {
+      "CodeID": "code-NC-42f1d983",
+      "CodeType": "Control",
+      "ControlCode": "NC",
+      "DisplayText": "NC (not coded)",
+      "NumericValue": -30,
+      "StringValue": "NC",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-NR-5e3eee23",
+      "CodeType": "Control",
+      "ControlCode": "NR",
+      "DisplayText": "NR (not reviewed)",
+      "NumericValue": -40,
+      "StringValue": "NR",
+      "VisibleInCoda": false
+    },
+    {
+      "CodeID": "code-NIC-99631cb8",
+      "CodeType": "Control",
+      "ControlCode": "NIC",
+      "DisplayText": "NIC (not internally consistent)",
+      "NumericValue": -50,
+      "StringValue": "NIC",
+      "VisibleInCoda": false
+    },
+    {
+      "CodeID": "code-NOC-4eb70633",
+      "ControlCode": "NOC",
+      "StringValue": "NOC",
+      "DisplayText": "Noise (Other Channel)",
+      "VisibleInCoda": true,
+      "NumericValue": -60,
+      "CodeType": "Control"
+    },
+    {
+      "CodeID": "code-STOP-08b832a8",
+      "CodeType": "Control",
+      "ControlCode": "STOP",
+      "DisplayText": "STOP",
+      "NumericValue": -90,
+      "StringValue": "STOP",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-WS-adb25603b7af",
+      "CodeType": "Control",
+      "ControlCode": "WS",
+      "DisplayText": "WS (wrong scheme)",
+      "NumericValue": -100,
+      "StringValue": "WS",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-CE-016c1e22",
+      "CodeType": "Control",
+      "ControlCode": "CE",
+      "DisplayText": "CE (coding error)",
+      "NumericValue": -110,
+      "StringValue": "CE",
+      "VisibleInCoda": false
+    },
+    {
         "CodeID": "code-PB-a434a800",
         "CodeType": "Meta",
         "MetaCode": "push_back",
