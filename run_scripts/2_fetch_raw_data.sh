@@ -18,7 +18,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ $# -ne 6 ]]; then
-    echo "Usage: ./1_fetch_raw_data.sh [--profile-cpu <cpu-profile-output-path>] <user> <google-cloud-credentials-file-path> \
+    echo "Usage: ./2_fetch_raw_data.sh [--profile-cpu <cpu-profile-output-path>] <user> <google-cloud-credentials-file-path> \
           <pipeline-configuration-file-path> <timestamp> <run-id> <data-root>"
     echo "Fetches all the raw data from Rapid Pro and converts to TracedData"
     exit
