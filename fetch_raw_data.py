@@ -1,5 +1,6 @@
 import argparse
 import json
+import os
 
 import pytz
 from core_data_modules.logging import Logger
@@ -10,11 +11,9 @@ from id_infrastructure.firestore_uuid_table import FirestoreUuidTable
 from rapid_pro_tools.rapid_pro_client import RapidProClient
 from storage.google_cloud import google_cloud_utils
 from temba_client.v2 import Contact, Run
-from pipeline_logs.firestore_pipeline_logger import FirestorePipelineLogger
 
 from src.lib import PipelineConfiguration
 from src.lib.pipeline_configuration import RapidProSource
-from src.lib.configuration_objects import PipelineEvents
 
 Logger.set_project_name("WUSC-KEEP-II")
 log = Logger(__name__)
@@ -98,14 +97,13 @@ def fetch_listening_groups_csvs(google_cloud_credentials_file_path, pipeline_con
             google_cloud_utils.download_blob_to_file(
                 google_cloud_credentials_file_path, listening_group_csv_url, listening_group_output_file)
 
-def main(user, google_cloud_credentials_file_path, pipeline_configuration_file_path, timestamp, run_id, raw_data_dir):
+def main(user, google_cloud_credentials_file_path, pipeline_configuration_file_path, raw_data_dir):
     # Read the settings from the configuration file
     log.info("Loading Pipeline Configuration File...")
     with open(pipeline_configuration_file_path) as f:
         pipeline_configuration = PipelineConfiguration.from_configuration_file(f)
 
-    # TODO: Assign appname in phone_number_uuid_table
-    log.info("Downloading Firestore Uuid Table credentials...")
+    log.info("Downloading Firestore UUID Table credentials...")
     firestore_uuid_table_credentials = json.loads(google_cloud_utils.download_blob_to_string(
         google_cloud_credentials_file_path,
         pipeline_configuration.phone_number_uuid_table.firebase_credentials_file_url
@@ -117,19 +115,6 @@ def main(user, google_cloud_credentials_file_path, pipeline_configuration_file_p
         "avf-phone-uuid-"
     )
     log.info("Initialised the Firestore UUID table")
-
-    # TODO: store credential files in cache
-    # TODO: rename this firebase app to DEFAULT
-    # TODO: Upload PipelineStart logs before initializing uuid table
-    log.info("Downloading Firestore Operations Dashboard Table credentials...")
-    firestore_pipeline_logs_table_credentials = json.loads(google_cloud_utils.download_blob_to_string(
-        google_cloud_credentials_file_path,
-        pipeline_configuration.operations_dashboard.firebase_credentials_file_url
-    ))
-
-    log.info(f"Updating PipelineStart event log for run_id: {run_id}")
-    FirestorePipelineLogger.update_pipeline_logs( pipeline_configuration.pipeline_name, timestamp, run_id,
-                                                  PipelineEvents.PIPELINE_START, firestore_pipeline_logs_table_credentials)
 
     log.info(f"Fetching data from {len(pipeline_configuration.raw_data_sources)} sources...")
     for i, raw_data_source in enumerate(pipeline_configuration.raw_data_sources):
@@ -155,14 +140,9 @@ if __name__ == "__main__":
                              "credentials bucket")
     parser.add_argument("pipeline_configuration_file_path", metavar="pipeline-configuration-file",
                         help="Path to the pipeline configuration json file"),
-    parser.add_argument("timestamp", metavar="timestamp",
-                        help="current pipeline run start datetime")
-    parser.add_argument("run_id", metavar="run-id",
-                        help="Identifier of this pipeline run")
     parser.add_argument("raw_data_dir", metavar="raw-data-dir",
                         help="Path to a directory to save the raw data to"),
 
     args = parser.parse_args()
 
-    main(args.user, args.google_cloud_credentials_file_path, args.pipeline_configuration_file_path, args.timestamp, args.run_id,
-         args.raw_data_dir)
+    main(args.user, args.google_cloud_credentials_file_path, args.pipeline_configuration_file_path, args.raw_data_dir)
