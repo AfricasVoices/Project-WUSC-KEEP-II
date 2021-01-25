@@ -39,5 +39,6 @@ class CodingPlan(object):
         self.id_field = id_field
 
 class PipelineEvents(object):
-    PIPELINE_START = "PipelineStart"
-    PIPELINE_END = "PipelineCompletedSuccessfully"
+    PIPELINE_EVENT = {"1":"CodaAdd", "2":"FetchingRawData", "3":"GeneratingOutputs", "4":"CodaGet",
+                      "5":"GeneratingAutomatedAnalysisFiles", "6":"BackingUpData", "7":"UploadingAnalysisFiles",
+                      "8":"UploadingLogFiles", "9":"PipelineCompletedSuccessfully"}
