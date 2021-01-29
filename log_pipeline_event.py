@@ -23,10 +23,10 @@ def log_pipeline_event(user, google_cloud_credentials_file_path, pipeline_config
     ))
 
     log.info(f"Updating PipelineStart event log for run_id: {run_id}")
-    firestore_pipeline_logger= FirestorePipelineLogger( pipeline_configuration.pipeline_name, timestamp, run_id,
-                                                  PipelineEvents.PIPELINE_EVENT[event_key], firestore_pipeline_logs_table_credentials)
+    firestore_pipeline_logger= FirestorePipelineLogger( pipeline_configuration.pipeline_name, run_id,
+                                                   firestore_pipeline_logs_table_credentials)
 
-    firestore_pipeline_logger.update_pipeline_logs()
+    firestore_pipeline_logger.log_event(timestamp, event_key)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Updates current pipeline event/stage to a firebase table to aid in monitoring")
@@ -42,10 +42,12 @@ if __name__ == "__main__":
     parser.add_argument("run_id", metavar="run-id",
                         help="Identifier of this pipeline run")
     parser.add_argument("event_key", metavar="event-key",
-                        help="Key for this pipeline event/stage {1:CodaAdd, 2:FetchingRawData, 3:GeneratingOutputs, 4:CodaAdd,\
-                              5:GeneratingAutomatedAnalysisFiles, 6:BackingUpData, 7:UploadingAnalysisFiles,\
-                              8:UploadingLogFiles, 9:PipelineCompletedSuccessfully}",
-                              choices= ["1","2","3","4","5","6","7","8","9"]),
+                        help="Key for this pipeline event/stage",
+                              choices= ["PipelineEvents.PIPELINE_RUN_START", "PipelineEvents.CODA_ADD", "PipelineEvents.FETCHING_RAW_DATA",
+                                        "PipelineEvents.GENERATING_OUTPUTS", "PipelineEvents.CODA_GET",
+                                        "PipelineEvents.GENERATING_AUTOMATED_ANALYSIS_FILES", "PipelineEvents.BACKING_UP_DATA",
+                                        "PipelineEvents.UPLOADING_ANALYSIS_FILES", "PipelineEvents.UPLOADING_LOG_FILES",
+                                        "PipelineEvents.PIPELINE_RUN_END"]),
 
     args = parser.parse_args()
 
