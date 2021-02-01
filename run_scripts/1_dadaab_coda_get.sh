@@ -2,9 +2,8 @@
 
 set -e
 
-if [[ $# -ne 8 ]]; then
-    echo "Usage: ./1_dadaab_coda_get.sh <coda-auth-file> <coda-v2-root> <data-root> <user> <google-cloud-credentials-file>\
-            <pipeline-configuration> <timestamp> <run-id>"
+if [[ $# -ne 3 ]]; then
+    echo "Usage: ./1_dadaab_coda_get.sh <coda-auth-file> <coda-v2-root> <data-root>"
     echo "Downloads coded messages datasets from Coda to '<data-root>/Coded Coda Files'"
     exit
 fi
@@ -12,11 +11,6 @@ fi
 AUTH=$1
 CODA_V2_ROOT=$2
 DATA_ROOT=$3
-USER=$4
-GOOGLE_CLOUD_CREDENTIALS_FILE_PATH=$5
-PIPELINE_CONFIGURATION=$6
-TIMESTAMP=$7
-RUN_ID=$8
 
 ./checkout_coda_v2.sh "$CODA_V2_ROOT"
 
@@ -60,8 +54,6 @@ DATASETS=(
     "s02_dadaab_lessons_learnt"
     "s02_dadaab_impact_made"
 )
-
-./log_pipeline_event.sh "$USER" "$GOOGLE_CLOUD_CREDENTIALS_FILE_PATH" "$PIPELINE_CONFIGURATION" "$TIMESTAMP" "$RUN_ID" "1"
 
 cd "$CODA_V2_ROOT/data_tools"
 git checkout "e895887b3abceb63bab672a262d5c1dd73dcad92"  # (master which supports incremental get)
