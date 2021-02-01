@@ -43,11 +43,11 @@ if __name__ == "__main__":
                         help="Identifier of this pipeline run")
     parser.add_argument("event_key", metavar="event-key",
                         help="Key for this pipeline event/stage",
-                              choices= ["PipelineEvents.PIPELINE_RUN_START", "PipelineEvents.CODA_ADD", "PipelineEvents.FETCHING_RAW_DATA",
-                                        "PipelineEvents.GENERATING_OUTPUTS", "PipelineEvents.CODA_GET",
-                                        "PipelineEvents.GENERATING_AUTOMATED_ANALYSIS_FILES", "PipelineEvents.BACKING_UP_DATA",
-                                        "PipelineEvents.UPLOADING_ANALYSIS_FILES", "PipelineEvents.UPLOADING_LOG_FILES",
-                                        "PipelineEvents.PIPELINE_RUN_END"]),
+                              choices= [PipelineEvents.PIPELINE_RUN_START, PipelineEvents.CODA_ADD, PipelineEvents.FETCHING_RAW_DATA,
+                                        PipelineEvents.GENERATING_OUTPUTS, PipelineEvents.CODA_GET,
+                                        PipelineEvents.GENERATING_AUTOMATED_ANALYSIS_FILES, PipelineEvents.BACKING_UP_DATA,
+                                        PipelineEvents.UPLOADING_ANALYSIS_FILES, PipelineEvents.UPLOADING_LOG_FILES,
+                                        PipelineEvents.PIPELINE_RUN_END]),
 
     args = parser.parse_args()
 
