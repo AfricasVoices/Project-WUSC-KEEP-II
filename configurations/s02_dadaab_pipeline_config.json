@@ -42,7 +42,7 @@
     "TableName": "WUSC_KEEP_II_phone_number_avf_phone_id"
   },
   "OperationsDashboard": {
-    "FirebaseCredentialsFileURL": "gs://avf-credentials/avf-dashboards-test-firebase-credentials.json"
+    "FirebaseCredentialsFileURL": "gs://avf-credentials/avf-dashboards-firebase-adminsdk-gvecb-ef772e79b6.json"
   },
   "RapidProKeyRemappings": [
     {"RapidProKey": "avf_phone_id", "PipelineKey": "uid"},
