@@ -74,12 +74,12 @@ class AnalysisFile(object):
 
         # Export listening group bool keys in analysis files headers only when running kakuma_pipeline because
         # dadaab does not have listening groups.
-        if pipeline_configuration.pipeline_name in ["kakuma_s01_pipeline", "kakuma_s02_pipeline", "kakuma_all_seasons_pipeline"]:
+        if pipeline_configuration.pipeline_name in ["kakuma_s01_pipeline", "kakuma_s02_pipeline", "kakuma_s03_pipeline", "kakuma_all_seasons_pipeline"]:
             export_keys.append("repeat_listening_group_participant")
             for plan in PipelineConfiguration.RQA_CODING_PLANS:
                 export_keys.extend([f'{plan.dataset_name}_listening_group_participant'])
         else:
-            assert pipeline_configuration.pipeline_name in ["dadaab_s01_pipeline", "dadaab_s02_pipeline", "dadaab_all_seasons_pipeline"],\
+            assert pipeline_configuration.pipeline_name in ["dadaab_s01_pipeline", "dadaab_s02_pipeline", "dadaab_s03_pipeline", "dadaab_all_seasons_pipeline"],\
                 "PipelineName must be either a 'seasonal pipeline' or 'all seasons pipeline'"
 
         for plan in PipelineConfiguration.RQA_CODING_PLANS + PipelineConfiguration.SURVEY_CODING_PLANS:
