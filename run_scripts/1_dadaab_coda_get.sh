@@ -34,11 +34,18 @@ DATASETS=(
     "dadaab_s02e07"
     "dadaab_s02e08"
 
+    "dadaab_s03e01"
+    "dadaab_s03e02"
+    "dadaab_s03e03"
+    "dadaab_s03e04"
+    "dadaab_s03e05"
+
     "dadaab_location"
     "dadaab_gender"
     "dadaab_age"
     "dadaab_nationality"
     "dadaab_household_language"
+    "dadaab_disabled"
 
     "dadaab_girls_education_champions"
     "dadaab_encouragement_for_boys"
