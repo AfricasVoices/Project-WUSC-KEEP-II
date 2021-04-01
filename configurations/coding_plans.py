@@ -366,8 +366,105 @@ S02_DADAAB_RQA_CODING_PLANS  = [
                                    ],
                                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s02e08"),
                                    raw_field_fold_strategy=FoldStrategies.concatenate),
-
         ]
+
+S03_DADAAB_RQA_CODING_PLANS = [
+    CodingPlan(raw_field="rqa_s03e01_raw",
+               dataset_name="dadaab_s03e01",
+               time_field="sent_on",
+               run_id_field="rqa_s03e01_run_id",
+               coda_filename="dadaab_s03e01.json",
+               icr_filename="dadaab_s03e01.csv",
+               coding_configurations=[
+                   CodingConfiguration(
+                       coding_mode=CodingModes.MULTIPLE,
+                       code_scheme=CodeSchemes.DADAAB_S03E01_REASONS,
+                       coded_field="rqa_s03e01_coded",
+                       analysis_file_key="rqa_s03e01_",
+                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                           CodeSchemes.DADAAB_S03E01_REASONS, x, y)
+                   )
+               ],
+               ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s03e01"),
+               raw_field_fold_strategy=FoldStrategies.concatenate),
+
+    CodingPlan(raw_field="rqa_s03e02_raw",
+               dataset_name="dadaab_s03e02",
+               time_field="sent_on",
+               run_id_field="rqa_s03e02_run_id",
+               coda_filename="dadaab_s03e02.json",
+               icr_filename="dadaab_s03e02.csv",
+               coding_configurations=[
+                   CodingConfiguration(
+                       coding_mode=CodingModes.MULTIPLE,
+                       code_scheme=CodeSchemes.DADAAB_S03E02_REASONS,
+                       coded_field="rqa_s03e02_coded",
+                       analysis_file_key="rqa_s03e02_",
+                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                           CodeSchemes.DADAAB_S03E02_REASONS, x, y)
+                   )
+               ],
+               ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s03e02"),
+               raw_field_fold_strategy=FoldStrategies.concatenate),
+
+
+    CodingPlan(raw_field="rqa_s03e03_raw",
+               dataset_name="dadaab_s03e03",
+               time_field="sent_on",
+               run_id_field="rqa_s03e03_run_id",
+               coda_filename="dadaab_s03e03.json",
+               icr_filename="dadaab_s03e03.csv",
+               coding_configurations=[
+                   CodingConfiguration(
+                       coding_mode=CodingModes.MULTIPLE,
+                       code_scheme=CodeSchemes.DADAAB_S03E03_REASONS,
+                       coded_field="rqa_s03e03_coded",
+                       analysis_file_key="rqa_s03e03_",
+                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                           CodeSchemes.DADAAB_S03E03_REASONS, x, y)
+                   )
+               ],
+               ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s03e03"),
+               raw_field_fold_strategy=FoldStrategies.concatenate),
+
+    CodingPlan(raw_field="rqa_s03e04_raw",
+               dataset_name="dadaab_s03e04",
+               time_field="sent_on",
+               run_id_field="rqa_s03e04_run_id",
+               coda_filename="dadaab_s03e04.json",
+               icr_filename="dadaab_s03e04.csv",
+               coding_configurations=[
+                   CodingConfiguration(
+                       coding_mode=CodingModes.MULTIPLE,
+                       code_scheme=CodeSchemes.DADAAB_S03E04_REASONS,
+                       coded_field="rqa_s03e04_coded",
+                       analysis_file_key="rqa_s03e04_",
+                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                           CodeSchemes.DADAAB_S03E04_REASONS, x, y)
+                   )
+               ],
+               ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s03e04"),
+               raw_field_fold_strategy=FoldStrategies.concatenate),
+
+    CodingPlan(raw_field="rqa_s03e05_raw",
+               dataset_name="dadaab_s03e05",
+               time_field="sent_on",
+               run_id_field="rqa_s03e05_run_id",
+               coda_filename="dadaab_s03e05.json",
+               icr_filename="dadaab_s03e05.csv",
+               coding_configurations=[
+                   CodingConfiguration(
+                       coding_mode=CodingModes.MULTIPLE,
+                       code_scheme=CodeSchemes.DADAAB_S03E05_REASONS,
+                       coded_field="rqa_s03e05_coded",
+                       analysis_file_key="rqa_s03e05_",
+                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                           CodeSchemes.DADAAB_S03E05_REASONS, x, y)
+                   )
+               ],
+               ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab s03e05"),
+               raw_field_fold_strategy=FoldStrategies.concatenate),
+]
 
 S01_KAKUMA_RQA_CODING_PLANS = [
             CodingPlan(raw_field="rqa_s01e01_raw",
@@ -734,6 +831,108 @@ S02_KAKUMA_RQA_CODING_PLANS  = [
                                    raw_field_fold_strategy=FoldStrategies.concatenate),
         ]
 
+S03_KAKUMA_RQA_CODING_PLANS = [
+    CodingPlan(raw_field="rqa_s03e01_raw",
+               dataset_name="kakuma_s03e01",
+               listening_group_filename="kakuma_s03e01_listening_group.csv",
+               time_field="sent_on",
+               run_id_field="rqa_s03e01_run_id",
+               coda_filename="kakuma_s03e01.json",
+               icr_filename="kakuma_s03e01.csv",
+               coding_configurations=[
+                   CodingConfiguration(
+                       coding_mode=CodingModes.MULTIPLE,
+                       code_scheme=CodeSchemes.KAKUMA_S03E01_REASONS,
+                       coded_field="rqa_s03e01_coded",
+                       analysis_file_key="rqa_s03e01_",
+                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                           CodeSchemes.KAKUMA_S03E01_REASONS, x, y)
+                   )
+               ],
+               ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s03e01"),
+               raw_field_fold_strategy=FoldStrategies.concatenate),
+
+    CodingPlan(raw_field="rqa_s03e02_raw",
+               dataset_name="kakuma_s03e02",
+               listening_group_filename="kakuma_s03e02_listening_group.csv",
+               time_field="sent_on",
+               run_id_field="rqa_s03e02_run_id",
+               coda_filename="kakuma_s03e02.json",
+               icr_filename="kakuma_s03e02.csv",
+               coding_configurations=[
+                   CodingConfiguration(
+                       coding_mode=CodingModes.MULTIPLE,
+                       code_scheme=CodeSchemes.KAKUMA_S03E02_REASONS,
+                       coded_field="rqa_s03e02_coded",
+                       analysis_file_key="rqa_s03e02_",
+                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                           CodeSchemes.KAKUMA_S03E02_REASONS, x, y)
+                   )
+               ],
+               ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s03e02"),
+               raw_field_fold_strategy=FoldStrategies.concatenate),
+
+    CodingPlan(raw_field="rqa_s03e03_raw",
+               dataset_name="kakuma_s03e03",
+               listening_group_filename="kakuma_s03e03_listening_group.csv",
+               time_field="sent_on",
+               run_id_field="rqa_s03e03_run_id",
+               coda_filename="kakuma_s03e03.json",
+               icr_filename="kakuma_s03e03.csv",
+               coding_configurations=[
+                   CodingConfiguration(
+                       coding_mode=CodingModes.MULTIPLE,
+                       code_scheme=CodeSchemes.KAKUMA_S03E03_REASONS,
+                       coded_field="rqa_s03e03_coded",
+                       analysis_file_key="rqa_s03e03_",
+                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                           CodeSchemes.KAKUMA_S03E03_REASONS, x, y)
+                   )
+               ],
+               ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s03e03"),
+               raw_field_fold_strategy=FoldStrategies.concatenate),
+
+    CodingPlan(raw_field="rqa_s03e04_raw",
+               dataset_name="kakuma_s03e04",
+               listening_group_filename="kakuma_s03e04_listening_group.csv",
+               time_field="sent_on",
+               run_id_field="rqa_s03e04_run_id",
+               coda_filename="kakuma_s03e04.json",
+               icr_filename="kakuma_s03e04.csv",
+               coding_configurations=[
+                   CodingConfiguration(
+                       coding_mode=CodingModes.MULTIPLE,
+                       code_scheme=CodeSchemes.KAKUMA_S03E04_REASONS,
+                       coded_field="rqa_s03e04_coded",
+                       analysis_file_key="rqa_s03e04_",
+                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                           CodeSchemes.KAKUMA_S03E04_REASONS, x, y)
+                   )
+               ],
+               ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s03e04"),
+               raw_field_fold_strategy=FoldStrategies.concatenate),
+
+    CodingPlan(raw_field="rqa_s03e05_raw",
+               dataset_name="kakuma_s03e05",
+               listening_group_filename="kakuma_s03e05_listening_group.csv",
+               time_field="sent_on",
+               run_id_field="rqa_s03e05_run_id",
+               coda_filename="kakuma_s03e05.json",
+               icr_filename="kakuma_s03e05.csv",
+               coding_configurations=[
+                   CodingConfiguration(
+                       coding_mode=CodingModes.MULTIPLE,
+                       code_scheme=CodeSchemes.KAKUMA_S03E05_REASONS,
+                       coded_field="rqa_s03e05_coded",
+                       analysis_file_key="rqa_s03e05_",
+                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                           CodeSchemes.KAKUMA_S03E05_REASONS, x, y)
+                   )
+               ],
+               ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s03e05"),
+               raw_field_fold_strategy=FoldStrategies.concatenate)
+]
+
 def get_rqa_coding_plans(pipeline_name):
     if pipeline_name == "dadaab_s01_pipeline":
         return S01_DADAAB_RQA_CODING_PLANS
@@ -741,8 +940,11 @@ def get_rqa_coding_plans(pipeline_name):
     elif pipeline_name == "dadaab_s02_pipeline":
         return S02_DADAAB_RQA_CODING_PLANS
 
+    elif pipeline_name == "dadaab_s03_pipeline":
+        return S03_DADAAB_RQA_CODING_PLANS
+
     elif pipeline_name == "dadaab_all_seasons_pipeline":
-        return S01_DADAAB_RQA_CODING_PLANS + S02_DADAAB_RQA_CODING_PLANS
+        return S01_DADAAB_RQA_CODING_PLANS + S02_DADAAB_RQA_CODING_PLANS + S03_DADAAB_RQA_CODING_PLANS
 
     elif pipeline_name == "kakuma_s01_pipeline":
         return S01_KAKUMA_RQA_CODING_PLANS
@@ -750,10 +952,13 @@ def get_rqa_coding_plans(pipeline_name):
     elif pipeline_name == "kakuma_s02_pipeline":
         return S02_KAKUMA_RQA_CODING_PLANS
 
+    elif pipeline_name == "kakuma_s03_pipeline":
+        return S03_KAKUMA_RQA_CODING_PLANS
+
     else:
-        assert pipeline_name == "kakuma_all_seasons_pipeline", "SeasonName must be either 'dadaab_s01_pipeline|" \
-                                "PipelineName must be either a 'seasonal pipeline' or 'all seasons pipeline'"
-        return S01_KAKUMA_RQA_CODING_PLANS + S02_KAKUMA_RQA_CODING_PLANS
+        assert pipeline_name == "kakuma_all_seasons_pipeline", "PipelineName must be either a " \
+                                "'seasonal pipeline' or 'all seasons pipeline'"
+        return S01_KAKUMA_RQA_CODING_PLANS + S02_KAKUMA_RQA_CODING_PLANS + S03_KAKUMA_RQA_CODING_PLANS
 
 DADAAB_DEMOGS_CODING_PLAN = [
         CodingPlan(raw_field="location_raw",
@@ -851,6 +1056,23 @@ DADAAB_DEMOGS_CODING_PLAN = [
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab nationality"),
                    raw_field_fold_strategy=FoldStrategies.assert_equal),
+
+        CodingPlan(raw_field="disabled_raw",
+                           dataset_name="dadaab_disabled",
+                           time_field="disabled_time",
+                           coda_filename="dadaab_disabled.json",
+                           coding_configurations=[
+                               CodingConfiguration(
+                                   coding_mode=CodingModes.SINGLE,
+                                   code_scheme=CodeSchemes.DISABLED,
+                                   coded_field="disabled_coded",
+                                   analysis_file_key="disabled",
+                                   fold_strategy=FoldStrategies.assert_label_ids_equal,
+                                   include_in_theme_distribution=Codes.TRUE
+                               )
+                           ],
+                           ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab disabled"),
+                           raw_field_fold_strategy=FoldStrategies.assert_equal)
     ]
 
 KAKUMA_DEMOG_CODING_PLANS = [
@@ -949,15 +1171,32 @@ KAKUMA_DEMOG_CODING_PLANS = [
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma nationality"),
                    raw_field_fold_strategy=FoldStrategies.assert_equal),
+
+        CodingPlan(raw_field="disabled_raw",
+                                   dataset_name="dadaab_disabled",
+                                   time_field="disabled_time",
+                                   coda_filename="kakuma_disabled.json",
+                                   coding_configurations=[
+                                       CodingConfiguration(
+                                           coding_mode=CodingModes.SINGLE,
+                                           code_scheme=CodeSchemes.DISABLED,
+                                           coded_field="disabled_coded",
+                                           analysis_file_key="disabled",
+                                           fold_strategy=FoldStrategies.assert_label_ids_equal,
+                                           include_in_theme_distribution=Codes.TRUE
+                                       )
+                                   ],
+                                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma disabled"),
+                                   raw_field_fold_strategy=FoldStrategies.assert_equal),
         ]
 
 
 def get_demog_coding_plans(pipeline_name):
 
-    if pipeline_name in ["dadaab_s01_pipeline", "dadaab_s02_pipeline", "dadaab_all_seasons_pipeline"]:
+    if pipeline_name in ["dadaab_s01_pipeline", "dadaab_s02_pipeline", "dadaab_s03_pipeline", "dadaab_all_seasons_pipeline"]:
         return DADAAB_DEMOGS_CODING_PLAN
     else:
-        assert pipeline_name in ["kakuma_s01_pipeline", "kakuma_s02_pipeline", "kakuma_all_seasons_pipeline"],\
+        assert pipeline_name in ["kakuma_s01_pipeline", "kakuma_s02_pipeline", "kakuma_s03_pipeline", "kakuma_all_seasons_pipeline"],\
             "PipelineName must be either a 'seasonal pipeline' or 'all seasons pipeline'"
         return KAKUMA_DEMOG_CODING_PLANS
 
@@ -1222,7 +1461,9 @@ S01_KAKUMA_FOLLOW_UP_CODING_PLANS = [
                            "kakuma show suggestions"),
                        raw_field_fold_strategy=FoldStrategies.concatenate)
         ]
+S03_DADAAB_FOLLOW_UP_CODING_PLANS = [
 
+]
 S02_KAKUMA_FOLLOW_UP_CODING_PLANS = [
     CodingPlan(raw_field="responses_to_sexual_violence_raw",
                dataset_name="kakuma_responses_to_sexual_violence",
@@ -1297,6 +1538,10 @@ S02_KAKUMA_FOLLOW_UP_CODING_PLANS = [
                                raw_field_fold_strategy=FoldStrategies.concatenate),
 ]
 
+S03_KAKUMA_FOLLOW_UP_CODING_PLANS = [
+
+]
+
 
 def get_follow_up_coding_plans(pipeline_name):
     if pipeline_name == "dadaab_s01_pipeline":
@@ -1305,8 +1550,11 @@ def get_follow_up_coding_plans(pipeline_name):
     elif pipeline_name == "dadaab_s02_pipeline":
         return S02_DADAAB_FOLLOW_UP_CODING_PLANS
 
+    elif pipeline_name == "dadaab_s03_pipeline":
+        return S03_DADAAB_FOLLOW_UP_CODING_PLANS
+
     elif pipeline_name == "dadaab_all_seasons_pipeline":
-        return S01_DADAAB_FOLLOW_UP_CODING_PLANS + S02_DADAAB_FOLLOW_UP_CODING_PLANS
+        return S01_DADAAB_FOLLOW_UP_CODING_PLANS + S02_DADAAB_FOLLOW_UP_CODING_PLANS + S03_DADAAB_FOLLOW_UP_CODING_PLANS
 
     elif pipeline_name == "kakuma_s01_pipeline":
         return S01_KAKUMA_FOLLOW_UP_CODING_PLANS
@@ -1314,15 +1562,18 @@ def get_follow_up_coding_plans(pipeline_name):
     elif pipeline_name == "kakuma_s02_pipeline":
         return S02_KAKUMA_FOLLOW_UP_CODING_PLANS
 
+    elif pipeline_name == "kakuma_s03_pipeline":
+        return S03_KAKUMA_FOLLOW_UP_CODING_PLANS
+
     else:
         assert pipeline_name == "kakuma_all_seasons_pipeline", "PipelineName must be either a 'seasonal pipeline' or 'all seasons pipeline'"
-        return S01_KAKUMA_FOLLOW_UP_CODING_PLANS + S02_KAKUMA_FOLLOW_UP_CODING_PLANS
+        return S01_KAKUMA_FOLLOW_UP_CODING_PLANS + S02_KAKUMA_FOLLOW_UP_CODING_PLANS + S03_KAKUMA_FOLLOW_UP_CODING_PLANS
 
 
 def get_ws_correct_dataset_scheme(pipeline_name):
-    if pipeline_name in ["dadaab_s01_pipeline", "dadaab_s02_pipeline", "dadaab_all_seasons_pipeline"]:
+    if pipeline_name in ["dadaab_s01_pipeline", "dadaab_s02_pipeline", "dadaab_s03_pipeline", "dadaab_all_seasons_pipeline"]:
         return CodeSchemes.DADAAB_WS_CORRECT_DATASET
     else:
-        assert pipeline_name in ["kakuma_s01_pipeline", "kakuma_s02_pipeline", "kakuma_all_seasons_pipeline"], \
+        assert pipeline_name in ["kakuma_s01_pipeline", "kakuma_s02_pipeline", "kakuma_s03_pipeline", "kakuma_all_seasons_pipeline"], \
             "PipelineName must be either a 'seasonal pipeline' or 'all seasons pipeline'"
         return CodeSchemes.KAKUMA_WS_CORRECT_DATASET
