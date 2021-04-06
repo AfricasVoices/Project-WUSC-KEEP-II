@@ -86,11 +86,11 @@
     {"RapidProKey": "Nationality (Text) - wusc_keep_ii_s02_dadaab_demogs", "PipelineKey": "nationality_raw"},
     {"RapidProKey": "Household_Language (Text) - wusc_keep_ii_s02_dadaab_demogs", "PipelineKey": "household_language_raw"},
 
-    {"RapidProKey": "Gender (Time) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "gender_time"},
-    {"RapidProKey": "Age (Time) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "age_time"},
-    {"RapidProKey": "Location (Time) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "location_time"},
-    {"RapidProKey": "Nationality (Time) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "nationality_time"},
-    {"RapidProKey": "Household_Language (Time) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "household_language_time"},
+    {"RapidProKey": "Gender (Time) - wusc_keep_ii_s02_dadaab_demogs", "PipelineKey": "gender_time"},
+    {"RapidProKey": "Age (Time) - wusc_keep_ii_s02_dadaab_demogs", "PipelineKey": "age_time"},
+    {"RapidProKey": "Location (Time) - wusc_keep_ii_s02_dadaab_demogs", "PipelineKey": "location_time"},
+    {"RapidProKey": "Nationality (Time) - wusc_keep_ii_s02_dadaab_demogs", "PipelineKey": "nationality_time"},
+    {"RapidProKey": "Household_Language (Time) - wusc_keep_ii_s02_dadaab_demogs", "PipelineKey": "household_language_time"},
 
     {"RapidProKey": "Gender (Text) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "gender_raw"},
     {"RapidProKey": "Age (Text) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "age_raw"},
