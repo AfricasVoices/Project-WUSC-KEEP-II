@@ -1173,7 +1173,7 @@ KAKUMA_DEMOG_CODING_PLANS = [
                    raw_field_fold_strategy=FoldStrategies.assert_equal),
 
         CodingPlan(raw_field="disabled_raw",
-                                   dataset_name="dadaab_disabled",
+                                   dataset_name="kakuma_disabled",
                                    time_field="disabled_time",
                                    coda_filename="kakuma_disabled.json",
                                    coding_configurations=[
