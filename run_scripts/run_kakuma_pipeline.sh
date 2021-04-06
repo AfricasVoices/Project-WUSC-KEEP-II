@@ -26,7 +26,7 @@ HASH=$(git rev-parse HEAD)
 RUN_ID="$TIMESTAMP-$HASH"
 
 ./log_pipeline_event.sh "$USER" "$GOOGLE_CLOUD_CREDENTIALS_FILE_PATH" "$PIPELINE_CONFIGURATION" \
-                        "$TIMESTAMP" "$RUN_ID" "PipelineRunStart"
+                        "$RUN_ID" "PipelineRunStart"
 
 ./1_kakuma_coda_get.sh "$CODA_PULL_CREDENTIALS_PATH" "$CODA_TOOLS_ROOT" "$DATA_ROOT"
 
@@ -47,4 +47,4 @@ RUN_ID="$TIMESTAMP-$HASH"
                          "$DATA_BACKUPS_DIR"
 
 ./log_pipeline_event.sh "$USER" "$GOOGLE_CLOUD_CREDENTIALS_FILE_PATH" "$PIPELINE_CONFIGURATION" \
-                        "$TIMESTAMP" "$RUN_ID" "PipelineRunEnd"
+                        "$RUN_ID" "PipelineRunEnd"
