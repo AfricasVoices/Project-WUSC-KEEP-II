@@ -28,14 +28,14 @@ RUN_ID="$TIMESTAMP-$HASH"
 ./log_pipeline_event.sh "$USER" "$GOOGLE_CLOUD_CREDENTIALS_FILE_PATH" "$PIPELINE_CONFIGURATION" \
                         "$RUN_ID" "PipelineRunStart"
 
-./1_kakuma_coda_get.sh "$CODA_PULL_CREDENTIALS_PATH" "$CODA_TOOLS_ROOT" "$DATA_ROOT"
+./1_all_seasons_dadaab_coda_get.sh "$CODA_PULL_CREDENTIALS_PATH" "$CODA_TOOLS_ROOT" "$DATA_ROOT"
 
 ./2_fetch_raw_data.sh "$USER" "$GOOGLE_CLOUD_CREDENTIALS_FILE_PATH" "$PIPELINE_CONFIGURATION" "$DATA_ROOT"
 
 ./3_generate_outputs.sh --profile-memory "$PERFORMANCE_LOGS_DIR/memory-$RUN_ID.profile" \
     "$USER" "$GOOGLE_CLOUD_CREDENTIALS_FILE_PATH" "$PIPELINE_CONFIGURATION" "$DATA_ROOT"
 
-./4_kakuma_coda_add.sh "$CODA_PUSH_CREDENTIALS_PATH" "$CODA_TOOLS_ROOT" "$DATA_ROOT"
+./4_all_seasons_dadaab_coda_add.sh "$CODA_PUSH_CREDENTIALS_PATH" "$CODA_TOOLS_ROOT" "$DATA_ROOT"
 
 ./5_automated_analysis.sh "$USER" "$PIPELINE_CONFIGURATION" "$DATA_ROOT"
 
@@ -43,8 +43,7 @@ RUN_ID="$TIMESTAMP-$HASH"
 
 ./7_upload_analysis_files.sh "$USER" "$GOOGLE_CLOUD_CREDENTIALS_FILE_PATH" "$PIPELINE_CONFIGURATION" "$RUN_ID" "$DATA_ROOT"
 
-./8_upload_log_files.sh "$USER" "$GOOGLE_CLOUD_CREDENTIALS_FILE_PATH" "$PIPELINE_CONFIGURATION" "$PERFORMANCE_LOGS_DIR"
-                         "$DATA_BACKUPS_DIR"
+./8_upload_log_files.sh "$USER" "$GOOGLE_CLOUD_CREDENTIALS_FILE_PATH" "$PIPELINE_CONFIGURATION" "$PERFORMANCE_LOGS_DIR" "$DATA_BACKUPS_DIR"
 
 ./log_pipeline_event.sh "$USER" "$GOOGLE_CLOUD_CREDENTIALS_FILE_PATH" "$PIPELINE_CONFIGURATION" \
                         "$RUN_ID" "PipelineRunEnd"
