@@ -113,9 +113,9 @@
   "MoveWSMessages": true,
   "DriveUpload": {
     "DriveCredentialsFileURL": "gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
-    "ProductionUploadPath": "wusc_keep_ii_analysis_outputs/dadaab/s03/dadaab_production.csv",
-    "MessagesUploadPath": "wusc_keep_ii_analysis_outputs/dadaab/s03/dadaab_messages.csv",
-    "IndividualsUploadPath": "wusc_keep_ii_analysis_outputs/dadaab/s03/dadaab_individuals.csv",
+    "ProductionUploadPath": "wusc_keep_ii_analysis_outputs/dadaab/s03/production.csv",
+    "MessagesUploadPath": "wusc_keep_ii_analysis_outputs/dadaab/s03/messages.csv",
+    "IndividualsUploadPath": "wusc_keep_ii_analysis_outputs/dadaab/s03/individuals.csv",
     "AutomatedAnalysisDir": "wusc_keep_ii_analysis_outputs/dadaab/s03/automated_analysis"
   },
   "MemoryProfileUploadURLPrefix": "gs://avf-pipeline-logs-performance-nearline/",
