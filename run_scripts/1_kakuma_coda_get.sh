@@ -34,11 +34,18 @@ DATASETS=(
     "kakuma_s02e07"
     "kakuma_s02e08"
 
+    "kakuma_s03e01"
+    "kakuma_s03e02"
+    "kakuma_s03e03"
+    "kakuma_s03e04"
+    "kakuma_s03e05"
+
     "kakuma_location"
     "kakuma_gender"
     "kakuma_age"
     "kakuma_nationality"
     "kakuma_household_language"
+    "kakuma_disabled"
 
     "kakuma_girls_education_champions"
     "kakuma_encouragement_for_boys"
