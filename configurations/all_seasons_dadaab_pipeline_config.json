@@ -23,7 +23,13 @@
         "wusc_keep_ii_s02e07_dadaab_activation",
         "wusc_keep_ii_s02e08_dadaab_activation",
         "wusc_keep_ii_s02_dadaab_initial_evaluation",
-        "wusc_keep_ii_s02_dadaab_final_evaluation"
+        "wusc_keep_ii_s02_dadaab_final_evaluation",
+        "wusc_keep_ii_s03e01_dadaab_activation",
+        "wusc_keep_ii_s03e02_dadaab_activation",
+        "wusc_keep_ii_s03e03_dadaab_activation",
+        "wusc_keep_ii_s03e04_dadaab_activation",
+        "wusc_keep_ii_s03e05_dadaab_activation",
+        "wusc_keep_ii_s03_dadaab_demogs"
       ],
       "SurveyFlowNames": [
         "wusc_keep_ii_dadaab_demogs",
@@ -177,7 +183,21 @@
     {"RapidProKey": "Encouragement_For_Boys (Time) - wusc_keep_ii_s01_w4_dadaab_follow_up", "PipelineKey": "encouragement_for_boys_time"},
     {"RapidProKey": "Unmarried_Fathers_Community_View (Time) - wusc_keep_ii_s01_w6_dadaab_follow_up", "PipelineKey": "unmarried_fathers_community_view_time"},
     {"RapidProKey": "Lessons_Learnt (Time) - dadaab_s01_evaluation_flow", "PipelineKey": "lessons_learnt_time"},
-    {"RapidProKey": "Show_Suggestions (Time) - dadaab_s01_evaluation_flow", "PipelineKey": "show_suggestions_time"}
+    {"RapidProKey": "Show_Suggestions (Time) - dadaab_s01_evaluation_flow", "PipelineKey": "show_suggestions_time"},
+
+    {"RapidProKey": "Gender (Text) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "gender_raw"},
+    {"RapidProKey": "Age (Text) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "age_raw"},
+    {"RapidProKey": "Location (Text) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "location_raw"},
+    {"RapidProKey": "Nationality (Text) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "nationality_raw"},
+    {"RapidProKey": "Household_Language (Text) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "household_language_raw"},
+    {"RapidProKey": "Disabled (Text) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "disabled_raw"},
+
+    {"RapidProKey": "Gender (Time) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "gender_time"},
+    {"RapidProKey": "Age (Time) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "age_time"},
+    {"RapidProKey": "Location (Time) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "location_time"},
+    {"RapidProKey": "Nationality (Time) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "nationality_time"},
+    {"RapidProKey": "Household_Language (Time) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "household_language_time"},
+    {"RapidProKey": "Disabled (Time) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "disabled_time"}
 
   ],
   "PipelineName": "dadaab_all_seasons_pipeline",
