@@ -122,9 +122,9 @@
 
   ],
   "PipelineName": "kakuma_s03_pipeline",
-  "ProjectStartDate": "2020-01-18T13:00:00+03:00",
+  "ProjectStartDate": "2021-04-02T19:30:00+03:00",
   "ProjectEndDate": "2100-01-01T00:00:00+03:00",
-  "FilterTestMessages": false,
+  "FilterTestMessages": true,
   "MoveWSMessages": true,
   "DriveUpload": {
     "DriveCredentialsFileURL": "gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
