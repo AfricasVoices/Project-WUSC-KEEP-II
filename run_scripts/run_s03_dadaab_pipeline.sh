@@ -3,7 +3,7 @@
 set -e
 
 if [[ $# -ne 9 ]]; then
-    echo "Usage: ./run_pipeline.sh"
+    echo "Usage: ./run_s03_pipeline.sh"
     echo "  <user> <pipeline-configuration-json>"
     echo "  <coda-pull-credentials-path> <coda-push-credentials-path> <google-cloud-credentials-file-path>"
     echo "  <coda-tools-root> <data-root> <data-backup-dir> <performance-logs-dir>"
