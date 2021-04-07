@@ -153,9 +153,9 @@
     {"RapidProKey": "Disabled (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "disabled_time"}
   ],
   "PipelineName": "kakuma_s03_pipeline",
-  "ProjectStartDate": "2020-01-18T13:00:00+03:00",
+  "ProjectStartDate": "2021-04-02T19:30:00+03:00",
   "ProjectEndDate": "2100-01-01T00:00:00+03:00",
-  "FilterTestMessages": false,
+  "FilterTestMessages": true,
   "MoveWSMessages": true,
   "AutomatedAnalysis": {
     "TrafficLabels": [
