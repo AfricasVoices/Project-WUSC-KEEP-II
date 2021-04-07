@@ -23,7 +23,12 @@
         "wusc_keep_ii_s02e07_kakuma_activation",
         "wusc_keep_ii_s02e08_kakuma_activation",
         "wusc_keep_ii_s02_kakuma_initial_evaluation",
-        "wusc_keep_ii_s02_kakuma_final_evaluation"
+        "wusc_keep_ii_s02_kakuma_final_evaluation",
+        "wusc_keep_ii_s03e01_kakuma_activation",
+        "wusc_keep_ii_s03e02_kakuma_activation",
+        "wusc_keep_ii_s03e03_kakuma_activation",
+        "wusc_keep_ii_s03e04_kakuma_activation",
+        "wusc_keep_ii_s03e05_kakuma_activation"
       ],
       "SurveyFlowNames": [
         "wusc_keep_ii_kakuma_demogs",
@@ -36,7 +41,8 @@
         "kakuma_s01_evaluation_flow",
         "wusc_keep_ii_s02_w3_kakuma_follow_up",
         "wusc_keep_ii_s02_w6_kakuma_follow_up",
-        "wusc_keep_ii_s02_programme_evaluation_kakuma"
+        "wusc_keep_ii_s02_programme_evaluation_kakuma",
+        "wusc_keep_ii_s03_kakuma_demogs"
       ],
       "TestContactUUIDs": [
         "84f1c3bc-596e-455e-b5f6-ce16640e9b95",
@@ -45,6 +51,24 @@
         "df4b5e80-2148-4fa6-82c1-307bebc554bc",
         "9571e451-9c34-4bf8-83ec-bf68a929c9e3",
         "e3831837-3dd7-4ace-91a3-ee8da80a3ebe"
+      ]
+    },
+    {
+      "SourceType": "RapidPro",
+      "Domain": "textit.in",
+      "TokenFileURL": "gs://avf-credentials/wusc-leap-kalobeyei-textit-token.txt",
+      "ContactsFileName": "wusc_kalobeyei_contacts",
+      "ActivationFlowNames": [
+
+      ],
+      "SurveyFlowNames": [
+        "wusc_leap_s01_kalobeyei_demogs"
+      ],
+      "TestContactUUIDs": [
+        "905aa170-fada-4380-b5b6-6837de5cbb04",
+        "95a2ad1f-9b47-4842-8ba0-d74d9796faae",
+        "b71bcda8-c6c7-4a76-a088-3ec209b39d31",
+        "df4b5e80-2148-4fa6-82c1-307bebc554bc"
       ]
     }
   ],
