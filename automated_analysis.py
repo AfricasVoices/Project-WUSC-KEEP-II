@@ -82,7 +82,9 @@ if __name__ == "__main__":
 
             "Total Participants": "-",
             "Total Participants with Opt-Ins": len(AnalysisUtils.filter_opt_ins(individuals, CONSENT_WITHDRAWN_KEY, [plan])),
-            "Total Relevant Participants": len(AnalysisUtils.filter_relevant(individuals, CONSENT_WITHDRAWN_KEY, [plan]))
+            "Total Relevant Participants": len(AnalysisUtils.filter_relevant(individuals, CONSENT_WITHDRAWN_KEY, [plan])),
+            "Total repeat listening group participants": 0,
+            "Total weekly listening group participants": 0,
         }
     engagement_counts["Total"] = {
         "Episode": "Total",
@@ -94,14 +96,31 @@ if __name__ == "__main__":
 
         "Total Participants": len(individuals),
         "Total Participants with Opt-Ins": len(AnalysisUtils.filter_opt_ins(individuals, CONSENT_WITHDRAWN_KEY, PipelineConfiguration.RQA_CODING_PLANS)),
-        "Total Relevant Participants": len(AnalysisUtils.filter_relevant(individuals, CONSENT_WITHDRAWN_KEY, PipelineConfiguration.RQA_CODING_PLANS))
+        "Total Relevant Participants": len(AnalysisUtils.filter_relevant(individuals, CONSENT_WITHDRAWN_KEY, PipelineConfiguration.RQA_CODING_PLANS)),
+        "Total repeat listening group participants": '-',
+        "Total weekly listening group participants": '-',
     }
+
+    # Compute, repeat and weekly listening group participants engagement per episode:
+    if pipeline_configuration.pipeline_name in ["kakuma_s01_pipeline", "kakuma_s02_pipeline",
+                                                                 "kakuma_all_seasons_pipeline"]:
+        for plan in PipelineConfiguration.RQA_CODING_PLANS:
+            for ind in individuals:
+                if ind["consent_withdrawn"] == Codes.TRUE:
+                    continue
+
+                if plan.raw_field in ind:
+                    if ind[f'{plan.dataset_name}_listening_group_participant']:
+                        engagement_counts[plan.dataset_name]["Total weekly listening group participants"] += 1
+                    if ind["repeat_listening_group_participant"]:
+                        engagement_counts[plan.dataset_name]["Total repeat listening group participants"] += 1
 
     with open(f"{automated_analysis_output_dir}/engagement_counts.csv", "w") as f:
         headers = [
             "Episode",
             "Total Messages", "Total Messages with Opt-Ins", "Total Labelled Messages", "Total Relevant Messages",
-            "Total Participants", "Total Participants with Opt-Ins", "Total Relevant Participants"
+            "Total Participants", "Total Participants with Opt-Ins", "Total Relevant Participants",
+            "Total repeat listening group participants", "Total weekly listening group participants"
         ]
         writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
         writer.writeheader()
