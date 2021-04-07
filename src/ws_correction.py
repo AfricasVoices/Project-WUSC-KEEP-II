@@ -81,7 +81,8 @@ class WSCorrection(object):
                         f"{plan.raw_field}_WS_correct_dataset":
                             CleaningUtils.make_label_from_cleaner_code(
                                 PipelineConfiguration.WS_CORRECT_DATASET_SCHEME,
-                                PipelineConfiguration.WS_CORRECT_DATASET_SCHEME.get_code_with_control_code(Codes.CODING_ERROR),
+                                PipelineConfiguration.WS_CORRECT_DATASET_SCHEME.get_code_with_control_code(
+                                    Codes.CODING_ERROR),
                                 Metadata.get_call_location(),
                             ).to_dict()
                     }
@@ -114,7 +115,8 @@ class WSCorrection(object):
             for plan in PipelineConfiguration.SURVEY_CODING_PLANS:
                 if plan.raw_field not in td or plan.coda_filename is None:
                     continue
-                ws_code = PipelineConfiguration.WS_CORRECT_DATASET_SCHEME.get_code_with_code_id(td[f"{plan.raw_field}_WS_correct_dataset"]["CodeID"])
+                ws_code = PipelineConfiguration.WS_CORRECT_DATASET_SCHEME.get_code_with_code_id(
+                    td[f"{plan.raw_field}_WS_correct_dataset"]["CodeID"])
                 if ws_code.code_type == "Normal" or ws_code.control_code == Codes.NOT_CODED:
                     if ws_code.code_id in ws_code_to_raw_field_map:
                         survey_moves[plan.raw_field] = ws_code_to_raw_field_map[ws_code.code_id]
@@ -130,7 +132,8 @@ class WSCorrection(object):
                 for plan in PipelineConfiguration.RQA_CODING_PLANS:
                     if plan.raw_field not in td or plan.coda_filename is None:
                         continue
-                    ws_code = PipelineConfiguration.WS_CORRECT_DATASET_SCHEME.get_code_with_code_id(td[f"{plan.raw_field}_WS_correct_dataset"]["CodeID"])
+                    ws_code = PipelineConfiguration.WS_CORRECT_DATASET_SCHEME.get_code_with_code_id(
+                        td[f"{plan.raw_field}_WS_correct_dataset"]["CodeID"])
                     if ws_code.code_type == "Normal" or ws_code.control_code == Codes.NOT_CODED:
                         if ws_code.code_id in ws_code_to_raw_field_map:
                             rqa_moves[(i, plan.raw_field)] = ws_code_to_raw_field_map[ws_code.code_id]
