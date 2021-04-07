@@ -6,7 +6,11 @@
       "TokenFileURL": "gs://avf-credentials/wusc-keep-II-dadaab-textit-token.txt",
       "ContactsFileName": "wusc_dadaab_contacts",
       "ActivationFlowNames": [
-        "wusc_keep_ii_s03e01_dadaab_activation"
+        "wusc_keep_ii_s03e01_dadaab_activation",
+        "wusc_keep_ii_s03e02_dadaab_activation",
+        "wusc_keep_ii_s03e03_dadaab_activation",
+        "wusc_keep_ii_s03e04_dadaab_activation",
+        "wusc_keep_ii_s03e05_dadaab_activation"
       ],
       "SurveyFlowNames": [
         "wusc_keep_ii_dadaab_demogs",
@@ -36,9 +40,21 @@
   "RapidProKeyRemappings": [
     {"RapidProKey": "avf_phone_id", "PipelineKey": "uid"},
 
-    {"RapidProKey": "Rqa_S02E01_Dadaab (Text) - wusc_keep_ii_s02e01_dadaab_activation", "PipelineKey": "rqa_s02e01_raw", "IsActivationMessage": true},
-    {"RapidProKey": "Rqa_S02E01_Dadaab (Run ID) - wusc_keep_ii_s02e01_dadaab_activation", "PipelineKey": "rqa_s02e01_run_id"},
-    {"RapidProKey": "Rqa_S02E02_Dadaab (Time) - wusc_keep_ii_s02e02_dadaab_activation", "PipelineKey": "sent_on"},
+    {"RapidProKey": "Rqa_S03E01_Dadaab (Text) - wusc_keep_ii_s03e01_dadaab_activation", "PipelineKey": "rqa_s03e01_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S03E01_Dadaab (Run ID) - wusc_keep_ii_s03e01_dadaab_activation", "PipelineKey": "rqa_s03e01_run_id"},
+    {"RapidProKey": "Rqa_S03E01_Dadaab (Time) - wusc_keep_ii_s03e01_dadaab_activation", "PipelineKey": "sent_on"},
+    {"RapidProKey": "Rqa_S03E02_Dadaab (Text) - wusc_keep_ii_s03e02_dadaab_activation", "PipelineKey": "rqa_s03e02_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S03E02_Dadaab (Run ID) - wusc_keep_ii_s03e02_dadaab_activation", "PipelineKey": "rqa_s03e02_run_id"},
+    {"RapidProKey": "Rqa_S03E02_Dadaab (Time) - wusc_keep_ii_s03e02_dadaab_activation", "PipelineKey": "sent_on"},
+    {"RapidProKey": "Rqa_S03E03_Dadaab (Text) - wusc_keep_ii_s03e03_dadaab_activation", "PipelineKey": "rqa_s03e03_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S03E03_Dadaab (Run ID) - wusc_keep_ii_s03e03_dadaab_activation", "PipelineKey": "rqa_s03e03_run_id"},
+    {"RapidProKey": "Rqa_S03E03_Dadaab (Time) - wusc_keep_ii_s03e03_dadaab_activation", "PipelineKey": "sent_on"},
+    {"RapidProKey": "Rqa_S03E04_Dadaab (Text) - wusc_keep_ii_s03e05_dadaab_activation", "PipelineKey": "rqa_s03e04_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S03E04_Dadaab (Run ID) - wusc_keep_ii_s03e04_dadaab_activation", "PipelineKey": "rqa_s03e04_run_id"},
+    {"RapidProKey": "Rqa_S03E04_Dadaab (Time) - wusc_keep_ii_s03e04_dadaab_activation", "PipelineKey": "sent_on"},
+    {"RapidProKey": "Rqa_S03E05_Dadaab (Text) - wusc_keep_ii_s03e05_dadaab_activation", "PipelineKey": "rqa_s03e05_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S03E05_Dadaab (Run ID) - wusc_keep_ii_s03e05_dadaab_activation", "PipelineKey": "rqa_s03e05_run_id"},
+    {"RapidProKey": "Rqa_S03E05_Dadaab (Time) - wusc_keep_ii_s03e05_dadaab_activation", "PipelineKey": "sent_on"},
 
     {"RapidProKey": "Gender (Text) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "gender_raw"},
     {"RapidProKey": "Age (Text) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "age_raw"},
@@ -70,11 +86,11 @@
     {"RapidProKey": "Nationality (Text) - wusc_keep_ii_s02_dadaab_demogs", "PipelineKey": "nationality_raw"},
     {"RapidProKey": "Household_Language (Text) - wusc_keep_ii_s02_dadaab_demogs", "PipelineKey": "household_language_raw"},
 
-    {"RapidProKey": "Gender (Time) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "gender_time"},
-    {"RapidProKey": "Age (Time) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "age_time"},
-    {"RapidProKey": "Location (Time) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "location_time"},
-    {"RapidProKey": "Nationality (Time) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "nationality_time"},
-    {"RapidProKey": "Household_Language (Time) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "household_language_time"},
+    {"RapidProKey": "Gender (Time) - wusc_keep_ii_s02_dadaab_demogs", "PipelineKey": "gender_time"},
+    {"RapidProKey": "Age (Time) - wusc_keep_ii_s02_dadaab_demogs", "PipelineKey": "age_time"},
+    {"RapidProKey": "Location (Time) - wusc_keep_ii_s02_dadaab_demogs", "PipelineKey": "location_time"},
+    {"RapidProKey": "Nationality (Time) - wusc_keep_ii_s02_dadaab_demogs", "PipelineKey": "nationality_time"},
+    {"RapidProKey": "Household_Language (Time) - wusc_keep_ii_s02_dadaab_demogs", "PipelineKey": "household_language_time"},
 
     {"RapidProKey": "Gender (Text) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "gender_raw"},
     {"RapidProKey": "Age (Text) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "age_raw"},
@@ -97,9 +113,9 @@
   "MoveWSMessages": true,
   "DriveUpload": {
     "DriveCredentialsFileURL": "gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
-    "ProductionUploadPath": "wusc_keep_ii_analysis_outputs/dadaab/s03/dadaab_production.csv",
-    "MessagesUploadPath": "wusc_keep_ii_analysis_outputs/dadaab/s03/dadaab_messages.csv",
-    "IndividualsUploadPath": "wusc_keep_ii_analysis_outputs/dadaab/s03/dadaab_individuals.csv",
+    "ProductionUploadPath": "wusc_keep_ii_analysis_outputs/dadaab/s03/production.csv",
+    "MessagesUploadPath": "wusc_keep_ii_analysis_outputs/dadaab/s03/messages.csv",
+    "IndividualsUploadPath": "wusc_keep_ii_analysis_outputs/dadaab/s03/individuals.csv",
     "AutomatedAnalysisDir": "wusc_keep_ii_analysis_outputs/dadaab/s03/automated_analysis"
   },
   "MemoryProfileUploadURLPrefix": "gs://avf-pipeline-logs-performance-nearline/",
