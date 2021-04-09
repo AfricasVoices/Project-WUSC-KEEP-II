@@ -6,9 +6,9 @@
     {
       "CodeID": "code-a145bde3",
       "CodeType": "Normal",
-      "DisplayText": "extra tuition",
+      "DisplayText": "extra tutoring/tuition",
       "NumericValue": 1,
-      "StringValue": "extra_tuition",
+      "StringValue": "extra_tutoring_or_tuition",
       "VisibleInCoda": true
     },
     {
@@ -30,9 +30,9 @@
     {
       "CodeID": "code-20a33b45",
       "CodeType": "Normal",
-      "DisplayText": "provide advise",
+      "DisplayText": "provide advice",
       "NumericValue": 4,
-      "StringValue": "provide_advise",
+      "StringValue": "provide_advice",
       "VisibleInCoda": true
     },
     {
