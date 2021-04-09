@@ -3,7 +3,70 @@
   "Name": "KAKUMA S03E01 Reasons",
   "Version": "0.0.0.2",
   "Codes": [
-
+    {
+      "CodeID": "code-a145bde3",
+      "CodeType": "Normal",
+      "DisplayText": "extra tutoring/tuition",
+      "NumericValue": 1,
+      "StringValue": "extra_tutoring_or_tuition",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-7c3ed2a0",
+      "CodeType": "Normal",
+      "DisplayText": "support and encourage",
+      "NumericValue": 2,
+      "StringValue": "support_and_encourage",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-65cbdbaf",
+      "CodeType": "Normal",
+      "DisplayText": "provide learning resources",
+      "NumericValue": 3,
+      "StringValue": "provide_learning_resources",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-20a33b45",
+      "CodeType": "Normal",
+      "DisplayText": "provide advice",
+      "NumericValue": 4,
+      "StringValue": "provide_advice",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-dbd19ee8",
+      "CodeType": "Normal",
+      "DisplayText": "provide guidance",
+      "NumericValue": 5,
+      "StringValue": "provide_guidance",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-b29bfc8d",
+      "CodeType": "Normal",
+      "DisplayText": "availability of COVID-19 preventive measures",
+      "NumericValue": 6,
+      "StringValue": "availability_of_covid19_preventive_measures",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-5b16b96b",
+      "CodeType": "Normal",
+      "DisplayText": "give them time to study",
+      "NumericValue": 7,
+      "StringValue": "give_them_time_to_study",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-0cb865f9",
+      "CodeType": "Normal",
+      "DisplayText": "other_theme",
+      "NumericValue": 8,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
