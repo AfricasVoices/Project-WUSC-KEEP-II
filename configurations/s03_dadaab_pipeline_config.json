@@ -107,7 +107,7 @@
     {"RapidProKey": "Disabled (Time) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "disabled_time"}
   ],
   "PipelineName": "dadaab_s03_pipeline",
-  "ProjectStartDate": "2021-04-14T08:00:00+03:00",
+  "ProjectStartDate": "2021-04-07T08:00:00+03:00",
   "ProjectEndDate": "2100-01-01T00:00:00+03:00",
   "FilterTestMessages": true,
   "MoveWSMessages": true,
@@ -116,7 +116,7 @@
       {"StartDate": "2021-04-07T08:00+03:00", "EndDate": "2021-04-09T19:30+03:00", "Label": "E01 Promo"},
       {"StartDate": "2021-04-09T19:30+03:00", "EndDate": "2021-04-10T09:00+03:00", "Label": "E01 Ad"},
       {"StartDate": "2021-04-10T09:00+03:00", "EndDate": "2021-04-10T12:00+03:00", "Label": "E01 Gargaar"},
-      {"StartDate": "2021-04-10T20:00+03:00", "EndDate": "2021-04-21T21:00+03:00", "Label": "E01 Star"}
+      {"StartDate": "2021-04-10T20:00+03:00", "EndDate": "2021-04-10T21:00+03:00", "Label": "E01 Star"}
     ]
   },
   "DriveUpload": {
