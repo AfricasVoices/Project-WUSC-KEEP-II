@@ -3,7 +3,78 @@
   "Name": "KAKUMA S03E02 Reasons",
   "Version": "0.0.0.2",
   "Codes": [
-
+    {
+      "CodeID": "code-9848645a",
+      "CodeType": "Normal",
+      "DisplayText": "financial support",
+      "NumericValue": 1,
+      "StringValue": "financial_support",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-77aae28a",
+      "CodeType": "Normal",
+      "DisplayText": "bring pride",
+      "NumericValue": 2,
+      "StringValue": "bring_pride",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-4031156f",
+      "CodeType": "Normal",
+      "DisplayText": "good role models",
+      "NumericValue": 3,
+      "StringValue": "good_role_models",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-5e5ecb2f",
+      "CodeType": "Normal",
+      "DisplayText": "bring positive change",
+      "NumericValue": 4,
+      "StringValue": "bring_positive_change",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-29f40186",
+      "CodeType": "Normal",
+      "DisplayText": "educate others",
+      "NumericValue": 5,
+      "StringValue": "educate_others",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-40f865a1",
+      "CodeType": "Normal",
+      "DisplayText": "they become empowered",
+      "NumericValue": 6,
+      "StringValue": "they_become_empowered",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-96b6af65",
+      "CodeType": "Normal",
+      "DisplayText": "importance of girls' education",
+      "NumericValue": 7,
+      "StringValue": "importance_of_girls_education",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-1ae300af",
+      "CodeType": "Normal",
+      "DisplayText": "a lot of benefit",
+      "NumericValue": 8,
+      "StringValue": "a_lot_of_benefit",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-92c20a6d",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 9,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
