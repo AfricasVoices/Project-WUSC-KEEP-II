@@ -62,8 +62,10 @@
     "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s02e04_listening_group.csv",
     "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s02e05_listening_group.csv",
     "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s02e06_listening_group.csv",
-    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s02e07_listening_group.csv"
-    ],
+    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s02e07_listening_group.csv",
+    "gs://avf-project-datasets/2021/WUSC-KEEP-II/KAKUMA/LISTENING_GROUPS/s03_repeat_listening_group.csv",
+    "gs://avf-project-datasets/2021/WUSC-KEEP-II/KAKUMA/LISTENING_GROUPS/kakuma_s03e01_listening_group.csv"
+  ],
   "PhoneNumberUuidTable": {
     "FirebaseCredentialsFileURL": "gs://avf-credentials/avf-id-infrastructure-firebase-adminsdk-6xps8-b9173f2bfd.json",
     "TableName": "WUSC_KEEP_II_phone_number_avf_phone_id"

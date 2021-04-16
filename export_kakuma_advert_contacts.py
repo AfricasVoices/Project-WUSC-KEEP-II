@@ -43,7 +43,7 @@ if __name__ == "__main__":
     log.info("Loading Pipeline Configuration File...")
     with open(pipeline_configuration_file_path) as f:
         pipeline_configuration = PipelineConfiguration.from_configuration_file(f)
-        assert pipeline_configuration.pipeline_name in ["kakuma_s01_pipeline", "kakuma_s02_pipeline", "kakuma_all_seasons_pipeline"], \
+        assert pipeline_configuration.pipeline_name in ["kakuma_s01_pipeline", "kakuma_s02_pipeline", "kakuma_s03_pipeline", "kakuma_all_seasons_pipeline"], \
             "PipelineName must be either a 'seasonal pipeline' or 'all seasons pipeline'"
 
     log.info("Downloading Firestore UUID Table credentials...")
