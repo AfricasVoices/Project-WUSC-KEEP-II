@@ -88,7 +88,9 @@
     "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s02e04_listening_group.csv",
     "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s02e05_listening_group.csv",
     "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s02e06_listening_group.csv",
-    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s02e07_listening_group.csv"
+    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s02e07_listening_group.csv",
+    "gs://avf-project-datasets/2021/WUSC-KEEP-II/KAKUMA/LISTENING_GROUPS/s03_repeat_listening_group.csv",
+    "gs://avf-project-datasets/2021/WUSC-KEEP-II/KAKUMA/LISTENING_GROUPS/s03_repeat_listening_group.csv"
     ],
   "PhoneNumberUuidTable": {
     "FirebaseCredentialsFileURL": "gs://avf-credentials/avf-id-infrastructure-firebase-adminsdk-6xps8-b9173f2bfd.json",
@@ -159,6 +161,24 @@
     {"RapidProKey": "Rqa_S02E08_Kakuma (Time) - wusc_keep_ii_s02e08_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Community_Views_On_Girls_Education_Final (Time) - wusc_keep_ii_s02_kakuma_final_evaluation", "PipelineKey": "sent_on"},
 
+    {"RapidProKey": "Rqa_S03E01_Kakuma (Text) - wusc_keep_ii_s03e01_kakuma_activation", "PipelineKey": "rqa_s03e01_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S03E02_Kakuma (Text) - wusc_keep_ii_s03e02_kakuma_activation", "PipelineKey": "rqa_s03e02_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S03E03_Kakuma (Text) - wusc_keep_ii_s03e03_kakuma_activation", "PipelineKey": "rqa_s03e03_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S03E04_Kakuma (Text) - wusc_keep_ii_s03e04_kakuma_activation", "PipelineKey": "rqa_s03e04_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S03E05_Kakuma (Text) - wusc_keep_ii_s03e05_kakuma_activation", "PipelineKey": "rqa_s03e05_raw", "IsActivationMessage": true},
+
+    {"RapidProKey": "Rqa_S03E01_Kakuma (Run ID) - wusc_keep_ii_s03e01_kakuma_activation", "PipelineKey": "rqa_s03e01_run_id"},
+    {"RapidProKey": "Rqa_S03E02_Kakuma (Run ID) - wusc_keep_ii_s03e02_kakuma_activation", "PipelineKey": "rqa_s03e02_run_id"},
+    {"RapidProKey": "Rqa_S03E03_Kakuma (Run ID) - wusc_keep_ii_s03e03_kakuma_activation", "PipelineKey": "rqa_s03e03_run_id"},
+    {"RapidProKey": "Rqa_S03E04_Kakuma (Run ID) - wusc_keep_ii_s03e04_kakuma_activation", "PipelineKey": "rqa_s03e04_run_id"},
+    {"RapidProKey": "Rqa_S03E05_Kakuma (Run ID) - wusc_keep_ii_s03e05_kakuma_activation", "PipelineKey": "rqa_s03e05_run_id"},
+
+    {"RapidProKey": "Rqa_S03E01_Kakuma (Time) - wusc_keep_ii_s03e01_kakuma_activation", "PipelineKey": "sent_on"},
+    {"RapidProKey": "Rqa_S03E02_Kakuma (Time) - wusc_keep_ii_s03e02_kakuma_activation", "PipelineKey": "sent_on"},
+    {"RapidProKey": "Rqa_S03E03_Kakuma (Time) - wusc_keep_ii_s03e03_kakuma_activation", "PipelineKey": "sent_on"},
+    {"RapidProKey": "Rqa_S03E04_Kakuma (Time) - wusc_keep_ii_s03e04_kakuma_activation", "PipelineKey": "sent_on"},
+    {"RapidProKey": "Rqa_S03E05_Kakuma (Time) - wusc_keep_ii_s03e05_kakuma_activation", "PipelineKey": "sent_on"},
+
     {"RapidProKey": "Responses_To_Sexual_Violence (Text) - wusc_keep_ii_s02_w3_kakuma_follow_up", "PipelineKey": "responses_to_sexual_violence_raw"},
     {"RapidProKey": "Responses_To_Sexual_Violence (Time) - wusc_keep_ii_s02_w3_kakuma_follow_up", "PipelineKey": "responses_to_sexual_violence_time"},
 
@@ -206,6 +226,19 @@
     {"RapidProKey": "Location (Time) - wusc_keep_ii_s02_kakuma_demogs", "PipelineKey": "location_time"},
     {"RapidProKey": "Nationality (Time) - wusc_keep_ii_s02_kakuma_demogs", "PipelineKey": "nationality_time"},
     {"RapidProKey": "Household_Language (Time) - wusc_keep_ii_s02_kakuma_demogs", "PipelineKey": "household_language_time"},
+
+    {"RapidProKey": "Gender (Text) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "gender_raw"},
+    {"RapidProKey": "Age (Text) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "age_raw"},
+    {"RapidProKey": "Location (Text) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "location_raw"},
+    {"RapidProKey": "Nationality (Text) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "nationality_raw"},
+    {"RapidProKey": "Household_Language (Text) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "household_language_raw"},
+    {"RapidProKey": "Disabled (Text) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "disabled_raw"},
+    {"RapidProKey": "Gender (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "gender_time"},
+    {"RapidProKey": "Age (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "age_time"},
+    {"RapidProKey": "Location (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "location_time"},
+    {"RapidProKey": "Nationality (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "nationality_time"},
+    {"RapidProKey": "Household_Language (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "household_language_time"},
+    {"RapidProKey": "Disabled (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "disabled_time"},
 
     {"RapidProKey": "Girls_Education_Champions (Text) - wusc_keep_ii_s01_w3_kakuma_follow_up", "PipelineKey": "girls_education_champions_raw"},
     {"RapidProKey": "Encouragement_For_Boys (Text) - wusc_keep_ii_s01_w4_kakuma_follow_up", "PipelineKey": "encouragement_for_boys_raw"},
