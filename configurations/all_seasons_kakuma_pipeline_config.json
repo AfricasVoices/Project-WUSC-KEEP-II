@@ -90,7 +90,8 @@
     "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s02e06_listening_group.csv",
     "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s02e07_listening_group.csv",
     "gs://avf-project-datasets/2021/WUSC-KEEP-II/KAKUMA/LISTENING_GROUPS/s03_repeat_listening_group.csv",
-    "gs://avf-project-datasets/2021/WUSC-KEEP-II/KAKUMA/LISTENING_GROUPS/s03_repeat_listening_group.csv"
+    "gs://avf-project-datasets/2021/WUSC-KEEP-II/KAKUMA/LISTENING_GROUPS/kakuma_s03e01_listening_group.csv",
+    "gs://avf-project-datasets/2021/WUSC-KEEP-II/KAKUMA/LISTENING_GROUPS/kakuma_s03e02_listening_group.csv"
     ],
   "PhoneNumberUuidTable": {
     "FirebaseCredentialsFileURL": "gs://avf-credentials/avf-id-infrastructure-firebase-adminsdk-6xps8-b9173f2bfd.json",
@@ -259,6 +260,34 @@
   "ProjectEndDate": "2100-01-01T00:00:00+03:00",
   "FilterTestMessages": true,
   "MoveWSMessages": true,
+  "AutomatedAnalysis": {
+    "TrafficLabels": [
+      {"StartDate": "2021-04-04T08:00+03:00", "EndDate": "2021-04-05T19:30+03:00", "Label": "E01 Promo"},
+      {"StartDate": "2021-04-05T19:30+03:00", "EndDate": "2021-04-06T17:00+03:00", "Label": "E01 Ad"},
+      {"StartDate": "2021-04-06T17:00+03:00", "EndDate": "2021-04-06T19:00+03:00", "Label": "E01 Atanayache"},
+      {"StartDate": "2021-04-08T20:00+03:00", "EndDate": "2021-04-08T22:00+03:00", "Label": "E01 Biblia"},
+
+      {"StartDate": "2021-04-11T08:00+03:00", "EndDate": "2021-04-12T19:30+03:00", "Label": "E02 Promo"},
+      {"StartDate": "2021-04-12T19:30+03:00", "EndDate": "2021-04-13T17:00+03:00", "Label": "E02 Ad"},
+      {"StartDate": "2021-04-13T17:00+03:00", "EndDate": "2021-04-13T19:00+03:00", "Label": "E02 Atanayache"},
+      {"StartDate": "2021-04-15T20:00+03:00", "EndDate": "2021-04-15T22:00+03:00", "Label": "E02 Biblia"},
+
+      {"StartDate": "2021-04-18T08:00+03:00", "EndDate": "2021-04-19T19:30+03:00", "Label": "E03 Promo"},
+      {"StartDate": "2021-04-19T19:30+03:00", "EndDate": "2021-04-20T17:00+03:00", "Label": "E03 Ad"},
+      {"StartDate": "2021-04-20T17:00+03:00", "EndDate": "2021-04-20T19:00+03:00", "Label": "E03 Atanayache"},
+      {"StartDate": "2021-04-22T20:00+03:00", "EndDate": "2021-04-22T22:00+03:00", "Label": "E03 Biblia"},
+
+      {"StartDate": "2021-04-25T08:00+03:00", "EndDate": "2021-04-26T19:30+03:00", "Label": "E04 Promo"},
+      {"StartDate": "2021-04-26T19:30+03:00", "EndDate": "2021-04-27T17:00+03:00", "Label": "E04 Ad"},
+      {"StartDate": "2021-04-27T17:00+03:00", "EndDate": "2021-04-27T19:00+03:00", "Label": "E04 Atanayache"},
+      {"StartDate": "2021-04-29T20:00+03:00", "EndDate": "2021-04-29T22:00+03:00", "Label": "E04 Biblia"},
+
+      {"StartDate": "2021-05-02T08:00+03:00", "EndDate": "2021-05-02T19:30+03:00", "Label": "E05 Promo"},
+      {"StartDate": "2021-05-03T19:30+03:00", "EndDate": "2021-05-04T17:00+03:00", "Label": "E05 Ad"},
+      {"StartDate": "2021-05-04T17:00+03:00", "EndDate": "2021-05-04T19:00+03:00", "Label": "E05 Atanayache"},
+      {"StartDate": "2021-05-06T20:00+03:00", "EndDate": "2021-05-06T22:00+03:00", "Label": "E05 Biblia"}
+    ]
+  },
   "DriveUpload": {
     "DriveCredentialsFileURL": "gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
     "ProductionUploadPath": "wusc_keep_ii_analysis_outputs/kakuma/All-Seasons/wusc_keep_ii_all_seasons_kakuma_production.csv",
