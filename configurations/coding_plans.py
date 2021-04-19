@@ -482,7 +482,7 @@ S03_DADAAB_RQA_CODING_PLANS = [
                                CodeSchemes.DADAAB_EXPECTATIONS_FROM_EDUCATED_GIRLS, x, y)
                        )
                    ],
-                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("dadaab expectations_from_educated_girls"),
+                   ws_code=CodeSchemes.DADAAB_EXPECTATIONS_FROM_EDUCATED_GIRLS.get_code_with_match_value("dadaab expectations_from_educated_girls"),
                    raw_field_fold_strategy=FoldStrategies.concatenate)
 
 ]
@@ -953,25 +953,25 @@ S03_KAKUMA_RQA_CODING_PLANS = [
                ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma s03e05"),
                raw_field_fold_strategy=FoldStrategies.concatenate),
 
-CodingPlan(raw_field="expectations_from_educated_girls_raw",
-               dataset_name="kakuma_expectations_from_educated_girls",
-               listening_group_filename="kakuma_expectations_from_educated_girls.csv",
-               time_field="sent_on",
-               run_id_field="expectations_from_educated_girls_run_id",
-               coda_filename="kakuma_expectations_from_educated_girls.json",
-               icr_filename="kakuma_expectations_from_educated_girls.csv",
-               coding_configurations=[
-                   CodingConfiguration(
-                       coding_mode=CodingModes.MULTIPLE,
-                       code_scheme=CodeSchemes.KAKUMA_EXPECTATIONS_FROM_EDUCATED_GIRLS,
-                       coded_field="expectations_from_educated_girls_coded",
-                       analysis_file_key="expectations_from_educated_girls_",
-                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
-                           CodeSchemes.KAKUMA_EXPECTATIONS_FROM_EDUCATED_GIRLS, x, y)
-                   )
-               ],
-               ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma expectations_from_educated_girls"),
-               raw_field_fold_strategy=FoldStrategies.concatenate)
+    CodingPlan(raw_field="expectations_from_educated_girls_raw",
+                   dataset_name="kakuma_expectations_from_educated_girls",
+                   listening_group_filename="kakuma_expectations_from_educated_girls.csv",
+                   time_field="sent_on",
+                   run_id_field="expectations_from_educated_girls_run_id",
+                   coda_filename="kakuma_expectations_from_educated_girls.json",
+                   icr_filename="kakuma_expectations_from_educated_girls.csv",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.MULTIPLE,
+                           code_scheme=CodeSchemes.KAKUMA_EXPECTATIONS_FROM_EDUCATED_GIRLS,
+                           coded_field="expectations_from_educated_girls_coded",
+                           analysis_file_key="expectations_from_educated_girls_",
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                               CodeSchemes.KAKUMA_EXPECTATIONS_FROM_EDUCATED_GIRLS, x, y)
+                       )
+                   ],
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma expectations_from_educated_girls"),
+                   raw_field_fold_strategy=FoldStrategies.concatenate)
 ]
 
 def get_rqa_coding_plans(pipeline_name):
