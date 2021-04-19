@@ -482,7 +482,7 @@ S03_DADAAB_RQA_CODING_PLANS = [
                                CodeSchemes.DADAAB_EXPECTATIONS_FROM_EDUCATED_GIRLS, x, y)
                        )
                    ],
-                   ws_code=CodeSchemes.DADAAB_EXPECTATIONS_FROM_EDUCATED_GIRLS.get_code_with_match_value("dadaab expectations_from_educated_girls"),
+                   ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab expectations_from_educated_girls"),
                    raw_field_fold_strategy=FoldStrategies.concatenate)
 
 ]
