@@ -174,14 +174,14 @@
     {"RapidProKey": "Rqa_S03E03_Kakuma (Run ID) - wusc_keep_ii_s03e03_kakuma_activation", "PipelineKey": "rqa_s03e03_run_id"},
     {"RapidProKey": "Rqa_S03E04_Kakuma (Run ID) - wusc_keep_ii_s03e04_kakuma_activation", "PipelineKey": "rqa_s03e04_run_id"},
     {"RapidProKey": "Rqa_S03E05_Kakuma (Run ID) - wusc_keep_ii_s03e05_kakuma_activation", "PipelineKey": "rqa_s03e05_run_id"},
-    {"RapidProKey": "Expectations_From_Educated_Girls (Run ID) - wusc_keep_ii_s03e02_kakuma_follow_up", "PipelineKey": "expectations_from_educated_girls_run_id", "IsActivationMessage": true},
+    {"RapidProKey": "Expectations_From_Educated_Girls (Run ID) - wusc_keep_ii_s03e02_kakuma_follow_up", "PipelineKey": "expectations_from_educated_girls_run_id"},
 
     {"RapidProKey": "Rqa_S03E01_Kakuma (Time) - wusc_keep_ii_s03e01_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S03E02_Kakuma (Time) - wusc_keep_ii_s03e02_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S03E03_Kakuma (Time) - wusc_keep_ii_s03e03_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S03E04_Kakuma (Time) - wusc_keep_ii_s03e04_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S03E05_Kakuma (Time) - wusc_keep_ii_s03e05_kakuma_activation", "PipelineKey": "sent_on"},
-    {"RapidProKey": "Expectations_From_Educated_Girls (Time) - wusc_keep_ii_s03e02_kakuma_follow_up", "PipelineKey": "sent_on", "IsActivationMessage": true},
+    {"RapidProKey": "Expectations_From_Educated_Girls (Time) - wusc_keep_ii_s03e02_kakuma_follow_up", "PipelineKey": "sent_on"},
 
     {"RapidProKey": "Responses_To_Sexual_Violence (Text) - wusc_keep_ii_s02_w3_kakuma_follow_up", "PipelineKey": "responses_to_sexual_violence_raw"},
     {"RapidProKey": "Responses_To_Sexual_Violence (Time) - wusc_keep_ii_s02_w3_kakuma_follow_up", "PipelineKey": "responses_to_sexual_violence_time"},

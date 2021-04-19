@@ -40,6 +40,7 @@ DATASETS=(
     "dadaab_s03e03"
     "dadaab_s03e04"
     "dadaab_s03e05"
+    "dadaab_expectations_from_educated_girls.json"
 
     "dadaab_location"
     "dadaab_gender"
