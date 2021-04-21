@@ -20,7 +20,7 @@ DATASETS=(
     "kakuma_s03e02"
     "kakuma_s03e03"
     "kakuma_s03e04"
-    "kakuma_s03e05",
+    "kakuma_s03e05"
     "kakuma_expectations_from_educated_girls"
 
     "kakuma_location"
