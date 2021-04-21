@@ -3,7 +3,70 @@
   "Name": "DADAAB S03E02 Reasons",
   "Version": "0.0.0.2",
   "Codes": [
-
+    {
+      "CodeID": "code-8bb6375f",
+      "CodeType": "Normal",
+      "DisplayText": "financial support",
+      "NumericValue": 1,
+      "StringValue": "financial_support",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-d2bfacd7",
+      "CodeType": "Normal",
+      "DisplayText": "good role models",
+      "NumericValue": 2,
+      "StringValue": "good_role_models",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-46266f38",
+      "CodeType": "Normal",
+      "DisplayText": "bring pride",
+      "NumericValue": 3,
+      "StringValue": "bring_pride",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-20f3e7c7",
+      "CodeType": "Normal",
+      "DisplayText": "they become empowered",
+      "NumericValue": 4,
+      "StringValue": "they_become_empowered",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-fcb0121c",
+      "CodeType": "Normal",
+      "DisplayText": "girls education is important",
+      "NumericValue": 5,
+      "StringValue": "girls_education_is_important",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-37787986",
+      "CodeType": "Normal",
+      "DisplayText": "lots of benefits",
+      "NumericValue": 6,
+      "StringValue": "lots_of_benefits",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-4e1d38ba",
+      "CodeType": "Normal",
+      "DisplayText": "educate others",
+      "NumericValue": 7,
+      "StringValue": "educate_others",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-56b2fd41",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 8,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
