@@ -10,7 +10,8 @@
         "wusc_keep_ii_s03e02_dadaab_activation",
         "wusc_keep_ii_s03e03_dadaab_activation",
         "wusc_keep_ii_s03e04_dadaab_activation",
-        "wusc_keep_ii_s03e05_dadaab_activation"
+        "wusc_keep_ii_s03e05_dadaab_activation",
+        "wusc_keep_ii_s03e02_dadaab_follow_up"
       ],
       "SurveyFlowNames": [
         "wusc_keep_ii_dadaab_demogs",
@@ -55,6 +56,9 @@
     {"RapidProKey": "Rqa_S03E05_Dadaab (Text) - wusc_keep_ii_s03e05_dadaab_activation", "PipelineKey": "rqa_s03e05_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_S03E05_Dadaab (Run ID) - wusc_keep_ii_s03e05_dadaab_activation", "PipelineKey": "rqa_s03e05_run_id"},
     {"RapidProKey": "Rqa_S03E05_Dadaab (Time) - wusc_keep_ii_s03e05_dadaab_activation", "PipelineKey": "sent_on"},
+    {"RapidProKey": "Expectations_From_Educated_Girls (Text) - wusc_keep_ii_s03e02_dadaab_follow_up", "PipelineKey": "expectations_from_educated_girls_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Expectations_From_Educated_Girls (Run ID) - wusc_keep_ii_s03e02_dadaab_follow_up", "PipelineKey": "expectations_from_educated_girls_run_id"},
+    {"RapidProKey": "Expectations_From_Educated_Girls (Time) - wusc_keep_ii_s03e02_dadaab_follow_up", "PipelineKey": "sent_on"},
 
     {"RapidProKey": "Gender (Text) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "gender_raw"},
     {"RapidProKey": "Age (Text) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "age_raw"},
