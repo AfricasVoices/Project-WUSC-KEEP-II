@@ -3,7 +3,46 @@
   "Name": "KAKUMA Expectations From Educated Girls.json",
   "Version": "0.0.0.2",
   "Codes": [
-
+    {
+      "CodeID": "code-7f9fcdef",
+      "CodeType": "Normal",
+      "DisplayText": "good role models",
+      "NumericValue": 1,
+      "StringValue": "good_role_models",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-cbac0575",
+      "CodeType": "Normal",
+      "DisplayText": "community and family development",
+      "NumericValue": 2,
+      "StringValue": "community_and_family_development",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-5823dc3f",
+      "CodeType": "Normal",
+      "DisplayText": "marriage and bride price",
+      "NumericValue": 3,
+      "StringValue": "marriage_and_bride_price",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-c2edece1",
+      "CodeType": "Normal",
+      "DisplayText": "nothing",
+      "NumericValue": 4,
+      "StringValue": "nothing",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-1f4f2cb2",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 5,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
