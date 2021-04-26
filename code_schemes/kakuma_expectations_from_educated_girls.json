@@ -1,69 +1,45 @@
 {
-  "SchemeID": "Scheme-40e19fff",
-  "Name": "KAKUMA S03E01 Reasons",
+  "SchemeID": "Scheme-28a97799",
+  "Name": "KAKUMA Expectations From Educated Girls.json",
   "Version": "0.0.0.2",
   "Codes": [
     {
-      "CodeID": "code-a145bde3",
+      "CodeID": "code-7f9fcdef",
       "CodeType": "Normal",
-      "DisplayText": "extra tutoring/tuition",
+      "DisplayText": "good role models",
       "NumericValue": 1,
-      "StringValue": "extra_tutoring_or_tuition",
+      "StringValue": "good_role_models",
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-7c3ed2a0",
+      "CodeID": "code-cbac0575",
       "CodeType": "Normal",
-      "DisplayText": "support and encourage",
+      "DisplayText": "community and family development",
       "NumericValue": 2,
-      "StringValue": "support_and_encourage",
+      "StringValue": "community_and_family_development",
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-65cbdbaf",
+      "CodeID": "code-5823dc3f",
       "CodeType": "Normal",
-      "DisplayText": "provide learning resources",
+      "DisplayText": "marriage and bride price",
       "NumericValue": 3,
-      "StringValue": "provide_learning_resources",
+      "StringValue": "marriage_and_bride_price",
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-20a33b45",
+      "CodeID": "code-c2edece1",
       "CodeType": "Normal",
-      "DisplayText": "provide advice",
+      "DisplayText": "nothing",
       "NumericValue": 4,
-      "StringValue": "provide_advice",
+      "StringValue": "nothing",
       "VisibleInCoda": true
     },
     {
-      "CodeID": "code-dbd19ee8",
+      "CodeID": "code-1f4f2cb2",
       "CodeType": "Normal",
-      "DisplayText": "provide guidance",
+      "DisplayText": "other theme",
       "NumericValue": 5,
-      "StringValue": "provide_guidance",
-      "VisibleInCoda": true
-    },
-    {
-      "CodeID": "code-b29bfc8d",
-      "CodeType": "Normal",
-      "DisplayText": "availability of COVID-19 preventive measures",
-      "NumericValue": 6,
-      "StringValue": "availability_of_covid19_preventive_measures",
-      "VisibleInCoda": true
-    },
-    {
-      "CodeID": "code-5b16b96b",
-      "CodeType": "Normal",
-      "DisplayText": "give them time to study",
-      "NumericValue": 7,
-      "StringValue": "give_them_time_to_study",
-      "VisibleInCoda": true
-    },
-    {
-      "CodeID": "code-0cb865f9",
-      "CodeType": "Normal",
-      "DisplayText": "other_theme",
-      "NumericValue": 8,
       "StringValue": "other_theme",
       "VisibleInCoda": true
     },

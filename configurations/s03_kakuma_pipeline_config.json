@@ -28,7 +28,8 @@
         "wusc_keep_ii_s03e02_kakuma_activation",
         "wusc_keep_ii_s03e03_kakuma_activation",
         "wusc_keep_ii_s03e04_kakuma_activation",
-        "wusc_keep_ii_s03e05_kakuma_activation"
+        "wusc_keep_ii_s03e05_kakuma_activation",
+        "wusc_keep_ii_s03e02_kakuma_follow_up"
       ],
       "SurveyFlowNames": [
         "wusc_keep_ii_kakuma_demogs",
@@ -47,23 +48,10 @@
     }
   ],
   "ListeningGroupCSVURLs":[
-    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/s01_repeat_listening_group.csv",
-    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s01e01_listening_group.csv",
-    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s01e02_listening_group.csv",
-    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s01e03_listening_group.csv",
-    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s01e04_listening_group.csv",
-    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s01e05_listening_group.csv",
-    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s01e06_listening_group.csv",
-    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s01e07_listening_group.csv",
-    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/s02_repeat_listening_group.csv",
-    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s02e01_listening_group.csv",
-    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s02e02_listening_group.csv",
-    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s02e03_listening_group.csv",
-    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s02e04_listening_group.csv",
-    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s02e05_listening_group.csv",
-    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s02e06_listening_group.csv",
-    "gs://avf-project-datasets/2019/WUSC-KEEP-II/LISTENING_GROUPS/kakuma_s02e07_listening_group.csv"
-    ],
+    "gs://avf-project-datasets/2021/WUSC-KEEP-II/KAKUMA/LISTENING_GROUPS/s03_repeat_listening_group.csv",
+    "gs://avf-project-datasets/2021/WUSC-KEEP-II/KAKUMA/LISTENING_GROUPS/kakuma_s03e01_listening_group.csv",
+    "gs://avf-project-datasets/2021/WUSC-KEEP-II/KAKUMA/LISTENING_GROUPS/kakuma_s03e02_listening_group.csv"
+  ],
   "PhoneNumberUuidTable": {
     "FirebaseCredentialsFileURL": "gs://avf-credentials/avf-id-infrastructure-firebase-adminsdk-6xps8-b9173f2bfd.json",
     "TableName": "WUSC_KEEP_II_phone_number_avf_phone_id"
@@ -79,18 +67,21 @@
     {"RapidProKey": "Rqa_S03E03_Kakuma (Text) - wusc_keep_ii_s03e03_kakuma_activation", "PipelineKey": "rqa_s03e03_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_S03E04_Kakuma (Text) - wusc_keep_ii_s03e04_kakuma_activation", "PipelineKey": "rqa_s03e04_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_S03E05_Kakuma (Text) - wusc_keep_ii_s03e05_kakuma_activation", "PipelineKey": "rqa_s03e05_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Expectations_From_Educated_Girls (Text) - wusc_keep_ii_s03e02_kakuma_follow_up", "PipelineKey": "expectations_from_educated_girls_raw", "IsActivationMessage": true},
 
     {"RapidProKey": "Rqa_S03E01_Kakuma (Run ID) - wusc_keep_ii_s03e01_kakuma_activation", "PipelineKey": "rqa_s03e01_run_id"},
     {"RapidProKey": "Rqa_S03E02_Kakuma (Run ID) - wusc_keep_ii_s03e02_kakuma_activation", "PipelineKey": "rqa_s03e02_run_id"},
     {"RapidProKey": "Rqa_S03E03_Kakuma (Run ID) - wusc_keep_ii_s03e03_kakuma_activation", "PipelineKey": "rqa_s03e03_run_id"},
     {"RapidProKey": "Rqa_S03E04_Kakuma (Run ID) - wusc_keep_ii_s03e04_kakuma_activation", "PipelineKey": "rqa_s03e04_run_id"},
     {"RapidProKey": "Rqa_S03E05_Kakuma (Run ID) - wusc_keep_ii_s03e05_kakuma_activation", "PipelineKey": "rqa_s03e05_run_id"},
+    {"RapidProKey": "Expectations_From_Educated_Girls (Run ID) - wusc_keep_ii_s03e02_kakuma_follow_up", "PipelineKey": "expectations_from_educated_girls_run_id"},
 
     {"RapidProKey": "Rqa_S03E01_Kakuma (Time) - wusc_keep_ii_s03e01_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S03E02_Kakuma (Time) - wusc_keep_ii_s03e02_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S03E03_Kakuma (Time) - wusc_keep_ii_s03e03_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S03E04_Kakuma (Time) - wusc_keep_ii_s03e04_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S03E05_Kakuma (Time) - wusc_keep_ii_s03e05_kakuma_activation", "PipelineKey": "sent_on"},
+    {"RapidProKey": "Expectations_From_Educated_Girls (Time) - wusc_keep_ii_s03e02_kakuma_follow_up", "PipelineKey": "sent_on"},
 
     {"RapidProKey": "Gender (Text) - wusc_keep_ii_kakuma_demogs", "PipelineKey": "gender_raw"},
     {"RapidProKey": "Age (Text) - wusc_keep_ii_kakuma_demogs", "PipelineKey": "age_raw"},
@@ -162,7 +153,27 @@
       {"StartDate": "2021-04-04T08:00+03:00", "EndDate": "2021-04-05T19:30+03:00", "Label": "E01 Promo"},
       {"StartDate": "2021-04-05T19:30+03:00", "EndDate": "2021-04-06T17:00+03:00", "Label": "E01 Ad"},
       {"StartDate": "2021-04-06T17:00+03:00", "EndDate": "2021-04-06T19:00+03:00", "Label": "E01 Atanayache"},
-      {"StartDate": "2021-04-08T20:00+03:00", "EndDate": "2021-04-08T21:00+03:00", "Label": "E01 Biblia"}
+      {"StartDate": "2021-04-08T20:00+03:00", "EndDate": "2021-04-08T22:00+03:00", "Label": "E01 Biblia"},
+
+      {"StartDate": "2021-04-11T08:00+03:00", "EndDate": "2021-04-12T19:30+03:00", "Label": "E02 Promo"},
+      {"StartDate": "2021-04-12T19:30+03:00", "EndDate": "2021-04-13T17:00+03:00", "Label": "E02 Ad"},
+      {"StartDate": "2021-04-13T17:00+03:00", "EndDate": "2021-04-13T19:00+03:00", "Label": "E02 Atanayache"},
+      {"StartDate": "2021-04-15T20:00+03:00", "EndDate": "2021-04-15T22:00+03:00", "Label": "E02 Biblia"},
+
+      {"StartDate": "2021-04-18T08:00+03:00", "EndDate": "2021-04-19T19:30+03:00", "Label": "E03 Promo"},
+      {"StartDate": "2021-04-19T19:30+03:00", "EndDate": "2021-04-20T17:00+03:00", "Label": "E03 Ad"},
+      {"StartDate": "2021-04-20T17:00+03:00", "EndDate": "2021-04-20T19:00+03:00", "Label": "E03 Atanayache"},
+      {"StartDate": "2021-04-22T20:00+03:00", "EndDate": "2021-04-22T22:00+03:00", "Label": "E03 Biblia"},
+
+      {"StartDate": "2021-04-25T08:00+03:00", "EndDate": "2021-04-26T19:30+03:00", "Label": "E04 Promo"},
+      {"StartDate": "2021-04-26T19:30+03:00", "EndDate": "2021-04-27T17:00+03:00", "Label": "E04 Ad"},
+      {"StartDate": "2021-04-27T17:00+03:00", "EndDate": "2021-04-27T19:00+03:00", "Label": "E04 Atanayache"},
+      {"StartDate": "2021-04-29T20:00+03:00", "EndDate": "2021-04-29T22:00+03:00", "Label": "E04 Biblia"},
+
+      {"StartDate": "2021-05-02T08:00+03:00", "EndDate": "2021-05-02T19:30+03:00", "Label": "E05 Promo"},
+      {"StartDate": "2021-05-03T19:30+03:00", "EndDate": "2021-05-04T17:00+03:00", "Label": "E05 Ad"},
+      {"StartDate": "2021-05-04T17:00+03:00", "EndDate": "2021-05-04T19:00+03:00", "Label": "E05 Atanayache"},
+      {"StartDate": "2021-05-06T20:00+03:00", "EndDate": "2021-05-06T22:00+03:00", "Label": "E05 Biblia"}
     ]
   },
   "DriveUpload": {

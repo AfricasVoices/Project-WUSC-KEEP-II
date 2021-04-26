@@ -3,7 +3,54 @@
   "Name": "DADAAB S03E01 Reasons",
   "Version": "0.0.0.2",
   "Codes": [
-
+    {
+      "CodeID": "code-a1faaa10",
+      "CodeType": "Normal",
+      "DisplayText": "continue learning from home",
+      "NumericValue": 1,
+      "StringValue": "continue_learning_from_home",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-efc35f5a",
+      "CodeType": "Normal",
+      "DisplayText": "encourage them",
+      "NumericValue": 2,
+      "StringValue": "encourage_them",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-c61f5e34",
+      "CodeType": "Normal",
+      "DisplayText": "covid-19 negative impacts",
+      "NumericValue": 3,
+      "StringValue": "covid_19_negative_impacts",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-e719c959",
+      "CodeType": "Normal",
+      "DisplayText": "education is important",
+      "NumericValue": 4,
+      "StringValue": "education_is_important",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-d8509b5b",
+      "CodeType": "Normal",
+      "DisplayText": "availability of covid_19 preventive measures",
+      "NumericValue": 5,
+      "StringValue": "availability_of_covid_19_preventive_measures",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-e1aab950",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 6,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",

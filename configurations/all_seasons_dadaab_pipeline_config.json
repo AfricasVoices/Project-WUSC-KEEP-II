@@ -28,8 +28,7 @@
         "wusc_keep_ii_s03e02_dadaab_activation",
         "wusc_keep_ii_s03e03_dadaab_activation",
         "wusc_keep_ii_s03e04_dadaab_activation",
-        "wusc_keep_ii_s03e05_dadaab_activation",
-        "wusc_keep_ii_s03_dadaab_demogs"
+        "wusc_keep_ii_s03e05_dadaab_activation"
       ],
       "SurveyFlowNames": [
         "wusc_keep_ii_dadaab_demogs",
@@ -40,7 +39,8 @@
         "wusc_keep_ii_s01_w6_dadaab_follow_up",
         "dadaab_s01_evaluation_flow",
         "wusc_keep_ii_s02_w3_dadaab_follow_up",
-        "wusc_keep_ii_s02_w6_dadaab_follow_up"
+        "wusc_keep_ii_s02_w6_dadaab_follow_up",
+        "wusc_keep_ii_s03_dadaab_demogs"
       ],
       "TestContactUUIDs": [
         "84f1c3bc-596e-455e-b5f6-ce16640e9b95",
@@ -125,6 +125,25 @@
     {"RapidProKey": "Rqa_S02E08_Dadaab (Time) - wusc_keep_ii_s02e08_dadaab_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Community_Views_On_Girls_Education_Final (Time) - wusc_keep_ii_s02_dadaab_final_evaluation", "PipelineKey": "sent_on"},
 
+    {"RapidProKey": "Rqa_S03E01_Dadaab (Text) - wusc_keep_ii_s03e01_dadaab_activation", "PipelineKey": "rqa_s03e01_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S03E01_Dadaab (Run ID) - wusc_keep_ii_s03e01_dadaab_activation", "PipelineKey": "rqa_s03e01_run_id"},
+    {"RapidProKey": "Rqa_S03E01_Dadaab (Time) - wusc_keep_ii_s03e01_dadaab_activation", "PipelineKey": "sent_on"},
+    {"RapidProKey": "Rqa_S03E02_Dadaab (Text) - wusc_keep_ii_s03e02_dadaab_activation", "PipelineKey": "rqa_s03e02_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S03E02_Dadaab (Run ID) - wusc_keep_ii_s03e02_dadaab_activation", "PipelineKey": "rqa_s03e02_run_id"},
+    {"RapidProKey": "Rqa_S03E02_Dadaab (Time) - wusc_keep_ii_s03e02_dadaab_activation", "PipelineKey": "sent_on"},
+    {"RapidProKey": "Rqa_S03E03_Dadaab (Text) - wusc_keep_ii_s03e03_dadaab_activation", "PipelineKey": "rqa_s03e03_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S03E03_Dadaab (Run ID) - wusc_keep_ii_s03e03_dadaab_activation", "PipelineKey": "rqa_s03e03_run_id"},
+    {"RapidProKey": "Rqa_S03E03_Dadaab (Time) - wusc_keep_ii_s03e03_dadaab_activation", "PipelineKey": "sent_on"},
+    {"RapidProKey": "Rqa_S03E04_Dadaab (Text) - wusc_keep_ii_s03e05_dadaab_activation", "PipelineKey": "rqa_s03e04_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S03E04_Dadaab (Run ID) - wusc_keep_ii_s03e04_dadaab_activation", "PipelineKey": "rqa_s03e04_run_id"},
+    {"RapidProKey": "Rqa_S03E04_Dadaab (Time) - wusc_keep_ii_s03e04_dadaab_activation", "PipelineKey": "sent_on"},
+    {"RapidProKey": "Rqa_S03E05_Dadaab (Text) - wusc_keep_ii_s03e05_dadaab_activation", "PipelineKey": "rqa_s03e05_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_S03E05_Dadaab (Run ID) - wusc_keep_ii_s03e05_dadaab_activation", "PipelineKey": "rqa_s03e05_run_id"},
+    {"RapidProKey": "Rqa_S03E05_Dadaab (Time) - wusc_keep_ii_s03e05_dadaab_activation", "PipelineKey": "sent_on"},
+    {"RapidProKey": "Expectations_From_Educated_Girls (Text) - wusc_keep_ii_s03e02_dadaab_follow_up", "PipelineKey": "expectations_from_educated_girls_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Expectations_From_Educated_Girls (Run ID) - wusc_keep_ii_s03e02_dadaab_follow_up", "PipelineKey": "expectations_from_educated_girls_run_id"},
+    {"RapidProKey": "Expectations_From_Educated_Girls (Time) - wusc_keep_ii_s03e02_dadaab_follow_up", "PipelineKey": "sent_on"},
+
     {"RapidProKey": "Responses_To_Sexual_Violence (Text) - wusc_keep_ii_s02_w3_dadaab_follow_up", "PipelineKey": "responses_to_sexual_violence_raw"},
     {"RapidProKey": "Responses_To_Sexual_Violence (Time) - wusc_keep_ii_s02_w3_dadaab_follow_up", "PipelineKey": "responses_to_sexual_violence_time"},
 
@@ -205,6 +224,14 @@
   "ProjectEndDate": "2100-01-01T00:00:00+03:00",
   "FilterTestMessages": true,
   "MoveWSMessages": true,
+  "AutomatedAnalysis": {
+    "TrafficLabels": [
+      {"StartDate": "2021-04-07T08:00+03:00", "EndDate": "2021-04-09T19:30+03:00", "Label": "E01 Promo"},
+      {"StartDate": "2021-04-09T19:30+03:00", "EndDate": "2021-04-10T09:00+03:00", "Label": "E01 Ad"},
+      {"StartDate": "2021-04-10T09:00+03:00", "EndDate": "2021-04-10T12:00+03:00", "Label": "E01 Gargaar"},
+      {"StartDate": "2021-04-10T20:00+03:00", "EndDate": "2021-04-10T21:00+03:00", "Label": "E01 Star"}
+    ]
+  },
   "DriveUpload": {
     "DriveCredentialsFileURL": "gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
     "ProductionUploadPath": "wusc_keep_ii_analysis_outputs/dadaab/All-Seasons/wusc_keep_ii_all_seasons_dadaab_production.csv",

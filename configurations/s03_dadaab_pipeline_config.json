@@ -10,7 +10,8 @@
         "wusc_keep_ii_s03e02_dadaab_activation",
         "wusc_keep_ii_s03e03_dadaab_activation",
         "wusc_keep_ii_s03e04_dadaab_activation",
-        "wusc_keep_ii_s03e05_dadaab_activation"
+        "wusc_keep_ii_s03e05_dadaab_activation",
+        "wusc_keep_ii_s03e02_dadaab_follow_up"
       ],
       "SurveyFlowNames": [
         "wusc_keep_ii_dadaab_demogs",
@@ -55,6 +56,9 @@
     {"RapidProKey": "Rqa_S03E05_Dadaab (Text) - wusc_keep_ii_s03e05_dadaab_activation", "PipelineKey": "rqa_s03e05_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_S03E05_Dadaab (Run ID) - wusc_keep_ii_s03e05_dadaab_activation", "PipelineKey": "rqa_s03e05_run_id"},
     {"RapidProKey": "Rqa_S03E05_Dadaab (Time) - wusc_keep_ii_s03e05_dadaab_activation", "PipelineKey": "sent_on"},
+    {"RapidProKey": "Expectations_From_Educated_Girls (Text) - wusc_keep_ii_s03e02_dadaab_follow_up", "PipelineKey": "expectations_from_educated_girls_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Expectations_From_Educated_Girls (Run ID) - wusc_keep_ii_s03e02_dadaab_follow_up", "PipelineKey": "expectations_from_educated_girls_run_id"},
+    {"RapidProKey": "Expectations_From_Educated_Girls (Time) - wusc_keep_ii_s03e02_dadaab_follow_up", "PipelineKey": "sent_on"},
 
     {"RapidProKey": "Gender (Text) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "gender_raw"},
     {"RapidProKey": "Age (Text) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "age_raw"},
@@ -107,7 +111,7 @@
     {"RapidProKey": "Disabled (Time) - wusc_keep_ii_s03_dadaab_demogs", "PipelineKey": "disabled_time"}
   ],
   "PipelineName": "dadaab_s03_pipeline",
-  "ProjectStartDate": "2021-04-14T08:00:00+03:00",
+  "ProjectStartDate": "2021-04-07T08:00:00+03:00",
   "ProjectEndDate": "2100-01-01T00:00:00+03:00",
   "FilterTestMessages": true,
   "MoveWSMessages": true,
@@ -116,7 +120,27 @@
       {"StartDate": "2021-04-07T08:00+03:00", "EndDate": "2021-04-09T19:30+03:00", "Label": "E01 Promo"},
       {"StartDate": "2021-04-09T19:30+03:00", "EndDate": "2021-04-10T09:00+03:00", "Label": "E01 Ad"},
       {"StartDate": "2021-04-10T09:00+03:00", "EndDate": "2021-04-10T12:00+03:00", "Label": "E01 Gargaar"},
-      {"StartDate": "2021-04-10T20:00+03:00", "EndDate": "2021-04-21T21:00+03:00", "Label": "E01 Star"}
+      {"StartDate": "2021-04-10T20:00+03:00", "EndDate": "2021-04-10T22:00+03:00", "Label": "E01 Star"},
+
+      {"StartDate": "2021-04-14T08:00+03:00", "EndDate": "2021-04-14T19:30+03:00", "Label": "E02 Promo"},
+      {"StartDate": "2021-04-16T19:30+03:00", "EndDate": "2021-04-17T09:00+03:00", "Label": "E02 Ad"},
+      {"StartDate": "2021-04-17T09:00+03:00", "EndDate": "2021-04-17T12:00+03:00", "Label": "E02 Gargaar"},
+      {"StartDate": "2021-04-17T20:00+03:00", "EndDate": "2021-04-17T22:00+03:00", "Label": "E02 Star"},
+
+      {"StartDate": "2021-04-21T08:00+03:00", "EndDate": "2021-04-23T19:30+03:00", "Label": "E03 Promo"},
+      {"StartDate": "2021-04-23T19:30+03:00", "EndDate": "2021-04-24T09:00+03:00", "Label": "E03 Ad"},
+      {"StartDate": "2021-04-24T09:00+03:00", "EndDate": "2021-04-24T12:00+03:00", "Label": "E03 Gargaar"},
+      {"StartDate": "2021-04-24T20:00+03:00", "EndDate": "2021-04-14T22:00+03:00", "Label": "E03 Star"},
+
+      {"StartDate": "2021-04-28T08:00+03:00", "EndDate": "2021-04-30T19:30+03:00", "Label": "E04 Promo"},
+      {"StartDate": "2021-04-30T19:30+03:00", "EndDate": "2021-05-01T09:00+03:00", "Label": "E04 Ad"},
+      {"StartDate": "2021-05-01T09:00+03:00", "EndDate": "2021-05-01T12:00+03:00", "Label": "E04 Gargaar"},
+      {"StartDate": "2021-05-01T20:00+03:00", "EndDate": "2021-05-01T22:00+03:00", "Label": "E04 Star"},
+
+      {"StartDate": "2021-05-05T08:00+03:00", "EndDate": "2021-05-07T19:30+03:00", "Label": "E05 Promo"},
+      {"StartDate": "2021-05-07T19:30+03:00", "EndDate": "2021-05-08T09:00+03:00", "Label": "E05 Ad"},
+      {"StartDate": "2021-05-08T09:00+03:00", "EndDate": "2021-05-08T12:00+03:00", "Label": "E05 Gargaar"},
+      {"StartDate": "2021-05-08T20:00+03:00", "EndDate": "2021-05-08T22:00+03:00", "Label": "E05 Star"}
     ]
   },
   "DriveUpload": {
