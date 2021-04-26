@@ -3,7 +3,70 @@
   "Name": "KAKUMA S03E03 Reasons",
   "Version": "0.0.0.2",
   "Codes": [
-
+    {
+      "CodeID": "code-8ef676bc",
+      "CodeType": "Normal",
+      "DisplayText": "providing services",
+      "NumericValue": 1,
+      "StringValue": "providing_services",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-74a4b570",
+      "CodeType": "Normal",
+      "DisplayText": "work in organizations",
+      "NumericValue": 2,
+      "StringValue": "work_in_organizations",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-c93eb112",
+      "CodeType": "Normal",
+      "DisplayText": "training",
+      "NumericValue": 3,
+      "StringValue": "training",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-8bb6375f",
+      "CodeType": "Normal",
+      "DisplayText": "engage in small businesses",
+      "NumericValue": 4,
+      "StringValue": "engage_in_small_businesses",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-41e07c5e",
+      "CodeType": "Normal",
+      "DisplayText": "financial support and advise",
+      "NumericValue": 5,
+      "StringValue": "financial_support_and_advise",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-9becfbcf",
+      "CodeType": "Normal",
+      "DisplayText": "a lot of opportunities",
+      "NumericValue": 6,
+      "StringValue": "a_lot_of_opportunities",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-f2ca70ed",
+      "CodeType": "Normal",
+      "DisplayText": "no opportunities",
+      "NumericValue": 7,
+      "StringValue": "no_opportunities",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-e794d01e",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 8,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",

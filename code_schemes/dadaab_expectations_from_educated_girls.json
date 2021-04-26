@@ -3,7 +3,54 @@
   "Name": "DADAAB Expectations From Educated Girls.json",
   "Version": "0.0.0.2",
   "Codes": [
-
+    {
+      "CodeID": "code-c2bf8115",
+      "CodeType": "Normal",
+      "DisplayText": "community and family development",
+      "NumericValue": 1,
+      "StringValue": "community_and_family_development",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-dbcc1bb8",
+      "CodeType": "Normal",
+      "DisplayText": "good role model",
+      "NumericValue": 2,
+      "StringValue": "good_role_model",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-d66ef23f",
+      "CodeType": "Normal",
+      "DisplayText": "empowered",
+      "NumericValue": 3,
+      "StringValue": "empowered",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-1ebbbf0d",
+      "CodeType": "Normal",
+      "DisplayText": "lots of benefits",
+      "NumericValue": 4,
+      "StringValue": "lots of benefits",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-44d3e6dd",
+      "CodeType": "Normal",
+      "DisplayText": "marriage",
+      "NumericValue": 5,
+      "StringValue": "marriage",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-8aedbe79",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 6,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
