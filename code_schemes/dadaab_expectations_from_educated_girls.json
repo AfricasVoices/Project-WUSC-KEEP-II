@@ -32,7 +32,7 @@
       "CodeType": "Normal",
       "DisplayText": "lots of benefits",
       "NumericValue": 4,
-      "StringValue": "lots of benefits",
+      "StringValue": "lots_of_benefits",
       "VisibleInCoda": true
     },
     {
