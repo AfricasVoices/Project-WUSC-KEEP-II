@@ -3,7 +3,62 @@
   "Name": "KAKUMA S03E03 Reasons",
   "Version": "0.0.0.2",
   "Codes": [
-
+    {
+      "CodeID": "code-1c9878a5",
+      "CodeType": "Normal",
+      "DisplayText": "providing services",
+      "NumericValue": 1,
+      "StringValue": "providing_services",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-d6b0f58f",
+      "CodeType": "Normal",
+      "DisplayText": "engage in small businesses",
+      "NumericValue": 2,
+      "StringValue": "engage_in_small_businesses",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-3f8e60ab",
+      "CodeType": "Normal",
+      "DisplayText": "training",
+      "NumericValue": 3,
+      "StringValue": "training",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-76d2ffa4",
+      "CodeType": "Normal",
+      "DisplayText": "lots of opportunities",
+      "NumericValue": 4,
+      "StringValue": "lots_of_opportunities",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-49026791",
+      "CodeType": "Normal",
+      "DisplayText": "no opportunities",
+      "NumericValue": 5,
+      "StringValue": "no_opportunities",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-0fb11365",
+      "CodeType": "Normal",
+      "DisplayText": "support and encouragement",
+      "NumericValue": 6,
+      "StringValue": "support_and_encouragement",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-2d5d0a54",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 7,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
