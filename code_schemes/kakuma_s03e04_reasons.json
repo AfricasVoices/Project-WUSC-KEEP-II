@@ -3,7 +3,70 @@
   "Name": "KAKUMA S03E04 Reasons",
   "Version": "0.0.0.2",
   "Codes": [
-
+    {
+      "CodeID": "code-63cdbfaa",
+      "CodeType": "Normal",
+      "DisplayText": "creating awareness",
+      "NumericValue": 1,
+      "StringValue": "creating_awareness",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-953a79af",
+      "CodeType": "Normal",
+      "DisplayText": "award the whistleblower",
+      "NumericValue": 2,
+      "StringValue": "award_the_whistleblower",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-cc7d6398",
+      "CodeType": "Normal",
+      "DisplayText": "report SGBV cases",
+      "NumericValue": 3,
+      "StringValue": "report_sgbv_cases",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-1c9878a5",
+      "CodeType": "Normal",
+      "DisplayText": "punish the perpetrators",
+      "NumericValue": 4,
+      "StringValue": "punish_the_perpetrators",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-4404cee5",
+      "CodeType": "Normal",
+      "DisplayText": "negative cultural norms",
+      "NumericValue": 5,
+      "StringValue": "negative_cultural_norms",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-98b6aa3f",
+      "CodeType": "Normal",
+      "DisplayText": "taking victim to hospital",
+      "NumericValue": 6,
+      "StringValue": "taking_victim_to_hospital",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-35c7973b",
+      "CodeType": "Normal",
+      "DisplayText": "don't know",
+      "NumericValue": 7,
+      "StringValue": "dont_know",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-b0d57e2d",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 8,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
