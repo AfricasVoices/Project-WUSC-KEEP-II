@@ -483,8 +483,27 @@ S03_DADAAB_RQA_CODING_PLANS = [
                        )
                    ],
                    ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab expectations_from_educated_girls"),
-                   raw_field_fold_strategy=FoldStrategies.concatenate)
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
 
+    CodingPlan(raw_field="prevention_of_sgbv_cases_raw",
+                               dataset_name="dadaab_prevention_of_sgbv_cases",
+                               listening_group_filename="dadaab_prevention_of_sgbv_cases.csv",
+                               time_field="sent_on",
+                               run_id_field="prevention_of_sgbv_cases_run_id",
+                               coda_filename="dadaab_prevention_of_sgbv_cases.json",
+                               icr_filename="dadaab_prevention_of_sgbv_cases.csv",
+                               coding_configurations=[
+                                   CodingConfiguration(
+                                       coding_mode=CodingModes.MULTIPLE,
+                                       code_scheme=CodeSchemes.DADAAB_PREVENTION_OF_SGBV_CASES,
+                                       coded_field="prevention_of_sgbv_cases_coded",
+                                       analysis_file_key="prevention_of_sgbv_cases_",
+                                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                           CodeSchemes.DADAAB_PREVENTION_OF_SGBV_CASES, x, y)
+                                   )
+                               ],
+                               ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab prevention_of_sgbv_cases"),
+                               raw_field_fold_strategy=FoldStrategies.concatenate)
 ]
 
 S01_KAKUMA_RQA_CODING_PLANS = [
@@ -971,7 +990,28 @@ S03_KAKUMA_RQA_CODING_PLANS = [
                        )
                    ],
                    ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma expectations_from_educated_girls"),
-                   raw_field_fold_strategy=FoldStrategies.concatenate)
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
+
+    CodingPlan(raw_field="prevention_of_sgbv_cases_raw",
+                       dataset_name="kakuma_prevention_of_sgbv_cases",
+                       listening_group_filename="kakuma_prevention_of_sgbv_cases.csv",
+                       time_field="sent_on",
+                       run_id_field="prevention_of_sgbv_cases_run_id",
+                       coda_filename="kakuma_prevention_of_sgbv_cases.json",
+                       icr_filename="kakuma_prevention_of_sgbv_cases.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.KAKUMA_PREVENTION_OF_SGBV_CASES,
+                               coded_field="prevention_of_sgbv_cases_coded",
+                               analysis_file_key="prevention_of_sgbv_cases_",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                   CodeSchemes.KAKUMA_PREVENTION_OF_SGBV_CASES, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma prevention_of_sgbv_cases"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate)
+
 ]
 
 def get_rqa_coding_plans(pipeline_name):

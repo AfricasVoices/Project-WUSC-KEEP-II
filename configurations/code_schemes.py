@@ -34,6 +34,7 @@ class CodeSchemes(object):
     DADAAB_S03E04_REASONS = _open_scheme("dadaab_s03e04_reasons.json")
     DADAAB_S03E05_REASONS = _open_scheme("dadaab_s03e05_reasons.json")
     DADAAB_EXPECTATIONS_FROM_EDUCATED_GIRLS = _open_scheme("dadaab_expectations_from_educated_girls.json")
+    DADAAB_PREVENTION_OF_SGBV_CASES = _open_scheme("dadaab_prevention_of_sgbv_cases.json")
 
     KAKUMA_S01E01_REASONS = _open_scheme("kakuma_s01e01_reasons.json")
     KAKUMA_S01E02_REASONS = _open_scheme("kakuma_s01e02_reasons.json")
@@ -59,6 +60,7 @@ class CodeSchemes(object):
     KAKUMA_S03E04_REASONS = _open_scheme("kakuma_s03e04_reasons.json")
     KAKUMA_S03E05_REASONS = _open_scheme("kakuma_s03e05_reasons.json")
     KAKUMA_EXPECTATIONS_FROM_EDUCATED_GIRLS = _open_scheme("kakuma_expectations_from_educated_girls.json")
+    KAKUMA_PREVENTION_OF_SGBV_CASES = _open_scheme("kakuma_prevention_of_sgbv_cases.json")
 
     GENDER = _open_scheme("gender.json")
     NATIONALITY = _open_scheme("nationality.json")
