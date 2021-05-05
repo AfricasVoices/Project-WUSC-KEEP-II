@@ -3,7 +3,62 @@
   "Name": "DADAAB S03E04 Reasons",
   "Version": "0.0.0.2",
   "Codes": [
-
+    {
+      "CodeID": "code-fff71d5a",
+      "CodeType": "Normal",
+      "DisplayText": "creating awareness",
+      "NumericValue": 1,
+      "StringValue": "creating_awareness",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-aa1e9c78",
+      "CodeType": "Normal",
+      "DisplayText": "prevent SGBV cases",
+      "NumericValue": 2,
+      "StringValue": "prevent_sgbv_cases",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-19bd86ed",
+      "CodeType": "Normal",
+      "DisplayText": "punish perpetrators",
+      "NumericValue": 3,
+      "StringValue": "punish_perpetrators",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-c6eb534e",
+      "CodeType": "Normal",
+      "DisplayText": "report SGBV cases",
+      "NumericValue": 4,
+      "StringValue": "report_sgbv_cases",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-7d29a360",
+      "CodeType": "Normal",
+      "DisplayText": "cooperation between stakeholders",
+      "NumericValue": 5,
+      "StringValue": "cooperation_between_stakeholders",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-41f9a433",
+      "CodeType": "Normal",
+      "DisplayText": "negative cultural norms",
+      "NumericValue": 6,
+      "StringValue": "negative_cultural_norms",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-a67904b9",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 7,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
