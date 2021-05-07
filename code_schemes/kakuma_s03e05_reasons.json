@@ -3,7 +3,62 @@
   "Name": "KAKUMA S03E05 Reasons",
   "Version": "0.0.0.2",
   "Codes": [
-
+    {
+      "CodeID": "code-17938995",
+      "CodeType": "Normal",
+      "DisplayText": "advising them",
+      "NumericValue": 1,
+      "StringValue": "advising_them",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-4bcf659b",
+      "CodeType": "Normal",
+      "DisplayText": "financial support",
+      "NumericValue": 2,
+      "StringValue": "financial_support",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-a01e7fc8",
+      "CodeType": "Normal",
+      "DisplayText": "encourage them",
+      "NumericValue": 3,
+      "StringValue": "encourage_them",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-9151227a",
+      "CodeType": "Normal",
+      "DisplayText": "counsel them",
+      "NumericValue": 4,
+      "StringValue": "counsel_them",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-80e4622b",
+      "CodeType": "Normal",
+      "DisplayText": "awareness creation",
+      "NumericValue": 5,
+      "StringValue": "awareness_creation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-803c4051",
+      "CodeType": "Normal",
+      "DisplayText": "go back to school",
+      "NumericValue": 6,
+      "StringValue": "go_back_to_school",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-5085343a",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 7,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
