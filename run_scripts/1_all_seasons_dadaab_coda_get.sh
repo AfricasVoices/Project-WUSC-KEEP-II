@@ -40,6 +40,7 @@ DATASETS=(
     "dadaab_s03e04"
     "dadaab_s03e05"
     "dadaab_expectations_from_educated_girls"
+    "dadaab_prevention_of_sgbv_cases"
 
     "dadaab_location"
     "dadaab_gender"
