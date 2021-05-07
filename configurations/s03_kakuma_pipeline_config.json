@@ -142,7 +142,7 @@
     {"RapidProKey": "Location (Text) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "location_raw"},
     {"RapidProKey": "Nationality (Text) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "nationality_raw"},
     {"RapidProKey": "Household_Language (Text) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "household_language_raw"},
-    {"RapidProKey": "Disabled (Text) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "disabled_raw"},
+    {"RapidProKey": "Disability (Text) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "disabled_raw"},
     {"RapidProKey": "Gender (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "gender_time"},
     {"RapidProKey": "Age (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "age_time"},
     {"RapidProKey": "Location (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "location_time"},
