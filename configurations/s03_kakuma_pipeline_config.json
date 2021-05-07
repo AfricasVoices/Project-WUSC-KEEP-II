@@ -29,7 +29,8 @@
         "wusc_keep_ii_s03e03_kakuma_activation",
         "wusc_keep_ii_s03e04_kakuma_activation",
         "wusc_keep_ii_s03e05_kakuma_activation",
-        "wusc_keep_ii_s03e02_kakuma_follow_up"
+        "wusc_keep_ii_s03e02_kakuma_follow_up",
+        "wusc_keep_ii_s03e04_kakuma_follow_up"
       ],
       "SurveyFlowNames": [
         "wusc_keep_ii_kakuma_demogs",
@@ -85,7 +86,7 @@
     {"RapidProKey": "Rqa_S03E05_Kakuma (Time) - wusc_keep_ii_s03e05_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Expectations_From_Educated_Girls (Time) - wusc_keep_ii_s03e02_kakuma_follow_up", "PipelineKey": "sent_on"},
 
-        {"RapidProKey": "Prevention_Of_Sgbv_Cases (Text) - wusc_keep_ii_s03e04_kakuma_follow_up", "PipelineKey": "prevention_of_sgbv_cases_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Prevention_Of_Sgbv_Cases (Text) - wusc_keep_ii_s03e04_kakuma_follow_up", "PipelineKey": "prevention_of_sgbv_cases_raw", "IsActivationMessage": true},
     {"RapidProKey": "Prevention_Of_Sgbv_Cases (Run ID) - wusc_keep_ii_s03e04_kakuma_follow_up", "PipelineKey": "prevention_of_sgbv_cases_run_id"},
     {"RapidProKey": "Prevention_Of_Sgbv_Cases (Time) - wusc_keep_ii_s03e04_kakuma_follow_up", "PipelineKey": "sent_on"},
 
@@ -147,7 +148,7 @@
     {"RapidProKey": "Location (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "location_time"},
     {"RapidProKey": "Nationality (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "nationality_time"},
     {"RapidProKey": "Household_Language (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "household_language_time"},
-    {"RapidProKey": "Disabled (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "disabled_time"}
+    {"RapidProKey": "Disability (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "disabled_time"}
   ],
   "PipelineName": "kakuma_s03_pipeline",
   "ProjectStartDate": "2021-04-02T19:30:00+03:00",
