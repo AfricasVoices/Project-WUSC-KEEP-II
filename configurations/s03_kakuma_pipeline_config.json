@@ -29,7 +29,8 @@
         "wusc_keep_ii_s03e03_kakuma_activation",
         "wusc_keep_ii_s03e04_kakuma_activation",
         "wusc_keep_ii_s03e05_kakuma_activation",
-        "wusc_keep_ii_s03e02_kakuma_follow_up"
+        "wusc_keep_ii_s03e02_kakuma_follow_up",
+        "wusc_keep_ii_s03e04_kakuma_follow_up"
       ],
       "SurveyFlowNames": [
         "wusc_keep_ii_kakuma_demogs",
@@ -84,6 +85,10 @@
     {"RapidProKey": "Rqa_S03E04_Kakuma (Time) - wusc_keep_ii_s03e04_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Rqa_S03E05_Kakuma (Time) - wusc_keep_ii_s03e05_kakuma_activation", "PipelineKey": "sent_on"},
     {"RapidProKey": "Expectations_From_Educated_Girls (Time) - wusc_keep_ii_s03e02_kakuma_follow_up", "PipelineKey": "sent_on"},
+
+    {"RapidProKey": "Prevention_Of_Sgbv_Cases (Text) - wusc_keep_ii_s03e04_kakuma_follow_up", "PipelineKey": "prevention_of_sgbv_cases_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Prevention_Of_Sgbv_Cases (Run ID) - wusc_keep_ii_s03e04_kakuma_follow_up", "PipelineKey": "prevention_of_sgbv_cases_run_id"},
+    {"RapidProKey": "Prevention_Of_Sgbv_Cases (Time) - wusc_keep_ii_s03e04_kakuma_follow_up", "PipelineKey": "sent_on"},
 
     {"RapidProKey": "Gender (Text) - wusc_keep_ii_kakuma_demogs", "PipelineKey": "gender_raw"},
     {"RapidProKey": "Age (Text) - wusc_keep_ii_kakuma_demogs", "PipelineKey": "age_raw"},
