@@ -1,9 +1,40 @@
 {
   "SchemeID": "Scheme-f165e2c9",
-  "Name": "KAKUMA Prevention Of SGBV Cases.json",
+  "Name": "KAKUMA Prevention Of SGBV Cases",
   "Version": "0.0.0.2",
   "Codes": [
-
+{
+      "CodeID": "code-f30d2de8",
+      "CodeType": "Normal",
+      "DisplayText": "creating awareness",
+      "NumericValue": 1,
+      "StringValue": "creating awareness",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-9664be33",
+      "CodeType": "Normal",
+      "DisplayText": "prevent violence",
+      "NumericValue": 2,
+      "StringValue": "prevent_violence",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-843d72ad",
+      "CodeType": "Normal",
+      "DisplayText": "report the cases",
+      "NumericValue": 3,
+      "StringValue": "report_the_cases",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-4b89cba9",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 4,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
