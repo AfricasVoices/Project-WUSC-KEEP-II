@@ -148,7 +148,7 @@
     {"RapidProKey": "Location (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "location_time"},
     {"RapidProKey": "Nationality (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "nationality_time"},
     {"RapidProKey": "Household_Language (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "household_language_time"},
-    {"RapidProKey": "Disabled (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "disabled_time"}
+    {"RapidProKey": "Disability (Time) - wusc_keep_ii_s03_kakuma_demogs", "PipelineKey": "disabled_time"}
   ],
   "PipelineName": "kakuma_s03_pipeline",
   "ProjectStartDate": "2021-04-02T19:30:00+03:00",
