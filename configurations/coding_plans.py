@@ -507,7 +507,7 @@ S03_DADAAB_RQA_CODING_PLANS = [
 
     CodingPlan(raw_field="s03_impact_made_raw",
                dataset_name="s03_dadaab_impact_made",
-               time_field="s03_impact_made_time",
+               time_field="sent_on",
                run_id_field="s03_impact_made_run_id",
                icr_filename="s03_impact_made.csv",
                coda_filename="s03_dadaab_impact_made.json",
@@ -527,7 +527,7 @@ S03_DADAAB_RQA_CODING_PLANS = [
 
     CodingPlan(raw_field="s03_lessons_learnt_raw",
                dataset_name="s03_dadaab_lessons_learnt",
-               time_field="s03_lessons_learnt_time",
+               time_field="sent_on",
                icr_filename="s03_lessons_learnt.csv",
                run_id_field="s03_lessons_learnt_run_id",
                coda_filename="s03_dadaab_lessons_learnt.json",
@@ -1054,7 +1054,7 @@ S03_KAKUMA_RQA_CODING_PLANS = [
 
     CodingPlan(raw_field="s03_impact_made_raw",
                dataset_name="s03_kakuma_impact_made",
-               time_field="s03_impact_made_time",
+               time_field="sent_on",
                run_id_field="s03_impact_made_run_id",
                icr_filename="s03_impact_made.csv",
                coda_filename="s03_kakuma_impact_made.json",
@@ -1074,7 +1074,7 @@ S03_KAKUMA_RQA_CODING_PLANS = [
 
     CodingPlan(raw_field="s03_lessons_learnt_raw",
                dataset_name="s03_kakuma_lessons_learnt",
-               time_field="s03_lessons_learnt_time",
+               time_field="sent_on",
                run_id_field="s03_lessons_learnt_run_id",
                icr_filename="s03_lessons_learnt.csv",
                coda_filename="s03_kakuma_lessons_learnt.json",
