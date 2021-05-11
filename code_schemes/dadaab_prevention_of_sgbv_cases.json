@@ -3,7 +3,54 @@
   "Name": "DADAAB Prevention Of SGBV Cases",
   "Version": "0.0.0.2",
   "Codes": [
-
+{
+      "CodeID": "code-ff37a89b",
+      "CodeType": "Normal",
+      "DisplayText": "creating awareness",
+      "NumericValue": 1,
+      "StringValue": "creating awareness",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-18198470",
+      "CodeType": "Normal",
+      "DisplayText": "punish perpetrators",
+      "NumericValue": 2,
+      "StringValue": "punish_perpetrators",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-00c37acd",
+      "CodeType": "Normal",
+      "DisplayText": "marry the girls off",
+      "NumericValue": 3,
+      "StringValue": "marry_the_girls_off",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-285f93d5",
+      "CodeType": "Normal",
+      "DisplayText": "reduction of bride price",
+      "NumericValue": 4,
+      "StringValue": "reduction_of_bride_price",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-73bdc2c9",
+      "CodeType": "Normal",
+      "DisplayText": "prevent violence",
+      "NumericValue": 5,
+      "StringValue": "prevent_violence",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-c9c6fc5d",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 6,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
