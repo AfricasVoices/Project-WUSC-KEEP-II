@@ -23,6 +23,8 @@ DATASETS=(
     "kakuma_s03e05"
     "kakuma_expectations_from_educated_girls"
     "kakuma_prevention_of_sgbv_cases"
+    "s03_kakuma_lessons_learnt"
+    "s03_kakuma_impact_made"
 
     "kakuma_location"
     "kakuma_gender"
