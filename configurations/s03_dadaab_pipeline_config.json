@@ -12,7 +12,8 @@
         "wusc_keep_ii_s03e04_dadaab_activation",
         "wusc_keep_ii_s03e05_dadaab_activation",
         "wusc_keep_ii_s03e02_dadaab_follow_up",
-        "wusc_keep_ii_s03e04_dadaab_follow_up"
+        "wusc_keep_ii_s03e04_dadaab_follow_up",
+        "wusc_keep_ii_s03_programme_evaluation_dadaab"
       ],
       "SurveyFlowNames": [
         "wusc_keep_ii_dadaab_demogs",
@@ -57,12 +58,22 @@
     {"RapidProKey": "Rqa_S03E05_Dadaab (Text) - wusc_keep_ii_s03e05_dadaab_activation", "PipelineKey": "rqa_s03e05_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_S03E05_Dadaab (Run ID) - wusc_keep_ii_s03e05_dadaab_activation", "PipelineKey": "rqa_s03e05_run_id"},
     {"RapidProKey": "Rqa_S03E05_Dadaab (Time) - wusc_keep_ii_s03e05_dadaab_activation", "PipelineKey": "sent_on"},
+
     {"RapidProKey": "Expectations_From_Educated_Girls (Text) - wusc_keep_ii_s03e02_dadaab_follow_up", "PipelineKey": "expectations_from_educated_girls_raw", "IsActivationMessage": true},
     {"RapidProKey": "Expectations_From_Educated_Girls (Run ID) - wusc_keep_ii_s03e02_dadaab_follow_up", "PipelineKey": "expectations_from_educated_girls_run_id"},
     {"RapidProKey": "Expectations_From_Educated_Girls (Time) - wusc_keep_ii_s03e02_dadaab_follow_up", "PipelineKey": "sent_on"},
+
     {"RapidProKey": "Prevention_Of_Sgbv_Cases (Text) - wusc_keep_ii_s03e04_dadaab_follow_up", "PipelineKey": "prevention_of_sgbv_cases_raw", "IsActivationMessage": true},
     {"RapidProKey": "Prevention_Of_Sgbv_Cases (Run ID) - wusc_keep_ii_s03e04_dadaab_follow_up", "PipelineKey": "prevention_of_sgbv_cases_run_id"},
     {"RapidProKey": "Prevention_Of_Sgbv_Cases (Time) - wusc_keep_ii_s03e04_dadaab_follow_up", "PipelineKey": "sent_on"},
+
+    {"RapidProKey": "Lessons_Learnt (Text) - wusc_keep_ii_s03_programme_evaluation_dadaab", "PipelineKey": "s03_lessons_learnt_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Lessons_Learnt (Run ID) - wusc_keep_ii_s03_programme_evaluation_dadaab", "PipelineKey": "s03_lessons_learnt_run_id"},
+    {"RapidProKey": "Lessons_Learnt (Time) - wusc_keep_ii_s03_programme_evaluation_dadaab", "PipelineKey": "sent_on"},
+
+    {"RapidProKey": "Impact_Made (Text) - wusc_keep_ii_s03_programme_evaluation_dadaab", "PipelineKey": "s03_impact_made_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Impact_Made (Run ID) - wusc_keep_ii_s03_programme_evaluation_dadaab", "PipelineKey": "s03_impact_made_run_id"},
+    {"RapidProKey": "Impact_Made (Time) - wusc_keep_ii_s03_programme_evaluation_dadaab", "PipelineKey": "sent_on"},
 
     {"RapidProKey": "Gender (Text) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "gender_raw"},
     {"RapidProKey": "Age (Text) - wusc_keep_ii_dadaab_demogs", "PipelineKey": "age_raw"},

@@ -503,7 +503,47 @@ S03_DADAAB_RQA_CODING_PLANS = [
                                    )
                                ],
                                ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value("dadaab prevention_of_sgbv_cases"),
-                               raw_field_fold_strategy=FoldStrategies.concatenate)
+                               raw_field_fold_strategy=FoldStrategies.concatenate),
+
+    CodingPlan(raw_field="s03_impact_made_raw",
+               dataset_name="s03_dadaab_impact_made",
+               time_field="sent_on",
+               run_id_field="s03_impact_made_run_id",
+               icr_filename="s03_impact_made.csv",
+               coda_filename="s03_dadaab_impact_made.json",
+               coding_configurations=[
+                   CodingConfiguration(
+                       coding_mode=CodingModes.MULTIPLE,
+                       code_scheme=CodeSchemes.S03_DADAAB_IMPACT_MADE,
+                       coded_field="s03_impact_made",
+                       analysis_file_key="s03_impact_made_",
+                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                           CodeSchemes.S03_DADAAB_IMPACT_MADE, x, y)
+                   )
+               ],
+               ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value(
+                   "s03 dadaab impact made"),
+               raw_field_fold_strategy=FoldStrategies.concatenate),
+
+    CodingPlan(raw_field="s03_lessons_learnt_raw",
+               dataset_name="s03_dadaab_lessons_learnt",
+               time_field="sent_on",
+               icr_filename="s03_lessons_learnt.csv",
+               run_id_field="s03_lessons_learnt_run_id",
+               coda_filename="s03_dadaab_lessons_learnt.json",
+               coding_configurations=[
+                   CodingConfiguration(
+                       coding_mode=CodingModes.MULTIPLE,
+                       code_scheme=CodeSchemes.S03_DADAAB_LESSONS_LEARNT,
+                       coded_field="s03_lessons_learnt",
+                       analysis_file_key="s03_lessons_learnt_",
+                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                           CodeSchemes.S03_DADAAB_LESSONS_LEARNT, x, y)
+                   )
+               ],
+               ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value(
+                   "s03 dadaab lessons learnt"),
+               raw_field_fold_strategy=FoldStrategies.concatenate)
 ]
 
 S01_KAKUMA_RQA_CODING_PLANS = [
@@ -1010,8 +1050,47 @@ S03_KAKUMA_RQA_CODING_PLANS = [
                            )
                        ],
                        ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value("kakuma prevention_of_sgbv_cases"),
-                       raw_field_fold_strategy=FoldStrategies.concatenate)
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
 
+    CodingPlan(raw_field="s03_impact_made_raw",
+               dataset_name="s03_kakuma_impact_made",
+               time_field="sent_on",
+               run_id_field="s03_impact_made_run_id",
+               icr_filename="s03_impact_made.csv",
+               coda_filename="s03_kakuma_impact_made.json",
+               coding_configurations=[
+                   CodingConfiguration(
+                       coding_mode=CodingModes.MULTIPLE,
+                       code_scheme=CodeSchemes.S03_KAKUMA_IMPACT_MADE,
+                       coded_field="s03_impact_made",
+                       analysis_file_key="s03_impact_made_",
+                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                           CodeSchemes.S03_KAKUMA_IMPACT_MADE, x, y)
+                   )
+               ],
+               ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value(
+                   "s03 kakuma impact made"),
+               raw_field_fold_strategy=FoldStrategies.concatenate),
+
+    CodingPlan(raw_field="s03_lessons_learnt_raw",
+               dataset_name="s03_kakuma_lessons_learnt",
+               time_field="sent_on",
+               run_id_field="s03_lessons_learnt_run_id",
+               icr_filename="s03_lessons_learnt.csv",
+               coda_filename="s03_kakuma_lessons_learnt.json",
+               coding_configurations=[
+                   CodingConfiguration(
+                       coding_mode=CodingModes.MULTIPLE,
+                       code_scheme=CodeSchemes.S03_KAKUMA_LESSONS_LEARNT,
+                       coded_field="s03_lessons_learnt",
+                       analysis_file_key="s03_lessons_learnt_",
+                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                           CodeSchemes.S03_KAKUMA_LESSONS_LEARNT, x, y)
+                   )
+               ],
+               ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value(
+                   "s03 kakuma lessons learnt"),
+               raw_field_fold_strategy=FoldStrategies.concatenate)
 ]
 
 def get_rqa_coding_plans(pipeline_name):

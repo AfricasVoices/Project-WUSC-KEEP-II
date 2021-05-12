@@ -79,6 +79,8 @@ class CodeSchemes(object):
     S02_DADAAB_LESSONS_LEARNT = _open_scheme("s02_dadaab_lessons_learnt.json")
     DADAAB_SHOW_SUGGESTIONS = _open_scheme("dadaab_show_suggestions.json")
     S02_DADAAB_IMPACT_MADE = _open_scheme("s02_dadaab_impact_made.json")
+    S03_DADAAB_LESSONS_LEARNT = _open_scheme("s03_dadaab_lessons_learnt.json")
+    S03_DADAAB_IMPACT_MADE = _open_scheme("s03_dadaab_impact_made.json")
 
     DADAAB_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION = _open_scheme("dadaab_community_views_on_girls_education.json")
     DADAAB_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION_FINAL = _open_scheme("dadaab_community_views_on_girls_education_final.json")
@@ -92,6 +94,8 @@ class CodeSchemes(object):
     S02_KAKUMA_LESSONS_LEARNT = _open_scheme("s02_kakuma_lessons_learnt.json")
     KAKUMA_SHOW_SUGGESTIONS = _open_scheme("kakuma_show_suggestions.json")
     S02_KAKUMA_IMPACT_MADE = _open_scheme("s02_kakuma_impact_made.json")
+    S03_KAKUMA_LESSONS_LEARNT = _open_scheme("s03_kakuma_lessons_learnt.json")
+    S03_KAKUMA_IMPACT_MADE = _open_scheme("s03_kakuma_impact_made.json")
 
     KAKUMA_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION = _open_scheme("kakuma_community_views_on_girls_education.json")
     KAKUMA_COMMUNITY_VIEWS_ON_GIRLS_EDUCATION_FINAL = _open_scheme("kakuma_community_views_on_girls_education_final.json")
