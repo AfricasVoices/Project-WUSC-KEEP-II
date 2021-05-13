@@ -3,7 +3,38 @@
   "Name": "S03 DADAAB Impact Made",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-3ba78b7c",
+      "CodeType": "Normal",
+      "DisplayText": "girls getting encouragement",
+      "NumericValue": 1,
+      "StringValue": "girls_getting_encouragement",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-76625f02",
+      "CodeType": "Normal",
+      "DisplayText": "knowledge",
+      "NumericValue": 2,
+      "StringValue": "knowledge",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-c157f6d6",
+      "CodeType": "Normal",
+      "DisplayText": "lots of changes",
+      "NumericValue": 3,
+      "StringValue": "lots_of_changes",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-23a91b9f",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 4,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
