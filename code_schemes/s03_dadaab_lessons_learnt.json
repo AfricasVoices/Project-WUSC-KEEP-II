@@ -20,6 +20,14 @@
       "VisibleInCoda": true
     },
     {
+      "CodeID": "code-295e5974",
+      "CodeType": "Normal",
+      "DisplayText": "learnt a lot",
+      "NumericValue": 4,
+      "StringValue": "learnt_alot",
+      "VisibleInCoda": true
+    },
+    {
       "CodeID": "code-24195b60",
       "CodeType": "Normal",
       "DisplayText": "nothing",
