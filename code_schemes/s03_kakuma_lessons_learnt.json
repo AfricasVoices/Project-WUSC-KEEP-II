@@ -3,7 +3,38 @@
   "Name": "S03 KAKUMA Lessons Learnt",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-09269e41",
+      "CodeType": "Normal",
+      "DisplayText": "benefits of educating girls",
+      "NumericValue": 1,
+      "StringValue": "benefits_of_educating_girls",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-295e5974",
+      "CodeType": "Normal",
+      "DisplayText": "learnt a lot",
+      "NumericValue": 2,
+      "StringValue": "learnt_a_lot",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-567a5c20",
+      "CodeType": "Normal",
+      "DisplayText": "nothing",
+      "NumericValue": 3,
+      "StringValue": "nothing",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-2edb6cee",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 4,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",

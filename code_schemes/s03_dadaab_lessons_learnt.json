@@ -3,7 +3,46 @@
   "Name": "S03 DADAAB Lessons Learnt",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-e4cd35fd",
+      "CodeType": "Normal",
+      "DisplayText": "benefits of educating girls",
+      "NumericValue": 1,
+      "StringValue": "benefits_of_educating_girls",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-3d184f9a",
+      "CodeType": "Normal",
+      "DisplayText": "gender equality and girls' rights",
+      "NumericValue": 2,
+      "StringValue": "gender_equality_and_girls_rights",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-295e5974",
+      "CodeType": "Normal",
+      "DisplayText": "learnt a lot",
+      "NumericValue": 5,
+      "StringValue": "learnt_a_lot",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-24195b60",
+      "CodeType": "Normal",
+      "DisplayText": "nothing",
+      "NumericValue": 3,
+      "StringValue": "nothing",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-6cbbb24b",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 4,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",

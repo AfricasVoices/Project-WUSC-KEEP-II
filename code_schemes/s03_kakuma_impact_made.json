@@ -3,7 +3,38 @@
   "Name": "S03 KAKUMA Impact Made",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-ad12efa4",
+      "CodeType": "Normal",
+      "DisplayText": "girls getting encouragement",
+      "NumericValue": 1,
+      "StringValue": "girls_getting_encouragement",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-6d65c3f5",
+      "CodeType": "Normal",
+      "DisplayText": "change",
+      "NumericValue": 2,
+      "StringValue": "change",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-f5303c71",
+      "CodeType": "Normal",
+      "DisplayText": "girl's rights or child's rights",
+      "NumericValue": 3,
+      "StringValue": "girls_rights_or_childs_rights",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-46bea83b",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 4,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
