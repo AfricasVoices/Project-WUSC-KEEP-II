@@ -12,7 +12,8 @@
       "Shortcut": "m",
       "VisibleInCoda": true,
       "MatchValues" : [
-        "man"
+        "man",
+        "male"
       ]
     },
     {
@@ -24,7 +25,8 @@
       "Shortcut": "f",
       "VisibleInCoda": true,
       "MatchValues" : [
-        "woman"
+        "woman",
+        "female"
       ]
     },
     {
