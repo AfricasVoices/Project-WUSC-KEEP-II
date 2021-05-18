@@ -54,7 +54,8 @@
     "gs://avf-project-datasets/2021/WUSC-KEEP-II/KAKUMA/LISTENING_GROUPS/kakuma_s03e01_listening_group.csv",
     "gs://avf-project-datasets/2021/WUSC-KEEP-II/KAKUMA/LISTENING_GROUPS/kakuma_s03e02_listening_group.csv",
     "gs://avf-project-datasets/2021/WUSC-KEEP-II/KAKUMA/LISTENING_GROUPS/kakuma_s03e03_listening_group.csv",
-    "gs://avf-project-datasets/2021/WUSC-KEEP-II/KAKUMA/LISTENING_GROUPS/kakuma_s03e04_listening_group.csv"
+    "gs://avf-project-datasets/2021/WUSC-KEEP-II/KAKUMA/LISTENING_GROUPS/kakuma_s03e04_listening_group.csv",
+    "gs://avf-project-datasets/2021/WUSC-KEEP-II/KAKUMA/LISTENING_GROUPS/kakuma_s03e05_listening_group.csv"
   ],
   "PhoneNumberUuidTable": {
     "FirebaseCredentialsFileURL": "gs://avf-credentials/avf-id-infrastructure-firebase-adminsdk-6xps8-b9173f2bfd.json",
