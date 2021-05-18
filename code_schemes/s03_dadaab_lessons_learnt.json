@@ -14,7 +14,7 @@
     {
       "CodeID": "code-3d184f9a",
       "CodeType": "Normal",
-      "DisplayText": "gender equality and girls rights",
+      "DisplayText": "gender equality and girls' rights",
       "NumericValue": 2,
       "StringValue": "gender_equality_and_girls_rights",
       "VisibleInCoda": true
@@ -24,7 +24,7 @@
       "CodeType": "Normal",
       "DisplayText": "learnt a lot",
       "NumericValue": 5,
-      "StringValue": "learnt_alot",
+      "StringValue": "learnt_a_lot",
       "VisibleInCoda": true
     },
     {
