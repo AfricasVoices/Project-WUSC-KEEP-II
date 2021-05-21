@@ -26,6 +26,7 @@ DATASETS=(
     "kakuma_prevention_of_sgbv_cases"
     "s03_kakuma_lessons_learnt"
     "s03_kakuma_impact_made"
+    "kakuma_s03_close_out"
 
     "kakuma_location"
     "kakuma_gender"

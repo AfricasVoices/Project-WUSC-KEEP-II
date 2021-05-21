@@ -543,7 +543,27 @@ S03_DADAAB_RQA_CODING_PLANS = [
                ],
                ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value(
                    "s03 dadaab lessons learnt"),
-               raw_field_fold_strategy=FoldStrategies.concatenate)
+               raw_field_fold_strategy=FoldStrategies.concatenate),
+
+    CodingPlan(raw_field="s03_close_out_raw",
+                       dataset_name="s03_close_out",
+                       time_field="sent_on",
+                       run_id_field="s03_close_out_run_id",
+                       icr_filename="s03_close_out.csv",
+                       coda_filename="dadaab_s03_close_out.json",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.DADAAB_S03_CLOSE_OUTS,
+                               coded_field="s03_close_out",
+                               analysis_file_key="s03_close_out_",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                                   CodeSchemes.DADAAB_S03_CLOSE_OUTS, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.DADAAB_WS_CORRECT_DATASET.get_code_with_match_value(
+                           "dadaab s03 close out"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate)
 ]
 
 S01_KAKUMA_RQA_CODING_PLANS = [
@@ -1090,7 +1110,27 @@ S03_KAKUMA_RQA_CODING_PLANS = [
                ],
                ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value(
                    "s03 kakuma lessons learnt"),
-               raw_field_fold_strategy=FoldStrategies.concatenate)
+               raw_field_fold_strategy=FoldStrategies.concatenate),
+
+    CodingPlan(raw_field="s03_close_out_raw",
+                   dataset_name="s03_close_out",
+                   time_field="sent_on",
+                   run_id_field="s03_close_out_run_id",
+                   icr_filename="s03_close_out.csv",
+                   coda_filename="kakuma_s03_close_out.json",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.MULTIPLE,
+                           code_scheme=CodeSchemes.KAKUMA_S03_CLOSE_OUTS,
+                           coded_field="s03_close_out",
+                           analysis_file_key="s03_close_out_",
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
+                               CodeSchemes.KAKUMA_S03_CLOSE_OUTS, x, y)
+                       )
+                   ],
+                   ws_code=CodeSchemes.KAKUMA_WS_CORRECT_DATASET.get_code_with_match_value(
+                       "kakuma s03 close out"),
+                   raw_field_fold_strategy=FoldStrategies.concatenate)
 ]
 
 def get_rqa_coding_plans(pipeline_name):
