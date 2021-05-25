@@ -26,6 +26,7 @@ DATASETS=(
     "dadaab_prevention_of_sgbv_cases"
     "s03_dadaab_lessons_learnt"
     "s03_dadaab_impact_made"
+    "dadaab_s03_close_out"
 
     "dadaab_location"
     "dadaab_gender"
