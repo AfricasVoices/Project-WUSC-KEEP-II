@@ -47,7 +47,7 @@ class AnalysisFile(object):
         ListeningGroups.tag_listening_groups_participants(user, data, pipeline_configuration, raw_data_dir)
 
         # Hide data from participants who opted out
-        ConsentUtils.set_stopped(user, data, consent_withdrawn_key, additional_keys=export_keys)
+        #ConsentUtils.set_stopped(user, data, consent_withdrawn_key, additional_keys=export_keys)
 
         with open(csv_path, "w") as f:
             TracedDataCSVIO.export_traced_data_iterable_to_csv(data, f, headers=export_keys)
